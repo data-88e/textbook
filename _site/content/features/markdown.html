@@ -7,15 +7,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Search the site</title>
+  <title>Creating book content</title>
   <meta name="description" content="This is the textbook for Data 88: Economic Models at UC Berkeley.">
 
-  <link rel="canonical" href="http://0.0.0.0:4000/econ-models-textbook/search">
+  <link rel="canonical" href="http://0.0.0.0:4000/econ-models-textbook/content/features/markdown.html">
   <link rel="alternate" type="application/rss+xml" title="Data 88: Economic Models" href="http://0.0.0.0:4000/econ-models-textbook/feed.xml">
 
-  <meta property="og:url"         content="http://0.0.0.0:4000/econ-models-textbook/search" />
+  <meta property="og:url"         content="http://0.0.0.0:4000/econ-models-textbook/content/features/markdown.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Search the site" />
+<meta property="og:title"       content="Creating book content" />
 <meta property="og:description" content="This is the textbook for Data 88: Economic Models at UC Berkeley." />
 <meta property="og:image"       content="" />
 
@@ -25,9 +25,9 @@
   "@context": "http://schema.org",
   "@type": "NewsArticle",
   "mainEntityOfPage":
-    "http://0.0.0.0:4000/econ-models-textbook/search",
+    "http://0.0.0.0:4000/econ-models-textbook/content/features/markdown.html",
   "headline":
-    "Search the site",
+    "Creating book content",
   "datePublished":
     "2019-09-12T18:56:43-05:00",
   "dateModified":
@@ -815,6 +815,33 @@ initFunction(initQuery);
 </nav>
 
       
+      <!-- Shamelessly copied from minimal mistakes -->
+
+
+<!-- TOC will only show up if it has at least one item -->
+
+
+  <aside class="sidebar__right">
+    <nav class="onthispage">
+      <header><h4 class="nav__title"><i class="fa fa-list"></i>   On this page</h4></header>
+      <ul class="toc__menu">
+  <li><a href="#sidebars-with-jekyll">Sidebars with Jekyll</a>
+    <ul>
+      <li><a href="#heres-a-third-level-header">Here’s a third-level header</a></li>
+    </ul>
+  </li>
+  <li><a href="#embedding-media">Embedding media</a>
+    <ul>
+      <li><a href="#adding-images">Adding images</a></li>
+      <li><a href="#adding-movies">Adding movies</a></li>
+    </ul>
+  </li>
+</ul>
+    </nav>
+  </aside>
+
+
+      
       <main class="c-textbook__page" tabindex="-1">
           <div class="o-wrapper">
             <div class="c-sidebar-toggle">
@@ -833,71 +860,53 @@ initFunction(initQuery);
             
 
             <div class="c-textbook__content">
-              <div class="search-content__inner-wrap">
-    <input type="text" id="lunr_search" class="search-input" tabindex="-1" placeholder="'Enter your search term...''" />
-    <div id="results" class="results"></div>
-</div>
+              <h1 id="creating-book-content">Creating book content</h1>
 
-<script>
-    // Add the lunr store since we will now search it
-    var store = [{
-        "title": "Lab 1",
-        
-        "excerpt":
-            "Economic Models, Fall 2019 Dr. Eric Van Dusen Welcome to Data 88: Data Science and Economics Connector Course! Week 1 - Introduction Economics is in the world around us, and so is Data Science! It’s in our every day lives. As we connect Data Science with Economics, we will be exploring real life datasets to illustrate how Economics concepts are shaped and how decisions lead to real-life impacts. Today’s Lab Some learning outcomes: Navigate and use tools, such as Jupyter notebooks Write and evaluate basic expressions in Python Represent formulas and expressions in LaTeX Write and evaluate functions, such as...",
-        "categories": [],
-        "tags": [],
-        "url": "http://0.0.0.0:4000/econ-models-textbook/econ-fa19/wk01/lab01.html",
-        "teaser":null},{
-        "title": "Horizontal Sum Supply",
-        
-        "excerpt":
-            "Economic Models, Fall 2019 Dr. Eric Van Dusen import qgrid import numpy as np import pandas as pd import matplotlib.pyplot as plt %matplotlib inline This Notebook will demonstrate using QGrid - a way to interact with the data in a table. Unfortunately Qgrid works with Pandas, so this Notebook uses a pandas Dataframe as its data source. (I used the naming convention df for dataframe) First we will read in a dataframe with some Supply functions for 3 firms, they have 3 quantities they will supply at three possible prices In the first part Firm C is not producing anything...",
-        "categories": [],
-        "tags": [],
-        "url": "http://0.0.0.0:4000/econ-models-textbook/econ-fa19/wk02/Horizontal_Sum_Supply.html",
-        "teaser":null},{
-        "title": "Intro to Production",
-        
-        "excerpt":
-            "Economic Models, Fall 2019 Dr. Eric Van Dusen import numpy as np import matplotlib.pyplot as plt %matplotlib inline from datascience import * Total Output Imagine that we have a production function is as follows: Where $x$ is our production input and $f(x)$ is the units of output. For simplicity, we can think of both in dollar terms. def graph(formula, x_range, title): x = np.array(x_range) y = formula(x) # &lt;- note now we're calling the function 'formula' with x plt.plot(x, y) plt.xlabel(\"Input units\") plt.ylabel(\"Output units\") plt.title(title) plt.show() def TPP(x): return -0.6*x**3+20*x**2+10*x graph(TPP, range(0, 30), \"Total output with respect to inputs\") Here...",
-        "categories": [],
-        "tags": [],
-        "url": "http://0.0.0.0:4000/econ-models-textbook/econ-fa19/wk02/Intro_to_Production.html",
-        "teaser":null},{
-        "title": "Lab 2",
-        
-        "excerpt":
-            "Economic Models, Fall 2019 Dr. Eric Van Dusen from datascience import * import matplotlib.pyplot as plt %matplotlib inline import numpy as np import pandas as pd from utils import * plt.style.use('seaborn-muted') from __future__ import print_function from ipywidgets import interact, interactive, fixed, interact_manual import ipywidgets as widgets from matplotlib import patches import csaps Welcome to Week 2 of Data 88. This week is about the Supply Curve and Firm Behaviour. Supply of a commodity refers to the quantity of a commodity which producers or sellers are willing produce and offer for sale at a particular price in some given period of...",
-        "categories": [],
-        "tags": [],
-        "url": "http://0.0.0.0:4000/econ-models-textbook/econ-fa19/wk02/lab02.html",
-        "teaser":null},{
-        "title": "Home",
-        
-        "excerpt":
-            "Books with Jupyter and Jekyll   This is a textbook.  ",
-        "categories": [],
-        "tags": [],
-        "url": "http://0.0.0.0:4000/econ-models-textbook/intro.html",
-        "teaser":null},{
-        "title": "Sympy and LaTeX",
-        
-        "excerpt":
-            "Week 1   some content  ",
-        "categories": [],
-        "tags": [],
-        "url": "http://0.0.0.0:4000/econ-models-textbook/lecture-intros/wk01.html",
-        "teaser":null},{
-        "title": "Supply and Firm Behavior",
-        
-        "excerpt":
-            "wk02   some content  ",
-        "categories": [],
-        "tags": [],
-        "url": "http://0.0.0.0:4000/econ-models-textbook/lecture-intros/wk02.html",
-        "teaser":null},]
-</script>
+<p>The two kinds of files that contain course content are:</p>
+
+<ul>
+  <li>Jupyter Notebooks</li>
+  <li>Markdown files</li>
+</ul>
+
+<p>Each are contained in the <code class="highlighter-rouge">content/</code> folder and referenced from <code class="highlighter-rouge">_data/toc.yml</code>.</p>
+
+<p>If the file is markdown, it will be copied over with front-matter YAML added so
+that Jekyll can parse it</p>
+
+<h2 id="sidebars-with-jekyll">Sidebars with Jekyll</h2>
+
+<p>You may notice that there’s a sidebar to the right (if your screen is wide enough).
+These are automatically generated from the headers that are present in your page.
+The sidebar will automatically capture all 2nd and 3rd level section headers.
+The best way to designate these headers is with <code class="highlighter-rouge">#</code> characters at the beginning
+of a line.</p>
+
+<h3 id="heres-a-third-level-header">Here’s a third-level header</h3>
+
+<p>This section is here purely to demonstrate the third-level header of the
+rendered page!</p>
+
+<h2 id="embedding-media">Embedding media</h2>
+
+<h3 id="adding-images">Adding images</h3>
+
+<p>You can reference external media like images from your markdown file. If you use
+relative paths, then they will continue to work when the markdown files are copied over,
+so long as they point to a file that’s inside of the repository.</p>
+
+<p>Here’s an image relative to the site root</p>
+
+<p><img src="../images/C-3PO_droid.png" alt="" /></p>
+
+<h3 id="adding-movies">Adding movies</h3>
+
+<p>You can even embed references to movies on the web! For example, here’s a little gif for you!</p>
+
+<p><img src="https://media.giphy.com/media/yoJC2A59OCZHs1LXvW/giphy.gif" alt="" /></p>
+
+<p>This will be included in your website when it is built.</p>
+
               <nav class="c-page__nav">
   
 

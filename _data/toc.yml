@@ -27,24 +27,25 @@
   not_numbered: true
 
 - divider: true
-
 - header: Part I
 
 - title: Sympy and LaTeX
+  url: /lecture-intros/wk01
   expand_sections: true
   sections:
-    - title: Lab 1
-      not_numbered: true
-      url: /econ-fa19/wk01/lab01
+  - title: Lab 1
+    url: /econ-fa19/wk01/lab01
+    not_numbered: true
 - title: Supply and Firm Behavior
+  url: /lecture-intros/wk02
   expand_sections: true
   sections:
-    - title: Horizontal Sum Supply
-      url: /econ-fa19/wk02/Horizontal_Sum_Supply
-      not_numbered: true
-    - tile: Intro to Production
-      url: /econ-fa19/wk02/Intro_to_Production
-      not_numbered: true
-    - title: Lab 2
-      url: /econ-fa19/wk02/lab02
-      not_numbered: true
+  - title: Horizontal Sum Supply
+    url: /econ-fa19/wk02/Horizontal_Sum_Supply
+    not_numbered: true
+  - title: Intro to Production
+    url: /econ-fa19/wk02/Intro_to_Production
+    not_numbered: true
+  - title: Lab 2
+    url: /econ-fa19/wk02/lab02
+    not_numbered: true
