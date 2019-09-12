@@ -26,31 +26,25 @@
   url: /intro
   not_numbered: true
 
-# External link
-- title: GitHub repository
-  url: https://github.com/jupyter/jupyter-book
-  external: true
-  not_numbered: true
-
-# Adds a searchbar link
-- title: Search
-  search: true
-
-# Divider for meta-pages and content page
 - divider: true
 
-# Add a header and sample content section
-- header: Demo textbook
+- header: Part I
 
-# A chapter w/ a collection of sections beneath it
-- title: Features and customization
-  url: /features/features
-  not_numbered: true
+- title: Sympy and LaTeX
   expand_sections: true
   sections:
-  - title: Markdown files
-    url: /features/markdown
-    not_numbered: true
-  - title: Jupyter notebooks
-    url: /features/notebooks
-    not_numbered: true
+    - title: Lab 1
+      not_numbered: true
+      url: /econ-fa19/wk01/lab01
+- title: Supply and Firm Behavior
+  expand_sections: true
+  sections:
+    - title: Horizontal Sum Supply
+      url: /econ-fa19/wk02/Horizontal_Sum_Supply
+      not_numbered: true
+    - tile: Intro to Production
+      url: /econ-fa19/wk02/Intro_to_Production
+      not_numbered: true
+    - title: Lab 2
+      url: /econ-fa19/wk02/lab02
+      not_numbered: true
