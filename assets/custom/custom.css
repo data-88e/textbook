@@ -1,0 +1,8 @@
+/* Put your custom CSS here */
+.left {
+    margin-left: 0px;
+}
+
+table#nb-header {
+	display: none;
+}
