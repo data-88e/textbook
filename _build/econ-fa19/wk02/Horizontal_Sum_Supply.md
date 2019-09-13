@@ -6,7 +6,7 @@ kernel_name: python3
 title: 'Horizontal Sum Supply'
 prev_page:
   url: /lecture-intros/wk02
-  title: 'Supply and Firm Behavior'
+  title: 'The Supply Curve and Firm Behavior'
 next_page:
   url: /econ-fa19/wk02/Intro_to_Production
   title: 'Intro to Production'

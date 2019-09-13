@@ -8,6 +8,11 @@ next_page:
   title: 'Sympy and LaTeX'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
-# Books with Jupyter and Jekyll
+# Data 88: Economic Models
 
-This is a textbook.
+This is a textbook developed for UC Berkeley's course Data 88: Economic Models. [Data 88](https://d8a-88.github.io) is a generic course listing for Data 8 connector courses.
+
+## Course Description
+
+The idea for the class is to take students through a series of exercises to motivate and illustrate key concepts in Economics with examples in Python Jupyter notebooks. The class will cover concepts from Introductory Economics, MIcroeconomic Theory, Econometrics, Development Economics, Environmental Economics and Public Economics. The course will give data science students a pathway to apply python programming and data science concepts within the discipline of economics. The course will also give economics students a pathway to apply programming to reinforce fundamental concepts and to advance the level of study in upper division coursework and possible thesis work.
+

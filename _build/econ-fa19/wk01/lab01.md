@@ -7,7 +7,7 @@ prev_page:
   title: 'Sympy and LaTeX'
 next_page:
   url: /lecture-intros/wk02
-  title: 'Supply and Firm Behavior'
+  title: 'The Supply Curve and Firm Behavior'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 
