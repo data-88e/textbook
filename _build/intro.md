@@ -4,8 +4,8 @@ prev_page:
   url: 
   title: ''
 next_page:
-  url: /lecture-intros/wk01
-  title: 'Sympy and LaTeX'
+  url: /LICENSE
+  title: 'License'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 # Data 88: Economic Models

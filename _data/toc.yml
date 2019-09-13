@@ -25,6 +25,9 @@
 - title: Home
   url: /intro
   not_numbered: true
+- title: License
+  url: /LICENSE
+  not_numbered: true
 
 - divider: true
 - header: Part I
