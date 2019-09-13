@@ -5,3 +5,7 @@ numpy
 datascience
 folium
 matplotlib
+sympy
+qgrid
+ipywidgets
+csaps
