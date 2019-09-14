@@ -32,7 +32,4 @@ site:
 
 textbook:
 	python scripts/clean.py
-	rm -rf content/econ-fa19
-	git clone https://github.com/d8a-88/econ-fa19 content/econ-fa19
 	jupyter-book build ./ --overwrite
-	rm -rf content/econ-fa19
