@@ -1,0 +1,1621 @@
+---
+interact_link: content/econ-fa19/wk02/lab02.ipynb
+kernel_name: python3
+has_widgets: true
+title: |-
+  Lab 2
+prev_page:
+  url: /econ-fa19/wk02/Intro_to_Production.html
+  title: |-
+    Intro to Production
+next_page:
+  url: 
+  title: |-
+    
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
+---
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Lab-2:-Supply-and-Firm-Behavior">Lab 2: Supply and Firm Behavior<a class="anchor-link" href="#Lab-2:-Supply-and-Firm-Behavior"> </a></h1>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell tag_hide_input">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># NO CODE</span>
+<span class="kn">from</span> <span class="nn">datascience</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">utils</span> <span class="k">import</span> <span class="o">*</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;seaborn-muted&#39;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">print_function</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="k">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">interactive</span><span class="p">,</span> <span class="n">fixed</span><span class="p">,</span> <span class="n">interact_manual</span>
+<span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="k">import</span> <span class="n">patches</span>
+<span class="kn">import</span> <span class="nn">csaps</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Supply of a commodity refers to the quantity of a commodity which producers or sellers are willing produce and offer for sale at a particular price in some given period of time.</p>
+<p>Individual supply refers to supply offered by a single firm/producer. Market supply refers to supply offered by all the firms/producers in a market.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Firms-and-Supply">Firms and Supply<a class="anchor-link" href="#Firms-and-Supply"> </a></h2>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To answer questions like at a given price, what will be the supply of a good in the market, we need to know the market supply curve. A supply curve is simply a curve (or graph) which shows the different quantites of a good that can be produced and the prices they will be produced at.</p>
+<p>The individual supply curve shows the prices and quantities produced at those prices for a single firm. Market supply curve is the horizontal summation of the individual supply curves in the market.</p>
+<p>The following table and graph will give an example of a market with two firm: A and B.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">market_supply</span> <span class="o">=</span> <span class="n">Table</span><span class="p">()</span><span class="o">.</span><span class="n">with_columns</span><span class="p">(</span><span class="s2">&quot;Price&quot;</span><span class="p">,</span> <span class="n">make_array</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
+                                     <span class="s2">&quot;Quantity supplied by A&quot;</span><span class="p">,</span> <span class="n">make_array</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">),</span>
+                                     <span class="s2">&quot;Quantity supplied by B&quot;</span><span class="p">,</span> <span class="n">make_array</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span>
+                                     <span class="s2">&quot;Market Supply&quot;</span><span class="p">,</span> <span class="n">make_array</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">90</span><span class="p">))</span>
+<span class="n">market_supply</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>Price</th> <th>Quantity supplied by A</th> <th>Quantity supplied by B</th> <th>Market Supply</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>2    </td> <td>20                    </td> <td>30                    </td> <td>50           </td>
+        </tr>
+        <tr>
+            <td>3    </td> <td>30                    </td> <td>40                    </td> <td>70           </td>
+        </tr>
+        <tr>
+            <td>4    </td> <td>40                    </td> <td>50                    </td> <td>90           </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell tag_hide_input">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># NO CODE</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">market_supply</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">market_supply</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">market_supply</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">market_supply</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">market_supply</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">market_supply</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Quantity&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Price&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Market Supply&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">make_array</span><span class="p">(</span><span class="s2">&quot;Quantity supplied by A&quot;</span><span class="p">,</span><span class="s2">&quot;Quantity supplied by B&quot;</span><span class="p">,</span><span class="s2">&quot;Market Supply&quot;</span><span class="p">),</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.04</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;center left&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="../../images/econ-fa19/wk02/lab02_6_0.png"
+>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Market behaviour relating to supply is based on the behaviour of the individual firms that comprise it. Now, how does an individual firm make its decision about production?</p>
+<p>It does so based on the costs associated with production. If the price of a good is enough to recover the costs, the firm produces. Generally, costs increase with the quantity of production. So, to induce producers to increase the quantity supplied, the prices need to increase to compensate for the increased costs.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We will split costs into two categories: Fixed costs and variable costs.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Fixed-Costs">Fixed Costs<a class="anchor-link" href="#Fixed-Costs"> </a></h3><p>Fixed costs are costs associated with fixed factors (or inputs) of production. For example, land for a factory, capital equipment like machinery, etc. The quantity of these inputs cannot be changed quickly in the short term. A factory owner cannot purchase land quickly enough to ramp up production in a week. A key point to note is that fixed costs are irrespective of the quantity, i.e., they do not change with the quantity produced.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Variable-Costs">Variable Costs<a class="anchor-link" href="#Variable-Costs"> </a></h3><p>Variable Costs are costs associated with variable factors (or inputs) of production. For example, labor, raw materials, etc. The quantity of these inputs can be changed quickly in the short term to adjust supply. A factory owner can hire more laborers or purchase more raw material to increase output. Variable costs change as the supply changes.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Putting-Them-Together">Putting Them Together<a class="anchor-link" href="#Putting-Them-Together"> </a></h3>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The following table will give an example of a firms costs. The columns are:</p>
+<ul>
+<li><strong>Output:</strong> Units produced and supplied</li>
+<li><strong>Total Fixed Cost (TFC):</strong> Cost incurred by firm on usage of all fixed factors.</li>
+<li><strong>Total Variable Cost (TVC):</strong> Cost incurred by firm on usage of all variable factors.</li>
+<li><strong>Total Cost (TC):</strong> Sum of the total fixed and variable costs</li>
+<li><strong>Marginal Cost (MC):</strong> Addition to total cost as one more unit of output is produced</li>
+<li><strong>Average Fixed Cost (AFC):</strong> Cost per unit of fixed factors</li>
+<li><strong>Average Variable Cost (AVC):</strong> Cost per unit of variable factors</li>
+<li><strong>Average Total Cost (ATC):</strong> Total cost per unit</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">individual_firm_costs</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s1">&#39;individual_firm_costs.csv&#39;</span><span class="p">)</span>
+<span class="n">individual_firm_costs</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>Output</th> <th>Total Fixed Cost</th> <th>Total Variable Cost</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>0     </td> <td>50              </td> <td>0                  </td>
+        </tr>
+        <tr>
+            <td>1     </td> <td>50              </td> <td>50                 </td>
+        </tr>
+        <tr>
+            <td>2     </td> <td>50              </td> <td>78                 </td>
+        </tr>
+        <tr>
+            <td>3     </td> <td>50              </td> <td>98                 </td>
+        </tr>
+        <tr>
+            <td>4     </td> <td>50              </td> <td>112                </td>
+        </tr>
+        <tr>
+            <td>5     </td> <td>50              </td> <td>130                </td>
+        </tr>
+        <tr>
+            <td>6     </td> <td>50              </td> <td>150                </td>
+        </tr>
+        <tr>
+            <td>7     </td> <td>50              </td> <td>175                </td>
+        </tr>
+        <tr>
+            <td>8     </td> <td>50              </td> <td>204                </td>
+        </tr>
+        <tr>
+            <td>9     </td> <td>50              </td> <td>242                </td>
+        </tr>
+    </tbody>
+</table>
+<p>... (2 rows omitted)</p>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We are going to calculate all of the above mentioned curves using the data above.</p>
+<p>First, lets calculate Total cost, which is the sum of total fixed cost and total variable cost.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">total_cost</span> <span class="o">=</span> <span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Total Fixed Cost&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Total Variable Cost&quot;</span><span class="p">)</span>
+<span class="n">total_cost</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([ 50, 100, 128, 148, 162, 180, 200, 225, 254, 292, 350, 435])</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># adding the array to the table</span>
+<span class="n">individual_firm_costs</span> <span class="o">=</span> <span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="s2">&quot;Total Cost&quot;</span><span class="p">,</span> <span class="n">total_cost</span><span class="p">)</span>
+<span class="n">individual_firm_costs</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>Output</th> <th>Total Fixed Cost</th> <th>Total Variable Cost</th> <th>Total Cost</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>0     </td> <td>50              </td> <td>0                  </td> <td>50        </td>
+        </tr>
+        <tr>
+            <td>1     </td> <td>50              </td> <td>50                 </td> <td>100       </td>
+        </tr>
+        <tr>
+            <td>2     </td> <td>50              </td> <td>78                 </td> <td>128       </td>
+        </tr>
+        <tr>
+            <td>3     </td> <td>50              </td> <td>98                 </td> <td>148       </td>
+        </tr>
+        <tr>
+            <td>4     </td> <td>50              </td> <td>112                </td> <td>162       </td>
+        </tr>
+        <tr>
+            <td>5     </td> <td>50              </td> <td>130                </td> <td>180       </td>
+        </tr>
+        <tr>
+            <td>6     </td> <td>50              </td> <td>150                </td> <td>200       </td>
+        </tr>
+        <tr>
+            <td>7     </td> <td>50              </td> <td>175                </td> <td>225       </td>
+        </tr>
+        <tr>
+            <td>8     </td> <td>50              </td> <td>204                </td> <td>254       </td>
+        </tr>
+        <tr>
+            <td>9     </td> <td>50              </td> <td>242                </td> <td>292       </td>
+        </tr>
+    </tbody>
+</table>
+<p>... (2 rows omitted)</p>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>AFC can be calculated as the TFC divided by the output.</p>
+<p>First, however, note that at the zero level of output, we would by dividing by zero, which is invalid. So, we will calcuate for all other output levels and add the value for AFC manually at zero. While there should be no value for Average Fixed Cost at output zero, we will put a zero there for coding reasons. We will remove the first row by using <code>Table.take()</code> to select only rows in the range of indices from 1 to <code>num_rows</code>. Then <code>np.append(array1, array2)</code> merges the two arrays, with <code>array1</code> being the first array.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">individual_firm_costs_no_first</span> <span class="o">=</span> <span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">num_rows</span><span class="p">))</span>
+<span class="n">average_fixed_cost</span> <span class="o">=</span> <span class="n">individual_firm_costs_no_first</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Total Fixed Cost&quot;</span><span class="p">)</span> <span class="o">/</span> <span class="n">individual_firm_costs_no_first</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Output&quot;</span><span class="p">)</span>
+<span class="n">average_fixed_cost</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">make_array</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">average_fixed_cost</span><span class="p">)</span>
+<span class="n">average_fixed_cost</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([ 0.        , 50.        , 25.        , 16.66666667, 12.5       ,
+       10.        ,  8.33333333,  7.14285714,  6.25      ,  5.55555556,
+        5.        ,  4.54545455])</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">individual_firm_costs</span> <span class="o">=</span> <span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="s2">&quot;Average Fixed Cost&quot;</span><span class="p">,</span> <span class="n">average_fixed_cost</span><span class="p">)</span>
+<span class="n">individual_firm_costs</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>Output</th> <th>Total Fixed Cost</th> <th>Total Variable Cost</th> <th>Total Cost</th> <th>Average Fixed Cost</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>0     </td> <td>50              </td> <td>0                  </td> <td>50        </td> <td>0                 </td>
+        </tr>
+        <tr>
+            <td>1     </td> <td>50              </td> <td>50                 </td> <td>100       </td> <td>50                </td>
+        </tr>
+        <tr>
+            <td>2     </td> <td>50              </td> <td>78                 </td> <td>128       </td> <td>25                </td>
+        </tr>
+        <tr>
+            <td>3     </td> <td>50              </td> <td>98                 </td> <td>148       </td> <td>16.6667           </td>
+        </tr>
+        <tr>
+            <td>4     </td> <td>50              </td> <td>112                </td> <td>162       </td> <td>12.5              </td>
+        </tr>
+        <tr>
+            <td>5     </td> <td>50              </td> <td>130                </td> <td>180       </td> <td>10                </td>
+        </tr>
+        <tr>
+            <td>6     </td> <td>50              </td> <td>150                </td> <td>200       </td> <td>8.33333           </td>
+        </tr>
+        <tr>
+            <td>7     </td> <td>50              </td> <td>175                </td> <td>225       </td> <td>7.14286           </td>
+        </tr>
+        <tr>
+            <td>8     </td> <td>50              </td> <td>204                </td> <td>254       </td> <td>6.25              </td>
+        </tr>
+        <tr>
+            <td>9     </td> <td>50              </td> <td>242                </td> <td>292       </td> <td>5.55556           </td>
+        </tr>
+    </tbody>
+</table>
+<p>... (2 rows omitted)</p>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Similarly, AVC can be calculated as the TVC divided by the output.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">average_variable_cost</span> <span class="o">=</span> <span class="n">individual_firm_costs_no_first</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Total Variable Cost&quot;</span><span class="p">)</span><span class="o">/</span><span class="n">individual_firm_costs_no_first</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Output&quot;</span><span class="p">)</span>
+<span class="n">average_variable_cost</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">make_array</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">average_variable_cost</span><span class="p">)</span>
+<span class="n">average_variable_cost</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([ 0.        , 50.        , 39.        , 32.66666667, 28.        ,
+       26.        , 25.        , 25.        , 25.5       , 26.88888889,
+       30.        , 35.        ])</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">individual_firm_costs</span> <span class="o">=</span> <span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="s2">&quot;Average Variable Cost&quot;</span><span class="p">,</span> <span class="n">average_variable_cost</span><span class="p">)</span>
+<span class="n">individual_firm_costs</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>Output</th> <th>Total Fixed Cost</th> <th>Total Variable Cost</th> <th>Total Cost</th> <th>Average Fixed Cost</th> <th>Average Variable Cost</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>0     </td> <td>50              </td> <td>0                  </td> <td>50        </td> <td>0                 </td> <td>0                    </td>
+        </tr>
+        <tr>
+            <td>1     </td> <td>50              </td> <td>50                 </td> <td>100       </td> <td>50                </td> <td>50                   </td>
+        </tr>
+        <tr>
+            <td>2     </td> <td>50              </td> <td>78                 </td> <td>128       </td> <td>25                </td> <td>39                   </td>
+        </tr>
+        <tr>
+            <td>3     </td> <td>50              </td> <td>98                 </td> <td>148       </td> <td>16.6667           </td> <td>32.6667              </td>
+        </tr>
+        <tr>
+            <td>4     </td> <td>50              </td> <td>112                </td> <td>162       </td> <td>12.5              </td> <td>28                   </td>
+        </tr>
+        <tr>
+            <td>5     </td> <td>50              </td> <td>130                </td> <td>180       </td> <td>10                </td> <td>26                   </td>
+        </tr>
+        <tr>
+            <td>6     </td> <td>50              </td> <td>150                </td> <td>200       </td> <td>8.33333           </td> <td>25                   </td>
+        </tr>
+        <tr>
+            <td>7     </td> <td>50              </td> <td>175                </td> <td>225       </td> <td>7.14286           </td> <td>25                   </td>
+        </tr>
+        <tr>
+            <td>8     </td> <td>50              </td> <td>204                </td> <td>254       </td> <td>6.25              </td> <td>25.5                 </td>
+        </tr>
+        <tr>
+            <td>9     </td> <td>50              </td> <td>242                </td> <td>292       </td> <td>5.55556           </td> <td>26.8889              </td>
+        </tr>
+    </tbody>
+</table>
+<p>... (2 rows omitted)</p>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Similarly, ATC can be calculated as the TC divided by the output.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">average_total_cost</span> <span class="o">=</span> <span class="n">individual_firm_costs_no_first</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Total Cost&quot;</span><span class="p">)</span><span class="o">/</span><span class="n">individual_firm_costs_no_first</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Output&quot;</span><span class="p">)</span>
+<span class="n">average_total_cost</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">make_array</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">average_total_cost</span><span class="p">)</span>
+<span class="n">average_total_cost</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([  0.        , 100.        ,  64.        ,  49.33333333,
+        40.5       ,  36.        ,  33.33333333,  32.14285714,
+        31.75      ,  32.44444444,  35.        ,  39.54545455])</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">individual_firm_costs</span> <span class="o">=</span> <span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="s2">&quot;Average Total Cost&quot;</span><span class="p">,</span> <span class="n">average_total_cost</span><span class="p">)</span>
+<span class="n">individual_firm_costs</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>Output</th> <th>Total Fixed Cost</th> <th>Total Variable Cost</th> <th>Total Cost</th> <th>Average Fixed Cost</th> <th>Average Variable Cost</th> <th>Average Total Cost</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>0     </td> <td>50              </td> <td>0                  </td> <td>50        </td> <td>0                 </td> <td>0                    </td> <td>0                 </td>
+        </tr>
+        <tr>
+            <td>1     </td> <td>50              </td> <td>50                 </td> <td>100       </td> <td>50                </td> <td>50                   </td> <td>100               </td>
+        </tr>
+        <tr>
+            <td>2     </td> <td>50              </td> <td>78                 </td> <td>128       </td> <td>25                </td> <td>39                   </td> <td>64                </td>
+        </tr>
+        <tr>
+            <td>3     </td> <td>50              </td> <td>98                 </td> <td>148       </td> <td>16.6667           </td> <td>32.6667              </td> <td>49.3333           </td>
+        </tr>
+        <tr>
+            <td>4     </td> <td>50              </td> <td>112                </td> <td>162       </td> <td>12.5              </td> <td>28                   </td> <td>40.5              </td>
+        </tr>
+        <tr>
+            <td>5     </td> <td>50              </td> <td>130                </td> <td>180       </td> <td>10                </td> <td>26                   </td> <td>36                </td>
+        </tr>
+        <tr>
+            <td>6     </td> <td>50              </td> <td>150                </td> <td>200       </td> <td>8.33333           </td> <td>25                   </td> <td>33.3333           </td>
+        </tr>
+        <tr>
+            <td>7     </td> <td>50              </td> <td>175                </td> <td>225       </td> <td>7.14286           </td> <td>25                   </td> <td>32.1429           </td>
+        </tr>
+        <tr>
+            <td>8     </td> <td>50              </td> <td>204                </td> <td>254       </td> <td>6.25              </td> <td>25.5                 </td> <td>31.75             </td>
+        </tr>
+        <tr>
+            <td>9     </td> <td>50              </td> <td>242                </td> <td>292       </td> <td>5.55556           </td> <td>26.8889              </td> <td>32.4444           </td>
+        </tr>
+    </tbody>
+</table>
+<p>... (2 rows omitted)</p>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>MC can be calculated as the difference between TC at current output level and TC at previous output level (or TVC, as TFC is fixed). For this we are going to use the function <code>np.diff</code>. You can read about it in the <a href="http://d8a-88.github.io/econ-fa19/python-reference.html">Python reference</a>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">marginal_cost</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">total_cost</span><span class="p">)</span>
+<span class="n">marginal_cost</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">make_array</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">marginal_cost</span><span class="p">)</span>
+<span class="n">marginal_cost</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([ 0, 50, 28, 20, 14, 18, 20, 25, 29, 38, 58, 85])</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">individual_firm_costs</span> <span class="o">=</span> <span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="s2">&quot;Marginal Cost&quot;</span><span class="p">,</span> <span class="n">marginal_cost</span><span class="p">)</span>
+<span class="n">individual_firm_costs</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>Output</th> <th>Total Fixed Cost</th> <th>Total Variable Cost</th> <th>Total Cost</th> <th>Average Fixed Cost</th> <th>Average Variable Cost</th> <th>Average Total Cost</th> <th>Marginal Cost</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>0     </td> <td>50              </td> <td>0                  </td> <td>50        </td> <td>0                 </td> <td>0                    </td> <td>0                 </td> <td>0            </td>
+        </tr>
+        <tr>
+            <td>1     </td> <td>50              </td> <td>50                 </td> <td>100       </td> <td>50                </td> <td>50                   </td> <td>100               </td> <td>50           </td>
+        </tr>
+        <tr>
+            <td>2     </td> <td>50              </td> <td>78                 </td> <td>128       </td> <td>25                </td> <td>39                   </td> <td>64                </td> <td>28           </td>
+        </tr>
+        <tr>
+            <td>3     </td> <td>50              </td> <td>98                 </td> <td>148       </td> <td>16.6667           </td> <td>32.6667              </td> <td>49.3333           </td> <td>20           </td>
+        </tr>
+        <tr>
+            <td>4     </td> <td>50              </td> <td>112                </td> <td>162       </td> <td>12.5              </td> <td>28                   </td> <td>40.5              </td> <td>14           </td>
+        </tr>
+        <tr>
+            <td>5     </td> <td>50              </td> <td>130                </td> <td>180       </td> <td>10                </td> <td>26                   </td> <td>36                </td> <td>18           </td>
+        </tr>
+        <tr>
+            <td>6     </td> <td>50              </td> <td>150                </td> <td>200       </td> <td>8.33333           </td> <td>25                   </td> <td>33.3333           </td> <td>20           </td>
+        </tr>
+        <tr>
+            <td>7     </td> <td>50              </td> <td>175                </td> <td>225       </td> <td>7.14286           </td> <td>25                   </td> <td>32.1429           </td> <td>25           </td>
+        </tr>
+        <tr>
+            <td>8     </td> <td>50              </td> <td>204                </td> <td>254       </td> <td>6.25              </td> <td>25.5                 </td> <td>31.75             </td> <td>29           </td>
+        </tr>
+        <tr>
+            <td>9     </td> <td>50              </td> <td>242                </td> <td>292       </td> <td>5.55556           </td> <td>26.8889              </td> <td>32.4444           </td> <td>38           </td>
+        </tr>
+    </tbody>
+</table>
+<p>... (2 rows omitted)</p>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let's look at some plots! First, we'll plot the total fixed cost, total variable cost, and total cost:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell tag_hide_input">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># NO CODE</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Output&quot;</span><span class="p">),</span> <span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Total Fixed Cost&quot;</span><span class="p">),</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Output&quot;</span><span class="p">),</span> <span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Total Variable Cost&quot;</span><span class="p">),</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Output&quot;</span><span class="p">),</span> <span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Total Cost&quot;</span><span class="p">),</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Quantity&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Cost&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;TFC, TVC and TC&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">make_array</span><span class="p">(</span><span class="s2">&quot;Total Fixed Cost&quot;</span><span class="p">,</span><span class="s2">&quot;Total Variable Cost&quot;</span><span class="p">,</span><span class="s2">&quot;Total Cost&quot;</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="../../images/econ-fa19/wk02/lab02_30_0.png"
+>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now let's look at the AFC, AVC, and ATC:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell tag_hide_input">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># NO CODE</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Output&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Average Fixed Cost&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Output&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Average Variable Cost&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Output&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Average Total Cost&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Quantity&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Cost&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;AFC, AVC and ATC&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">make_array</span><span class="p">(</span><span class="s2">&quot;Average Fixed Cost&quot;</span><span class="p">,</span><span class="s2">&quot;Average Variable Cost&quot;</span><span class="p">,</span><span class="s2">&quot;Average Total Cost&quot;</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="../../images/econ-fa19/wk02/lab02_32_0.png"
+>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Notice that as we increase the quantity, the AFC goes down and the AVC converges to the ATC. Will the AVC ever cross the ATC?</p>
+<p>The answer is no because regardless of how many units we're producing, the AFC is <em>always</em> greater than 0, so the ATC has to be greater than the AVC.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now let's look at a more interesting plot: the marginal cost, AVC, and ATC.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell tag_hide_input">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># NO CODE</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Output&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Marginal Cost&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Output&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Average Variable Cost&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Output&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Average Total Cost&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Quantity&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Cost&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Mc, AVC and ATC&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">make_array</span><span class="p">(</span><span class="s2">&quot;Marginal Cost&quot;</span><span class="p">,</span><span class="s2">&quot;Average Variable Cost&quot;</span><span class="p">,</span><span class="s2">&quot;Average Total Cost&quot;</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="../../images/econ-fa19/wk02/lab02_35_0.png"
+>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>What do you notice about the way that the MC curve intersects with the AVC and ATC curves? It always intersects their their minima! This is because once the additional cost per good (MC) becomes greater than the average cost, the average begins going up.</p>
+<p>To illustrate this point, the plot below shows the tangent line at each intersection point. Notice that the slope of the tangent is 0, meaning that we're at the exact minimum of the function.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell tag_hide_input">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># NO CODE</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Output&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="n">mc</span> <span class="o">=</span> <span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Marginal Cost&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="n">avc</span> <span class="o">=</span> <span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Average Variable Cost&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="n">atc</span> <span class="o">=</span> <span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Average Total Cost&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:]</span>
+
+<span class="n">sp_mc</span> <span class="o">=</span> <span class="n">csaps</span><span class="o">.</span><span class="n">UnivariateCubicSmoothingSpline</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">mc</span><span class="p">,</span> <span class="n">smooth</span><span class="o">=</span><span class="mf">0.85</span><span class="p">)</span>
+<span class="n">sp_avc</span> <span class="o">=</span> <span class="n">csaps</span><span class="o">.</span><span class="n">UnivariateCubicSmoothingSpline</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">avc</span><span class="p">,</span> <span class="n">smooth</span><span class="o">=</span><span class="mf">0.85</span><span class="p">)</span>
+<span class="n">sp_atc</span> <span class="o">=</span> <span class="n">csaps</span><span class="o">.</span><span class="n">UnivariateCubicSmoothingSpline</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">atc</span><span class="p">,</span> <span class="n">smooth</span><span class="o">=</span><span class="mf">0.85</span><span class="p">)</span>
+
+<span class="n">output_s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">output</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">output</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">150</span><span class="p">)</span>
+<span class="n">mc_s</span> <span class="o">=</span> <span class="n">sp_mc</span><span class="p">(</span><span class="n">output_s</span><span class="p">)</span>
+<span class="n">avc_s</span> <span class="o">=</span> <span class="n">sp_avc</span><span class="p">(</span><span class="n">output_s</span><span class="p">)</span>
+<span class="n">atc_s</span> <span class="o">=</span> <span class="n">sp_atc</span><span class="p">(</span><span class="n">output_s</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">mc</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;tab:blue&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">output_s</span><span class="p">,</span> <span class="n">mc_s</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">lw</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;_nolegend_&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;tab:blue&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">avc</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;tab:green&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">output_s</span><span class="p">,</span> <span class="n">avc_s</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">lw</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;_nolegend_&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;tab:green&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">atc</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;tab:orange&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">output_s</span><span class="p">,</span> <span class="n">atc_s</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">lw</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;_nolegend_&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;tab:orange&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="nb">min</span><span class="p">(</span><span class="n">avc</span><span class="p">),</span> <span class="n">xmin</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span> <span class="n">xmax</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">zorder</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="nb">min</span><span class="p">(</span><span class="n">atc</span><span class="p">),</span> <span class="n">xmin</span> <span class="o">=</span> <span class="mf">7.5</span><span class="p">,</span> <span class="n">xmax</span> <span class="o">=</span> <span class="mf">9.5</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">zorder</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Quantity&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Cost&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;MC, AVC and ATC&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">make_array</span><span class="p">(</span><span class="s2">&quot;Marginal Cost&quot;</span><span class="p">,</span><span class="s2">&quot;Average Variable Cost&quot;</span><span class="p">,</span><span class="s2">&quot;Average Total Cost&quot;</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="../../images/econ-fa19/wk02/lab02_37_0.png"
+>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>What do you notice? <strong>A company decides to produce if it the price is greater than or equal to its Average Variable Cost.</strong></p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>There are 3 different scenarios: they do not produce at all, they produce at a loss (minimising quantity), and they produce at a profit. Play around with the slider to see them.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell tag_interactive">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">interact</span><span class="p">(</span><span class="k">lambda</span> <span class="n">price</span><span class="p">:</span> <span class="n">firm_behaviour</span><span class="p">(</span><span class="n">price</span><span class="p">,</span> <span class="n">individual_firm_costs</span><span class="p">),</span> <span class="n">price</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="nb">max</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span><span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">value</span><span class="o">=</span><span class="mi">25</span><span class="p">));</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper output_widget_view  }}">
+<div class="output_area">
+
+
+
+
+ 
+ 
+<div id="87f3375a-5759-4d1f-955e-7736074e4bc3"></div>
+<div class="output_subarea output_widget_view ">
+<script type="text/javascript">
+var element = $('#87f3375a-5759-4d1f-955e-7736074e4bc3');
+</script>
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "b8a31b2642264476887c86ffd486a382", "version_major": 2, "version_minor": 0}
+</script>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In the above example, if the price is 24, for any amount of production, the firm will lose money. In this case, they shut down and the loss is limited to its fixed costs.</p>
+<p>If the price is above the minimum of AVC (25 in the example), for some amount of production, the firm will maximise its profits (or minimise its losses). Profits are Total Revenue minus Total Costs, where Total Revenue is Price times Quantity.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Therefore, based on the price, each firm looks at its costs and makes a decision to produce. At low prices, only the firms with the lowest production costs produce. As the price increases, firms with higher production costs find it feasible to produce and begin to supply. Thus, the market supply rises with higher prices. Firms with lower costs make extra profits.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="An-Example-from-EEP-147">An Example from EEP 147<a class="anchor-link" href="#An-Example-from-EEP-147"> </a></h2>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let's look at a real life example! This comes from <strong>EEP 147 Regulation of Energy and the Environment</strong>. The table below, stored as <code>ESG_table</code>, holds data on power plants grouped by means of production and contains data on their capacities (in MW) and their AVCs.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell tag_hide_input">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># NO CODE</span>
+<span class="n">ESG_table</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s1">&#39;ESGPorfolios_forcsv.csv&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">select</span><span class="p">(</span>
+    <span class="s2">&quot;Group&quot;</span><span class="p">,</span> <span class="s2">&quot;Group_num&quot;</span><span class="p">,</span> <span class="s2">&quot;UNIT NAME&quot;</span><span class="p">,</span> <span class="s2">&quot;Capacity_MW&quot;</span><span class="p">,</span> <span class="s2">&quot;Total_Var_Cost_USDperMWH&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span>
+    <span class="s2">&quot;Total_Var_Cost_USDperMWH&quot;</span><span class="p">,</span> <span class="n">descending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">relabel</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;Average Variable Cost&quot;</span><span class="p">)</span>
+<span class="n">ESG_table</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>Group</th> <th>Group_num</th> <th>UNIT NAME</th> <th>Capacity_MW</th> <th>Average Variable Cost</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Old Timers  </td> <td>7        </td> <td>BIG CREEK      </td> <td>1000       </td> <td>0                    </td>
+        </tr>
+        <tr>
+            <td>Fossil Light</td> <td>8        </td> <td>HELMS          </td> <td>800        </td> <td>0.5                  </td>
+        </tr>
+        <tr>
+            <td>Fossil Light</td> <td>8        </td> <td>DIABLO CANYON 1</td> <td>1000       </td> <td>11.5                 </td>
+        </tr>
+        <tr>
+            <td>Bay Views   </td> <td>4        </td> <td>MOSS LANDING 6 </td> <td>750        </td> <td>32.56                </td>
+        </tr>
+        <tr>
+            <td>Bay Views   </td> <td>4        </td> <td>MOSS LANDING 7 </td> <td>750        </td> <td>32.56                </td>
+        </tr>
+        <tr>
+            <td>Old Timers  </td> <td>7        </td> <td>MOHAVE 1       </td> <td>750        </td> <td>34.5                 </td>
+        </tr>
+        <tr>
+            <td>Old Timers  </td> <td>7        </td> <td>MOHAVE 2       </td> <td>750        </td> <td>34.5                 </td>
+        </tr>
+        <tr>
+            <td>Big Coal    </td> <td>1        </td> <td>FOUR CORNERS   </td> <td>1900       </td> <td>36.5                 </td>
+        </tr>
+        <tr>
+            <td>Bay Views   </td> <td>4        </td> <td>MORRO BAY 3&4  </td> <td>665        </td> <td>36.61                </td>
+        </tr>
+        <tr>
+            <td>East Bay    </td> <td>6        </td> <td>PITTSBURGH 5&6 </td> <td>650        </td> <td>36.61                </td>
+        </tr>
+    </tbody>
+</table>
+<p>... (32 rows omitted)</p>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This table shows some electricity producers and their costs. You can think about the Capacity as the output the firm is capable of producing. The Average Variable Cost shows the minimum variable cost per MW produced. At a price below AVC, the firm supplies nothing. At a price above the AVC, the firm can supply upto its capacity. Being a profit maximising firm, it will try to supply its full capacity.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>First, lets look at just the Big Coal producers and understand the data.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">selection</span> <span class="o">=</span> <span class="s1">&#39;Big Coal&#39;</span>
+<span class="n">Group</span> <span class="o">=</span> <span class="n">ESG_table</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s2">&quot;Group&quot;</span><span class="p">,</span> <span class="n">selection</span><span class="p">)</span>
+<span class="n">Group</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>Group</th> <th>Group_num</th> <th>UNIT NAME</th> <th>Capacity_MW</th> <th>Average Variable Cost</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Big Coal</td> <td>1        </td> <td>FOUR CORNERS        </td> <td>1900       </td> <td>36.5                 </td>
+        </tr>
+        <tr>
+            <td>Big Coal</td> <td>1        </td> <td>HUNTINGTON BEACH 1&2</td> <td>300        </td> <td>40.5                 </td>
+        </tr>
+        <tr>
+            <td>Big Coal</td> <td>1        </td> <td>REDONDO 5&6         </td> <td>350        </td> <td>41.94                </td>
+        </tr>
+        <tr>
+            <td>Big Coal</td> <td>1        </td> <td>REDONDO 7&8         </td> <td>950        </td> <td>41.94                </td>
+        </tr>
+        <tr>
+            <td>Big Coal</td> <td>1        </td> <td>HUNTINGTON BEACH 5  </td> <td>150        </td> <td>66.5                 </td>
+        </tr>
+        <tr>
+            <td>Big Coal</td> <td>1        </td> <td>ALAMITOS 7          </td> <td>250        </td> <td>73.72                </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell tag_hide_input">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># NO CODE</span>
+<span class="c1"># Make the plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">new_x_group</span><span class="p">,</span> <span class="n">height_group</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">width_group</span><span class="p">,</span> <span class="n">edgecolor</span> <span class="o">=</span> <span class="s2">&quot;black&quot;</span><span class="p">)</span>
+<span class="c1"># Add title and axis names</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">selection</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Capacity_MW&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Variable Cost/Price&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="../../images/econ-fa19/wk02/lab02_49_0.png"
+>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This figure is the Big Coal Supply curve. It shows the price of electricity, and the quantity supplied at those prices (which depends on Variable Cost). For example, at any Variable Cost at or above 36.5, the producer FOUR CORNERS  (the one with the lowest production costs) will supply, and so on.</p>
+<p>Lets interact with it.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell tag_interactive">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">interact</span><span class="p">(</span><span class="n">group_plot</span><span class="p">,</span> <span class="n">price</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="nb">max</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span><span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">value</span><span class="o">=</span><span class="mi">37</span><span class="p">));</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper output_widget_view  }}">
+<div class="output_area">
+
+
+
+
+ 
+ 
+<div id="4201a320-59f3-4a04-9adc-e1b0d01816e1"></div>
+<div class="output_subarea output_widget_view ">
+<script type="text/javascript">
+var element = $('#4201a320-59f3-4a04-9adc-e1b0d01816e1');
+</script>
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "890c87af25d74f98b034ded86911307d", "version_major": 2, "version_minor": 0}
+</script>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We are going to repeat the same process, this time for all the energy sources. They have been colored according to source for reference.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell tag_interactive">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">interact</span><span class="p">(</span><span class="n">ESG_plot</span><span class="p">,</span> <span class="n">price</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="nb">max</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span><span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">value</span><span class="o">=</span><span class="mi">37</span><span class="p">));</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper output_widget_view  }}">
+<div class="output_area">
+
+
+
+
+ 
+ 
+<div id="ec86dcfb-000a-4ab9-b4e8-6327fdb50cc5"></div>
+<div class="output_subarea output_widget_view ">
+<script type="text/javascript">
+var element = $('#ec86dcfb-000a-4ab9-b4e8-6327fdb50cc5');
+</script>
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "dc5cf83f76b1432aa923e7fce58e28d6", "version_major": 2, "version_minor": 0}
+</script>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+ 
+
