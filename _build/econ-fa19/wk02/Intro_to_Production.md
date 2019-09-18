@@ -3,18 +3,39 @@ redirect_from:
   - "/econ-fa19/wk02/intro-to-production"
 interact_link: content/econ-fa19/wk02/Intro_to_Production.ipynb
 kernel_name: python3
+has_widgets: false
 title: 'Intro to Production'
 prev_page:
-  url: /econ-fa19/wk02/Horizontal_Sum_Supply
+  url: /econ-fa19/wk02/Horizontal_Sum_Supply.html
   title: 'Horizontal Sum Supply'
 next_page:
-  url: /econ-fa19/wk02/lab02
+  url: /econ-fa19/wk02/lab02.html
   title: 'Lab 2'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 # Introduction to Production
 
+
+
+<div markdown="1" class="cell code_cell">
+<div class="input_area" markdown="1">
+```python
+# HIDDEN
+import numpy as np  
+import matplotlib.pyplot as plt  
+%matplotlib inline
+from datascience import *
+
+```
+</div>
+
+</div>
+
+
+
 ## Total Output
+
+
 
 Imagine that we have a production function is as follows: 
 
@@ -24,7 +45,8 @@ Where $x$ is our production input and $f(x)$ is the units of output. For simplic
 
 
 
-{:.input_area}
+<div markdown="1" class="cell code_cell">
+<div class="input_area" markdown="1">
 ```python
 def graph(formula, x_range, title):  
     x = np.array(x_range)  
@@ -39,18 +61,29 @@ def TPP(x):
     return -0.6*x**3+20*x**2+10*x
 
 graph(TPP, range(0, 30), "Total output with respect to inputs")
+
 ```
+</div>
 
+<div class="output_wrapper" markdown="1">
+<div class="output_subarea" markdown="1">
 
+{:.output_png}
+![png](../../images/econ-fa19/wk02/Intro_to_Production_4_0.png)
 
-{:.output .output_png}
-![png](../../images/econ-fa19/wk02/Intro_to_Production_3_0.png)
+</div>
+</div>
+</div>
 
 
 
 Here is something interesting to note: when we feed in too many inputs, production actually decreases! Typically, this does not happen, but for this example we can imagine that perhaps hiring too many laborers will reduce the overall output of our production.
 
+
+
 ## Average Output
+
+
 
 The average production function is the average number of output for each input unit. The formula is as follows:
 
@@ -61,22 +94,32 @@ $$\begin{aligned}
 
 
 
-{:.input_area}
+<div markdown="1" class="cell code_cell">
+<div class="input_area" markdown="1">
 ```python
 def APP(x):
     return -0.6*x**2+20*x+10
 
 graph(APP, range(0, 30), "Average output per unit of input")
+
 ```
+</div>
 
+<div class="output_wrapper" markdown="1">
+<div class="output_subarea" markdown="1">
 
+{:.output_png}
+![png](../../images/econ-fa19/wk02/Intro_to_Production_8_0.png)
 
-{:.output .output_png}
-![png](../../images/econ-fa19/wk02/Intro_to_Production_7_0.png)
+</div>
+</div>
+</div>
 
 
 
 ## Marginal Output
+
+
 
 The marginal production function is the marginal units of output for each additional unit of input. The formula is as follows:
 
@@ -84,18 +127,26 @@ $$\Large \frac{d f(x)}{d x} = -1.8x^2+40x+10$$
 
 
 
-{:.input_area}
+<div markdown="1" class="cell code_cell">
+<div class="input_area" markdown="1">
 ```python
 def MPP(x):
     return -1.8*x**2+40*x+10
 
 graph(MPP, range(0, 30), "Marginal output per additional unit of input")
+
 ```
+</div>
 
+<div class="output_wrapper" markdown="1">
+<div class="output_subarea" markdown="1">
 
+{:.output_png}
+![png](../../images/econ-fa19/wk02/Intro_to_Production_11_0.png)
 
-{:.output .output_png}
-![png](../../images/econ-fa19/wk02/Intro_to_Production_10_0.png)
+</div>
+</div>
+</div>
 
 
 
@@ -103,15 +154,45 @@ Combining all 3 functions:
 
 
 
+<div markdown="1" class="cell code_cell">
+<div class="input_area" markdown="1">
+```python
+# NO CODE
+plt.rcParams["font.size"] = 14
+fig, axs = plt.subplots(2)
+fig.suptitle('Total and Average and Marginal Production')
+axs[0].plot(range(0, 30), [TPP(i) for i in range(0, 30)])
+axs[0].set_title('TPP')
+axs[0].set_ylabel('Unit of Output')
+axs[1].plot(range(0, 30), [APP(i) for i in range(0, 30)])
+axs[1].plot(range(0, 30), [MPP(i) for i in range(0, 30)])
+axs[1].set_title('APP and MPP')
+axs[1].set_ylabel('Output per input Y/X')
+axs[1].axhline(0)
+plt.xlabel("Input units (X)")
 
 
-{:.output .output_png}
-![png](../../images/econ-fa19/wk02/Intro_to_Production_12_0.png)
+fig.set_size_inches(15,15)
+
+```
+</div>
+
+<div class="output_wrapper" markdown="1">
+<div class="output_subarea" markdown="1">
+
+{:.output_png}
+![png](../../images/econ-fa19/wk02/Intro_to_Production_13_0.png)
+
+</div>
+</div>
+</div>
 
 
 
 ## Think Pair Share
 If you were a supplier, how many input units would you use?
+
+
 
 ## As a Data Set
 
@@ -119,13 +200,17 @@ Let's think about this as a data set. Consider the data set imported below:
 
 
 
-{:.input_area}
+<div markdown="1" class="cell code_cell">
+<div class="input_area" markdown="1">
 ```python
 TPP = Table().read_table("tableTPP.csv")
 TPP.show(20)
+
 ```
+</div>
 
-
+<div class="output_wrapper" markdown="1">
+<div class="output_subarea" markdown="1">
 
 <div markdown="0" class="output output_html">
 <table border="1" class="dataframe">
@@ -200,18 +285,54 @@ TPP.show(20)
 <p>... (1 rows omitted)</p>
 </div>
 
+</div>
+</div>
+</div>
+
+
 
 Now, we plot the total, average, and marginal production for this data.
 
 
 
+<div markdown="1" class="cell code_cell">
+<div class="input_area" markdown="1">
+```python
+# NO CODE
+fig, axs = plt.subplots(2)
+fig.suptitle('Total and Average and Marginal Production')
+axs[0].plot(TPP.column("Input (x)"),TPP.column("Output_Y"))
+axs[0].set_title('TPP')
+axs[0].set_ylabel('Unit of Output')
+
+axs[1].plot(TPP.column("Input (x)"),TPP.column("Average_Product"))
+axs[1].plot(TPP.column("Input (x)"),TPP.column("Marginal_Product"))
+axs[1].set_title('APP and MPP')
+axs[1].set_ylabel('Output per input Y/X')
+axs[1].axhline(0)
+plt.xlabel("Input units (X)")
 
 
-{:.output .output_png}
-![png](../../images/econ-fa19/wk02/Intro_to_Production_17_0.png)
+fig.set_size_inches(15,15)
+
+```
+</div>
+
+<div class="output_wrapper" markdown="1">
+<div class="output_subarea" markdown="1">
+
+{:.output_png}
+![png](../../images/econ-fa19/wk02/Intro_to_Production_18_0.png)
+
+</div>
+</div>
+</div>
 
 
 
 _This is the same graph as it comes from the same function!_
 
+
+
  
+

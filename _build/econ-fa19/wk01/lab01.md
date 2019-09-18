@@ -1,20 +1,27 @@
 ---
 interact_link: content/econ-fa19/wk01/lab01.ipynb
 kernel_name: python3
+has_widgets: false
 title: 'Lab 1'
 prev_page:
-  url: /lecture-intros/wk01
+  url: /lecture-intros/wk01.html
   title: 'Sympy and LaTeX'
 next_page:
-  url: /lecture-intros/wk02
+  url: /lecture-intros/wk02.html
   title: 'The Supply Curve and Firm Behavior'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 # Lab 1: SymPy and LaTeX
 
+
+
 Economics is in the world around us, and so is Data Science! It's in our every day lives. As we connect Data Science with Economics, we will be exploring real life datasets to illustrate how Economics concepts are shaped and how decisions lead to real-life impacts.
 
+
+
 ## Today's Lab
+
+
 
 Some learning outcomes:
 1. Navigate and use tools, such as Jupyter notebooks
@@ -25,15 +32,25 @@ Some learning outcomes:
 
 
 
+
+
 Acknowledgement: prob140.org, opentextbc.ca
+
+
 
 ## Intro to Jupyter Notebooks
 
+
+
 Welcome to Jupyter notebooks, a place used to write programs, write texts, and view the results.
+
+
 
 Each rectangle is called a *cell*. There are two types of cells: text or code. Text cells, like this one, can be edited by double-clicking on them. 
 
 To run a cell, click the "<i class="fa-step-forward fa"></i> Run" button on the top menu bar or hold `shift` + `return` (or `shift` + `enter`). 
+
+
 
 <div class="alert alert-info">
 
@@ -41,11 +58,15 @@ To run a cell, click the "<i class="fa-step-forward fa"></i> Run" button on the 
 
 </div>
 
+
+
 <div class="alert alert-success">
     
 <strong>Answer:</strong> Economics is fun.
 
 </div>
+
+
 
 <div class="alert alert-info">
 
@@ -55,40 +76,76 @@ To run a cell, click the "<i class="fa-step-forward fa"></i> Run" button on the 
 
 
 
-{:.input_area}
+<div markdown="1" class="cell code_cell">
+<div class="input_area" markdown="1">
 ```python
 #Run this cell
 print("Hello, World!")
+
 ```
+</div>
 
-
-{:.output .output_stream}
+<div class="output_wrapper" markdown="1">
+<div class="output_subarea" markdown="1">
+{:.output_stream}
 ```
 Hello, World!
-
 ```
+</div>
+</div>
+</div>
 
 
 
-{:.input_area}
+<div markdown="1" class="cell code_cell">
+<div class="input_area" markdown="1">
 ```python
 print("Economics is fun!")
 print("I love data science!")
+
 ```
+</div>
 
-
-{:.output .output_stream}
+<div class="output_wrapper" markdown="1">
+<div class="output_subarea" markdown="1">
+{:.output_stream}
 ```
 Economics is fun!
 I love data science!
+```
+</div>
+</div>
+</div>
+
+
+
+<div markdown="1" class="cell code_cell">
+<div class="input_area" markdown="1">
+```python
+# HIDDEN
+from datascience import *
+import numpy as np
+from sympy import *
+init_printing()
+import matplotlib.pyplot as plt
+%matplotlib inline
 
 ```
+</div>
+
+</div>
+
+
 
 ## LaTeX
+
+
 
 A tool for presenting and formatting numeric formulas, functions, and symbols is LaTeX. To format with LaTex, place your equations and math in between dollar signs, $. 
 
 For example, `$f(x) = 8x$`  gets formatted as  $f(x) = 8x$
+
+
 
 Some other common operations:
 
@@ -96,15 +153,23 @@ Exponentials: `$x^{2}$` gets formatted as $x^{2}$
 
 Fractions: `$\frac{x}{y}$` yields $\frac{x}{y}$
 
+
+
 We can use LaTeX for formatting Supply and Demand curves and functions in Economics, such as $ P = 2Q + 4 $
 
+
+
 Practice typing a few different expressions using LaTeX. 
+
+
 
 <div class="alert alert-info">
 
 <strong>Question 2.1:</strong> Type the Pythagorean theorem.
 
 </div>
+
+
 
 <div class="alert alert-success">
     
@@ -114,11 +179,15 @@ LaTeX: <code>$a^2 + b^2 = c^2$</code>
 
 </div>
 
+
+
 <div class="alert alert-info">
     
 <strong>Question 2.2:</strong> Type the Euclidian distance theorem.
 
 </div>
+
+
 
 
 <div class="alert alert-success">
@@ -129,7 +198,11 @@ LaTeX: `$d = \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}$`
 
 </div>
 
+
+
 ## Supply and Demand
+
+
 
 In economics and the world around us, supply and demand make up the fundamentals. 
 
@@ -143,16 +216,20 @@ Let's look at a real-world example of a dataset for gasoline.
 
 
 
-{:.input_area}
+<div markdown="1" class="cell code_cell">
+<div class="input_area" markdown="1">
 ```python
 #Run this cell to load the table
 Table().with_columns(
     'Price (per gallon)', np.arange(1.00, 2.40, 0.2), 
     'Quantity Supplied (millions of gallons)', [500, 550, 600, 640, 680, 700, 720], 
     'Quantity Demanded (millions of gallons)', [800, 700, 600, 550, 500, 460, 420])
+
 ```
+</div>
 
-
+<div class="output_wrapper" markdown="1">
+<div class="output_subarea" markdown="1">
 
 
 
@@ -190,20 +267,39 @@ Table().with_columns(
 </div>
 
 
+</div>
+</div>
+</div>
+
+
 
 Supply refers to the amount of a good or service a producer is willing to supply for each given price. 
 
+
+
 ![supply](image1.png)
+
+
 
 Demand is the amount of a good or service consumers are willing and able to purchase for each given price. 
 
+
+
 ![demand](image2.png)
+
+
 
 In the next section, we will be exploring SymPy to find the intersection of the supply and demand curves, which marks the equilibrium point where both the price and quantity consumers are willing and able to buy at is equal to the price and quantity producers are willing to sell at.
 
+
+
 ![supply and demand](image3.png)
 
+
+
 ## SymPy
+
+
 
 Python has many tools, such as the [SymPy library](https://docs.sympy.org/latest/tutorial/index.html) that we can use for expressing and evaluating formulas and functions in economics. 
 
@@ -213,17 +309,26 @@ Since SymPy helps with symbolic math, we start out by create a symbol using `Sym
 
 
 
-{:.input_area}
+<div markdown="1" class="cell code_cell">
+<div class="input_area" markdown="1">
 ```python
 x = Symbol('x')
 x
+
 ```
+</div>
 
-
+<div class="output_wrapper" markdown="1">
+<div class="output_subarea" markdown="1">
 
 
 
 $$x$$
+
+
+</div>
+</div>
+</div>
 
 
 
@@ -233,50 +338,73 @@ Let's start out with an upward sloping Supply curve, where $P_S$ is price and $Q
 
 
 
-{:.input_area}
+<div markdown="1" class="cell code_cell">
+<div class="input_area" markdown="1">
 ```python
 P_S = Symbol('P_S')
 P_S
+
 ```
+</div>
 
-
+<div class="output_wrapper" markdown="1">
+<div class="output_subarea" markdown="1">
 
 
 
 $$P_{S}$$
 
 
+</div>
+</div>
+</div>
 
 
 
-{:.input_area}
+<div markdown="1" class="cell code_cell">
+<div class="input_area" markdown="1">
 ```python
 Q_S = Symbol('Q_S')
 Q_S
+
 ```
+</div>
 
-
+<div class="output_wrapper" markdown="1">
+<div class="output_subarea" markdown="1">
 
 
 
 $$Q_{S}$$
 
 
+</div>
+</div>
+</div>
 
 
 
-{:.input_area}
+<div markdown="1" class="cell code_cell">
+<div class="input_area" markdown="1">
 ```python
 #Supply curve
 P_S = 2 * Q_S - 4
 P_S
+
 ```
+</div>
 
-
+<div class="output_wrapper" markdown="1">
+<div class="output_subarea" markdown="1">
 
 
 
 $$2 Q_{S} - 4$$
+
+
+</div>
+</div>
+</div>
 
 
 
@@ -284,34 +412,50 @@ Now, use the same symbols $P_D$ and $Q_D$ to create an expression for a downward
 
 
 
-{:.input_area}
+<div markdown="1" class="cell code_cell">
+<div class="input_area" markdown="1">
 ```python
 Q_D = Symbol('Q_D')
 Q_D
+
 ```
+</div>
 
-
+<div class="output_wrapper" markdown="1">
+<div class="output_subarea" markdown="1">
 
 
 
 $$Q_{D}$$
 
 
+</div>
+</div>
+</div>
 
 
 
-{:.input_area}
+<div markdown="1" class="cell code_cell">
+<div class="input_area" markdown="1">
 ```python
 # Demand curve
 P_D = 2 - Q_D
 P_D
+
 ```
+</div>
 
-
+<div class="output_wrapper" markdown="1">
+<div class="output_subarea" markdown="1">
 
 
 
 $$- Q_{D} + 2$$
+
+
+</div>
+</div>
+</div>
 
 
 
@@ -319,45 +463,69 @@ Given the supply and demand curve, we set the two equations equal to each other 
 
 
 
-{:.input_area}
+<div markdown="1" class="cell code_cell">
+<div class="input_area" markdown="1">
 ```python
 P_D = P_S
+
 ```
+</div>
+
+</div>
+
 
 
 Using SymPy, we call solve, which takes in the equation as the first argument followed by the variable we are solving for.
 
 
 
-{:.input_area}
+<div markdown="1" class="cell code_cell">
+<div class="input_area" markdown="1">
 ```python
 solve(P_S, Q_S)
+
 ```
+</div>
 
-
+<div class="output_wrapper" markdown="1">
+<div class="output_subarea" markdown="1">
 
 
 
 $$\left [ 2\right ]$$
 
 
+</div>
+</div>
+</div>
 
 
 
-{:.input_area}
+<div markdown="1" class="cell code_cell">
+<div class="input_area" markdown="1">
 ```python
 solve(P_S, P_D)
+
 ```
+</div>
 
-
+<div class="output_wrapper" markdown="1">
+<div class="output_subarea" markdown="1">
 
 
 
 $$\left [ 0\right ]$$
 
 
+</div>
+</div>
+</div>
+
+
 
 The equilibrium price and quantity are 0 and 2, respectively. 
+
+
 
 ### Example 2
 Let's suppose our demand function is $\text{Quantity}_{D}=-2 \cdot \text{Price}_{D} + 10$. Using SymPy, this would be
@@ -365,18 +533,27 @@ Let's suppose our demand function is $\text{Quantity}_{D}=-2 \cdot \text{Price}_
 
 
 
-{:.input_area}
+<div markdown="1" class="cell code_cell">
+<div class="input_area" markdown="1">
 ```python
 q = Symbol("q")
 demand = -2*q + 10
 demand
+
 ```
+</div>
 
-
+<div class="output_wrapper" markdown="1">
+<div class="output_subarea" markdown="1">
 
 
 
 $$- 2 q + 10$$
+
+
+</div>
+</div>
+</div>
 
 
 
@@ -385,17 +562,26 @@ Suppose we have a supply function $\text{Price}_{S}=3 \cdot \text{Quantity}_{S} 
 
 
 
-{:.input_area}
+<div markdown="1" class="cell code_cell">
+<div class="input_area" markdown="1">
 ```python
 supply = 3*q + 1
 supply
+
 ```
+</div>
 
-
+<div class="output_wrapper" markdown="1">
+<div class="output_subarea" markdown="1">
 
 
 
 $$3 q + 1$$
+
+
+</div>
+</div>
+</div>
 
 
 
@@ -404,7 +590,8 @@ We will now try to find the market equilibrium. The market equilibrium is the pr
 
 
 
-{:.input_area}
+<div markdown="1" class="cell code_cell">
+<div class="input_area" markdown="1">
 ```python
 def plot_equation(equation, price_start, price_end, label=None):
     plot_prices = [price_start, price_end]
@@ -421,23 +608,35 @@ plot_equation(demand, 0, 5)
 plot_equation(supply, 0, 5)
 plt.ylim(0,20)
 plot_intercept(supply, demand)
+
 ```
+</div>
 
-
+<div class="output_wrapper" markdown="1">
+<div class="output_subarea" markdown="1">
 
 
 
 $$\left ( \frac{9}{5}, \quad \frac{32}{5}\right )$$
 
 
+</div>
+</div>
+<div class="output_wrapper" markdown="1">
+<div class="output_subarea" markdown="1">
 
+{:.output_png}
+![png](../../images/econ-fa19/wk01/lab01_53_1.png)
 
-{:.output .output_png}
-![png](../../images/econ-fa19/wk01/lab01_52_1.png)
+</div>
+</div>
+</div>
 
 
 
 ## Calculus Review
+
+
 
 Let's review partial derivatives, which is simplying taking derivatives with respect to the variable specified in the partial derivative. All other variables are treated as constants. 
 
@@ -457,7 +656,11 @@ $\displaystyle\frac{\partial}{\partial x}(x^{4} + xy^{2} + x) = 4x^{3} + y^{2} +
 
 </div>
 
+
+
 **Question 3.1:** $\displaystyle\frac{\partial}{\partial x} (x^{2} + 8x)$
+
+
 
 <div class="alert alert-success">
     
@@ -465,7 +668,11 @@ $\displaystyle\frac{\partial}{\partial x}(x^{4} + xy^{2} + x) = 4x^{3} + y^{2} +
 
 </div>
 
+
+
 **Question 3.2:** $\displaystyle\frac{\partial}{\partial z} (5z^{6} + 10x^{2}yz^{2} + xyz + \ln(z))$
+
+
 
 <div class="alert alert-success">
     
@@ -473,6 +680,11 @@ $\displaystyle\frac{\partial}{\partial x}(x^{4} + xy^{2} + x) = 4x^{3} + y^{2} +
 
 </div>
 
+
+
 Congrats! You finished Lab 1! 
 
+
+
  
+

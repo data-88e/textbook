@@ -4,7 +4,7 @@ prev_page:
   url: 
   title: ''
 next_page:
-  url: /lecture-intros/wk01
+  url: /lecture-intros/wk01.html
   title: 'Sympy and LaTeX'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
@@ -22,8 +22,11 @@ The idea for the class is to take students through a series of exercises to moti
 
 **Textbook Developer:** [Christopher Pyles](https://chrispyles.io)
 
-**Content Developers:** Angela Guan, Shashank Dalmia, Amal Bhatnagar, Andrei Caprau, Eric Van Dusen, Christopher Pyles, Alan Liang, Umar Maniku, Alex McMurry
+**Content Developers:** Angela Guan, Shashank Dalmia, Amal Bhatnagar, Andrei Caprau, Eric Van Dusen, Christopher Pyles, [Alan Liang](http://alanliang.me/), Umar Maniku, Alex McMurry
 
 ## License
 
 This textbook is licensed under a [BSD 3-Clause License](https://github.com/d8a-88/econ-models-textbook/blob/master/LICENSE).
+
+
+ 
