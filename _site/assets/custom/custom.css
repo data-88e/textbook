@@ -26,3 +26,8 @@ div.alert-success {
 	color: #155724;
 	border-color: #c3e6cb;
 }
+
+iframe.widget {
+	width: 100%;
+	height: 400px;
+}

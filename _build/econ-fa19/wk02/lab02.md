@@ -902,7 +902,13 @@ interactive(children=(IntSlider(value=25, description='price', max=60, min=20), 
 </div>
 </div>
 
-
+<div id="lab02-wgt01">
+    <iframe src="http://econ-models-widget.herokuapp.com/#lab02-wgt01" id="lab02-wgt01-iframe" width="100%" height="400px"></iframe>
+    <script type="text/javascript">
+        var widget = document.querySelector("#lab02-wgt01-iframe");
+        widget.contentWindow;
+    </script>
+</div>
 
 In the above example, if the price is 24, for any amount of production, the firm will lose money. In this case, they shut down and the loss is limited to its fixed costs.
 
@@ -1070,7 +1076,7 @@ plt.show()
 <div class="output_subarea" markdown="1">
 
 {:.output_png}
-![png](../../images/econ-fa19/wk02/lab02_49_0.png)
+![png](../../images/econ-fa19/wk02/lab02_50_0.png)
 
 </div>
 </div>
