@@ -29,9 +29,9 @@
   "headline":
     "Lab 2",
   "datePublished":
-    "2019-09-18T20:17:42-05:00",
+    "2019-09-19T17:21:16-05:00",
   "dateModified":
-    "2019-09-18T20:17:42-05:00",
+    "2019-09-19T17:21:16-05:00",
   "description":
     "Lab 2: Supply and Firm Behavior",
   "author": {
@@ -793,27 +793,6 @@ initFunction(initQuery);
             <div class="c-textbook__content">
               <h1 id="lab-2-supply-and-firm-behavior">Lab 2: Supply and Firm Behavior</h1>
 
-<div class="cell code_cell">
-  <div class="input_area">
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># HIDDEN</span>
-<span class="kn">from</span> <span class="nn">datascience</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
-<span class="kn">from</span> <span class="nn">utils</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s">'seaborn-muted'</span><span class="p">)</span>
-<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
-<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">interactive</span><span class="p">,</span> <span class="n">fixed</span><span class="p">,</span> <span class="n">interact_manual</span>
-<span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="n">widgets</span>
-<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">patches</span>
-<span class="kn">import</span> <span class="nn">csaps</span>
-
-</code></pre></div>    </div>
-  </div>
-
-</div>
-
 <p>Supply of a commodity refers to the quantity of a commodity which producers or sellers are willing produce and offer for sale at a particular price in some given period of time.</p>
 
 <p>Individual supply refers to supply offered by a single firm/producer. Market supply refers to supply offered by all the firms/producers in a market.</p>
@@ -866,7 +845,7 @@ initFunction(initQuery);
 </div>
 
 <div class="cell code_cell">
-  <div class="input_area">
+  <div class="input_area hidecode">
     <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># NO CODE</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">market_supply</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">market_supply</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">marker</span><span class="o">=</span><span class="s">'o'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">market_supply</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">market_supply</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">marker</span><span class="o">=</span><span class="s">'o'</span><span class="p">)</span>
@@ -1386,7 +1365,7 @@ initFunction(initQuery);
 <p>Let’s look at some plots! First, we’ll plot the total fixed cost, total variable cost, and total cost:</p>
 
 <div class="cell code_cell">
-  <div class="input_area">
+  <div class="input_area hidecode">
     <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># NO CODE</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s">"Output"</span><span class="p">),</span> <span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s">"Total Fixed Cost"</span><span class="p">),</span> <span class="n">marker</span><span class="o">=</span><span class="s">'o'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s">"Output"</span><span class="p">),</span> <span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s">"Total Variable Cost"</span><span class="p">),</span> <span class="n">marker</span><span class="o">=</span><span class="s">'o'</span><span class="p">)</span>
@@ -1413,7 +1392,7 @@ initFunction(initQuery);
 <p>Now let’s look at the AFC, AVC, and ATC:</p>
 
 <div class="cell code_cell">
-  <div class="input_area">
+  <div class="input_area hidecode">
     <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># NO CODE</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s">"Output"</span><span class="p">)[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s">"Average Fixed Cost"</span><span class="p">)[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">marker</span><span class="o">=</span><span class="s">'o'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s">"Output"</span><span class="p">)[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s">"Average Variable Cost"</span><span class="p">)[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">marker</span><span class="o">=</span><span class="s">'o'</span><span class="p">)</span>
@@ -1444,7 +1423,7 @@ initFunction(initQuery);
 <p>Now let’s look at a more interesting plot: the marginal cost, AVC, and ATC.</p>
 
 <div class="cell code_cell">
-  <div class="input_area">
+  <div class="input_area hidecode">
     <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># NO CODE</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s">"Output"</span><span class="p">)[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s">"Marginal Cost"</span><span class="p">)[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">marker</span><span class="o">=</span><span class="s">'o'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s">"Output"</span><span class="p">)[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s">"Average Variable Cost"</span><span class="p">)[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">marker</span><span class="o">=</span><span class="s">'o'</span><span class="p">)</span>
@@ -1473,7 +1452,7 @@ initFunction(initQuery);
 <p>To illustrate this point, the plot below shows the tangent line at each intersection point. Notice that the slope of the tangent is 0, meaning that we’re at the exact minimum of the function.</p>
 
 <div class="cell code_cell">
-  <div class="input_area">
+  <div class="input_area hidecode">
     <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># NO CODE</span>
 <span class="n">output</span> <span class="o">=</span> <span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s">"Output"</span><span class="p">)[</span><span class="mi">1</span><span class="p">:]</span>
 <span class="n">mc</span> <span class="o">=</span> <span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s">"Marginal Cost"</span><span class="p">)[</span><span class="mi">1</span><span class="p">:]</span>
@@ -1520,28 +1499,8 @@ initFunction(initQuery);
 
 <p>There are 3 different scenarios: they do not produce at all, they produce at a loss (minimising quantity), and they produce at a profit. Play around with the slider to see them.</p>
 
-<div class="cell code_cell">
-  <div class="input_area">
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">interact</span><span class="p">(</span><span class="k">lambda</span> <span class="n">price</span><span class="p">:</span> <span class="n">firm_behaviour</span><span class="p">(</span><span class="n">price</span><span class="p">,</span> <span class="n">individual_firm_costs</span><span class="p">),</span> <span class="n">price</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="nb">max</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span><span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">value</span><span class="o">=</span><span class="mi">25</span><span class="p">));</span>
-
-</code></pre></div>    </div>
-  </div>
-
-  <div class="output_wrapper">
-    <div class="output_subarea">
-      <div class="output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>interactive(children=(IntSlider(value=25, description='price', max=60, min=20), Output()), _dom_classes=('widg…
-</code></pre></div>      </div>
-
-    </div>
-  </div>
-</div>
-
 <div id="lab02-wgt01">
-    <iframe src="http://econ-models-widget.herokuapp.com/#lab02-wgt01" id="lab02-wgt01-iframe" width="100%" height="400px"></iframe>
-    <script type="text/javascript">
-        var widget = document.querySelector("#lab02-wgt01-iframe");
-        widget.contentWindow;
-    </script>
+    <iframe src="http://econ-models-widget.herokuapp.com/?id=lab02-wgt01" id="lab02-wgt01-iframe" class="widget-iframe"></iframe>
 </div>
 
 <p>In the above example, if the price is 24, for any amount of production, the firm will lose money. In this case, they shut down and the loss is limited to its fixed costs.</p>
@@ -1555,7 +1514,7 @@ initFunction(initQuery);
 <p>Let’s look at a real life example! This comes from <strong>EEP 147 Regulation of Energy and the Environment</strong>. The table below, stored as <code class="highlighter-rouge">ESG_table</code>, holds data on power plants grouped by means of production and contains data on their capacities (in MW) and their AVCs.</p>
 
 <div class="cell code_cell">
-  <div class="input_area">
+  <div class="input_area hidecode">
     <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># NO CODE</span>
 <span class="n">ESG_table</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s">'ESGPorfolios_forcsv.csv'</span><span class="p">)</span><span class="o">.</span><span class="n">select</span><span class="p">(</span>
     <span class="s">"Group"</span><span class="p">,</span> <span class="s">"Group_num"</span><span class="p">,</span> <span class="s">"UNIT NAME"</span><span class="p">,</span> <span class="s">"Capacity_MW"</span><span class="p">,</span> <span class="s">"Total_Var_Cost_USDperMWH"</span><span class="p">)</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span>
@@ -1666,7 +1625,7 @@ initFunction(initQuery);
 </div>
 
 <div class="cell code_cell">
-  <div class="input_area">
+  <div class="input_area hidecode">
     <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># NO CODE</span>
 <span class="c"># Make the plot</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
@@ -1694,38 +1653,14 @@ initFunction(initQuery);
 
 <p>Lets interact with it.</p>
 
-<div class="cell code_cell">
-  <div class="input_area">
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">interact</span><span class="p">(</span><span class="n">group_plot</span><span class="p">,</span> <span class="n">price</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="nb">max</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span><span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">value</span><span class="o">=</span><span class="mi">37</span><span class="p">));</span>
-
-</code></pre></div>    </div>
-  </div>
-
-  <div class="output_wrapper">
-    <div class="output_subarea">
-      <div class="output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>interactive(children=(IntSlider(value=37, description='price', max=80, min=20), Output()), _dom_classes=('widg…
-</code></pre></div>      </div>
-
-    </div>
-  </div>
+<div id="lab02-wgt02">
+    <iframe src="http://econ-models-widget.herokuapp.com/?id=lab02-wgt02" id="lab02-wgt02-iframe" class="widget-iframe"></iframe>
 </div>
 
 <p>We are going to repeat the same process, this time for all the energy sources. They have been colored according to source for reference.</p>
 
-<div class="cell code_cell">
-  <div class="input_area">
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">interact</span><span class="p">(</span><span class="n">ESG_plot</span><span class="p">,</span> <span class="n">price</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="nb">max</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span><span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">value</span><span class="o">=</span><span class="mi">37</span><span class="p">));</span>
-
-</code></pre></div>    </div>
-  </div>
-
-  <div class="output_wrapper">
-    <div class="output_subarea">
-      <div class="output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>interactive(children=(IntSlider(value=37, description='price', max=90), Output()), _dom_classes=('widget-inter…
-</code></pre></div>      </div>
-
-    </div>
-  </div>
+<div id="lab02-wgt03">
+    <iframe src="http://econ-models-widget.herokuapp.com/?id=lab02-wgt03" id="lab02-wgt03-iframe" class="widget-iframe"></iframe>
 </div>
 
 

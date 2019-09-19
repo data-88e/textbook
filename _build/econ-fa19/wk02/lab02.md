@@ -15,28 +15,6 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 
 
-<div markdown="1" class="cell code_cell">
-<div class="input_area" markdown="1">
-```python
-# HIDDEN
-from datascience import *
-import matplotlib.pyplot as plt
-%matplotlib inline
-import numpy as np
-import pandas as pd
-from utils import *
-plt.style.use('seaborn-muted')
-from __future__ import print_function
-from ipywidgets import interact, interactive, fixed, interact_manual
-import ipywidgets as widgets
-from matplotlib import patches
-import csaps
-
-```
-</div>
-
-</div>
-
 
 
 Supply of a commodity refers to the quantity of a commodity which producers or sellers are willing produce and offer for sale at a particular price in some given period of time.
@@ -103,7 +81,7 @@ market_supply
 
 
 <div markdown="1" class="cell code_cell">
-<div class="input_area" markdown="1">
+<div class="input_area hidecode" markdown="1">
 ```python
 # NO CODE
 plt.plot(market_supply.column(1), market_supply.column(0), marker='o')
@@ -721,7 +699,7 @@ Let's look at some plots! First, we'll plot the total fixed cost, total variable
 
 
 <div markdown="1" class="cell code_cell">
-<div class="input_area" markdown="1">
+<div class="input_area hidecode" markdown="1">
 ```python
 # NO CODE
 plt.plot(individual_firm_costs.column("Output"), individual_firm_costs.column("Total Fixed Cost"), marker='o')
@@ -754,7 +732,7 @@ Now let's look at the AFC, AVC, and ATC:
 
 
 <div markdown="1" class="cell code_cell">
-<div class="input_area" markdown="1">
+<div class="input_area hidecode" markdown="1">
 ```python
 # NO CODE
 plt.plot(individual_firm_costs.column("Output")[1:], individual_firm_costs.column("Average Fixed Cost")[1:], marker='o')
@@ -793,7 +771,7 @@ Now let's look at a more interesting plot: the marginal cost, AVC, and ATC.
 
 
 <div markdown="1" class="cell code_cell">
-<div class="input_area" markdown="1">
+<div class="input_area hidecode" markdown="1">
 ```python
 # NO CODE
 plt.plot(individual_firm_costs.column("Output")[1:], individual_firm_costs.column("Marginal Cost")[1:], marker='o')
@@ -828,7 +806,7 @@ To illustrate this point, the plot below shows the tangent line at each intersec
 
 
 <div markdown="1" class="cell code_cell">
-<div class="input_area" markdown="1">
+<div class="input_area hidecode" markdown="1">
 ```python
 # NO CODE
 output = individual_firm_costs.column("Output")[1:]
@@ -883,31 +861,8 @@ There are 3 different scenarios: they do not produce at all, they produce at a l
 
 
 
-<div markdown="1" class="cell code_cell">
-<div class="input_area" markdown="1">
-```python
-interact(lambda price: firm_behaviour(price, individual_firm_costs), price=widgets.IntSlider(min=20,max=60,step=1,value=25));
-
-```
-</div>
-
-<div class="output_wrapper" markdown="1">
-<div class="output_subarea" markdown="1">
-{:.output_data_text}
-```
-interactive(children=(IntSlider(value=25, description='price', max=60, min=20), Output()), _dom_classes=('widg…
-```
-
-</div>
-</div>
-</div>
-
 <div id="lab02-wgt01">
-    <iframe src="http://econ-models-widget.herokuapp.com/#lab02-wgt01" id="lab02-wgt01-iframe" width="100%" height="400px"></iframe>
-    <script type="text/javascript">
-        var widget = document.querySelector("#lab02-wgt01-iframe");
-        widget.contentWindow;
-    </script>
+    <iframe src="http://econ-models-widget.herokuapp.com/?id=lab02-wgt01" id="lab02-wgt01-iframe" class="widget-iframe"></iframe>
 </div>
 
 In the above example, if the price is 24, for any amount of production, the firm will lose money. In this case, they shut down and the loss is limited to its fixed costs.
@@ -929,7 +884,7 @@ Let's look at a real life example! This comes from **EEP 147 Regulation of Energ
 
 
 <div markdown="1" class="cell code_cell">
-<div class="input_area" markdown="1">
+<div class="input_area hidecode" markdown="1">
 ```python
 # NO CODE
 ESG_table = Table.read_table('ESGPorfolios_forcsv.csv').select(
@@ -1056,7 +1011,7 @@ Group
 
 
 <div markdown="1" class="cell code_cell">
-<div class="input_area" markdown="1">
+<div class="input_area hidecode" markdown="1">
 ```python
 # NO CODE
 # Make the plot
@@ -1090,51 +1045,17 @@ Lets interact with it.
 
 
 
-<div markdown="1" class="cell code_cell">
-<div class="input_area" markdown="1">
-```python
-interact(group_plot, price=widgets.IntSlider(min=20,max=80,step=1,value=37));
-
-```
+<div id="lab02-wgt02">
+    <iframe src="http://econ-models-widget.herokuapp.com/?id=lab02-wgt02" id="lab02-wgt02-iframe" class="widget-iframe"></iframe>
 </div>
-
-<div class="output_wrapper" markdown="1">
-<div class="output_subarea" markdown="1">
-{:.output_data_text}
-```
-interactive(children=(IntSlider(value=37, description='price', max=80, min=20), Output()), _dom_classes=('widg…
-```
-
-</div>
-</div>
-</div>
-
-
 
 We are going to repeat the same process, this time for all the energy sources. They have been colored according to source for reference.
 
 
 
-<div markdown="1" class="cell code_cell">
-<div class="input_area" markdown="1">
-```python
-interact(ESG_plot, price=widgets.IntSlider(min=0,max=90,step=1,value=37));
-
-```
+<div id="lab02-wgt03">
+    <iframe src="http://econ-models-widget.herokuapp.com/?id=lab02-wgt03" id="lab02-wgt03-iframe" class="widget-iframe"></iframe>
 </div>
-
-<div class="output_wrapper" markdown="1">
-<div class="output_subarea" markdown="1">
-{:.output_data_text}
-```
-interactive(children=(IntSlider(value=37, description='price', max=90), Output()), _dom_classes=('widget-inter…
-```
-
-</div>
-</div>
-</div>
-
-
 
  
 
