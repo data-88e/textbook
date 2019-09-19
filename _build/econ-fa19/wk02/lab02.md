@@ -862,7 +862,7 @@ There are 3 different scenarios: they do not produce at all, they produce at a l
 
 
 <div id="lab02-wgt01">
-    <iframe src="http://econ-models-widget.herokuapp.com/?id=lab02-wgt01" id="lab02-wgt01-iframe" class="widget-iframe"></iframe>
+    <iframe src="https://econ-models-widget.herokuapp.com/?id=lab02-wgt01" id="lab02-wgt01-iframe" class="widget-iframe"></iframe>
 </div>
 
 In the above example, if the price is 24, for any amount of production, the firm will lose money. In this case, they shut down and the loss is limited to its fixed costs.
@@ -1046,7 +1046,7 @@ Lets interact with it.
 
 
 <div id="lab02-wgt02">
-    <iframe src="http://econ-models-widget.herokuapp.com/?id=lab02-wgt02" id="lab02-wgt02-iframe" class="widget-iframe"></iframe>
+    <iframe src="https://econ-models-widget.herokuapp.com/?id=lab02-wgt02" id="lab02-wgt02-iframe" class="widget-iframe"></iframe>
 </div>
 
 We are going to repeat the same process, this time for all the energy sources. They have been colored according to source for reference.
@@ -1054,7 +1054,7 @@ We are going to repeat the same process, this time for all the energy sources. T
 
 
 <div id="lab02-wgt03">
-    <iframe src="http://econ-models-widget.herokuapp.com/?id=lab02-wgt03" id="lab02-wgt03-iframe" class="widget-iframe"></iframe>
+    <iframe src="https://econ-models-widget.herokuapp.com/?id=lab02-wgt03" id="lab02-wgt03-iframe" class="widget-iframe"></iframe>
 </div>
 
  
