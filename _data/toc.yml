@@ -49,3 +49,10 @@
   - title: Lab 2
     url: /econ-fa19/wk02/lab02
     not_numbered: true
+- title: The Demand Curve and Market Equilibrium
+  url: /lecture-intros/wk03
+  expand_sections: true
+  sections:
+    - title: Lab 3
+      url: /econ-fa19/wk03/lab03
+      not_numbered: true

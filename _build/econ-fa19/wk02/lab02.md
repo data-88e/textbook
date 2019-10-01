@@ -7,8 +7,8 @@ prev_page:
   url: /econ-fa19/wk02/Intro_to_Production.html
   title: 'Intro to Production'
 next_page:
-  url: 
-  title: ''
+  url: /lecture-intros/wk03.html
+  title: 'The Demand Curve and Market Equilibrium'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 # Lab 2: Supply and Firm Behavior
