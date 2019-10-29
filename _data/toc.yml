@@ -56,3 +56,31 @@
     - title: Lab 3
       url: /econ-fa19/wk03/lab03
       not_numbered: true
+- title: Utility Maximization
+  url: /lecture-intros/wk04
+  expand_sections: true
+  sections:
+    - title: Lab 4
+      url: /econ-fa19/wk04/lab04
+      not_numbered: true
+- title: Welfare and Elasticities
+  url: /lecture-intros/wk05
+  expand_sections: true
+  sections:
+    - title: Lab 5
+      url: /econ-fa19/wk05/lab05
+      not_numbered: true
+- title: Trade and Taxes
+  url: /lecture-intros/wk06
+  expand_sections: true
+  sections:
+    - title: Lab 6
+      url: /econ-fa19/wk06/lab06
+      not_numbered: true
+- title: Production and Cobb-Douglas
+  url: /lecture-intros/wk07
+  expand_sections: true
+  sections:
+    - title: Lab 7
+      url: /econ-fa19/wk07/lab07
+      not_numbered: true
