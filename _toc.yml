@@ -1,0 +1,91 @@
+# This file contains the order and numbering for all sections in the book.
+#
+# It is a sample TOC file to help you get started. Fill it out with entries
+# for your own content.
+#
+# Each entry has the following schema:
+#
+# - title: mytitle   # Title of chapter or section
+#   file: /myurl  # path to file; change key to `url` if external
+#   sections:  # Contains a list of more entries that make up the chapter's sections
+#   not_numbered: true  # if the section shouldn't have a number in the sidebar
+#     (e.g. Introduction or appendices)
+#   expand_sections: true  # if you'd like the sections of this chapter to always
+#     be expanded in the sidebar.
+#
+# Below are some special values that trigger specific behavior:
+# - search: true  # Will provide a link to a search page
+# - divider: true  # Will insert a divider in the sidebar
+# - header: My Header  # Will insert a header with no link in the sidebar
+#
+# See the links below for an example.
+
+# Top-level page
+- title: Home
+  file: content/intro
+
+# # - divider: true
+# - header: "Part I: Foundational Economics"
+
+# # - divider: true
+# - header: "Part II: Economic Applications"
+
+- file: content/01-demand/index.md
+  sections:
+    - file: content/01-demand/demand.ipynb
+    - file: content/01-demand/market-equilibria.ipynb
+    - file: content/01-demand/sympy.ipynb
+
+- file: content/02-supply/index.md
+  sections:
+    - file: content/02-supply/supply.ipynb
+    - file: content/02-supply/eep147-example.ipynb
+    - file: content/02-supply/elasticity.ipynb
+
+- file: content/03-public/index.md
+
+- file: content/04-production/index.md
+  sections:
+    - file: content/04-production/production.ipynb
+    - file: content/04-production/shifts.ipynb
+
+- file: content/05-utility/index.md
+  sections:
+    - file: content/05-utility/utility.ipynb
+    - file: content/05-utility/budget-constraints.ipynb
+    - url: https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes
+      title: LaTeX
+
+- file: content/06-development/index.md
+
+- file: content/07-game-theory/index.md
+  sections:
+    # - title: Equilibria & Oligopolies
+    - file: content/07-game-theory/expected-utility.ipynb
+    - file: content/07-game-theory/equilibria-oligopolies.ipynb
+    - file: content/07-game-theory/cournot.ipynb
+    - file: content/07-game-theory/bertrand.ipynb
+    - file: content/07-game-theory/python-classes.ipynb
+
+- file: content/08-behavioral/index.md
+
+- file: content/09-finance/index.md
+  sections:
+    - file: content/09-finance/value-interest.ipynb
+    - file: content/09-finance/options.ipynb
+
+- file: content/10-inequality/index.md
+  sections:
+    - file: content/10-inequality/inequality.ipynb
+    - file: content/10-inequality/historical-inequality.ipynb
+
+- file: content/11-econometrics/index.md
+  sections:
+    - file: content/11-econometrics/single-variable.ipynb
+    - file: content/11-econometrics/statsmodels.ipynb
+    - file: content/11-econometrics/multivariable.ipynb
+    - file: content/11-econometrics/reading-econ-papers.ipynb
+
+- file: content/12-macro/index.md
+
+- file: content/references.md

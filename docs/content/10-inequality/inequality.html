@@ -1,0 +1,750 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Measurements of Inequality &#8212; Data 88: Economic Models Textbook</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/mystnb.js"></script>
+    <script src="../../_static/plotly.min.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.13.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Income Inequality Historically" href="historical-inequality.html" />
+    <link rel="prev" title="Inequality" href="index.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/econ-models.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Data 88: Economic Models Textbook</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-demand/index.html">
+   Demand and Market Equilibrium
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-supply/index.html">
+   Supply &amp; Elasticity
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-public/index.html">
+   Public Economics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04-production/index.html">
+   Production
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../05-utility/index.html">
+   Utility
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06-development/index.html">
+   Development
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../07-game-theory/index.html">
+   Game Theory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-behavioral/index.html">
+   Behavioral Economics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../09-finance/index.html">
+   Finance
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="index.html">
+   Inequality
+  </a>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Measurements of Inequality
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="historical-inequality.html">
+     Income Inequality Historically
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="historical-inequality.html#income-inequality-for-the-rest-of-the-world">
+     Income Inequality for the Rest of the World
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="historical-inequality.html#factors-that-affect-income-inequality">
+     Factors that Affect Income Inequality
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../11-econometrics/index.html">
+   Econometrics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../12-macro/index.html">
+   Macroeconomic Policy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/content/10-inequality/inequality.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ds-connectors/econ-models-Textbook"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ds-connectors/econ-models-Textbook/master?urlpath=tree/content/10-inequality/inequality.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        <a class="jupyterhub-button" href="https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https://github.com/ds-connectors/econ-models-Textbook&urlpath=tree/econ-models-Textbook/content/10-inequality/inequality.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> On this page
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-lorenz-curve">
+   The Lorenz Curve
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#line-of-perfect-equality">
+     Line of Perfect Equality
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-toy-example">
+     A Toy Example
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comparing-lorenz-curves">
+     Comparing Lorenz Curves
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-gini-coefficient">
+   The Gini Coefficient
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#other-forms-of-measurement">
+   Other Forms of Measurement
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="measurements-of-inequality">
+<h1>Measurements of Inequality<a class="headerlink" href="#measurements-of-inequality" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="the-lorenz-curve">
+<h2>The Lorenz Curve<a class="headerlink" href="#the-lorenz-curve" title="Permalink to this headline">¶</a></h2>
+<p>The Lorenz Curve visually presents income inequality by plotting household income percentile on the <span class="math notranslate nohighlight">\(x\)</span>-axis, and the cumulative income share that the bottom <span class="math notranslate nohighlight">\(x\)</span> percentile own on the <span class="math notranslate nohighlight">\(y\)</span>-axis. The households are sorted by income, so that the first household at the 0th percentile has the least amount of income, while the household at the 100th percentile has the greatest income.</p>
+<p>For any point <span class="math notranslate nohighlight">\((x,y)\)</span> on the Lorenz curve, “the bottom x percent own y% of the income”. For example, if the <span class="math notranslate nohighlight">\(x\)</span>-axis reads 0.30 and <span class="math notranslate nohighlight">\(y\)</span>-axis reads 0.10, then it means that the bottom 30% of the population received 10% of the total population’s income. This yields 2 implications for the Lorenz Curve:</p>
+<ul class="simple">
+<li><p>The points <span class="math notranslate nohighlight">\((0,0)\)</span> and <span class="math notranslate nohighlight">\((1,1)\)</span> are always on the curve. <span class="math notranslate nohighlight">\((0,0)\)</span> represents the 0% of the population owning 0% of the income and <span class="math notranslate nohighlight">\((1,1)\)</span> represents 100% of the population owning 100% of the income.</p></li>
+<li><p>The slope is always increasing. This is because households are sorted by income as percentiles: for a slight increase in <span class="math notranslate nohighlight">\(x\)</span>, households become richer and hence provide a larger share of total income.</p></li>
+</ul>
+<div class="section" id="line-of-perfect-equality">
+<h3>Line of Perfect Equality<a class="headerlink" href="#line-of-perfect-equality" title="Permalink to this headline">¶</a></h3>
+<p>In a world of perfect equality, everyone would have the exact same income. In this case, the Lorenz curve would just be a 45-degree straight line that runs through <span class="math notranslate nohighlight">\((0,0)\)</span> and <span class="math notranslate nohighlight">\((1,1)\)</span>, i.e. <span class="math notranslate nohighlight">\(y=x\)</span>. Mathematically, this is because the derivative is constant: for a slight increase in <span class="math notranslate nohighlight">\(x\)</span>, the total share of income increases at a constant rate. Another way to think about this is that the bottom 10% of the population will own 10% of the total income, the bottom 50% of the population will own 50% of the total income, and so on. This line is known as the <em>line of perfect equality</em>, and we typically display this line when plotting our Lorenz curves as a reference.</p>
+</div>
+<div class="section" id="a-toy-example">
+<h3>A Toy Example<a class="headerlink" href="#a-toy-example" title="Permalink to this headline">¶</a></h3>
+<p>Let’s suppose country 1 has the following income distribution:</p>
+<ul class="simple">
+<li><p>The bottom 10% owns a cumulative 2% of total income</p></li>
+<li><p>The bottom 20% owns 5% of total income</p></li>
+<li><p>The bottom 30% owns 9% of total income</p></li>
+<li><p>The bottom 40% owns 15% of total income</p></li>
+<li><p>The bottom 50% owns 23% of total income</p></li>
+<li><p>The bottom 60% owns 33% of total income</p></li>
+<li><p>The bottom 70% with 45% of total income</p></li>
+<li><p>The bottom 80% with 59% of total income</p></li>
+<li><p>The bottom 90% with 75% of total income</p></li>
+<li><p>The bottom 100% with 100% of total income</p></li>
+</ul>
+<p>We will create an array of income shares and call it <code class="docutils literal notranslate"><span class="pre">Country1</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Country1</span> <span class="o">=</span> <span class="n">make_array</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.09</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">,</span> <span class="mf">0.23</span><span class="p">,</span> <span class="mf">0.33</span><span class="p">,</span> <span class="mf">0.45</span><span class="p">,</span> <span class="mf">0.59</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To better see this information, we will create a table containing population percentage and cumulative income share.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">income_distribution</span> <span class="o">=</span> <span class="n">Table</span><span class="p">()</span><span class="o">.</span><span class="n">with_columns</span><span class="p">(</span>
+    <span class="s2">&quot;Population Percentage (%)&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="o">*</span> <span class="mi">10</span><span class="p">,</span> 
+    <span class="s2">&quot;Cumulative Income Share (%)&quot;</span><span class="p">,</span> <span class="n">Country1</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> 
+    <span class="s2">&quot;Perfect Equality Income Share (%)&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="o">*</span> <span class="mi">10</span>
+<span class="p">)</span>
+<span class="n">income_distribution</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>Population Percentage (%)</th> <th>Cumulative Income Share (%)</th> <th>Perfect Equality Income Share (%)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>0                        </td> <td>0                          </td> <td>0                                </td>
+        </tr>
+        <tr>
+            <td>10                       </td> <td>2                          </td> <td>10                               </td>
+        </tr>
+        <tr>
+            <td>20                       </td> <td>5                          </td> <td>20                               </td>
+        </tr>
+        <tr>
+            <td>30                       </td> <td>9                          </td> <td>30                               </td>
+        </tr>
+        <tr>
+            <td>40                       </td> <td>15                         </td> <td>40                               </td>
+        </tr>
+        <tr>
+            <td>50                       </td> <td>23                         </td> <td>50                               </td>
+        </tr>
+        <tr>
+            <td>60                       </td> <td>33                         </td> <td>60                               </td>
+        </tr>
+        <tr>
+            <td>70                       </td> <td>45                         </td> <td>70                               </td>
+        </tr>
+        <tr>
+            <td>80                       </td> <td>59                         </td> <td>80                               </td>
+        </tr>
+        <tr>
+            <td>90                       </td> <td>75                         </td> <td>90                               </td>
+        </tr>
+    </tbody>
+</table>
+<p>... (1 rows omitted)</p></div></div>
+</div>
+<p>How will the Lorenz Curve for this income distribution look?</p>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<img alt="../../_images/inequality_9_0.png" src="../../_images/inequality_9_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="comparing-lorenz-curves">
+<h3>Comparing Lorenz Curves<a class="headerlink" href="#comparing-lorenz-curves" title="Permalink to this headline">¶</a></h3>
+<p>Now let’s compare 2 countries’ Lorenz curves. Suppose country 2 has the following income distribution:</p>
+<ul class="simple">
+<li><p>The bottom 10% owns a cumulative 3% of total income</p></li>
+<li><p>The bottom 20% owns 7% of total income</p></li>
+<li><p>The bottom 30% owns 13% of total income</p></li>
+<li><p>The bottom 40% owns 19% of total income</p></li>
+<li><p>The bottom 50% owns 27% of total income</p></li>
+<li><p>The bottom 60% owns 37% of total income</p></li>
+<li><p>The bottom 70% with 50% of total income</p></li>
+<li><p>The bottom 80% with 65% of total income</p></li>
+<li><p>The bottom 90% with 81% of total income</p></li>
+<li><p>The bottom 100% with 100% of total income</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Country2</span> <span class="o">=</span> <span class="n">make_array</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">,</span> <span class="mf">0.07</span><span class="p">,</span> <span class="mf">0.13</span><span class="p">,</span> <span class="mf">0.19</span><span class="p">,</span> <span class="mf">0.27</span><span class="p">,</span> <span class="mf">0.37</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.65</span><span class="p">,</span> <span class="mf">0.81</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+<span class="n">income_distribution2</span> <span class="o">=</span> <span class="n">Table</span><span class="p">()</span><span class="o">.</span><span class="n">with_columns</span><span class="p">(</span>
+    <span class="s2">&quot;Population Percentage (%)&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="o">*</span> <span class="mi">10</span><span class="p">,</span> 
+    <span class="s2">&quot;Cumulative Income Share (%)&quot;</span><span class="p">,</span> <span class="n">Country2</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> 
+    <span class="s2">&quot;Perfect Equality Income Share (%)&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="o">*</span> <span class="mi">10</span>
+<span class="p">)</span>
+<span class="n">income_distribution2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>Population Percentage (%)</th> <th>Cumulative Income Share (%)</th> <th>Perfect Equality Income Share (%)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>0                        </td> <td>0                          </td> <td>0                                </td>
+        </tr>
+        <tr>
+            <td>10                       </td> <td>3                          </td> <td>10                               </td>
+        </tr>
+        <tr>
+            <td>20                       </td> <td>7                          </td> <td>20                               </td>
+        </tr>
+        <tr>
+            <td>30                       </td> <td>13                         </td> <td>30                               </td>
+        </tr>
+        <tr>
+            <td>40                       </td> <td>19                         </td> <td>40                               </td>
+        </tr>
+        <tr>
+            <td>50                       </td> <td>27                         </td> <td>50                               </td>
+        </tr>
+        <tr>
+            <td>60                       </td> <td>37                         </td> <td>60                               </td>
+        </tr>
+        <tr>
+            <td>70                       </td> <td>50                         </td> <td>70                               </td>
+        </tr>
+        <tr>
+            <td>80                       </td> <td>65                         </td> <td>80                               </td>
+        </tr>
+        <tr>
+            <td>90                       </td> <td>81                         </td> <td>90                               </td>
+        </tr>
+    </tbody>
+</table>
+<p>... (1 rows omitted)</p></div></div>
+</div>
+<p>Comparing the 2 countries’ income distributions side by side:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">income_distribution</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+    <span class="p">[</span><span class="s2">&quot;Population Percentage (%)&quot;</span><span class="p">,</span> <span class="s2">&quot;Perfect Equality Income Share (%)&quot;</span><span class="p">],</span> 
+    <span class="n">income_distribution2</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Population Percentage (%)&quot;</span><span class="p">,</span> <span class="s2">&quot;Perfect Equality Income Share (%)&quot;</span><span class="p">]</span>
+<span class="p">)</span><span class="o">.</span><span class="n">relabel</span><span class="p">(</span>
+    <span class="s2">&quot;Cumulative Income Share (%)&quot;</span><span class="p">,</span> <span class="s2">&quot;Country 1 Cumulative Income Share (%)&quot;</span>
+<span class="p">)</span><span class="o">.</span><span class="n">relabel</span><span class="p">(</span>
+    <span class="s2">&quot;Cumulative Income Share (%)_2&quot;</span><span class="p">,</span> <span class="s2">&quot;Country 2 Cumulative Income Share (%)&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>Population Percentage (%)</th> <th>Perfect Equality Income Share (%)</th> <th>Country 1 Cumulative Income Share (%)</th> <th>Country 2 Cumulative Income Share (%)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>0                        </td> <td>0                                </td> <td>0                                    </td> <td>0                                    </td>
+        </tr>
+        <tr>
+            <td>10                       </td> <td>10                               </td> <td>2                                    </td> <td>3                                    </td>
+        </tr>
+        <tr>
+            <td>20                       </td> <td>20                               </td> <td>5                                    </td> <td>7                                    </td>
+        </tr>
+        <tr>
+            <td>30                       </td> <td>30                               </td> <td>9                                    </td> <td>13                                   </td>
+        </tr>
+        <tr>
+            <td>40                       </td> <td>40                               </td> <td>15                                   </td> <td>19                                   </td>
+        </tr>
+        <tr>
+            <td>50                       </td> <td>50                               </td> <td>23                                   </td> <td>27                                   </td>
+        </tr>
+        <tr>
+            <td>60                       </td> <td>60                               </td> <td>33                                   </td> <td>37                                   </td>
+        </tr>
+        <tr>
+            <td>70                       </td> <td>70                               </td> <td>45                                   </td> <td>50                                   </td>
+        </tr>
+        <tr>
+            <td>80                       </td> <td>80                               </td> <td>59                                   </td> <td>65                                   </td>
+        </tr>
+        <tr>
+            <td>90                       </td> <td>90                               </td> <td>75                                   </td> <td>81                                   </td>
+        </tr>
+    </tbody>
+</table>
+<p>... (1 rows omitted)</p></div></div>
+</div>
+<p>Plotting both countries’ Lorenz curves, can you tell which country has a higher level of income inequality?</p>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<img alt="../../_images/inequality_15_0.png" src="../../_images/inequality_15_0.png" />
+</div>
+</div>
+<p>In this case, we can see that country 2’s Lorenz curve is closer to the line of equality than that of country 1, which intuitively would suggest that country 2 is more equal. If we were to look at the numbers, we see that the bottom percentiles own a higher % of total national income in country 2 than in country 1, while top percentiles own less in country 2 than in country 1. This would suggest that country 2 is more equal in income than country 1, so that country 1 has a higher level of income inequality.</p>
+<p>But now let’s consider a different case; suppose country 3 has the following distribution:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Country3</span> <span class="o">=</span> <span class="n">make_array</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">,</span> <span class="mf">0.07</span><span class="p">,</span> <span class="mf">0.12</span><span class="p">,</span> <span class="mf">0.18</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.33</span><span class="p">,</span> <span class="mf">0.42</span><span class="p">,</span> <span class="mf">0.54</span><span class="p">,</span> <span class="mf">0.73</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+<span class="n">income_distribution3</span> <span class="o">=</span> <span class="n">Table</span><span class="p">()</span><span class="o">.</span><span class="n">with_columns</span><span class="p">(</span>
+    <span class="s2">&quot;Population Percentage (%)&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="o">*</span> <span class="mi">10</span><span class="p">,</span> 
+    <span class="s2">&quot;Cumulative Income Share (%)&quot;</span><span class="p">,</span> <span class="n">Country3</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> 
+    <span class="s2">&quot;Perfect Equality Income Share (%)&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="o">*</span> <span class="mi">10</span>
+<span class="p">)</span>
+<span class="n">income_distribution</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+    <span class="p">[</span><span class="s2">&quot;Population Percentage (%)&quot;</span><span class="p">,</span> <span class="s2">&quot;Perfect Equality Income Share (%)&quot;</span><span class="p">],</span> 
+    <span class="n">income_distribution3</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Population Percentage (%)&quot;</span><span class="p">,</span> <span class="s2">&quot;Perfect Equality Income Share (%)&quot;</span><span class="p">]</span>
+<span class="p">)</span><span class="o">.</span><span class="n">relabel</span><span class="p">(</span>
+    <span class="s2">&quot;Cumulative Income Share (%)&quot;</span><span class="p">,</span> <span class="s2">&quot;Country 1 Cumulative Income Share (%)&quot;</span>
+<span class="p">)</span><span class="o">.</span><span class="n">relabel</span><span class="p">(</span>
+    <span class="s2">&quot;Cumulative Income Share (%)_2&quot;</span><span class="p">,</span> <span class="s2">&quot;Country 3 Cumulative Income Share (%)&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>Population Percentage (%)</th> <th>Perfect Equality Income Share (%)</th> <th>Country 1 Cumulative Income Share (%)</th> <th>Country 3 Cumulative Income Share (%)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>0                        </td> <td>0                                </td> <td>0                                    </td> <td>0                                    </td>
+        </tr>
+        <tr>
+            <td>10                       </td> <td>10                               </td> <td>2                                    </td> <td>3                                    </td>
+        </tr>
+        <tr>
+            <td>20                       </td> <td>20                               </td> <td>5                                    </td> <td>7                                    </td>
+        </tr>
+        <tr>
+            <td>30                       </td> <td>30                               </td> <td>9                                    </td> <td>12                                   </td>
+        </tr>
+        <tr>
+            <td>40                       </td> <td>40                               </td> <td>15                                   </td> <td>18                                   </td>
+        </tr>
+        <tr>
+            <td>50                       </td> <td>50                               </td> <td>23                                   </td> <td>25                                   </td>
+        </tr>
+        <tr>
+            <td>60                       </td> <td>60                               </td> <td>33                                   </td> <td>33                                   </td>
+        </tr>
+        <tr>
+            <td>70                       </td> <td>70                               </td> <td>45                                   </td> <td>42                                   </td>
+        </tr>
+        <tr>
+            <td>80                       </td> <td>80                               </td> <td>59                                   </td> <td>54                                   </td>
+        </tr>
+        <tr>
+            <td>90                       </td> <td>90                               </td> <td>75                                   </td> <td>73                                   </td>
+        </tr>
+    </tbody>
+</table>
+<p>... (1 rows omitted)</p></div></div>
+</div>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<img alt="../../_images/inequality_19_0.png" src="../../_images/inequality_19_0.png" />
+</div>
+</div>
+<p>Now, ambiguity arises; while bottom income percentiles earn a larger share of national income in country 3, top income percentiles also have a larger share. We can visualize this phenomenon by the ‘crossing’ of Lorenz curves on the plot. As a result, we do cannot easily tell which country has a higher level of income inequality.</p>
+<p>As you may see, the Lorenz curve is not able to produce a ‘quantitative’ measure of income inequality, making the scenario above hard for us to compare the 2 countries. For this, we turn to the Gini coefficient.</p>
+</div>
+</div>
+<div class="section" id="the-gini-coefficient">
+<h2>The Gini Coefficient<a class="headerlink" href="#the-gini-coefficient" title="Permalink to this headline">¶</a></h2>
+<p>We can use the Gini coefficeint to quantify the level of income inequality.</p>
+<div class="figure align-default" id="gini-coefficient">
+<a class="reference internal image-reference" href="../../_images/Gini.png"><img alt="../../_images/Gini.png" src="../../_images/Gini.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">The Gini coefficient</span><a class="headerlink" href="#gini-coefficient" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition-definition admonition">
+<p class="admonition-title">Definition</p>
+<p>The <strong>Gini coefficient</strong> is the ratio of the area between the line of equality and the Lorenz curve to the total area under the line of equality. Referring to <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> from <a class="reference internal" href="#gini-coefficient"><span class="std std-numref">Fig. 1</span></a>:</p>
+<div class="math notranslate nohighlight">
+\[\text{Gini} = \frac{\text{Area between line of equality and Lorenz curve}}{\text{Area under line of equality}} = \frac{A}{A+B}\]</div>
+<p>If we express the Lorenz curve as <span class="math notranslate nohighlight">\(L(x)\)</span>, we can use calculus to derive an equation for the Gini coefficient:</p>
+<div class="math notranslate nohighlight">
+\[\text{Gini} = \frac{\frac{1}{2} - \int_0^1 L(x)\text{d}x}{\frac{1}{2}} = 1 - 2\int_0^1 L(x)\text{d}x\]</div>
+</div>
+<p>Intuitively, the closer the Lorenz curve is to the line of equality, the lower income inequality exists. Hence, the smaller the area of A, the lower the inequality. <strong>This means that the smaller the Gini coefficient, the lower the income inequality.</strong> Also note that the Gini coefficient will always be between 0 and 1. Mathematically, since <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are both positive, <span class="math notranslate nohighlight">\(0&lt;\frac{A}{A+B}&lt;1\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># This function estimates the Gini coefficient. You don&#39;t have to understand how this code works below.</span>
+<span class="k">def</span> <span class="nf">gini</span><span class="p">(</span><span class="n">distribution</span><span class="p">):</span>
+    <span class="n">sorted_distribution</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">distribution</span><span class="p">)</span>
+    <span class="n">height</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">area</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">sorted_distribution</span><span class="p">:</span>
+        <span class="n">height</span> <span class="o">+=</span> <span class="n">i</span>
+        <span class="n">area</span> <span class="o">+=</span> <span class="n">height</span> <span class="o">-</span> <span class="n">i</span> <span class="o">/</span> <span class="mi">2</span>
+    <span class="n">fair_area</span> <span class="o">=</span> <span class="n">height</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">distribution</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">fair_area</span> <span class="o">-</span> <span class="n">area</span><span class="p">)</span> <span class="o">/</span> <span class="n">fair_area</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>When we use our population as the parameter to the <code class="docutils literal notranslate"><span class="pre">gini</span></code> function, we get:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gini_coefficient_country1</span> <span class="o">=</span> <span class="n">gini</span><span class="p">(</span><span class="n">Country1</span><span class="p">)</span>
+<span class="n">gini_coefficient_country1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.518628912071535
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gini_coefficient_country2</span> <span class="o">=</span> <span class="n">gini</span><span class="p">(</span><span class="n">Country2</span><span class="p">)</span>
+<span class="n">gini_coefficient_country2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.48756218905472637
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gini_coefficient_country3</span> <span class="o">=</span> <span class="n">gini</span><span class="p">(</span><span class="n">Country3</span><span class="p">)</span>
+<span class="n">gini_coefficient_country3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.4934357195937577
+</pre></div>
+</div>
+</div>
+</div>
+<p>These results confirm our intuition from the analysis we did previously via Lorenz curves. Previously, we concluded that country 1 had a higher level of income inequality than country 2, and this is supported by country 1’s higher gini coefficient. On the other hand, we had trouble comparing levels of inequality between country 1 and country 3. Here, the gini coefficient would indicate that country 1 has a higher level of income inequality than country 3.</p>
+</div>
+<div class="section" id="other-forms-of-measurement">
+<h2>Other Forms of Measurement<a class="headerlink" href="#other-forms-of-measurement" title="Permalink to this headline">¶</a></h2>
+<p>The Gini coefficient is a fairly comprehensive and robust measure of inequality with just a single value: as we’ve seen above, we look at the entire population’s income distribution to determine the Gini coefficient. As a result, calculating the Gini is often a challenging task. In reality, we will never observe the true population Lorenz curve without conducting a census to know how much exactly each household earns. As a result, economists will often attempt to interpolate the Lorenz curve and consequent Gini coefficient from the data they have available. The Gini coefficient is also not as easy to understand or explain; the value by itself does not have significant meaning.</p>
+<p>Instead, another common measure of income inequality is the share of income earned by the “top <span class="math notranslate nohighlight">\(x\)</span>%” or the “bottom <span class="math notranslate nohighlight">\(y\)</span>%”. These measures are more often used in the media or by politicians in discussing the extent of inequality, since they are much easier to understand. Consider the chart below, which plots the share of income earned by the top 1%, bottom 90%, and the 90-99%:</p>
+<div class="figure align-default" id="id1">
+<img alt="../../_images/alt_measure.png" src="../../_images/alt_measure.png" />
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Alternative forms of measurement</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/10-inequality"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">Inequality</a>
+    <a class='right-next' id="next-link" href="historical-inequality.html" title="next page">Income Inequality Historically</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Data 88 Course Staff<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../../_static/js/index.js"></script>
+    
+  </body>
+</html>

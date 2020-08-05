@@ -1,6 +1,7 @@
 # Data 88: Economic Models
 
-This is a textbook developed for UC Berkeley's course Data 88: Economic Models. [Data 88](https://d8a-88.github.io) is a generic course listing for Data 8 connector courses.
+Economics is in the world around us, and so is Data Science! It's in our every day lives. As we connect Data Science with Economics, we will be exploring real life datasets to illustrate how Economics concepts are shaped and how decisions lead to real-life impacts. This is a textbook developed for UC Berkeley's course Data 88: Economic Models. [Data 88](https://ds-connectors.github.io) is a generic course listing for Data 8 connector courses.
+
 
 ## Course Description
 
@@ -16,7 +17,4 @@ The idea for the class is to take students through a series of exercises to moti
 
 ## License
 
-This textbook is licensed under a [BSD 3-Clause License](https://github.com/d8a-88/econ-models-textbook/blob/master/LICENSE).
-
-
- 
+This textbook is licensed under a [BSD 3-Clause License](https://github.com/ds-connectors/econ-models-textbook/blob/master/LICENSE).

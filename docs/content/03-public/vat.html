@@ -1,0 +1,1551 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>An Example: VAT taxes in French Restaurants &#8212; Data 88: Economic Models Textbook</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/mystnb.js"></script>
+    <script src="../../_static/plotly.min.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.13.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/econ-models.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Data 88: Economic Models Textbook</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-demand/index.html">
+   Demand and Market Equilibrium
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-supply/index.html">
+   Supply &amp; Elasticity
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
+   Public Economics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04-production/index.html">
+   Production
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../05-utility/index.html">
+   Utility
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06-development/index.html">
+   Development
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../07-game-theory/index.html">
+   Game Theory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-behavioral/index.html">
+   Behavioral Economics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../09-finance/index.html">
+   Finance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../10-inequality/index.html">
+   Inequality
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../11-econometrics/index.html">
+   Econometrics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../12-macro/index.html">
+   Macroeconomic Policy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/content/03-public/vat.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ds-connectors/econ-models-Textbook"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ds-connectors/econ-models-Textbook/master?urlpath=tree/content/03-public/vat.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        <a class="jupyterhub-button" href="https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https://github.com/ds-connectors/econ-models-Textbook&urlpath=tree/econ-models-Textbook/content/03-public/vat.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> On this page
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-1-reading-in-data">
+   Step 1: Reading in Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-2-joining-the-data">
+   Step 2: Joining the Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-3-cleaning-the-data">
+   Step 3: Cleaning the Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-4-plotting-our-results">
+   Step 4: Plotting our Results
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">datascience</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="an-example-vat-taxes-in-french-restaurants">
+<h1>An Example: VAT taxes in French Restaurants<a class="headerlink" href="#an-example-vat-taxes-in-french-restaurants" title="Permalink to this headline">¶</a></h1>
+<p>The dataset in this example is taken from Benzarti and Carloni’s paper <em>Who Benefits from VAT cuts? Evidence from Large VAT Reform in France</em>.</p>
+<p>In July 2009, the Value Added Tax (VAT) rate for meals consumed in French sit-down restaurants was reduced from 19.6% to 5.5%. Since the VAT is charged directly to consumers, we will graph the demand curve pre and post tax to see the quantitative effects of the tax.</p>
+<p>The first few parts of this example go through some data wrangling procedures that ultimately allow us to get the data in a format we want. Do not worry too much if this has not yet been fully covered in Data 8; the concepts should be taught within the next couple weeks.</p>
+<div class="section" id="step-1-reading-in-data">
+<h2>Step 1: Reading in Data<a class="headerlink" href="#step-1-reading-in-data" title="Permalink to this headline">¶</a></h2>
+<p>In <code class="docutils literal notranslate"><span class="pre">prices.csv</span></code>, we will see the average price of a sit-down meal in France across months from January 2006 to December 2011.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">prices</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s2">&quot;prices.csv&quot;</span><span class="p">)</span>
+<span class="n">prices</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>year</th> <th>month</th> <th>price</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>2003</td> <td>1    </td> <td>100.52</td>
+        </tr>
+        <tr>
+            <td>2003</td> <td>2    </td> <td>100.71</td>
+        </tr>
+        <tr>
+            <td>2003</td> <td>3    </td> <td>100.95</td>
+        </tr>
+        <tr>
+            <td>2003</td> <td>4    </td> <td>101.29</td>
+        </tr>
+        <tr>
+            <td>2003</td> <td>5    </td> <td>101.38</td>
+        </tr>
+        <tr>
+            <td>2003</td> <td>6    </td> <td>101.57</td>
+        </tr>
+        <tr>
+            <td>2003</td> <td>7    </td> <td>101.91</td>
+        </tr>
+        <tr>
+            <td>2003</td> <td>8    </td> <td>102.18</td>
+        </tr>
+        <tr>
+            <td>2003</td> <td>9    </td> <td>102.25</td>
+        </tr>
+        <tr>
+            <td>2003</td> <td>10   </td> <td>102.49</td>
+        </tr>
+    </tbody>
+</table>
+<p>... (98 rows omitted)</p></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">prices</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">above</span><span class="p">(</span><span class="mi">2005</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In <code class="docutils literal notranslate"><span class="pre">quantities.csv</span></code>, we will see the average price of a sit-down meal in France across months from January 1995 to April 2015. Note that the quantity value across time periods is indexed relative to the year 2010, in which the average quantity consumed was 100 in 2010.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">quantities</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s2">&quot;quantities.csv&quot;</span><span class="p">)</span>
+<span class="n">quantities</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>year</th> <th>month</th> <th>quantity</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>2015</td> <td>4    </td> <td>88.8    </td>
+        </tr>
+        <tr>
+            <td>2015</td> <td>3    </td> <td>86.8    </td>
+        </tr>
+        <tr>
+            <td>2015</td> <td>2    </td> <td>88.6    </td>
+        </tr>
+        <tr>
+            <td>2015</td> <td>1    </td> <td>88.6    </td>
+        </tr>
+        <tr>
+            <td>2014</td> <td>12   </td> <td>88.9    </td>
+        </tr>
+        <tr>
+            <td>2014</td> <td>11   </td> <td>89.3    </td>
+        </tr>
+        <tr>
+            <td>2014</td> <td>10   </td> <td>90.3    </td>
+        </tr>
+        <tr>
+            <td>2014</td> <td>9    </td> <td>89.5    </td>
+        </tr>
+        <tr>
+            <td>2014</td> <td>8    </td> <td>90.7    </td>
+        </tr>
+        <tr>
+            <td>2014</td> <td>7    </td> <td>89.1    </td>
+        </tr>
+    </tbody>
+</table>
+<p>... (234 rows omitted)</p></div></div>
+</div>
+<p>Lastly, in <code class="docutils literal notranslate"><span class="pre">cpi.csv</span></code>, we have the data for the French Consumer Price Index (CPI). The CPI is also indexed, but this time relative to the yaer 1998. Having the CPI allows us to adjust for inflation, allowing us to calculate real prices. Below, we will calculate prices across time in terms of “2010 dollars”, i.e. the real price of a meal if measured in 2010.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cpi</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s2">&quot;cpi.csv&quot;</span><span class="p">)</span>
+<span class="n">cpi</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>year</th> <th>cpi</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1998</td> <td>100   </td>
+        </tr>
+        <tr>
+            <td>1999</td> <td>100.5 </td>
+        </tr>
+        <tr>
+            <td>2000</td> <td>102.2 </td>
+        </tr>
+        <tr>
+            <td>2001</td> <td>103.9 </td>
+        </tr>
+        <tr>
+            <td>2002</td> <td>105.9 </td>
+        </tr>
+        <tr>
+            <td>2003</td> <td>108.1 </td>
+        </tr>
+        <tr>
+            <td>2004</td> <td>110.4 </td>
+        </tr>
+        <tr>
+            <td>2005</td> <td>112.4 </td>
+        </tr>
+        <tr>
+            <td>2006</td> <td>114.23</td>
+        </tr>
+        <tr>
+            <td>2007</td> <td>115.92</td>
+        </tr>
+    </tbody>
+</table>
+<p>... (7 rows omitted)</p></div></div>
+</div>
+</div>
+<div class="section" id="step-2-joining-the-data">
+<h2>Step 2: Joining the Data<a class="headerlink" href="#step-2-joining-the-data" title="Permalink to this headline">¶</a></h2>
+<p>We would like a way to combine our data, currently spread across 3 tables, into a single table. This will allow us to more easily conduct table operations on it. Since all of our tables are based on time-series data, we can join them across shared time attributes.</p>
+<p>First, we join <code class="docutils literal notranslate"><span class="pre">price</span></code> with <code class="docutils literal notranslate"><span class="pre">quantities</span></code>. Notably, 2 columns (<code class="docutils literal notranslate"><span class="pre">year</span></code> and <code class="docutils literal notranslate"><span class="pre">month</span></code>) must match for us in both tables to join the data correctly together. In order to join on 2 columns instead of just 1, we provide a list of column labels.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">prices_and_quantities</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="s2">&quot;month&quot;</span><span class="p">],</span> <span class="n">quantities</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="s2">&quot;month&quot;</span><span class="p">])</span>
+<span class="n">prices_and_quantities</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>year</th> <th>month</th> <th>price</th> <th>quantity</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>2003</td> <td>1    </td> <td>100.52</td> <td>108.7   </td>
+        </tr>
+        <tr>
+            <td>2003</td> <td>2    </td> <td>100.71</td> <td>108     </td>
+        </tr>
+        <tr>
+            <td>2003</td> <td>3    </td> <td>100.95</td> <td>109     </td>
+        </tr>
+        <tr>
+            <td>2003</td> <td>4    </td> <td>101.29</td> <td>108.4   </td>
+        </tr>
+        <tr>
+            <td>2003</td> <td>5    </td> <td>101.38</td> <td>108.7   </td>
+        </tr>
+        <tr>
+            <td>2003</td> <td>6    </td> <td>101.57</td> <td>108.6   </td>
+        </tr>
+        <tr>
+            <td>2003</td> <td>7    </td> <td>101.91</td> <td>109.4   </td>
+        </tr>
+        <tr>
+            <td>2003</td> <td>8    </td> <td>102.18</td> <td>110.5   </td>
+        </tr>
+        <tr>
+            <td>2003</td> <td>9    </td> <td>102.25</td> <td>113.8   </td>
+        </tr>
+        <tr>
+            <td>2003</td> <td>10   </td> <td>102.49</td> <td>107.8   </td>
+        </tr>
+    </tbody>
+</table>
+<p>... (98 rows omitted)</p></div></div>
+</div>
+<p>Now, we join this table with CPI data to create a final table called <code class="docutils literal notranslate"><span class="pre">meals</span></code>. Here, since CPI is measured annually, we only join them on the shared <code class="docutils literal notranslate"><span class="pre">year</span></code> column.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">meals</span> <span class="o">=</span> <span class="n">prices_and_quantities</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="n">cpi</span><span class="p">,</span> <span class="s2">&quot;year&quot;</span><span class="p">)</span>
+<span class="n">meals</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>year</th> <th>month</th> <th>price</th> <th>quantity</th> <th>cpi</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>2006</td> <td>1    </td> <td>108.49</td> <td>107     </td> <td>114.23</td>
+        </tr>
+        <tr>
+            <td>2006</td> <td>2    </td> <td>108.76</td> <td>105.4   </td> <td>114.23</td>
+        </tr>
+        <tr>
+            <td>2006</td> <td>3    </td> <td>109.02</td> <td>105     </td> <td>114.23</td>
+        </tr>
+        <tr>
+            <td>2006</td> <td>4    </td> <td>109.28</td> <td>105.5   </td> <td>114.23</td>
+        </tr>
+        <tr>
+            <td>2006</td> <td>5    </td> <td>109.43</td> <td>105.7   </td> <td>114.23</td>
+        </tr>
+        <tr>
+            <td>2006</td> <td>6    </td> <td>109.69</td> <td>103.4   </td> <td>114.23</td>
+        </tr>
+        <tr>
+            <td>2006</td> <td>7    </td> <td>109.82</td> <td>105.8   </td> <td>114.23</td>
+        </tr>
+        <tr>
+            <td>2006</td> <td>8    </td> <td>110.18</td> <td>105.9   </td> <td>114.23</td>
+        </tr>
+        <tr>
+            <td>2006</td> <td>9    </td> <td>110.27</td> <td>109.2   </td> <td>114.23</td>
+        </tr>
+        <tr>
+            <td>2006</td> <td>10   </td> <td>110.64</td> <td>109.3   </td> <td>114.23</td>
+        </tr>
+    </tbody>
+</table>
+<p>... (62 rows omitted)</p></div></div>
+</div>
+<p>Note that since the <code class="docutils literal notranslate"><span class="pre">prices</span></code> table is already sorted in chronological order, <code class="docutils literal notranslate"><span class="pre">meals</span></code> will also be sorted the same way.</p>
+</div>
+<div class="section" id="step-3-cleaning-the-data">
+<h2>Step 3: Cleaning the Data<a class="headerlink" href="#step-3-cleaning-the-data" title="Permalink to this headline">¶</a></h2>
+<p>Let’s first ‘normalize’ the prices by controlling for inflation, using 2010 as a ‘base year’. In 2010, the CPI was 121.1:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cpi</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="mi">2010</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>year</th> <th>cpi</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>2010</td> <td>121.1</td>
+        </tr>
+    </tbody>
+</table></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cpi_2010</span> <span class="o">=</span> <span class="n">cpi</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="mi">2010</span><span class="p">)</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;cpi&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">cpi_2010</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>121.1
+</pre></div>
+</div>
+</div>
+</div>
+<p>That means to get a year <span class="math notranslate nohighlight">\(t\)</span>’s prices in 2010 dollars, we must normalize by dividing by that year’s CPI and multiplying by the 2010 CPI. Intuitively, we do this to ‘cancel’ out the units measured in year <span class="math notranslate nohighlight">\(t\)</span> dollars and convert it to 2010 dollars.
+$$\text{Price in 2010 dollars} = \text{Price in year <span class="math notranslate nohighlight">\(t\)</span> dollars} \times \frac{\text{CPI}_{2010}}{\text{CPI}_t}$$
+Now, we calculate this column and add it back into the <code class="docutils literal notranslate"><span class="pre">meals</span></code> table:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">adjusted_price</span> <span class="o">=</span> <span class="n">meals</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">)</span> <span class="o">*</span> <span class="n">cpi_2010</span> <span class="o">/</span> <span class="n">meals</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;cpi&quot;</span><span class="p">)</span>
+<span class="n">meals</span> <span class="o">=</span> <span class="n">meals</span><span class="o">.</span><span class="n">with_columns</span><span class="p">(</span><span class="s2">&quot;adj_price&quot;</span><span class="p">,</span> <span class="n">adjusted_price</span><span class="p">)</span>
+<span class="n">meals</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>year</th> <th>month</th> <th>price</th> <th>quantity</th> <th>cpi</th> <th>adj_price</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>2006</td> <td>1    </td> <td>108.49</td> <td>107     </td> <td>114.23</td> <td>115.015  </td>
+        </tr>
+        <tr>
+            <td>2006</td> <td>2    </td> <td>108.76</td> <td>105.4   </td> <td>114.23</td> <td>115.301  </td>
+        </tr>
+        <tr>
+            <td>2006</td> <td>3    </td> <td>109.02</td> <td>105     </td> <td>114.23</td> <td>115.577  </td>
+        </tr>
+        <tr>
+            <td>2006</td> <td>4    </td> <td>109.28</td> <td>105.5   </td> <td>114.23</td> <td>115.852  </td>
+        </tr>
+        <tr>
+            <td>2006</td> <td>5    </td> <td>109.43</td> <td>105.7   </td> <td>114.23</td> <td>116.011  </td>
+        </tr>
+        <tr>
+            <td>2006</td> <td>6    </td> <td>109.69</td> <td>103.4   </td> <td>114.23</td> <td>116.287  </td>
+        </tr>
+        <tr>
+            <td>2006</td> <td>7    </td> <td>109.82</td> <td>105.8   </td> <td>114.23</td> <td>116.425  </td>
+        </tr>
+        <tr>
+            <td>2006</td> <td>8    </td> <td>110.18</td> <td>105.9   </td> <td>114.23</td> <td>116.806  </td>
+        </tr>
+        <tr>
+            <td>2006</td> <td>9    </td> <td>110.27</td> <td>109.2   </td> <td>114.23</td> <td>116.902  </td>
+        </tr>
+        <tr>
+            <td>2006</td> <td>10   </td> <td>110.64</td> <td>109.3   </td> <td>114.23</td> <td>117.294  </td>
+        </tr>
+    </tbody>
+</table>
+<p>... (62 rows omitted)</p></div></div>
+</div>
+<p>Next, we will break up the table into 2 tables, corresponding to before the tax and after the tax. Recall the tax was reduced beginning in July 2009.</p>
+<p>Unfortunately, there isn’t a quick and clean way using <code class="docutils literal notranslate"><span class="pre">.where</span></code> to filter out our data into 2 tables. For example, using <code class="docutils literal notranslate"><span class="pre">meals.where(&quot;year&quot;,</span> <span class="pre">are.below(2010)).where(&quot;month&quot;,</span> <span class="pre">are.below(7))</span></code> to get all pre-tax periods will return observations where <strong>both</strong> the month is less than 7 and the year is less than 2010, so that a time period like November 2008 will not be included.</p>
+<p>Instead, we resort to a slightly ‘hacky’ way to split up our data by adding a ‘time index’ column, since the data is already sorted.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">meals</span> <span class="o">=</span> <span class="n">meals</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="s2">&quot;time index&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">meals</span><span class="o">.</span><span class="n">num_rows</span><span class="p">))</span>
+<span class="n">meals</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>year</th> <th>month</th> <th>price</th> <th>quantity</th> <th>cpi</th> <th>adj_price</th> <th>time index</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>2006</td> <td>1    </td> <td>108.49</td> <td>107     </td> <td>114.23</td> <td>115.015  </td> <td>0         </td>
+        </tr>
+        <tr>
+            <td>2006</td> <td>2    </td> <td>108.76</td> <td>105.4   </td> <td>114.23</td> <td>115.301  </td> <td>1         </td>
+        </tr>
+        <tr>
+            <td>2006</td> <td>3    </td> <td>109.02</td> <td>105     </td> <td>114.23</td> <td>115.577  </td> <td>2         </td>
+        </tr>
+        <tr>
+            <td>2006</td> <td>4    </td> <td>109.28</td> <td>105.5   </td> <td>114.23</td> <td>115.852  </td> <td>3         </td>
+        </tr>
+        <tr>
+            <td>2006</td> <td>5    </td> <td>109.43</td> <td>105.7   </td> <td>114.23</td> <td>116.011  </td> <td>4         </td>
+        </tr>
+        <tr>
+            <td>2006</td> <td>6    </td> <td>109.69</td> <td>103.4   </td> <td>114.23</td> <td>116.287  </td> <td>5         </td>
+        </tr>
+        <tr>
+            <td>2006</td> <td>7    </td> <td>109.82</td> <td>105.8   </td> <td>114.23</td> <td>116.425  </td> <td>6         </td>
+        </tr>
+        <tr>
+            <td>2006</td> <td>8    </td> <td>110.18</td> <td>105.9   </td> <td>114.23</td> <td>116.806  </td> <td>7         </td>
+        </tr>
+        <tr>
+            <td>2006</td> <td>9    </td> <td>110.27</td> <td>109.2   </td> <td>114.23</td> <td>116.902  </td> <td>8         </td>
+        </tr>
+        <tr>
+            <td>2006</td> <td>10   </td> <td>110.64</td> <td>109.3   </td> <td>114.23</td> <td>117.294  </td> <td>9         </td>
+        </tr>
+    </tbody>
+</table>
+<p>... (62 rows omitted)</p></div></div>
+</div>
+<p>Now, we will look for the index of the July 2009 time period. Every time period pre-tax will have a time index smaller, and every time period post-tax will have a time index equal or larger.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">meals</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="mi">2009</span><span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s2">&quot;month&quot;</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>year</th> <th>month</th> <th>price</th> <th>quantity</th> <th>cpi</th> <th>adj_price</th> <th>time index</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>2009</td> <td>7    </td> <td>116.64</td> <td>99.6    </td> <td>119.29</td> <td>118.41   </td> <td>42        </td>
+        </tr>
+    </tbody>
+</table></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">index</span> <span class="o">=</span> <span class="n">meals</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="mi">2009</span><span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s2">&quot;month&quot;</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;time index&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">index</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>42
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pre</span> <span class="o">=</span> <span class="n">meals</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s2">&quot;time index&quot;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">below</span><span class="p">(</span><span class="n">index</span><span class="p">))</span>
+<span class="n">post</span> <span class="o">=</span> <span class="n">meals</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s2">&quot;time index&quot;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">above_or_equal_to</span><span class="p">(</span><span class="n">index</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pre</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>year</th> <th>month</th> <th>price</th> <th>quantity</th> <th>cpi</th> <th>adj_price</th> <th>time index</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>2006</td> <td>1    </td> <td>108.49</td> <td>107     </td> <td>114.23</td> <td>115.015  </td> <td>0         </td>
+        </tr>
+        <tr>
+            <td>2006</td> <td>2    </td> <td>108.76</td> <td>105.4   </td> <td>114.23</td> <td>115.301  </td> <td>1         </td>
+        </tr>
+        <tr>
+            <td>2006</td> <td>3    </td> <td>109.02</td> <td>105     </td> <td>114.23</td> <td>115.577  </td> <td>2         </td>
+        </tr>
+        <tr>
+            <td>2006</td> <td>4    </td> <td>109.28</td> <td>105.5   </td> <td>114.23</td> <td>115.852  </td> <td>3         </td>
+        </tr>
+        <tr>
+            <td>2006</td> <td>5    </td> <td>109.43</td> <td>105.7   </td> <td>114.23</td> <td>116.011  </td> <td>4         </td>
+        </tr>
+        <tr>
+            <td>2006</td> <td>6    </td> <td>109.69</td> <td>103.4   </td> <td>114.23</td> <td>116.287  </td> <td>5         </td>
+        </tr>
+        <tr>
+            <td>2006</td> <td>7    </td> <td>109.82</td> <td>105.8   </td> <td>114.23</td> <td>116.425  </td> <td>6         </td>
+        </tr>
+        <tr>
+            <td>2006</td> <td>8    </td> <td>110.18</td> <td>105.9   </td> <td>114.23</td> <td>116.806  </td> <td>7         </td>
+        </tr>
+        <tr>
+            <td>2006</td> <td>9    </td> <td>110.27</td> <td>109.2   </td> <td>114.23</td> <td>116.902  </td> <td>8         </td>
+        </tr>
+        <tr>
+            <td>2006</td> <td>10   </td> <td>110.64</td> <td>109.3   </td> <td>114.23</td> <td>117.294  </td> <td>9         </td>
+        </tr>
+    </tbody>
+</table>
+<p>... (32 rows omitted)</p></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">post</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>year</th> <th>month</th> <th>price</th> <th>quantity</th> <th>cpi</th> <th>adj_price</th> <th>time index</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>2009</td> <td>7    </td> <td>116.64</td> <td>99.6    </td> <td>119.29</td> <td>118.41   </td> <td>42        </td>
+        </tr>
+        <tr>
+            <td>2009</td> <td>8    </td> <td>116.5 </td> <td>98.7    </td> <td>119.29</td> <td>118.268  </td> <td>43        </td>
+        </tr>
+        <tr>
+            <td>2009</td> <td>9    </td> <td>116.52</td> <td>98.6    </td> <td>119.29</td> <td>118.288  </td> <td>44        </td>
+        </tr>
+        <tr>
+            <td>2009</td> <td>10   </td> <td>116.57</td> <td>99.9    </td> <td>119.29</td> <td>118.339  </td> <td>45        </td>
+        </tr>
+        <tr>
+            <td>2009</td> <td>11   </td> <td>116.64</td> <td>99.5    </td> <td>119.29</td> <td>118.41   </td> <td>46        </td>
+        </tr>
+        <tr>
+            <td>2009</td> <td>12   </td> <td>116.64</td> <td>98.9    </td> <td>119.29</td> <td>118.41   </td> <td>47        </td>
+        </tr>
+        <tr>
+            <td>2010</td> <td>1    </td> <td>116.65</td> <td>98.1    </td> <td>121.1 </td> <td>116.65   </td> <td>48        </td>
+        </tr>
+        <tr>
+            <td>2010</td> <td>2    </td> <td>116.75</td> <td>99.4    </td> <td>121.1 </td> <td>116.75   </td> <td>49        </td>
+        </tr>
+        <tr>
+            <td>2010</td> <td>3    </td> <td>116.95</td> <td>99.8    </td> <td>121.1 </td> <td>116.95   </td> <td>50        </td>
+        </tr>
+        <tr>
+            <td>2010</td> <td>4    </td> <td>117   </td> <td>101.5   </td> <td>121.1 </td> <td>117      </td> <td>51        </td>
+        </tr>
+    </tbody>
+</table>
+<p>... (20 rows omitted)</p></div></div>
+</div>
+</div>
+<div class="section" id="step-4-plotting-our-results">
+<h2>Step 4: Plotting our Results<a class="headerlink" href="#step-4-plotting-our-results" title="Permalink to this headline">¶</a></h2>
+<p>Now let’s construct a scatter plot. Do not worry if you do not understand the code below; because we would like to overlay the plots, we utilize a slightly different set of functions in the <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> library.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">pre</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;quantity&quot;</span><span class="p">),</span> <span class="n">pre</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;adj_price&quot;</span><span class="p">),</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;tax = 19.6%&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">post</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;quantity&quot;</span><span class="p">),</span> <span class="n">post</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;adj_price&quot;</span><span class="p">),</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;tax = 5.5%&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/vat_33_0.png" src="../../_images/vat_33_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">minimize_error</span><span class="p">(</span><span class="n">slope</span><span class="p">,</span> <span class="n">intercept_pre</span><span class="p">,</span> <span class="n">intercept_post</span><span class="p">):</span>
+    <span class="n">pre_preds</span> <span class="o">=</span> <span class="n">slope</span> <span class="o">*</span> <span class="n">pre</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;quantity&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="n">intercept_pre</span>
+    <span class="n">pre_errors</span> <span class="o">=</span> <span class="n">pre</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">)</span> <span class="o">-</span> <span class="n">pre_preds</span>
+    <span class="n">post_preds</span> <span class="o">=</span> <span class="n">slope</span> <span class="o">*</span> <span class="n">post</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;quantity&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="n">intercept_post</span>
+    <span class="n">post_errors</span> <span class="o">=</span> <span class="n">post</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">)</span> <span class="o">-</span> <span class="n">post_preds</span>
+    <span class="c1"># errors = np.concatenate([pre_errors, post_errors])</span>
+    <span class="c1"># return np.mean(np.abs(errors))#np.sqrt(np.mean(errors ** 2))</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">pre_errors</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">post_errors</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">minimize</span><span class="p">(</span><span class="n">minimize_error</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([ -0.41022036, 156.44980217, 159.32195768])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">minimize_error</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">pre</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;quantity&quot;</span><span class="p">),</span> <span class="n">pre</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;adj_price&quot;</span><span class="p">),</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;tax = 19.6%&quot;</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">post</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;quantity&quot;</span><span class="p">),</span> <span class="n">post</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;adj_price&quot;</span><span class="p">),</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;tax = 5.5%&quot;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span> <span class="s1">&#39;orange&#39;</span><span class="p">)</span>
+<span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">95</span><span class="p">,</span> <span class="mi">112</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="o">*</span><span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">res</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span> <span class="o">=</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="o">*</span><span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">res</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">c</span> <span class="o">=</span> <span class="s1">&#39;orange&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/vat_37_0.png" src="../../_images/vat_37_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_stata</span><span class="p">(</span><span class="s2">&quot;/Users/alanliang/Downloads/114723-V1/data/AEJPol-2017-0504_DATA_prices_subsector.dta&quot;</span><span class="p">)</span>
+<span class="n">q</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;/Users/alanliang/Downloads/114723-V1/data/AEJPol-2017-0504_DATA_va_volume_combined.csv&quot;</span><span class="p">,</span> <span class="n">engine</span> <span class="o">=</span> <span class="s1">&#39;python&#39;</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_stata</span><span class="p">(</span><span class="s2">&quot;/Users/alanliang/Downloads/114723-V1/data/AEJPol-2017-0504_DATA_cpi.dta&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">merged</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">left_on</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="s2">&quot;month&quot;</span><span class="p">],</span> <span class="n">right_on</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="s2">&quot;month&quot;</span><span class="p">])</span>
+<span class="n">merged</span> <span class="o">=</span> <span class="n">merged</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">on</span> <span class="o">=</span> <span class="s2">&quot;year&quot;</span><span class="p">)</span>
+<span class="n">merged</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>item</th>
+      <th>price</th>
+      <th>year</th>
+      <th>month</th>
+      <th>time</th>
+      <th>trad</th>
+      <th>rapide</th>
+      <th>caf�</th>
+      <th>cpi</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Traditional Meal</td>
+      <td>100.519997</td>
+      <td>2003.0</td>
+      <td>1.0</td>
+      <td>Jan-2003</td>
+      <td>108.7</td>
+      <td>83.0</td>
+      <td>116.3</td>
+      <td>108.099998</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Traditional Meal</td>
+      <td>100.709999</td>
+      <td>2003.0</td>
+      <td>2.0</td>
+      <td>2</td>
+      <td>108.0</td>
+      <td>84.9</td>
+      <td>115.3</td>
+      <td>108.099998</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Traditional Meal</td>
+      <td>100.949997</td>
+      <td>2003.0</td>
+      <td>3.0</td>
+      <td>3</td>
+      <td>109.0</td>
+      <td>85.2</td>
+      <td>115.8</td>
+      <td>108.099998</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Traditional Meal</td>
+      <td>101.290001</td>
+      <td>2003.0</td>
+      <td>4.0</td>
+      <td>4</td>
+      <td>108.4</td>
+      <td>85.0</td>
+      <td>114.6</td>
+      <td>108.099998</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Traditional Meal</td>
+      <td>101.379997</td>
+      <td>2003.0</td>
+      <td>5.0</td>
+      <td>5</td>
+      <td>108.7</td>
+      <td>87.0</td>
+      <td>116.9</td>
+      <td>108.099998</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>103</th>
+      <td>Traditional Meal</td>
+      <td>119.959999</td>
+      <td>2011.0</td>
+      <td>8.0</td>
+      <td>104</td>
+      <td>101.7</td>
+      <td>101.2</td>
+      <td>95.4</td>
+      <td>123.660004</td>
+    </tr>
+    <tr>
+      <th>104</th>
+      <td>Traditional Meal</td>
+      <td>120.059998</td>
+      <td>2011.0</td>
+      <td>9.0</td>
+      <td>105</td>
+      <td>101.1</td>
+      <td>102.2</td>
+      <td>96.9</td>
+      <td>123.660004</td>
+    </tr>
+    <tr>
+      <th>105</th>
+      <td>Traditional Meal</td>
+      <td>120.269997</td>
+      <td>2011.0</td>
+      <td>10.0</td>
+      <td>106</td>
+      <td>100.9</td>
+      <td>101.8</td>
+      <td>97.6</td>
+      <td>123.660004</td>
+    </tr>
+    <tr>
+      <th>106</th>
+      <td>Traditional Meal</td>
+      <td>120.389999</td>
+      <td>2011.0</td>
+      <td>11.0</td>
+      <td>107</td>
+      <td>99.6</td>
+      <td>100.8</td>
+      <td>95.9</td>
+      <td>123.660004</td>
+    </tr>
+    <tr>
+      <th>107</th>
+      <td>Traditional Meal</td>
+      <td>120.529999</td>
+      <td>2011.0</td>
+      <td>12.0</td>
+      <td>108</td>
+      <td>100.3</td>
+      <td>104.1</td>
+      <td>97.5</td>
+      <td>123.660004</td>
+    </tr>
+  </tbody>
+</table>
+<p>108 rows × 9 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="p">[</span><span class="s1">&#39;adj&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">merged</span><span class="o">.</span><span class="n">price</span> <span class="o">/</span> <span class="n">merged</span><span class="o">.</span><span class="n">cpi</span> <span class="o">*</span> <span class="mf">121.1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">merged</span> <span class="o">=</span> <span class="n">merged</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="s2">&quot;month&quot;</span><span class="p">])</span>
+<span class="n">merged</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>item</th>
+      <th>price</th>
+      <th>year</th>
+      <th>month</th>
+      <th>time</th>
+      <th>trad</th>
+      <th>rapide</th>
+      <th>caf�</th>
+      <th>cpi</th>
+      <th>adj</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Traditional Meal</td>
+      <td>100.519997</td>
+      <td>2003.0</td>
+      <td>1.0</td>
+      <td>Jan-2003</td>
+      <td>108.7</td>
+      <td>83.0</td>
+      <td>116.3</td>
+      <td>108.099998</td>
+      <td>112.608437</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Traditional Meal</td>
+      <td>100.709999</td>
+      <td>2003.0</td>
+      <td>2.0</td>
+      <td>2</td>
+      <td>108.0</td>
+      <td>84.9</td>
+      <td>115.3</td>
+      <td>108.099998</td>
+      <td>112.821289</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Traditional Meal</td>
+      <td>100.949997</td>
+      <td>2003.0</td>
+      <td>3.0</td>
+      <td>3</td>
+      <td>109.0</td>
+      <td>85.2</td>
+      <td>115.8</td>
+      <td>108.099998</td>
+      <td>113.090141</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Traditional Meal</td>
+      <td>101.290001</td>
+      <td>2003.0</td>
+      <td>4.0</td>
+      <td>4</td>
+      <td>108.4</td>
+      <td>85.0</td>
+      <td>114.6</td>
+      <td>108.099998</td>
+      <td>113.471031</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Traditional Meal</td>
+      <td>101.379997</td>
+      <td>2003.0</td>
+      <td>5.0</td>
+      <td>5</td>
+      <td>108.7</td>
+      <td>87.0</td>
+      <td>116.9</td>
+      <td>108.099998</td>
+      <td>113.571861</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>103</th>
+      <td>Traditional Meal</td>
+      <td>119.959999</td>
+      <td>2011.0</td>
+      <td>8.0</td>
+      <td>104</td>
+      <td>101.7</td>
+      <td>101.2</td>
+      <td>95.4</td>
+      <td>123.660004</td>
+      <td>117.476593</td>
+    </tr>
+    <tr>
+      <th>104</th>
+      <td>Traditional Meal</td>
+      <td>120.059998</td>
+      <td>2011.0</td>
+      <td>9.0</td>
+      <td>105</td>
+      <td>101.1</td>
+      <td>102.2</td>
+      <td>96.9</td>
+      <td>123.660004</td>
+      <td>117.574524</td>
+    </tr>
+    <tr>
+      <th>105</th>
+      <td>Traditional Meal</td>
+      <td>120.269997</td>
+      <td>2011.0</td>
+      <td>10.0</td>
+      <td>106</td>
+      <td>100.9</td>
+      <td>101.8</td>
+      <td>97.6</td>
+      <td>123.660004</td>
+      <td>117.780174</td>
+    </tr>
+    <tr>
+      <th>106</th>
+      <td>Traditional Meal</td>
+      <td>120.389999</td>
+      <td>2011.0</td>
+      <td>11.0</td>
+      <td>107</td>
+      <td>99.6</td>
+      <td>100.8</td>
+      <td>95.9</td>
+      <td>123.660004</td>
+      <td>117.897690</td>
+    </tr>
+    <tr>
+      <th>107</th>
+      <td>Traditional Meal</td>
+      <td>120.529999</td>
+      <td>2011.0</td>
+      <td>12.0</td>
+      <td>108</td>
+      <td>100.3</td>
+      <td>104.1</td>
+      <td>97.5</td>
+      <td>123.660004</td>
+      <td>118.034798</td>
+    </tr>
+  </tbody>
+</table>
+<p>108 rows × 10 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="p">[</span><span class="n">merged</span><span class="o">.</span><span class="n">year</span> <span class="o">==</span> <span class="mi">2009</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>item</th>
+      <th>price</th>
+      <th>year</th>
+      <th>month</th>
+      <th>time</th>
+      <th>trad</th>
+      <th>rapide</th>
+      <th>caf�</th>
+      <th>cpi</th>
+      <th>adj</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>72</th>
+      <td>Traditional Meal</td>
+      <td>117.750000</td>
+      <td>2009.0</td>
+      <td>1.0</td>
+      <td>Jan-2009</td>
+      <td>98.2</td>
+      <td>97.4</td>
+      <td>106.2</td>
+      <td>119.290001</td>
+      <td>119.536636</td>
+    </tr>
+    <tr>
+      <th>73</th>
+      <td>Traditional Meal</td>
+      <td>117.839996</td>
+      <td>2009.0</td>
+      <td>2.0</td>
+      <td>74</td>
+      <td>97.9</td>
+      <td>95.3</td>
+      <td>105.8</td>
+      <td>119.290001</td>
+      <td>119.627991</td>
+    </tr>
+    <tr>
+      <th>74</th>
+      <td>Traditional Meal</td>
+      <td>118.010002</td>
+      <td>2009.0</td>
+      <td>3.0</td>
+      <td>75</td>
+      <td>98.4</td>
+      <td>96.5</td>
+      <td>99.3</td>
+      <td>119.290001</td>
+      <td>119.800575</td>
+    </tr>
+    <tr>
+      <th>75</th>
+      <td>Traditional Meal</td>
+      <td>118.099998</td>
+      <td>2009.0</td>
+      <td>4.0</td>
+      <td>76</td>
+      <td>98.0</td>
+      <td>96.9</td>
+      <td>104.9</td>
+      <td>119.290001</td>
+      <td>119.891937</td>
+    </tr>
+    <tr>
+      <th>76</th>
+      <td>Traditional Meal</td>
+      <td>118.199997</td>
+      <td>2009.0</td>
+      <td>5.0</td>
+      <td>77</td>
+      <td>98.0</td>
+      <td>96.7</td>
+      <td>100.1</td>
+      <td>119.290001</td>
+      <td>119.993454</td>
+    </tr>
+    <tr>
+      <th>77</th>
+      <td>Traditional Meal</td>
+      <td>118.260002</td>
+      <td>2009.0</td>
+      <td>6.0</td>
+      <td>78</td>
+      <td>97.2</td>
+      <td>95.4</td>
+      <td>97.3</td>
+      <td>119.290001</td>
+      <td>120.054375</td>
+    </tr>
+    <tr>
+      <th>78</th>
+      <td>Traditional Meal</td>
+      <td>116.639999</td>
+      <td>2009.0</td>
+      <td>7.0</td>
+      <td>Jul-2009</td>
+      <td>99.6</td>
+      <td>99.1</td>
+      <td>97.7</td>
+      <td>119.290001</td>
+      <td>118.409790</td>
+    </tr>
+    <tr>
+      <th>79</th>
+      <td>Traditional Meal</td>
+      <td>116.500000</td>
+      <td>2009.0</td>
+      <td>8.0</td>
+      <td>80</td>
+      <td>98.7</td>
+      <td>99.2</td>
+      <td>98.1</td>
+      <td>119.290001</td>
+      <td>118.267662</td>
+    </tr>
+    <tr>
+      <th>80</th>
+      <td>Traditional Meal</td>
+      <td>116.519997</td>
+      <td>2009.0</td>
+      <td>9.0</td>
+      <td>81</td>
+      <td>98.6</td>
+      <td>97.7</td>
+      <td>97.6</td>
+      <td>119.290001</td>
+      <td>118.287964</td>
+    </tr>
+    <tr>
+      <th>81</th>
+      <td>Traditional Meal</td>
+      <td>116.570000</td>
+      <td>2009.0</td>
+      <td>10.0</td>
+      <td>82</td>
+      <td>99.9</td>
+      <td>98.4</td>
+      <td>98.7</td>
+      <td>119.290001</td>
+      <td>118.338730</td>
+    </tr>
+    <tr>
+      <th>82</th>
+      <td>Traditional Meal</td>
+      <td>116.639999</td>
+      <td>2009.0</td>
+      <td>11.0</td>
+      <td>83</td>
+      <td>99.5</td>
+      <td>98.0</td>
+      <td>98.8</td>
+      <td>119.290001</td>
+      <td>118.409790</td>
+    </tr>
+    <tr>
+      <th>83</th>
+      <td>Traditional Meal</td>
+      <td>116.639999</td>
+      <td>2009.0</td>
+      <td>12.0</td>
+      <td>84</td>
+      <td>98.9</td>
+      <td>98.7</td>
+      <td>99.2</td>
+      <td>119.290001</td>
+      <td>118.409790</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pre</span> <span class="o">=</span> <span class="n">merged</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">78</span><span class="p">,:]</span>
+<span class="n">post</span> <span class="o">=</span> <span class="n">merged</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">78</span><span class="p">:,:]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">pre</span><span class="o">.</span><span class="n">trad</span><span class="p">,</span> <span class="n">pre</span><span class="o">.</span><span class="n">price</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">post</span><span class="o">.</span><span class="n">trad</span><span class="p">,</span> <span class="n">post</span><span class="o">.</span><span class="n">price</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x1326d8fa0&gt;
+</pre></div>
+</div>
+<img alt="../../_images/vat_45_1.png" src="../../_images/vat_45_1.png" />
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/03-public"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Data 88 Course Staff<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../../_static/js/index.js"></script>
+    
+  </body>
+</html>

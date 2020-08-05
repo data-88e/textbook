@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&display=swap');
+
+table.payoff-matrix {
+    width: fit-content;
+    margin: 25px auto;
+}
+
+table.payoff-matrix td {
+    border: 1px solid black;
+    padding: 2px 5px;
+}
+
+b, strong {
+    font-weight: 900;
+}
