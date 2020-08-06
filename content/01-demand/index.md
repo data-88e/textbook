@@ -1,4 +1,4 @@
-# Demand and Market Equilibrium
+# Demand & Market Equilibrium
 
 **Student Learning Outcomes:**
 
