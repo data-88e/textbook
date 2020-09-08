@@ -31,7 +31,7 @@
     <script src="../../_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.13.0/dist/embed-amd.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
@@ -284,7 +284,7 @@
                 
   <div class="section" id="the-supply-curve">
 <h1>The Supply Curve<a class="headerlink" href="#the-supply-curve" title="Permalink to this headline">¶</a></h1>
-<p>The supply of a commodity refers to the quantity for which producers or sellers are willing produce and offer for sale, at a particular price in some given period of time. To answer questions like <em>“at a given price, what will be the supply of a good in the market?”</em>, we need to know the market supply curve. A supply curve is simply a curve (or graph) which shows the quantites of a good that can be produced and the prices they will be sold at.</p>
+<p>The supply of a commodity refers to the quantity for which producers or sellers are willing to produce and offer for sale, at a particular price in some given period of time. To answer questions like <em>“at a given price, what will be the supply of a good in the market?”</em>, we need to know the market supply curve. A supply curve is simply a curve (or graph) which shows the quantites of a good that can be produced and the prices they will be sold at.</p>
 <p>It is good to discern between individual and market supply. <strong>Individual supply</strong> refers to the supply offered by a single firm or producer, while <strong>market supply</strong> refers to the supply offered by all the firms or producers in a market. It is the horizontal summation of the individual supply curves in the market.</p>
 <p>The following table and graph will give an example of a market with two firms: A and B.</p>
 <div class="cell docutils container">
@@ -336,7 +336,7 @@
 <p>Another important cost calculation to consider is the marginal cost.</p>
 <div class="admonition-definition admonition">
 <p class="admonition-title">Definition</p>
-<p>The <strong>marginal cost</strong> is the additional cost to produce one more unit of output. It can be calculated as the different between the total cost and the current level of output and the total cost at the previous level of output.</p>
+<p>The <strong>marginal cost</strong> is the additional cost to produce one more unit of output. It can be calculated as the difference between the total cost and the current level of output and the total cost at the previous level of output.</p>
 </div>
 <p>Below is a table with the following costs incurred by the firm:</p>
 <ul class="simple">
@@ -430,13 +430,13 @@
 </div>
 <div class="section" id="production-and-firm-behavior">
 <h2>Production and Firm Behavior<a class="headerlink" href="#production-and-firm-behavior" title="Permalink to this headline">¶</a></h2>
-<p>A company decides to produce if it the price is greater than or equal to its average variable cost. There are 3 different scenarios:</p>
+<p>A company decides to produce if the price is greater than or equal to its average variable cost. There are 3 different scenarios:</p>
 <ul class="simple">
 <li><p>A firm does not produce at all</p></li>
 <li><p>It produces at a loss-minimizing quantity</p></li>
 <li><p>It produces at a profit</p></li>
 </ul>
-<p>Profits are calculated as total revenut less total costs, where total revenue is price times quantity. For any price that is less than AVC, the firm will not produce at all. This is because for any amount of production, they will lose money. In this case, they shut down and the loss is limited to its fixed costs. In this example, we can see this for prices 24 and below.</p>
+<p>Profits are calculated as total revenue less total costs, where total revenue is price times quantity. For any price that is less than AVC, the firm will not produce at all. This is because for any amount of production, they will lose money. In this case, they shut down and the loss is limited to its fixed costs. In this example, we can see this for prices 24 and below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">firm_behaviour</span><span class="p">(</span><span class="mi">24</span><span class="p">,</span> <span class="n">individual_firm_costs</span><span class="p">)</span>
