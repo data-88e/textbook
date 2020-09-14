@@ -44,7 +44,6 @@
 
 - file: content/03-public/index.md
   sections:
-    - file: content/03-public/equilibria.ipynb
     - file: content/03-public/taxes-subsidies.ipynb
     - file: content/03-public/surplus.ipynb
     - file: content/03-public/govt-intervention.ipynb
