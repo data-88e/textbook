@@ -1,0 +1,50 @@
+Index,Major,Major Category,Median Income Difference,Cal P25th,Cal Median,Cal P75th,Overall P25th,Overall Median,Overall P75th
+1,American Studies,Humanities & Liberal Arts,15000,41600,55000,60000,30000,40000,42000
+2,Anthropology,Humanities & Liberal Arts,13600,36500,41600,51000,20000,28000,38000
+3,Applied Mathematics,Computers & Mathematics,35004,65000,80004,108000,34000,45000,63000
+4,Art,Arts,18380,38640,48880,56390,21000,30500,41000
+5,Astrophysics,Physical Sciences,-2000,50800,60000,77182,31500,62000,109000
+6,Bioengineering,Engineering,13900,54997,71000,86500,40000,57100,76000
+7,Business Administration,Business,37000,65000,75000,85000,29000,38000,50000
+8,Chemical Biology,Biology & Life Science,12520,44000,49920,68000,29000,37400,50000
+9,Chemical Engineering,Engineering,5000,65000,70000,80000,50000,65000,75000
+10,Chemistry,Physical Sciences,9000,37220,48000,61000,30000,39000,49900
+11,Civil Engineering,Engineering,18820,63525,68820,75000,40000,50000,60000
+12,Cognitive Science,Biology & Life Science,34000,53000,75000,105000,20000,41000,60000
+13,Conserv & Resource Stds,Agriculture & Natural Resources,6600,37580,41600,57020,25000,35000,42000
+14,Economics,Social Science,23750,60000,70750,85000,35000,47000,65000
+15,Electrical Eng & Comp Sci,Engineering,55000,105000,115000,120000,45000,60000,75000
+16,Engineering Physics,Engineering,22000,65250,80000,100000,25000,58000,74000
+17,English,Humanities & Liberal Arts,18000,41600,50000,62400,23000,32000,41000
+18,Environmental Sciences,Biology & Life Science,14400,36400,50000,61000,25000,35600,40200
+19,Ethnic Studies,Humanities & Liberal Arts,22598,53040,57598,83650,24500,35000,44000
+20,Film,Arts,20800,40560,52800,60000,22000,32000,42000
+21,Forestry and Natural Resources,Agriculture & Natural Resources,10600,35360,45600,51000,28600,35000,48000
+22,Geography,Social Science,10000,35000,48000,60000,30000,38000,50000
+23,History,Humanities & Liberal Arts,16500,40400,50500,65850,25000,34000,47000
+24,Industrial Eng & Ops Rsch,Engineering,23000,72250,80000,87500,37900,57000,67000
+25,Integrative Biology,Biology & Life Science,10280,33280,43680,56160,24000,33400,45000
+26,Interdisciplinary Studies,Interdisciplinary,25000,45000,60000,72500,25000,35000,44000
+27,L&S Computer Science,Computers & Mathematics,57000,103000,110000,120000,39000,53000,70000
+28,L&S Data Science,Computers & Mathematics,70200,90000,111500,120000,20000,41300,46000
+29,L&S Legal Studies,Law & Public Policy,14000,41600,50000,60490,29200,36000,46000
+30,L&S Ops Research & Mgmt Sci,Business,35250,75000,86250,106500,38000,51000,60000
+31,L&S Public Health,Health,22208,45940,56208,62800,21000,34000,45000
+32,L&S Social Welfare,Psychology & Social Work,10000,35520,40000,50000,25000,30000,35000
+33,Landscape Architecture,Engineering,12000,45760,52000,60000,31000,40000,50000
+34,Linguistics and Comparative Literature,Humanities & Liberal Arts,27500,47360,60500,87875,25000,33000,40000
+35,Materials Science & Eng,Engineering,28000,72700,80000,84000,35000,52000,62000
+36,Mathematics,Computers & Mathematics,17400,50400,62400,106000,33000,45000,60000
+37,Mechanical Engineering,Engineering,15000,67000,75000,87360,48000,60000,70000
+38,Media Studies,Communications & Journalism,19000,41600,52000,65200,25000,33000,45000
+39,Music,Arts,51000,51060,82000,121250,22300,31000,42000
+40,Nuclear Engineering,Engineering,-2150,57625,62850,80675,50000,65000,102000
+41,Nutritional Science,Health,6200,36500,41200,49980,26000,35000,45000
+42,Philosophy,Humanities & Liberal Arts,13550,35830,45750,68250,23000,32200,47100
+43,Physics,Physical Sciences,29364,54996,74364,100000,30000,45000,68000
+44,Political Science,Social Science,13000,41650,51000,61500,28000,38000,50000
+45,Psychology,Psychology & Social Work,16340,39520,47840,60000,24000,31500,41000
+46,Rhetoric,Humanities & Liberal Arts,23000,42000,50000,58355,20000,27000,35000
+47,Sociology,Social Science,17000,40000,50000,62000,25000,33000,44000
+48,Statistics,Computers & Mathematics,35000,61000,80000,107000,26700,45000,60000
+49,Theater & Perf Studies,Arts,14840,33400,41840,53670,19200,27000,35000

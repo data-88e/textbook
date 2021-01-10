@@ -30,6 +30,8 @@
 # # - divider: true
 # - header: "Part II: Economic Applications"
 
+- file: content/00-intro/index.ipynb
+
 - file: content/01-demand/index.md
   sections:
     - file: content/01-demand/demand.ipynb
