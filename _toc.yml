@@ -34,9 +34,10 @@
 
 - file: content/01-demand/index.md
   sections:
-    - file: content/01-demand/demand.ipynb
-    - file: content/01-demand/market-equilibria.ipynb
-    - file: content/01-demand/sympy.ipynb
+    - file: content/01-demand/01-demand.ipynb
+    - file: content/01-demand/02-example
+    - file: content/01-demand/03-log-log.ipynb
+    - file: content/01-demand/04-elasticity.ipynb
 
 - file: content/02-supply/index.md
   sections:

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demand Curves &#8212; Data 88: Economic Models Textbook</title>
+    <title>Demand &#8212; Data 88: Economic Models Textbook</title>
     
   <link rel="stylesheet" href="../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -61,8 +61,6 @@
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Market Equilibria" href="market-equilibria.html" />
-    <link rel="prev" title="Demand &amp; Market Equilibrium" href="index.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -92,30 +90,35 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="current nav sidenav_l1">
+    <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../00-intro/index.html">
    Introduction
   </a>
  </li>
- <li class="toctree-l1 current active collapsible-parent">
+ <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="index.html">
-   Demand &amp; Market Equilibrium
+   Demand and Elasticities
   </a>
-  <ul class="current collapse-ul">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01-demand.html">
      Demand Curves
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="market-equilibria.html">
-     Market Equilibria
+    <a class="reference internal" href="02-example.html">
+     An Empirical Demand Curve
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="sympy.html">
-     SymPy
+    <a class="reference internal" href="03-log-log.html">
+     Log-log and Semi-log Demand Curves
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04-elasticity.html">
+     Elasticity
     </a>
    </li>
   </ul>
@@ -462,25 +465,18 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#movement-and-the-demand-curve">
-   Movement and the Demand Curve
+  <a class="reference internal nav-link" href="#modeling-the-demand-curve">
+   Modeling the Demand Curve
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#shifts-in-the-demand-curve">
-     Shifts in the Demand Curve
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#movements-along-the-demand-curve">
-     Movements along the Demand Curve
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#income-and-substitution-effect">
-   Income and Substitution Effect
+  <a class="reference internal nav-link" href="#shifts-in-demand-curve">
+   Shifts in Demand Curve
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#an-empirical-example-fruits">
+   An Empirical Example: Fruits
   </a>
  </li>
 </ul>
@@ -494,29 +490,28 @@
         
               <div>
                 
-  <div class="section" id="demand-curves">
-<h1>Demand Curves<a class="headerlink" href="#demand-curves" title="Permalink to this headline">¶</a></h1>
-<p>In this chapter, we will explore one of the most foundational yet important concepts in economics: demand curves. The demand curve shows the graphical relationship between the price of a good or service and the quantity demanded for it over a given period of time.
+  <div class="section" id="demand">
+<h1>Demand<a class="headerlink" href="#demand" title="Permalink to this headline">¶</a></h1>
+<p>In this chapter, we will explore one of the most foundational yet important concepts in economics: demand curves.</p>
+<div class="section" id="modeling-the-demand-curve">
+<h2>Modeling the Demand Curve<a class="headerlink" href="#modeling-the-demand-curve" title="Permalink to this headline">¶</a></h2>
+<p>The demand curve shows the graphical relationship between the price of a good or service and the quantity demanded for it over a given period of time.
 In other words, it shows the quantity of goods or services consumers are willing to buy at each market price.
-The quantity of goods or services demanded or supplied can be modeled as a function of price, as in:</p>
-<div class="math notranslate nohighlight">
-\[\text{Quantity} = f(\text{Price})\]</div>
-<p>Notably, the curve is downwards sloping because of the law of demand, which states that <em>as the price of a good or service increases, the quantity demanded for it decreases, assuming all other factors are held constant</em>.</p>
-<p>This should make intuitive sense: as prices increase, fewer people are willing to pay the higher price for the same good. On the other hand, as prices decrease, more people are willing to pay the lower price for the same good. Hence, the quantity demanded of a good or service has an inverse relationship with the price.</p>
-<p>In this course, we will assume that the relationship is somewhat linear and can be described as</p>
-<div class="math notranslate nohighlight">
-\[\text{Quantity}_{d}=a \cdot \text{Price}_{d} + b\]</div>
-<p>We can interpret the equation above as follows: <em>as the price of a unit increases by 1, there is an <span class="math notranslate nohighlight">\(a\)</span> unit increase (or decrease, if <span class="math notranslate nohighlight">\(a\)</span> is negative) in the quantity demanded.</em> For example, <span class="math notranslate nohighlight">\(\text{Quantity}_{d}=-2 \cdot \text{Price}_{d} + 3\)</span> would suggest that a price increase by 1 would decrease overall quantity demanded in the market by 2.</p>
-<p>Price can also be measured as function of quantity to denote demand. In this case, we use an inverse demand function, as it is the inverse function of the demand function above. Since price is a function of quantity,</p>
-<div class="math notranslate nohighlight">
-\[\text{Price} = f(\text{Quantity})\]</div>
-<p>As we are solving for the inverse of the previous demand function, the inverse demand function for the example above is</p>
-<div class="math notranslate nohighlight">
-\[\text{Price}_{d}=-\frac{1}{2} \cdot \text{Quantity}_{d} - \dfrac{3}{2}\]</div>
-<div class="section" id="movement-and-the-demand-curve">
-<h2>Movement and the Demand Curve<a class="headerlink" href="#movement-and-the-demand-curve" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="shifts-in-the-demand-curve">
-<h3>Shifts in the Demand Curve<a class="headerlink" href="#shifts-in-the-demand-curve" title="Permalink to this headline">¶</a></h3>
+The quantity of goods or services demanded or supplied can be modeled as a function of price, as in:  <span class="math notranslate nohighlight">\($\text{Quantity} = f(\text{Price})\)</span>$</p>
+<p>Notably, the curve is downwards sloping because of the law of demand, which states that <em>as the price of a good or service increases, the quantity demanded for it decreases, assuming all other factors are held constant</em>.
+This should make intuitive sense: as prices increase, fewer people are willing to pay the higher price for the same good.
+On the other hand, as prices decrease, more people are willing to pay the lower price for the same good.
+Hence, the quantity demanded of a good or service has an inverse relationship with the price.
+In this course, we will assume that the relationship is somewhat linear and can be described as <span class="math notranslate nohighlight">\($\text{Quantity}_{d}=a * \text{Price}_{d} + b\)</span>$</p>
+<p>We can interpret the equation above as follows: <em>as the price of a unit increases by 1, there is an <span class="math notranslate nohighlight">\(a\)</span> unit increase (or decrease, if <span class="math notranslate nohighlight">\(a\)</span> is negative$ in the quantity demanded.</em>
+For example, <span class="math notranslate nohighlight">\($\text{Quantity}_{d}=-2 \text{Price}_{d} + 3\)</span>$ would suggest that a price increase by 1 would decrease overall quantity demanded in the market by 2.</p>
+<p>Oppositely, price can also be measured as function of quantity to denote demand.
+In this case, we use an inverse demand function, as it is the inverse function of the demand function above.
+Since price is a function of quantity, <span class="math notranslate nohighlight">\($\text{Price} = f(\text{Quantity})\)</span><span class="math notranslate nohighlight">\(.
+Because in this case we are solving for the inverse of the previous demand function, the inverse demand function for the example above is $\)</span>\text{Price}<em>{d}=-\frac{1}{2}\text{Quantity}</em>{d}-3/2$$.</p>
+</div>
+<div class="section" id="shifts-in-demand-curve">
+<h2>Shifts in Demand Curve<a class="headerlink" href="#shifts-in-demand-curve" title="Permalink to this headline">¶</a></h2>
 <p>The demand curve can shift in or out based on exogenous events that occur outside of the market.
 Some factors other than a change in price of the good/service could be changes in:</p>
 <ul class="simple">
@@ -525,33 +520,298 @@ Some factors other than a change in price of the good/service could be changes i
 <li><p>expectation of future price/supply/demand</p></li>
 <li><p>changes in the price of related goods</p></li>
 </ul>
-<p>If any of these changes occur and causes the demand for the selected good/service to decrease, then the curve shifts to the left as less of the good or service will be demanded at every price. Similarly, if any of these changes causes the demand for the selected good/service to increase, the curve would shift to the right. This signifies that more of the good or service will be demanded at every price. For example, consumers’ incomes decreased during the 2008 recession, thus decreasing overall buying power and shifting the demand curve leftwards; a left shift in the demand curve suggests that consumers would purchase fewer quantities of goods at every price.</p>
-<div class="cell tag_remove_input docutils container">
+<p>If any of these changes occur and causes the demand for the selected good/service to decrease, then the curve shifts to the left as less of the good or service will be demanded at every price.
+Similarly, if any of these changes causes the demand for the selected good/service to increase, the curve would shift to the right.
+For example, consumers’ incomes decreased during the 2008 recession, thus decreasing overall buying power and shifting the demand curve leftwards; a left shift in the demand curve suggests that consumers would purchase fewer quantities of goods.</p>
+</div>
+<div class="section" id="an-empirical-example-fruits">
+<h2>An Empirical Example: Fruits<a class="headerlink" href="#an-empirical-example-fruits" title="Permalink to this headline">¶</a></h2>
+<p>We will now explore the relationship between price and quantity of oranges produced between 1924 and 1938.
+Since the data is from the 1920’s and 1930’s, it is important to remember that the prices are much lower than what they would be today because of inflation, competition, innovations, and other factors.
+For example, in 1924, a ton of oranges would have costed 6.63 dollars; that same amount in 2019 is 100.78 dollars.</p>
+<p>The source of this dataset is S. Hoos (1941). “An Investigation on Complementarity Relations Between
+Fresh Fruits,” Journal of Farm Economics, Vol. 23, #2, pp. 421-433.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fruitprice</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s1">&#39;fruitprice.csv&#39;</span><span class="p">)</span>
+<span class="n">fruitprice</span>
+</pre></div>
+</div>
+</div>
 <div class="cell_output docutils container">
-<img alt="../../_images/demand_4_0.png" src="../../_images/demand_4_0.png" />
+<div class="output text_html"><table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>Year</th> <th>Pear Price</th> <th>Pear Unloads (Tons)</th> <th>Plum Price</th> <th>Plum Unloads</th> <th>Peach Price</th> <th>Peach Unloads</th> <th>Orange Price</th> <th>Orange Unloads</th> <th>NY Factory Wages</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1924</td> <td>8.04      </td> <td>18489              </td> <td>8.86      </td> <td>6582        </td> <td>4.96       </td> <td>41880        </td> <td>6.63        </td> <td>21258         </td> <td>27.22           </td>
+        </tr>
+        <tr>
+            <td>1925</td> <td>5.67      </td> <td>21919              </td> <td>7.27      </td> <td>5526        </td> <td>4.87       </td> <td>38772        </td> <td>9.19        </td> <td>15426         </td> <td>28.03           </td>
+        </tr>
+        <tr>
+            <td>1926</td> <td>5.44      </td> <td>29328              </td> <td>6.68      </td> <td>5742        </td> <td>3.35       </td> <td>46516        </td> <td>7.2         </td> <td>24762         </td> <td>28.89           </td>
+        </tr>
+        <tr>
+            <td>1927</td> <td>7.15      </td> <td>17082              </td> <td>8.09      </td> <td>5758        </td> <td>5.7        </td> <td>32500        </td> <td>8.63        </td> <td>22766         </td> <td>29.14           </td>
+        </tr>
+        <tr>
+            <td>1928</td> <td>5.81      </td> <td>20708              </td> <td>7.41      </td> <td>6000        </td> <td>4.13       </td> <td>46820        </td> <td>10.71       </td> <td>18766         </td> <td>29.34           </td>
+        </tr>
+        <tr>
+            <td>1929</td> <td>7.6       </td> <td>13071              </td> <td>10.86     </td> <td>3504        </td> <td>6.7        </td> <td>36990        </td> <td>6.36        </td> <td>35702         </td> <td>29.97           </td>
+        </tr>
+        <tr>
+            <td>1930</td> <td>5.06      </td> <td>22068              </td> <td>6.23      </td> <td>7998        </td> <td>6.35       </td> <td>29680        </td> <td>10.5        </td> <td>23718         </td> <td>28.68           </td>
+        </tr>
+        <tr>
+            <td>1931</td> <td>5.4       </td> <td>19255              </td> <td>6.86      </td> <td>5638        </td> <td>3.91       </td> <td>50940        </td> <td>5.81        </td> <td>39263         </td> <td>26.35           </td>
+        </tr>
+        <tr>
+            <td>1932</td> <td>4.06      </td> <td>17293              </td> <td>6.09      </td> <td>7364        </td> <td>4.57       </td> <td>27642        </td> <td>4.71        </td> <td>38553         </td> <td>21.98           </td>
+        </tr>
+        <tr>
+            <td>1933</td> <td>4.78      </td> <td>11063              </td> <td>5.86      </td> <td>8136        </td> <td>3.57       </td> <td>35560        </td> <td>4.6         </td> <td>36540         </td> <td>22.26           </td>
+        </tr>
+    </tbody>
+</table>
+<p>... (5 rows omitted)</p></div></div>
+</div>
+<p>Because we are only examining the relationship between prices and quantity for oranges, we can create a new table with the relevant columns: <code class="docutils literal notranslate"><span class="pre">Year</span></code>, <code class="docutils literal notranslate"><span class="pre">Orange</span> <span class="pre">Price</span></code>, and <code class="docutils literal notranslate"><span class="pre">Orange</span> <span class="pre">Unloads</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">oranges</span> <span class="o">=</span> <span class="n">fruitprice</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span> <span class="s2">&quot;Orange Price&quot;</span><span class="p">,</span> <span class="s2">&quot;Orange Unloads&quot;</span><span class="p">)</span>
+<span class="n">oranges</span>
+</pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="movements-along-the-demand-curve">
-<h3>Movements along the Demand Curve<a class="headerlink" href="#movements-along-the-demand-curve" title="Permalink to this headline">¶</a></h3>
-<p>Above, we looked at when exogenous events affect the demand curve. Another concept is movements along the demand curve, which would be considered endogenous events. In movements along the demand curve, changes in price affect the quantity demanded of the good or service. This assumes ceteris paribus, which means holding all other factors constant. This phenomenom is called the Movement of the Demand Curve. With a change in price, the quantity demanded for the good or service can shift the quantity demanded either upward or downward on the demand curve. For example, consider the shift on the graph below from quantity <span class="math notranslate nohighlight">\(q_1\)</span> at price <span class="math notranslate nohighlight">\(p_1\)</span> to quantity <span class="math notranslate nohighlight">\(q_2\)</span> at price <span class="math notranslate nohighlight">\(p_2\)</span>.</p>
-<div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<img alt="../../_images/demand_7_0.png" src="../../_images/demand_7_0.png" />
+<div class="output text_html"><table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>Year</th> <th>Orange Price</th> <th>Orange Unloads</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1924</td> <td>6.63        </td> <td>21258         </td>
+        </tr>
+        <tr>
+            <td>1925</td> <td>9.19        </td> <td>15426         </td>
+        </tr>
+        <tr>
+            <td>1926</td> <td>7.2         </td> <td>24762         </td>
+        </tr>
+        <tr>
+            <td>1927</td> <td>8.63        </td> <td>22766         </td>
+        </tr>
+        <tr>
+            <td>1928</td> <td>10.71       </td> <td>18766         </td>
+        </tr>
+        <tr>
+            <td>1929</td> <td>6.36        </td> <td>35702         </td>
+        </tr>
+        <tr>
+            <td>1930</td> <td>10.5        </td> <td>23718         </td>
+        </tr>
+        <tr>
+            <td>1931</td> <td>5.81        </td> <td>39263         </td>
+        </tr>
+        <tr>
+            <td>1932</td> <td>4.71        </td> <td>38553         </td>
+        </tr>
+        <tr>
+            <td>1933</td> <td>4.6         </td> <td>36540         </td>
+        </tr>
+    </tbody>
+</table>
+<p>... (5 rows omitted)</p></div></div>
+</div>
+<p>Next, we will rename our columns. In this case, let’s rename <code class="docutils literal notranslate"><span class="pre">Orange</span> <span class="pre">Unloads</span></code> to <code class="docutils literal notranslate"><span class="pre">Quantity</span></code> and <code class="docutils literal notranslate"><span class="pre">Orange</span> <span class="pre">Price</span></code> to <code class="docutils literal notranslate"><span class="pre">Price</span></code> for brevity and understandability.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">orangesRenamed</span> <span class="o">=</span> <span class="n">oranges</span><span class="o">.</span><span class="n">relabel</span><span class="p">(</span><span class="s2">&quot;Orange Unloads&quot;</span><span class="p">,</span> <span class="s2">&quot;Quantity&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">relabel</span><span class="p">(</span><span class="s2">&quot;Orange Price&quot;</span><span class="p">,</span> <span class="s2">&quot;Price&quot;</span><span class="p">)</span>
+<span class="n">orangesRenamed</span>
+</pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>Year</th> <th>Price</th> <th>Quantity</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1924</td> <td>6.63 </td> <td>21258   </td>
+        </tr>
+        <tr>
+            <td>1925</td> <td>9.19 </td> <td>15426   </td>
+        </tr>
+        <tr>
+            <td>1926</td> <td>7.2  </td> <td>24762   </td>
+        </tr>
+        <tr>
+            <td>1927</td> <td>8.63 </td> <td>22766   </td>
+        </tr>
+        <tr>
+            <td>1928</td> <td>10.71</td> <td>18766   </td>
+        </tr>
+        <tr>
+            <td>1929</td> <td>6.36 </td> <td>35702   </td>
+        </tr>
+        <tr>
+            <td>1930</td> <td>10.5 </td> <td>23718   </td>
+        </tr>
+        <tr>
+            <td>1931</td> <td>5.81 </td> <td>39263   </td>
+        </tr>
+        <tr>
+            <td>1932</td> <td>4.71 </td> <td>38553   </td>
+        </tr>
+        <tr>
+            <td>1933</td> <td>4.6  </td> <td>36540   </td>
+        </tr>
+    </tbody>
+</table>
+<p>... (5 rows omitted)</p></div></div>
+</div>
+<p>To construct the demand curve, let’s first see what the relationship between price and quantity is.
+We would expect to see a downward-sloping line between price and quantity; if a product’s price increases, consumers will purchase less, and if a product’s price decreases, then consumers will purchase more.</p>
+<p>To find this, we will create a scatterplot and draw a regression line (<code class="docutils literal notranslate"><span class="pre">fit_line</span> <span class="pre">=</span> <span class="pre">True</span></code>) between the points.
+Regression lines are helpful because they consolidate all the datapoints into a single line, helping us better understand the relationship between the two variables.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">orangesRenamed</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s2">&quot;Quantity&quot;</span><span class="p">,</span> <span class="s2">&quot;Price&quot;</span><span class="p">,</span> <span class="n">fit_line</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
 </div>
 </div>
-<div class="section" id="income-and-substitution-effect">
-<h2>Income and Substitution Effect<a class="headerlink" href="#income-and-substitution-effect" title="Permalink to this headline">¶</a></h2>
-<p>Changes in the price of a good also leads to 2 possible effects:</p>
+<div class="cell_output docutils container">
+<img alt="../../_images/demand_14_0.png" src="../../_images/demand_14_0.png" />
+</div>
+</div>
+<p>We can see that there is a negative relationship between the two variables. Perfect!
+As a quick refresher, scatterplots can show positive, negative, or neutral correlations among two variables:</p>
 <ul class="simple">
-<li><p><strong>Income Effect</strong>: Examines how the change in price of the good affects income, which then affects the quantity demanded of a good or service.</p></li>
-<li><p><strong>Substitution Effect</strong>: Examines how the change in price of the good affects its demand relative to other goods and services</p></li>
+<li><p>If two variables have a positive correlation, then as one variable increases, the other increases too.</p></li>
+<li><p>If two variables have a negative correlation, then as one variable increass, the other decreases.</p></li>
+<li><p>If two variables have a neutral correlation, then if one varible increases, the other variable stays constant.</p></li>
 </ul>
-<p>If the price of a good increases, it would require the consumer to spend more of their income on the good. This dissuades consumers from purchasing the good, decreases the quantity demanded. If the price of a good decreases, consumers would spend less money to receive the same good. This increases the quantity demanded for the good, because more consumers would want to purchase the good, given the decrease in the amount of purchasing power required to obtain the good.</p>
-<p>If the price of a good increases, then consumers might look at similar goods that function in the same way or yield an equivalent amount of utility as the original good. Consumers are effectively shifting or substituting away from the relatively more expensive good to a cheaper alternative, thereby decreasing the quantity demanded for the good. The converse is also true: if the price of a good decreases, then consumers that currently purchase other similar goods might start consuming this good instead, because it would cost less money for them to obtain.</p>
-<p>For example, if the price of gas increases, the higher price for gas might encourage consumers to look at purchasing more efficient cars, such as electric or hybrid cars. This is the subsitution effect. If the consumer stays with their original car, then they would have less disposable income after purchasing the now-more-expensive gas, so they might purchase less gas. This is the income effect.</p>
+<p>Note that scatterplots do not show or prove causation between two variables– it is up to the data scientists to prove any causation.</p>
+<p>We will now quantify our demand curve using NumPy’s polyfit function. <code class="docutils literal notranslate"><span class="pre">np.polyfit</span></code> returns an array of size 2, where the 0th index is the slope and 1st index is the <span class="math notranslate nohighlight">\(y\)</span>-intercept.</p>
+<p>The general template for the demand curve is <span class="math notranslate nohighlight">\(y = mx + b\)</span>, where <span class="math notranslate nohighlight">\(m\)</span> is the slope and <span class="math notranslate nohighlight">\(b\)</span> is <span class="math notranslate nohighlight">\(y\)</span>-intercept.
+In economic terms, <span class="math notranslate nohighlight">\(m\)</span> is the demand curve’s slope that shows how the good’s price affects the quantity demanded, and <span class="math notranslate nohighlight">\(b\)</span> encompasses the effects of all of the exogenous factors that are not price that affect demand.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">orangesRenamed</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Quantity&quot;</span><span class="p">),</span><span class="n">orangesRenamed</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Price&quot;</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([-2.14089690e-04,  1.33040264e+01])
+</pre></div>
+</div>
+</div>
+</div>
+<p>This shows that the demand curve is <span class="math notranslate nohighlight">\(y = -0.000214x+ 13.3\)</span>. The slope is -0.000214 and <span class="math notranslate nohighlight">\(y\)</span>-intercept is 13.3. That means that as quantity increases by 1 unit (in this case, 1 ton), price decreases by 0.000214 units (in this case, \$0.000214).</p>
+<p>We will now use SymPy to write out this demand curve.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Q</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;Q&quot;</span><span class="p">)</span>
+<span class="n">demand</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.000214</span> <span class="o">*</span> <span class="n">Q</span> <span class="o">+</span> <span class="mf">13.3</span>
+<span class="n">demand</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 13.3 - 0.000214 Q\]</div>
+</div>
+</div>
+<p>Let’s now assume that the supply curve is given by <span class="math notranslate nohighlight">\(y = 0.00023x + 0.8\)</span>.
+Supply curves show how much of a good suppliers are willing and able to supply at different prices.
+Note that this supply curve is not based on data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">supply</span> <span class="o">=</span> <span class="mf">0.00023</span> <span class="o">*</span> <span class="n">Q</span> <span class="o">+</span> <span class="mf">0.8</span>
+<span class="n">supply</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 0.00023 Q + 0.8\]</div>
+</div>
+</div>
+<p>With the supply and demand curves known, we can solve the for equilibrium.
+The equilibrium is the point where the supply curve and demand curve intersect, and denotes the price and quantity of the good transacted in the market.
+At this point, the quantity of the good that consumers desire to purchase is equivalent to the quantity of the good that producers supply; there is no shortage or surplus of the good at this quantity.
+The equilbrium consists of 2 components: the quantity equilbrium and price equilbrium.
+The quantity equilibrium is the quantity at which the supply curve and demand curve intersect.</p>
+<p>Let’s find the quantity equilibrium for this exercise.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Q_star</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">demand</span><span class="p">,</span> <span class="n">supply</span><span class="p">)</span>
+<span class="n">Q_star</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 28153.1531531532\]</div>
+</div>
+</div>
+<p>This means that the number of tons of oranges that consumers want to purchase and producers want to provide in this market is about 28,153 tons of oranges.</p>
+<p>Similarly, the price equilibrium is the price at which the supply curve and demand curve intersect. The price of the good that consumers desire to purchase at is equivalent to the price of the good that producers want to sell at. There is no shortage of surplus of the product at this price.</p>
+<p>Let’s find the price equilibrium.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">demand</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">Q_star</span><span class="p">)</span>
+<span class="n">supply</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">Q_star</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 7.27522522522523\]</div>
+</div>
+</div>
+<p>This means that the price of oranges in tons that consumers want to purchase at and producers want to provide is about \$7.27.</p>
+<p>Now that we have our demand and supply curves and price and quantity equilibriums, we can visualize them on a graph to see what they look like.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_equation</span><span class="p">(</span><span class="n">equation</span><span class="p">,</span> <span class="n">price_start</span><span class="p">,</span> <span class="n">price_end</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">plot_prices</span> <span class="o">=</span> <span class="p">[</span><span class="n">price_start</span><span class="p">,</span> <span class="n">price_end</span><span class="p">]</span>
+    <span class="n">plot_quantities</span> <span class="o">=</span> <span class="p">[</span><span class="n">equation</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">equation</span><span class="o">.</span><span class="n">free_symbols</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">plot_prices</span><span class="p">]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">plot_prices</span><span class="p">,</span> <span class="n">plot_quantities</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">)</span>
+    
+<span class="k">def</span> <span class="nf">plot_intercept</span><span class="p">(</span><span class="n">eq1</span><span class="p">,</span> <span class="n">eq2</span><span class="p">):</span>
+    <span class="n">ex</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">eq1</span><span class="o">-</span><span class="n">eq2</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">why</span> <span class="o">=</span> <span class="n">eq1</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">eq1</span><span class="o">.</span><span class="n">free_symbols</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ex</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">([</span><span class="n">ex</span><span class="p">],</span> <span class="p">[</span><span class="n">why</span><span class="p">])</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">ex</span><span class="p">,</span> <span class="n">why</span><span class="p">)</span>
+    
+<span class="n">plot_equation</span><span class="p">(</span><span class="n">demand</span><span class="p">,</span> <span class="mi">5000</span><span class="p">,</span> <span class="mi">50000</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Demand&quot;</span><span class="p">)</span>
+<span class="n">plot_equation</span><span class="p">(</span><span class="n">supply</span><span class="p">,</span> <span class="mi">5000</span><span class="p">,</span> <span class="mi">50000</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Supply&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Orange Supply and Demand in 1920&#39;s and 1930&#39;s&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Quantity (Tons)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Price&quot;</span><span class="p">)</span>
+<span class="n">plot_intercept</span><span class="p">(</span><span class="n">supply</span><span class="p">,</span> <span class="n">demand</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span> <span class="o">=</span> <span class="s2">&quot;upper right&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/demand_28_0.png" src="../../_images/demand_28_0.png" />
+</div>
+</div>
+<p>You can also practice on your own and download additional data sets here: http://users.stat.ufl.edu/~winner/datasets.html, courtesy of the University of Flordia’s Statistics Department.</p>
 </div>
 </div>
 
@@ -583,8 +843,6 @@ Some factors other than a change in price of the good/service could be changes i
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="index.html" title="previous page">Demand &amp; Market Equilibrium</a>
-    <a class='right-next' id="next-link" href="market-equilibria.html" title="next page">Market Equilibria</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

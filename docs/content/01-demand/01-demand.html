@@ -1,0 +1,617 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demand Curves &#8212; Data 88: Economic Models Textbook</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/mystnb.js"></script>
+    <script src="../../_static/plotly.min.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script src="../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="An Empirical Demand Curve" href="02-example.html" />
+    <link rel="prev" title="Demand and Elasticities" href="index.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/econ-models.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Data 88: Economic Models Textbook</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../00-intro/index.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="index.html">
+   Demand and Elasticities
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Demand Curves
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02-example.html">
+     An Empirical Demand Curve
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03-log-log.html">
+     Log-log and Semi-log Demand Curves
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04-elasticity.html">
+     Elasticity
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../02-supply/index.html">
+   Supply &amp; Elasticity
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-supply/supply.html">
+     The Supply Curve
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-supply/eep147-example.html">
+     An Empirical Example from EEP 147
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-supply/elasticity.html">
+     Elasticity
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../03-public/index.html">
+   Public Economics
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-public/taxes-subsidies.html">
+     Taxes and Subsidies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-public/surplus.html">
+     Surplus
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-public/govt-intervention.html">
+     Other Forms of Government Intervention
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../04-production/index.html">
+   Production
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-production/production.html">
+     Production and Cobb-Douglas Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-production/shifts.html">
+     Analyzing Shifts in
+     <span class="math notranslate nohighlight">
+      \(A\)
+     </span>
+     and
+     <span class="math notranslate nohighlight">
+      \(\alpha\)
+     </span>
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../05-utility/index.html">
+   Utility
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-utility/utility.html">
+     Utility Functions and Indifference Curves
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-utility/budget-constraints.html">
+     Budget Constraints and Utility Maximization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes">
+     LaTeX
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06-development/index.html">
+   Development
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../07-game-theory/index.html">
+   Game Theory
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07-game-theory/expected-utility.html">
+     Expected Utility Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07-game-theory/equilibria-oligopolies.html">
+     Equilibria &amp; Oligopolies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07-game-theory/cournot.html">
+     Cournot Competition
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07-game-theory/bertrand.html">
+     Bertrand Competition
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07-game-theory/python-classes.html">
+     Python Classes
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-behavioral/index.html">
+   Behavioral Economics
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../09-finance/index.html">
+   Finance
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09-finance/value-interest.html">
+     Present Value, Future Value, and Interest Rates
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09-finance/options.html">
+     Options
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../10-inequality/index.html">
+   Inequality
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10-inequality/inequality.html">
+     Measurements of Inequality
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10-inequality/historical-inequality.html">
+     Income Inequality Historically
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10-inequality/historical-inequality.html#income-inequality-for-the-rest-of-the-world">
+     Income Inequality for the Rest of the World
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10-inequality/historical-inequality.html#factors-that-affect-income-inequality">
+     Factors that Affect Income Inequality
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../11-econometrics/index.html">
+   Econometrics
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../11-econometrics/single-variable.html">
+     Single Variable Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../11-econometrics/statsmodels.html">
+     Using
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       statsmodels
+      </span>
+     </code>
+     for Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../11-econometrics/multivariable.html">
+     Multivariable Regression and Bias
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../11-econometrics/reading-econ-papers.html">
+     Reading Economics Papers
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../12-macro/index.html">
+   Macroeconomic Policy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/content/01-demand/01-demand.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ds-connectors/econ-models-Textbook"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ds-connectors/econ-models-Textbook/master?urlpath=tree/content/01-demand/01-demand.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        <a class="jupyterhub-button" href="https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https://github.com/ds-connectors/econ-models-Textbook&urlpath=tree/econ-models-Textbook/content/01-demand/01-demand.ipynb&branch=master"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#movement-and-the-demand-curve">
+   Movement and the Demand Curve
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#shifts-in-the-demand-curve">
+     Shifts in the Demand Curve
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#movements-along-the-demand-curve">
+     Movements along the Demand Curve
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#income-and-substitution-effect">
+   Income and Substitution Effect
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="demand-curves">
+<h1>Demand Curves<a class="headerlink" href="#demand-curves" title="Permalink to this headline">¶</a></h1>
+<p>In this chapter, we will explore one of the most foundational yet important concepts in economics: demand curves. The demand curve shows the graphical relationship between the price of a good or service and the quantity demanded for it over a given period of time.
+In other words, it shows the quantity of goods or services consumers are willing to buy at each market price.
+The quantity of goods or services demanded or supplied can be modeled as a function of price, as in:</p>
+<div class="math notranslate nohighlight">
+\[\text{Quantity} = f(\text{Price})\]</div>
+<p>Notably, the curve is downwards sloping because of the law of demand, which states that <em>as the price of a good or service increases, the quantity demanded for it decreases, assuming all other factors are held constant</em>.</p>
+<p>This should make intuitive sense: as prices increase, fewer people are willing to pay the higher price for the same good. On the other hand, as prices decrease, more people are willing to pay the lower price for the same good. Hence, the quantity demanded of a good or service has an inverse relationship with the price.</p>
+<p>In this course, we will assume that the relationship is somewhat linear and can be described as</p>
+<div class="math notranslate nohighlight">
+\[\text{Quantity}_{d}=a \cdot \text{Price}_{d} + b\]</div>
+<p>We can interpret the equation above as follows: <em>as the price of a unit increases by 1, there is an <span class="math notranslate nohighlight">\(a\)</span> unit increase (or decrease, if <span class="math notranslate nohighlight">\(a\)</span> is negative) in the quantity demanded.</em> For example, <span class="math notranslate nohighlight">\(\text{Quantity}_{d}=-2 \cdot \text{Price}_{d} + 3\)</span> would suggest that a price increase by 1 would decrease overall quantity demanded in the market by 2.</p>
+<p>Price can also be measured as function of quantity to denote demand. In this case, we use an inverse demand function, as it is the inverse function of the demand function above. Since price is a function of quantity,</p>
+<div class="math notranslate nohighlight">
+\[\text{Price} = f(\text{Quantity})\]</div>
+<p>As we are solving for the inverse of the previous demand function, the inverse demand function for the example above is</p>
+<div class="math notranslate nohighlight">
+\[\text{Price}_{d}=-\frac{1}{2} \cdot \text{Quantity}_{d} - \dfrac{3}{2}\]</div>
+<div class="section" id="movement-and-the-demand-curve">
+<h2>Movement and the Demand Curve<a class="headerlink" href="#movement-and-the-demand-curve" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="shifts-in-the-demand-curve">
+<h3>Shifts in the Demand Curve<a class="headerlink" href="#shifts-in-the-demand-curve" title="Permalink to this headline">¶</a></h3>
+<p>The demand curve can shift in or out based on exogenous events that occur outside of the market.
+Some factors other than a change in price of the good/service could be changes in:</p>
+<ul class="simple">
+<li><p>buyer’s income</p></li>
+<li><p>consumer preferences</p></li>
+<li><p>expectation of future price/supply/demand</p></li>
+<li><p>changes in the price of related goods</p></li>
+</ul>
+<p>If any of these changes occur and causes the demand for the selected good/service to decrease, then the curve shifts to the left as less of the good or service will be demanded at every price. Similarly, if any of these changes causes the demand for the selected good/service to increase, the curve would shift to the right. This signifies that more of the good or service will be demanded at every price. For example, consumers’ incomes decreased during the 2008 recession, thus decreasing overall buying power and shifting the demand curve leftwards; a left shift in the demand curve suggests that consumers would purchase fewer quantities of goods at every price.</p>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<img alt="../../_images/01-demand_4_0.png" src="../../_images/01-demand_4_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="movements-along-the-demand-curve">
+<h3>Movements along the Demand Curve<a class="headerlink" href="#movements-along-the-demand-curve" title="Permalink to this headline">¶</a></h3>
+<p>Above, we looked at when exogenous events affect the demand curve. Another concept is movements along the demand curve, which would be considered endogenous events. In movements along the demand curve, changes in price affect the quantity demanded of the good or service. This assumes ceteris paribus, which means holding all other factors constant. This phenomenom is called the Movement of the Demand Curve. With a change in price, the quantity demanded for the good or service can shift the quantity demanded either upward or downward on the demand curve. For example, consider the shift on the graph below from quantity <span class="math notranslate nohighlight">\(q_1\)</span> at price <span class="math notranslate nohighlight">\(p_1\)</span> to quantity <span class="math notranslate nohighlight">\(q_2\)</span> at price <span class="math notranslate nohighlight">\(p_2\)</span>.</p>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<img alt="../../_images/01-demand_7_0.png" src="../../_images/01-demand_7_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="income-and-substitution-effect">
+<h2>Income and Substitution Effect<a class="headerlink" href="#income-and-substitution-effect" title="Permalink to this headline">¶</a></h2>
+<p>Changes in the price of a good also leads to 2 possible effects:</p>
+<ul class="simple">
+<li><p><strong>Income Effect</strong>: Examines how the change in price of the good affects income, which then affects the quantity demanded of a good or service.</p></li>
+<li><p><strong>Substitution Effect</strong>: Examines how the change in price of the good affects its demand relative to other goods and services</p></li>
+</ul>
+<p>If the price of a good increases, it would require the consumer to spend more of their income on the good. This dissuades consumers from purchasing the good, decreases the quantity demanded. If the price of a good decreases, consumers would spend less money to receive the same good. This increases the quantity demanded for the good, because more consumers would want to purchase the good, given the decrease in the amount of purchasing power required to obtain the good.</p>
+<p>If the price of a good increases, then consumers might look at similar goods that function in the same way or yield an equivalent amount of utility as the original good. Consumers are effectively shifting or substituting away from the relatively more expensive good to a cheaper alternative, thereby decreasing the quantity demanded for the good. The converse is also true: if the price of a good decreases, then consumers that currently purchase other similar goods might start consuming this good instead, because it would cost less money for them to obtain.</p>
+<p>For example, if the price of gas increases, the higher price for gas might encourage consumers to look at purchasing more efficient cars, such as electric or hybrid cars. This is the subsitution effect. If the consumer stays with their original car, then they would have less disposable income after purchasing the now-more-expensive gas, so they might purchase less gas. This is the income effect.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/01-demand"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">Demand and Elasticities</a>
+    <a class='right-next' id="next-link" href="02-example.html" title="next page">An Empirical Demand Curve</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Data 88 Course Staff<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>
