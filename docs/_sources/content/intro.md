@@ -13,7 +13,7 @@ The idea for the class is to take students through a series of exercises to moti
 
 **Textbook Developer:** [Christopher Pyles](https://chrispyles.io)
 
-**Content Developers:** Angela Guan, Shashank Dalmia, Amal Bhatnagar, Andrei Caprau, Eric Van Dusen, Christopher Pyles, [Alan Liang](http://alanliang.me/), Umar Maniku, Alex McMurry
+**Content Developers:** [Alan Liang](http://alanliang.me/), Amal Bhatnagar, Andrei Caprau, [Christopher Pyles](https://chrispyles.io), Eric Van Dusen, Matthew Yep, Rohan Jha, Shashank Dalmia, Umar Maniku
 
 ## License
 
