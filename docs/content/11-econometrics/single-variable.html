@@ -133,18 +133,23 @@
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../02-supply/supply.html">
+    <a class="reference internal" href="../02-supply/01-supply.html">
      The Supply Curve
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../02-supply/eep147-example.html">
+    <a class="reference internal" href="../02-supply/02-eep147-example.html">
      An Empirical Example from EEP 147
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../02-supply/elasticity.html">
-     Elasticity
+    <a class="reference internal" href="../02-supply/03-market-equilibria.html">
+     Market Equilibria
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-supply/04-sympy.html">
+     SymPy
     </a>
    </li>
   </ul>
@@ -467,11 +472,6 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#regression-in-data-8">
-   Regression in Data 8
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#root-mean-squared-error">
    Root-Mean-Squared Error
   </a>
@@ -485,13 +485,6 @@
     <a class="reference internal nav-link" href="#years-of-schooling-and-earnings">
      Years of Schooling and Earnings
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#wage-and-similar-variables">
-       Wage and Similar Variables
-      </a>
-     </li>
-    </ul>
    </li>
   </ul>
  </li>
@@ -521,34 +514,9 @@
                 
   <div class="section" id="single-variable-regression">
 <h1>Single Variable Regression<a class="headerlink" href="#single-variable-regression" title="Permalink to this headline">¶</a></h1>
-<p>In this section, we will review single variable regression as taught in Data 8 and consider ways of quantifying the error of our line of best fit. We will also use data from the March 2012 Current Population Survey and the NLSY79 dataset to practice fitting some single variable regressions.</p>
-<div class="section" id="regression-in-data-8">
-<h2>Regression in Data 8<a class="headerlink" href="#regression-in-data-8" title="Permalink to this headline">¶</a></h2>
 <p>Suppose we have some data that look like this:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-<span class="n">noise</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4</span>
-<span class="n">y</span> <span class="o">=</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">noise</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$x$_standard&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$y$_standard&#39;</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/single-variable_3_0.png" src="../../_images/single-variable_3_0.png" />
-</div>
-</div>
-<p>In Data 8 we learned that <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> above have some <strong>correlation coefficient</strong> <span class="math notranslate nohighlight">\(r\)</span>, which is a measure of the strength of the linear relationship between the two variables. The correlation coefficient is calculated as</p>
-<div class="math notranslate nohighlight">
-\[
-r = \frac{1}{n}\sum^n_{i=1} \left ( \frac{x_i - \hat{\mu}_x}{\hat{\sigma}_x} \right ) \left ( \frac{y_i - \hat{\mu}_y}{\hat{\sigma}_y} \right )
-\]</div>
-<p>where <span class="math notranslate nohighlight">\(n\)</span> is the number of observations and <span class="math notranslate nohighlight">\(\hat{\mu}_x\)</span> and <span class="math notranslate nohighlight">\(\hat{\sigma}_x\)</span> are the observed mean and standard deviation of a variable <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p><img alt="title" src="../../_images/figure11.png" /></p>
+<p>In Data 8 we learned that <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> above have some <strong>correlation coefficient</strong> <span class="math notranslate nohighlight">\(r\)</span>, which is a measure of the strength of the linear relationship between the two variables.</p>
 <p>It looks like there is some positive linear association between <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> such that larger values of <span class="math notranslate nohighlight">\(x\)</span> correspond to larger values of <span class="math notranslate nohighlight">\(y\)</span>. We therefore expect <span class="math notranslate nohighlight">\(r\)</span> to be some positive number between 0 and 1, but not exactly 0 or exactly 1.</p>
 <p>First, let’s convert the data (stored in the arrays <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>) to standard units. To convert a set of data points to standard units, we subtract out the mean of the data and scale by the standard deviation. This has the effect of changing the data so that the data in standard units have mean 0 and  standard deviation 1. Below we construct a function that does this.</p>
 <div class="math notranslate nohighlight">
@@ -559,8 +527,13 @@ x_{su} = \dfrac{x - \mu_x}{\sigma_x}
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">standard_units</span><span class="p">(</span><span class="n">array</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">array</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">array</span><span class="p">))</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
-
-<span class="n">x_standard</span> <span class="o">=</span> <span class="n">standard_units</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x_standard</span> <span class="o">=</span> <span class="n">standard_units</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="n">y_standard</span> <span class="o">=</span> <span class="n">standard_units</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -568,14 +541,14 @@ x_{su} = \dfrac{x - \mu_x}{\sigma_x}
 </div>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<img alt="../../_images/single-variable_6_0.png" src="../../_images/single-variable_6_0.png" />
+<img alt="../../_images/single-variable_8_0.png" src="../../_images/single-variable_8_0.png" />
 </div>
 </div>
 <p>The plot looks the same as before, except now the axes are scaled such that we measure <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> in standard units. Now recall that <span class="math notranslate nohighlight">\(r\)</span> is calculated as the average of the product of two variables, when the variables are measured in standard units. Below we define a function that calculates <span class="math notranslate nohighlight">\(r\)</span>, assuming that the inputs have already been converted to standard units.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">correlation</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">y</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">correlation</span><span class="p">(</span><span class="n">array1</span><span class="p">,</span> <span class="n">array2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">array1</span> <span class="o">*</span> <span class="n">array2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -603,7 +576,7 @@ x_{su} = \dfrac{x - \mu_x}{\sigma_x}
 \[
 \text{intercept} = \hat{\mu}_y - \text{slope} \cdot \hat{\mu}_x
 \]</div>
-<p>Our regression line will have the form</p>
+<p>where <span class="math notranslate nohighlight">\(\hat{\sigma}_x\)</span> is the observed standard deviation of a variable <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(\hat{\mu}_x\)</span> is the observed mean. Our regression line will have the form</p>
 <div class="math notranslate nohighlight">
 \[
 y = \hat{\alpha} + \hat{\beta} x
@@ -621,7 +594,7 @@ y = \hat{\alpha} + \hat{\beta} x
 </div>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<img alt="../../_images/single-variable_13_0.png" src="../../_images/single-variable_13_0.png" />
+<img alt="../../_images/single-variable_15_0.png" src="../../_images/single-variable_15_0.png" />
 </div>
 </div>
 <p>Let’s take a closer look at the slope we found.</p>
@@ -670,36 +643,37 @@ y = 1.5 \cdot x + u
 <div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Slope:  1.5590151265266388
 </pre></div>
 </div>
-<img alt="../../_images/single-variable_20_1.png" src="../../_images/single-variable_20_1.png" />
+<img alt="../../_images/single-variable_22_1.png" src="../../_images/single-variable_22_1.png" />
 </div>
 </div>
 <p>Now the estimated slope is roughly 1.6, even though the underlying data was still generated using a slope of 1.5. This is a very important concept that we will revisit soon.</p>
 <p>Keep in mind, however, that correlation in data <em>does not</em> imply causation. In this example we know the true causal relationship between <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> because we defined it ourselves. However, when using real data you do not see the “true” relation and thus cannot conclude causality from correlation. It could simply be that both your variables depend on an unseen third variable and have no causal effect on one another. Or even worse, while unlikely it could be the case that slight linear trends in two variables is a complete coincidence.</p>
-</div>
 <div class="section" id="root-mean-squared-error">
 <h2>Root-Mean-Squared Error<a class="headerlink" href="#root-mean-squared-error" title="Permalink to this headline">¶</a></h2>
-<p>While we can arbitrarily pick <span class="math notranslate nohighlight">\(\hat{\alpha}\)</span> and <span class="math notranslate nohighlight">\(\hat{\beta}\)</span> values, we do want to pick the values that help predict <span class="math notranslate nohighlight">\(\hat{y}\)</span> that are closest to actual <span class="math notranslate nohighlight">\(y\)</span> values. To achieve this, we want to minimize a <strong>loss function</strong> that quantifies how far off our prediction <span class="math notranslate nohighlight">\(\hat{y}\)</span> is from <span class="math notranslate nohighlight">\(y\)</span> for some known data points. One of the most common loss functions is called the root-mean-squared error.</p>
-<div class="admonition-definition admonition">
-<p class="admonition-title">Definition</p>
-<p>The <strong>root-mean-squared error</strong> is a common loss function used to quantify the error of a prediction. It is defined as</p>
+<p>While we can arbitrarily pick <span class="math notranslate nohighlight">\(\hat{\alpha}\)</span> and <span class="math notranslate nohighlight">\(\hat{\beta}\)</span> values, we do want to pick the values that help predict <span class="math notranslate nohighlight">\(\hat{y}\)</span> that are closest to actual <span class="math notranslate nohighlight">\(y\)</span> values. To achieve this, we want to minimize a <strong>loss function</strong> that quantifies how far off our prediction <span class="math notranslate nohighlight">\(\hat{y}\)</span> is from <span class="math notranslate nohighlight">\(y\)</span> for some known data points. One of the most common loss functions is called the <strong>root-mean-squared error</strong>, and is defined as</p>
 <div class="math notranslate nohighlight">
 \[
 \text{RMSE} = \sqrt{ \frac{1}{n} \sum_{i=1}^n \left ( y_i - \hat{y}_i \right ) ^2 }
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(n\)</span> is the number of observations. The effect of this is to take the mean of the distance of each value of <span class="math notranslate nohighlight">\(\hat{y}\)</span> from its corresponding value in <span class="math notranslate nohighlight">\(y\)</span>; squaring these values keeps them positive, and then we take the square root to correct the units of the error.</p>
-</div>
-<p>Plugging the formula <span class="math notranslate nohighlight">\(\hat{y}\)</span> into the RMSE formula, we get</p>
+<p>Plugging in the formula <span class="math notranslate nohighlight">\(\hat{y}\)</span> in RMSE formula, we get,</p>
 <div class="math notranslate nohighlight">
 \[
 \text{RMSE} = \sqrt{ \frac{1}{n} \sum_{i=1}^n \left ( y_i - (\hat{\alpha} + \hat{\beta}x_i) \right ) ^2 }
 \]</div>
-<p>By doing a bit of calculus, we get the following formulas for <span class="math notranslate nohighlight">\(\hat{\alpha}\)</span> and <span class="math notranslate nohighlight">\(\hat{\beta}\)</span>:</p>
+<p>By doing a bit of calculus, we get the following formulas for <span class="math notranslate nohighlight">\(\hat{\alpha}\)</span> and <span class="math notranslate nohighlight">\(\hat{\beta}\)</span></p>
 <div class="math notranslate nohighlight">
-\[
+\[\Large
 \hat{\beta} = r\frac {\hat{\sigma}_y} {\hat{\sigma}_x} \qquad \qquad
 \hat{\alpha} = \hat{\mu}_y - \hat{\beta}\hat{\mu}_x
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(r\)</span> is the <strong>correlation</strong> between <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>, <span class="math notranslate nohighlight">\(\hat{\sigma}_y\)</span> is the standard deviation of <span class="math notranslate nohighlight">\(y\)</span>, <span class="math notranslate nohighlight">\(\hat{\sigma}_x\)</span> is the standard deviation of <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(\hat{\mu}_y\)</span> is the average of all our <span class="math notranslate nohighlight">\(y\)</span> values, and <span class="math notranslate nohighlight">\(\hat{\mu}_x\)</span> is the average of all our <span class="math notranslate nohighlight">\(x\)</span> values. (As an aside, note the hats on our <span class="math notranslate nohighlight">\(\sigma\)</span>’s and <span class="math notranslate nohighlight">\(\mu\)</span>’s; this is because these are <em>empirical estimates</em> of the parameters of these distributions, rather than the true values.) These are the same values we had above!</p>
+<p>Note that our formula for <span class="math notranslate nohighlight">\(\hat{\beta}\)</span> involves the <strong>correlation coefficient</strong> <span class="math notranslate nohighlight">\(r\)</span> of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>. The correlation coefficient of two variables is a measure of the strength of a linear relationship between them. <span class="math notranslate nohighlight">\(r\)</span> goes from -1 to 1, where <span class="math notranslate nohighlight">\(|r|=1\)</span> is a perfect linear relationship and <span class="math notranslate nohighlight">\(r=0\)</span> is no linear relationship. The formula for <span class="math notranslate nohighlight">\(r\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[
+r = \frac{1}{n}\sum^n_{i=1} \left ( \frac{x_i - \hat{\mu}_x}{\hat{\sigma}_x} \right ) \left ( \frac{y_i - \hat{\mu}_y}{\hat{\sigma}_y} \right )
+\]</div>
+<p>(Note: the form <span class="math notranslate nohighlight">\(\frac{x_i - \hat{\mu}_x}{\hat{\sigma}_x}\)</span> of a variable <span class="math notranslate nohighlight">\(x\)</span> is it’s representation in standard units, as mentioned above.)</p>
 <p>To calculate the RMSE, we will write an <code class="docutils literal notranslate"><span class="pre">rmse</span></code> function that makes use of sklearn’s <code class="docutils literal notranslate"><span class="pre">mean_squared_error</span></code> function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -735,9 +709,8 @@ y = 1.5 \cdot x + u
 </tbody>
 </table>
 <p>Here are the proposed regression lines and their errors:</p>
-<p><img alt="" src="../../_images/se_slope_1.png" />
-<img alt="" src="../../_images/se_slope_-1.png" /></p>
-</div>
+<img src="se_slope_1.png" width="600" />
+<img src="se_slope_-1.png" width="600" /></div>
 <div class="section" id="econometric-single-variable-regression">
 <h2>Econometric Single Variable Regression<a class="headerlink" href="#econometric-single-variable-regression" title="Permalink to this headline">¶</a></h2>
 <p>The regression line can have two purposes:</p>
@@ -816,69 +789,13 @@ y = \alpha + \beta \cdot x + \varepsilon
 </table>
 <p>... (21897 rows omitted)</p></div></div>
 </div>
-<p>We want to consider a person’s wage and years of schooling. But first…</p>
-<div class="section" id="wage-and-similar-variables">
-<h4>Wage and Similar Variables<a class="headerlink" href="#wage-and-similar-variables" title="Permalink to this headline">¶</a></h4>
-<p>Wage is an interesting variable because it is something that tends to vary by a proportion rather than an absolute amount. To highlight this fact, let’s actually consider how the variable GDP behaves. GDP tends to grow by a certain percent each year; no one is particularly interested in how <em>much</em> GDP changes from one year to the next, or from one country to another, but rather by <em>what percent</em> it changes.</p>
-<p>If you recall from the finance chapter, this behaves similarly to compound interest. If you were to plot GDP over time for a country, it might look something like this:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">GDPs</span> <span class="o">=</span> <span class="n">make_array</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">99</span><span class="p">):</span>
-    <span class="n">GDPs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">GDPs</span><span class="p">,</span> <span class="n">GDPs</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1.05</span><span class="p">)</span>
-    
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span> <span class="n">GDPs</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Years&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;GDP&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;GDP Over Time&#39;</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/single-variable_33_0.png" src="../../_images/single-variable_33_0.png" />
-</div>
-</div>
-<p>The starting value for GDP is 100, and GDP grows by 5 percent each year. Look at how how much GDP grows in the later years!</p>
-<p>While this phenomenon is impressive, it is misleading. At surface level, it seems to imply that something different happened at around year 50 or so that caused GDP to increase considerably in subsequent years. We know that this isn’t true, and that this is just a consequence of exponential growth.</p>
-<p>To counter this effect, for variables that tend to vary from one observation to the next by proportions rather than absolute amounts, we take the natural log of these variables. Let’s do that for GDP:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ln_GDPs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">GDPs</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span> <span class="n">ln_GDPs</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Years&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;GDP&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;GDP Over Time&#39;</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
+<p>We want to consider a person’s wage and years of schooling. But first, we will convert wage to log-wage. Wage is a variable that we would expect to increase proportionally (or, exponentially) with changes in years of schooling. And as such, we usually take the natural log of wage instead. Below we plot log wage and years of schooling for the CPS data.</p>
+<div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <img alt="../../_images/single-variable_35_0.png" src="../../_images/single-variable_35_0.png" />
 </div>
 </div>
-<p>We’ve now uncovered a linear relationship between years and GDP! You can interpret the slope of this line as the approximate <em>percent change</em> in GDP for an increase in one year. To verify:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Slope between years 0 and 1: &#39;</span><span class="p">,</span> <span class="n">ln_GDPs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">ln_GDPs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Slope between years 0 and 1:  0.04879016416943127
-</pre></div>
-</div>
-</div>
-</div>
-<p>It turns out that wage is another one of these variables, and so when we do studies on wage we usually take the natural log of wage instead. Below we plot log wage and years of schooling for the CPS data.</p>
-<div class="cell tag_remove_input docutils container">
-<div class="cell_output docutils container">
-<img alt="../../_images/single-variable_39_0.png" src="../../_images/single-variable_39_0.png" />
-</div>
-</div>
-<p>Now let’s fit a least-squares regression line onto this data.</p>
+<p>Now let’s fit a least-squares regression line onto this data. First, we’ll do it manually in the Data 8 style above.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">educ_standard</span> <span class="o">=</span> <span class="n">standard_units</span><span class="p">(</span><span class="n">educ</span><span class="p">)</span>
@@ -897,12 +814,11 @@ y = \alpha + \beta \cdot x + \varepsilon
 Intercept:  1.472287673006932
 </pre></div>
 </div>
-<img alt="../../_images/single-variable_42_1.png" src="../../_images/single-variable_42_1.png" />
+<img alt="../../_images/single-variable_38_1.png" src="../../_images/single-variable_38_1.png" />
 </div>
 </div>
 <p>So from the very simple and straight-forward model above, it seems that we estimate a slope of roughly 0.1, meaning we might expect that a one-year increase in schooling is associated with a 10% increase in wage, on average.</p>
 <p>We can also see that we have a non-zero intercept term. We should be careful how we interpret this term; from a strictly mathematical point of view, the intercept represents the expected value of <span class="math notranslate nohighlight">\(y\)</span> (in this case log wage) when <span class="math notranslate nohighlight">\(x = 0\)</span>. However, in economics sometimes it makes no sense for <span class="math notranslate nohighlight">\(x\)</span> to be 0, and so we cannot use the above interpretation. We won’t go into detail this lecture, but regardless of whether the intercept is interpretable, we almost always want to include it.</p>
-</div>
 </div>
 </div>
 <div class="section" id="uncertainty-in-hat-beta">
@@ -911,18 +827,35 @@ Intercept:  1.472287673006932
 <p>Let’s assume there is the following true linear relation between log wage and years of schooling,</p>
 <div class="math notranslate nohighlight">
 \[
-\text{log wage} = \alpha + \beta \cdot \text{years of schooling} + \varepsilon
+\text{logwage} = \alpha + \beta \cdot \text{years of schooling} + \varepsilon
 \]</div>
 <p>and we try to estimate <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span>.</p>
 <p>If our data are “well-behaved”, then even though there is uncertainty in our estimate <span class="math notranslate nohighlight">\(\hat{\beta}\)</span>, on average <span class="math notranslate nohighlight">\(\hat{\beta}\)</span> will be <span class="math notranslate nohighlight">\(\beta\)</span>; that is to say that the expectation of <span class="math notranslate nohighlight">\(\hat{\beta}\)</span> is <span class="math notranslate nohighlight">\(\beta\)</span>. Additionally, if our data are “well-behaved”, then <span class="math notranslate nohighlight">\(\hat{\beta}\)</span> has some normal distribution with mean <span class="math notranslate nohighlight">\(\beta\)</span>. We won’t worry too much about what assumptions need to be satisfied to make the data “well-behaved”.</p>
 <p>You can think of each person as an observation of these variables, and using a sample of people we can estimate the relationship between the two variables. However, due to the noise term and the fact that we only have a finite sample of people, the true relationship is always hidden from us, and we can only hope to get better estimates by designing better experiments and sampling more people.</p>
 <p>Let’s try to get an idea of how “certain” we can be of our estimate <span class="math notranslate nohighlight">\(\hat{\beta}\)</span>. We’ll do this in classic Data 8 style: bootstrapping. Using our existing sample data, we’ll create new samples by bootstrapping from the existing data. Then, for each sample, we’ll fit a line, and keep the slope of that line in a list with all of the other slopes. Then, we’ll find the standard deviation of that list of slopes.</p>
-<div class="cell tag_remove_input docutils container">
-<div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Standard dev. of bootstrapped slopes:  0.0015948419317821595
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">slopes</span> <span class="o">=</span> <span class="n">make_array</span><span class="p">()</span>
+<span class="n">educ_logwage</span> <span class="o">=</span> <span class="n">cps</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;educ&quot;</span><span class="p">,</span> <span class="s2">&quot;logwage&quot;</span><span class="p">)</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">200</span><span class="p">):</span>
+    <span class="n">educ_logwage_sample</span> <span class="o">=</span> <span class="n">educ_logwage</span><span class="o">.</span><span class="n">sample</span><span class="p">()</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">educ_logwage_sample</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;logwage&quot;</span><span class="p">)</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">educ_logwage_sample</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;educ&quot;</span><span class="p">)</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">X</span><span class="p">))</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+    <span class="n">slopes</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">slopes</span><span class="p">)</span>
+    
+<span class="n">Table</span><span class="p">()</span><span class="o">.</span><span class="n">with_columns</span><span class="p">(</span><span class="s2">&quot;Slopes&quot;</span><span class="p">,</span> <span class="n">slopes</span><span class="p">)</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>    
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Standard dev. of bootstrapped slopes: &#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">slopes</span><span class="p">))</span>
 </pre></div>
 </div>
-<img alt="../../_images/single-variable_45_1.png" src="../../_images/single-variable_45_1.png" />
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Standard dev. of bootstrapped slopes:  0.0015948419317821812
+</pre></div>
+</div>
+<img alt="../../_images/single-variable_42_1.png" src="../../_images/single-variable_42_1.png" />
 </div>
 </div>
 <p>Our bootstrapped approximation standard error of 0.00159 is pretty close to the true standard error of 0.00144. <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code>, the package we will be using to perform regressions, actually uses a precise mathematical formula for finding the standard error whereas we tried to find this value through simulation, but the idea behind the standard error is the same.</p>
@@ -937,7 +870,7 @@ Intercept:  1.472287673006932
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>95% confidence interval: [0.10456031293884147, 0.11093735589830406]
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>95% confidence interval: [0.1045603129388414, 0.1109373558983047]
 </pre></div>
 </div>
 </div>
@@ -1000,12 +933,12 @@ Intercept:  1.472287673006932
 <p>Now let’s visualize log earnings vs. the binary variable corresponding to whether or not an observation went to college.</p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<img alt="../../_images/single-variable_52_0.png" src="../../_images/single-variable_52_0.png" />
+<img alt="../../_images/single-variable_50_0.png" src="../../_images/single-variable_50_0.png" />
 </div>
 </div>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<img alt="../../_images/single-variable_53_0.png" src="../../_images/single-variable_53_0.png" />
+<img alt="../../_images/single-variable_51_0.png" src="../../_images/single-variable_51_0.png" />
 </div>
 </div>
 <p>Now let’s fit a regression model:</p>
@@ -1031,12 +964,12 @@ Intercept:  1.472287673006932
 <p>Wow! This regression would imply that we expect, on average, observations who went to college to have 70% higher earnings than those who did not go to college. Let’s now plot this line on the data:</p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<img alt="../../_images/single-variable_57_0.png" src="../../_images/single-variable_57_0.png" />
+<img alt="../../_images/single-variable_55_0.png" src="../../_images/single-variable_55_0.png" />
 </div>
 </div>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<img alt="../../_images/single-variable_58_0.png" src="../../_images/single-variable_58_0.png" />
+<img alt="../../_images/single-variable_56_0.png" src="../../_images/single-variable_56_0.png" />
 </div>
 </div>
 <p>When we perform a simple regression onto just a dummy variable, it is an important fact that <span class="math notranslate nohighlight">\(\hat{\alpha}\)</span> is the mean value of <span class="math notranslate nohighlight">\(y\)</span> for all observations in the sample where <span class="math notranslate nohighlight">\(x = 0\)</span>, and <span class="math notranslate nohighlight">\(\hat{\beta}\)</span> is the difference between the mean value of <span class="math notranslate nohighlight">\(y\)</span> for observations in the sample where <span class="math notranslate nohighlight">\(x = 1\)</span> and observations where <span class="math notranslate nohighlight">\(x = 0\)</span>. Proving this claim is beyond our scope this week, but let’s verify it with our data:</p>

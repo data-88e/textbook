@@ -133,18 +133,23 @@
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../02-supply/supply.html">
+    <a class="reference internal" href="../02-supply/01-supply.html">
      The Supply Curve
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../02-supply/eep147-example.html">
+    <a class="reference internal" href="../02-supply/02-eep147-example.html">
      An Empirical Example from EEP 147
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../02-supply/elasticity.html">
-     Elasticity
+    <a class="reference internal" href="../02-supply/03-market-equilibria.html">
+     Market Equilibria
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-supply/04-sympy.html">
+     SymPy
     </a>
    </li>
   </ul>
@@ -552,12 +557,12 @@
 <p>For example, take a factory producing dyed color T-shirts that pollute a nearby river. In a world without government intervention, the firm would not have to clean up the river even though they should include factor that into their costs. This is an example of a <strong>negative externality</strong>, in which the <em>private cost</em> faced in production by a firm or consumption by a consumer is lower than the actual <em>social cost</em>.</p>
 <div class="figure align-default" id="negative-externality">
 <a class="reference internal image-reference" href="../../_images/fig1-negative-externality.png"><img alt="../../_images/fig1-negative-externality.png" src="../../_images/fig1-negative-externality.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">A supply-side negative externality in which the marginal social cost is greater than the marginal private cost</span><a class="headerlink" href="#negative-externality" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">A supply-side negative externality in which the marginal social cost is greater than the marginal private cost</span><a class="headerlink" href="#negative-externality" title="Permalink to this image">¶</a></p>
 </div>
 <p>Take another example: vaccines. By consuming a vaccine shot, a consumer benefits their communities to overall reduce transmission of a disease. However, chances are the consumer probably did not consider the social benefits when making a decision on whether to vaccinate. This is an example of a <strong>positive externality</strong>, in which the <em>private benefit</em> faced in production by a firm or consumption by a consumer is lower than the actual <em>social benefit</em> (alternatively, in some cases it may be more intuitive to think about it as the <em>private cost</em> is greater than the <em>social cost</em>. Similarly, the opposite holds true for negative externalities).</p>
 <div class="figure align-default" id="positive-externality">
 <a class="reference internal image-reference" href="../../_images/fig1-positive-externality.png"><img alt="../../_images/fig1-positive-externality.png" src="../../_images/fig1-positive-externality.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">A demand-side positive externality in which the marginal social benefit is greater than the marginal private benefit</span><a class="headerlink" href="#positive-externality" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">A demand-side positive externality in which the marginal social benefit is greater than the marginal private benefit</span><a class="headerlink" href="#positive-externality" title="Permalink to this image">¶</a></p>
 </div>
 <p>In this case, a <strong>market failure</strong> occurs, in which the true quantity demanded by society does not match what would occur in a free market without government intervention. This is where taxes and interventions come in: they can correct for externalities and thus resolve consequent market failures.</p>
 </div>
@@ -566,12 +571,12 @@
 <p>The primary method that governments use to intervene in markets to address negative externalities is taxation.</p>
 <div class="figure align-default" id="supply-tax">
 <a class="reference internal image-reference" href="../../_images/fig2-supply-tax.png"><img alt="../../_images/fig2-supply-tax.png" src="../../_images/fig2-supply-tax.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">A shift in supply due to a tax levied on producers</span><a class="headerlink" href="#supply-tax" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">A shift in supply due to a tax levied on producers</span><a class="headerlink" href="#supply-tax" title="Permalink to this image">¶</a></p>
 </div>
 <p>If a tax is levied on producers, this decreases the quantity of goods they can supply at each price as the tax is effectively acting as an additional cost of production. This shifts the supply curve leftward. Compared to negative externality graph above, we can see that the tax essentially ‘corrects’ the supply curve based on the marginal private cost to instead mirror the supply curve based on the marginal social cost.</p>
 <div class="figure align-default" id="demand-tax">
 <a class="reference internal image-reference" href="../../_images/fig3-demand-tax.png"><img alt="../../_images/fig3-demand-tax.png" src="../../_images/fig3-demand-tax.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">A shift in demand due to a tax levied on consumers</span><a class="headerlink" href="#demand-tax" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">A shift in demand due to a tax levied on consumers</span><a class="headerlink" href="#demand-tax" title="Permalink to this image">¶</a></p>
 </div>
 <p>If the tax is levied on consumers, this increases the price per unit they must pay, thereby reducing quantity demanded at every price. This shifts the demand curve leftward.</p>
 </div>
@@ -580,7 +585,7 @@
 <p>To account for positive externalities, a popular form of government intervention is a subsidy. They intend to lower production or consumption costs, and thus increase the quantity supplied of goods and services at equilibrium.</p>
 <div class="figure align-default" id="subsidy">
 <a class="reference internal image-reference" href="../../_images/fig5-subsidy.png"><img alt="../../_images/fig5-subsidy.png" src="../../_images/fig5-subsidy.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">A shift in supply due to a new subsidy</span><a class="headerlink" href="#subsidy" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">A shift in supply due to a new subsidy</span><a class="headerlink" href="#subsidy" title="Permalink to this image">¶</a></p>
 </div>
 <p>We represent this visually as a rightward shift in the supply curve. As costs are lower, producers are now willing to supply more goods and services at every price. The demand curve remains unchanged as a subsidy goes directly to producers. The resulting equilibrium has a lower price <span class="math notranslate nohighlight">\(P^*\)</span> and higher quantity <span class="math notranslate nohighlight">\(Q^*\)</span>. It is assumed that the lower production costs would be passed onto consumers through lower market prices. <span class="math notranslate nohighlight">\(P^*\)</span> is what consumers pay, but producers receive <span class="math notranslate nohighlight">\(P_P = P^* + \text{subsidy}\)</span>. This is depicted visually by the price along the new supply curve at quantity <span class="math notranslate nohighlight">\(Q^*\)</span>.</p>
 <p>Consumer surplus increases as more individuals are able to purchase the good than before. Similarly, producer surplus has increased as the subsidy takes care of part (if not all) of their costs. Overall market surplus has increased.</p>
@@ -591,7 +596,7 @@
 <p>For the rest of this section, we will examine the effects of taxes in more detail.</p>
 <div class="figure align-default" id="dwl-tax-wedge">
 <a class="reference internal image-reference" href="../../_images/fig4-dwl-tax-wedge.png"><img alt="../../_images/fig4-dwl-tax-wedge.png" src="../../_images/fig4-dwl-tax-wedge.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">Deadweight loss due to a tax levied on consumers</span><a class="headerlink" href="#dwl-tax-wedge" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Deadweight loss due to a tax levied on consumers</span><a class="headerlink" href="#dwl-tax-wedge" title="Permalink to this image">¶</a></p>
 </div>
 <p>The resulting equilibrium - both price and quantity - is the same in both cases. However, the prices paid by producers and consumers are different. Let us denote the equilibrium quantity to be <span class="math notranslate nohighlight">\(Q^*\)</span>. The price that producers pay <span class="math notranslate nohighlight">\(P_p\)</span> occurs where <span class="math notranslate nohighlight">\(Q^*\)</span> intersects with the supply curve. At the same time, the price that consumers pay <span class="math notranslate nohighlight">\(P_c\)</span> occurs where <span class="math notranslate nohighlight">\(Q^*\)</span> intersects  the demand curve.</p>
 <p>You will notice that the vertical distance between <span class="math notranslate nohighlight">\(P_p\)</span> and <span class="math notranslate nohighlight">\(P_c\)</span> will be the value of the tax. That is to say, <span class="math notranslate nohighlight">\(P_c = P_p + \text{tax}\)</span>. We call the vertical distance between <span class="math notranslate nohighlight">\(P_p\)</span> and <span class="math notranslate nohighlight">\(P_c\)</span> at quantity <span class="math notranslate nohighlight">\(Q^*\)</span> the tax wedge.</p>
@@ -608,7 +613,7 @@
 <p>Graphically, the total tax burden is the rectangle formed by the tax wedge and the horizontal distance between 0 and <span class="math notranslate nohighlight">\(Q^*\)</span>: <span class="math notranslate nohighlight">\(Q^* \cdot \text{tax}\)</span> This is also how you calculate the revenue from the tax earned by the government.</p>
 <div class="figure align-default" id="elasticity-of-taxes">
 <a class="reference internal image-reference" href="../../_images/fig6-elasticity-of-taxes.png"><img alt="../../_images/fig6-elasticity-of-taxes.png" src="../../_images/fig6-elasticity-of-taxes.png" style="width: 900px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Differences in economic incidences of a tax due to elastic and inelastic demand.</span><a class="headerlink" href="#elasticity-of-taxes" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">Differences in economic incidences of a tax due to elastic and inelastic demand.</span><a class="headerlink" href="#elasticity-of-taxes" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="deadweight-loss">

@@ -75,7 +75,6 @@ def production(price, table):
         print("Suppliers: ", suppliers)
 
 def group_plot(price):
-    print(f"Price: ${price}")
     production(price, Group)
     plt.figure(figsize=(9,6))
     plt.bar(new_x_group, height_group, width=width_group, edgecolor = "black")
@@ -99,7 +98,6 @@ colors_mapped = list(pd.Series(ESG_table['Group']).map(energy_colors_dict))
 ESG_table = ESG_table.with_column('Color', colors_mapped)
 
 def ESG_plot(price):
-    print(f"Price: ${price}")
     production(price, ESG_table)
     plt.figure(figsize=(9,6))
     plt.bar(new_x, height, width=width, color=ESG_table['Color'], edgecolor = "black")
