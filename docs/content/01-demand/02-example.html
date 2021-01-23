@@ -472,13 +472,13 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#visualize-the-relationship">
-   Visualize the  Relationship
+  <a class="reference internal nav-link" href="#visualizing-the-relationship-between-price-and-quantity">
+   Visualizing the Relationship between Price and Quantity
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#fit-a-line">
-   Fit a Line
+  <a class="reference internal nav-link" href="#fitting-a-linear-demand-curve">
+   Fitting a Linear Demand Curve
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -556,8 +556,8 @@
 </table>
 <p>... (159 rows omitted)</p></div></div>
 </div>
-<div class="section" id="visualize-the-relationship">
-<h2>Visualize the  Relationship<a class="headerlink" href="#visualize-the-relationship" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="visualizing-the-relationship-between-price-and-quantity">
+<h2>Visualizing the Relationship between Price and Quantity<a class="headerlink" href="#visualizing-the-relationship-between-price-and-quantity" title="Permalink to this headline">¶</a></h2>
 <p>To construct the demand curve, let’s first see what the relationship between price and quantity is. We would expect to see a downward-sloping line between price and quantity; if a product’s price increases, consumers will purchase less, and if a product’s price decreases, then consumers will purchase more.</p>
 <p>To find this, we will create a scatterplot and draw a regression line (by setting <code class="docutils literal notranslate"><span class="pre">fit_line</span> <span class="pre">=</span> <span class="pre">True</span></code> in the <code class="docutils literal notranslate"><span class="pre">tbl.scatter</span></code> call) between the points. Regression lines are helpful because they consolidate all the datapoints into a single line, helping us better understand the relationship between the two variables.</p>
 <div class="cell docutils container">
@@ -575,13 +575,13 @@
 <p>As a quick refresher, scatterplots can show positive, negative, or neutral correlations among two variables:</p>
 <ul class="simple">
 <li><p>If two variables have a positive correlation, then as one variable increases, the other increases too.</p></li>
-<li><p>If two variables have a negative correlation, then as one variable increass, the other decreases.</p></li>
-<li><p>If two variables have a neutral correlation, then if one varible increases, the other variable stays constant.</p></li>
+<li><p>If two variables have a negative correlation, then as one variable increases, the other decreases.</p></li>
+<li><p>If two variables have a neutral correlation, then if one varible increases, the other variable is unaffected.</p></li>
 </ul>
 <p>Note that scatterplots do not show or prove causation between two variables– it is up to the data scientists to prove any causation.</p>
 </div>
-<div class="section" id="fit-a-line">
-<h2>Fit a Line<a class="headerlink" href="#fit-a-line" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="fitting-a-linear-demand-curve">
+<h2>Fitting a Linear Demand Curve<a class="headerlink" href="#fitting-a-linear-demand-curve" title="Permalink to this headline">¶</a></h2>
 <p>We will now quantify our demand curve using NumPy’s <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.polyfit.html"><code class="docutils literal notranslate"><span class="pre">np.polyfit</span></code> function</a>. <code class="docutils literal notranslate"><span class="pre">np.polyfit</span></code> returns an array of size 2, where the first element is the slope and the second is the <span class="math notranslate nohighlight">\(y\)</span>-intercept.</p>
 <p>It takes 3 parameters:</p>
 <ul class="simple">

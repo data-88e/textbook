@@ -534,7 +534,7 @@
 <img alt="../../_images/01-supply_3_0.png" src="../../_images/01-supply_3_0.png" />
 </div>
 </div>
-<p>Market behavior relating to supply is based on the behavior of the individual firms that comprise it. Now, how does an individual firm make its decision about production? It does so based on the costs associated with production. If the price of a good is enough to recover the costs, the firm produces. Generally, costs increase with the quantity of production. So, to induce producers to increase the quantity supplied, the market prices need to increase to compensate for the increased costs.</p>
+<p>Market behavior relating to supply is based on the behavior of the individual firms that comprise it. Now, how does an individual firm make its decision about production? It does so based on the costs associated with production. If the price of a good is enough to recover the costs, the firm produces. Generally, costs increase with the quantity of production. So, to induce producers to increase the quantity supplied, the market prices need to be high enough to compensate for the increased costs.</p>
 <div class="section" id="costs">
 <h2>Costs<a class="headerlink" href="#costs" title="Permalink to this headline">¶</a></h2>
 <p>We will split costs into two categories: fixed costs and variable costs.</p>
@@ -561,7 +561,7 @@
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">individual_firm_costs</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s1">&#39;supply_data.csv&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">individual_firm_costs</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s1">&#39;supply_textbook.csv&#39;</span><span class="p">)</span>
 <span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -646,7 +646,7 @@
 <li><p>It produces at a loss-minimizing quantity</p></li>
 <li><p>It produces at a profit</p></li>
 </ul>
-<p>Profits are calculated as total revenue less total costs, where total revenue is price times quantity. For any price that is less than AVC, the firm will not produce at all. This is because for any amount of production, they will lose money. In this case, they shut down and the loss is limited to its fixed costs. In this example, we can see this for prices 24 and below.</p>
+<p>Profits are calculated as total revenue minus total costs, where total revenue is price times quantity. For any price that is less than AVC, the firm will not produce at all. This is because for any amount of production, they will lose money. In this case, they shut down and the loss is limited to its fixed costs. In this example, we can see this for prices 24 and below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">firm_behaviour</span><span class="p">(</span><span class="mi">24</span><span class="p">,</span> <span class="n">individual_firm_costs</span><span class="p">)</span>

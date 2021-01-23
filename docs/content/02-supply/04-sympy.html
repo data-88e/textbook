@@ -515,12 +515,13 @@
 <img alt="../../_images/04-sympy_7_0.png" src="../../_images/04-sympy_7_0.png" />
 </div>
 </div>
-<p>To solve for the equilibrium given the supply and demand curve, we know that the price paid by consumers must equal to the price earned by suppliers. Thus, <span class="math notranslate nohighlight">\(P_D = P_S\)</span>, allowing us to set the two equations equal to each other and solve for the equilibrium quantity and thus equilibrium price. To solve this by hand, we would set up the following equation to solve for <span class="math notranslate nohighlight">\(Q\)</span>:
-<span class="math notranslate nohighlight">\($
+<p>To solve for the equilibrium given the supply and demand curve, we know that the price paid by consumers must equal to the price earned by suppliers. Thus, <span class="math notranslate nohighlight">\(P_D = P_S\)</span>, allowing us to set the two equations equal to each other and solve for the equilibrium quantity and thus equilibrium price. To solve this by hand, we would set up the following equation to solve for <span class="math notranslate nohighlight">\(Q\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 P_D = P_S\\
 2-Q = 2Q-3
-$\)</span></p>
-<p>Using SymPy, we call <code class="docutils literal notranslate"><span class="pre">solve</span></code>, which takes in 2 arguments that represent the 2 sides of an equation and solves for the underlying variable such that the equation holds. Here, we pass in <span class="math notranslate nohighlight">\(P_D\)</span> and <span class="math notranslate nohighlight">\(P_S\)</span>, both represented in terms of <span class="math notranslate nohighlight">\(Q\)</span>, to solve for the value of <span class="math notranslate nohighlight">\(Q\)</span> such that <span class="math notranslate nohighlight">\(P_D=P_S\)</span>. It’s good to know that <code class="docutils literal notranslate"><span class="pre">solve</span></code> is a custom function, and will be provided in the notebooks for you.</p>
+\end{split}\]</div>
+<p>Using SymPy, we call <code class="docutils literal notranslate"><span class="pre">solve</span></code>, which takes in 2 arguments that represent the 2 sides of an equation and solves for the underlying variable such that the equation holds. Here, we pass in <span class="math notranslate nohighlight">\(P_D\)</span> and <span class="math notranslate nohighlight">\(P_S\)</span>, both represented in terms of <span class="math notranslate nohighlight">\(Q\)</span>, to solve for the value of <span class="math notranslate nohighlight">\(Q\)</span> such that <span class="math notranslate nohighlight">\(P_D=P_S\)</span>. It’s good to know that <code class="docutils literal notranslate"><span class="pre">solve</span></code> is a custom function built for this class, and will be provided in the notebooks for you.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Q_star</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">P_D</span><span class="p">,</span> <span class="n">P_S</span><span class="p">)</span>
@@ -555,7 +556,7 @@ $\)</span></p>
 <img alt="../../_images/04-sympy_13_0.png" src="../../_images/04-sympy_13_0.png" />
 </div>
 </div>
-<p>Thus, the equilibrium price and quantity are \$0.33 and <span class="math notranslate nohighlight">\(\frac{5}{3}\)</span>, respectively.</p>
+<p>Thus, the equilibrium price and quantity are $0.33 and <span class="math notranslate nohighlight">\(\frac{5}{3}\)</span>, respectively.</p>
 <p>Let’s try another example. Suppose our demand function is <span class="math notranslate nohighlight">\(\text{Price}_{D}=-2 \cdot \text{Quantity} + 10\)</span>. Using SymPy, this would be</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -622,6 +623,8 @@ $\)</span></p>
 <span class="n">plot_equation</span><span class="p">(</span><span class="n">demand</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 <span class="n">plot_equation</span><span class="p">(</span><span class="n">supply</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Quantity&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Price&quot;</span><span class="p">)</span>
 <span class="n">plot_intercept</span><span class="p">(</span><span class="n">supply</span><span class="p">,</span> <span class="n">demand</span><span class="p">);</span>
 </pre></div>
 </div>

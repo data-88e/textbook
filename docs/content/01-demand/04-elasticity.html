@@ -500,7 +500,7 @@
   <div class="section" id="elasticity">
 <h1>Elasticity<a class="headerlink" href="#elasticity" title="Permalink to this headline">¶</a></h1>
 <p>Suppose you own a business but you find yourself struggling to make a profit lately. How would you resolve this? You might consider raising your prices. But surely if you were to raise your prices too much you might lose some of your customers. To relate to our discussions above regarding surplus, maybe some of your customers are already at their highest willingness to pay, and raising prices would push them away from your business. Depending on the situation, you might lose so many customers that the increased revenue from raising your prices are completely offset by a decline in customers. This is a problem. To answer the question of how much to raise prices without losing too many customers and therefore losing revenue, we would like a way to measure this concept of customers’ responsiveness to prices. We call this concept <em>elasticity</em>.</p>
-<p>How would we measure elasticity? In the above context, we want to see how much quantity demanded of your business’s goods or services changes in response to a change in price. It seems like a good place to start would be to define elasticity as the percent change in quantity over percent change in price. Let’s use the demand curve depicted below as an example.</p>
+<p>How would we measure elasticity? In the above context, we want to see how much quantity demanded of your business’s goods or services changes in response to a change in price. It seems like a good place to start would be to define elasticity as the percent change in quantity over percent change in price. Let’s use the demand curve, assuming linear non-log demand curves, depicted below as an example.</p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <img alt="../../_images/04-elasticity_4_0.png" src="../../_images/04-elasticity_4_0.png" />
@@ -541,7 +541,7 @@
 <div class="math notranslate nohighlight">
 \[\frac{\frac{Q_2 - Q_1}{(Q_2 + Q_1)\times0.5}\times100\%}{\frac{P_2 - P_1}{(P_2 + P_1)\times0.5}\times100\%}\]</div>
 <p>What this does is it essentially finds the elasticity of the point between the two given points.</p>
-<p>It is also useful, however, to think of elasticity as a property of a single point. For example, we might want the price point of 5 in the example above to have an elasticity of 1 irrespective of what other point we are going to or coming from. For this, we can use the <strong>point-slope formula</strong>.</p>
+<p>It is also useful, however, to think of elasticity as a property of a single point. For example, we might want the price point of 5 in the example above to have a set elasticity of 1 irrespective of what other point we are going to or coming from. For this, we can use the <strong>point-slope formula</strong>.</p>
 <div class="math notranslate nohighlight">
 \[\frac{\Delta Q}{\Delta P}\frac{P}{Q}\]</div>
 <p>or</p>
@@ -597,7 +597,20 @@
 </div>
 </div>
 <p>Notice how a price increase will increase revenue until a certain point, at which point revenue decreases again. Intuitively this makes sense. A firm can only increase its prices so much until it starts losing too many of its customers for the increase to be worthwhile. Let’s try and find when this happens in general. First let’s plot revenue as a function of price.</p>
-<div class="cell tag_remove_input docutils container">
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">elast</span> <span class="o">=</span> <span class="p">[</span><span class="nb">abs</span><span class="p">(</span><span class="n">elasticity</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">demand_equation</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">x</span><span class="p">),</span><span class="n">demand_equation</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)))</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)]</span>
+<span class="n">revenue</span> <span class="o">=</span> <span class="p">[</span><span class="n">demand_equation</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)]</span>
+<span class="n">prices</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">prices</span><span class="p">,</span><span class="n">revenue</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Price&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Revenue&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Revenue vs Price for Given Demand Curve&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
 <div class="cell_output docutils container">
 <img alt="../../_images/04-elasticity_18_0.png" src="../../_images/04-elasticity_18_0.png" />
 </div>
