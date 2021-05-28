@@ -15,7 +15,7 @@
 # 	bundle install
 
 book:
-	rm -r docs
+	rm -r docs || :
 	jupyter-book build ./
 	mv _build/html docs
 	rm -r _build

@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Income Inequality Historically &#8212; Data 88E: Economic Models Textbook</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
@@ -25,14 +25,16 @@
     href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/.ipynb_checkpoints/style-checkpoint.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
 
@@ -40,17 +42,12 @@
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
     <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/mystnb.js"></script>
     <script src="../../_static/plotly.min.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script src="../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -58,6 +55,8 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -92,7 +91,14 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="current nav sidenav_l1">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Data 88E: Economic Models
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../00-intro/index.html">
    Introduction
@@ -373,6 +379,10 @@
 
 </nav> <!-- To handle the deprecated key -->
 
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
 </div>
 
 
@@ -421,7 +431,7 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/ds-connectors/econ-models-Textbook"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/data-88e/textbook"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         
@@ -443,14 +453,14 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/ds-connectors/econ-models-Textbook/master?urlpath=tree/content/10-inequality/historical-inequality.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/data-88e/textbook/master?urlpath=tree/content/10-inequality/historical-inequality.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
         
         
-        <a class="jupyterhub-button" href="https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https://github.com/ds-connectors/econ-models-Textbook&urlpath=tree/econ-models-Textbook/content/10-inequality/historical-inequality.ipynb&branch=master"><button type="button"
+        <a class="jupyterhub-button" href="https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https://github.com/data-88e/textbook&urlpath=tree/textbook/content/10-inequality/historical-inequality.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="../../_static/images/logo_jupyterhub.svg"
@@ -537,7 +547,7 @@
 <p>Let’s look at historical trends of income inequality in the US over the last 100 years. The data has been collected from <a class="reference external" href="https://wid.world/">The World Inequality Database</a>, which is co-directed by Berkeley Economics professors Emanuel Saez and Gabriel Zucman. Specifically, we will observe income distributions for the bottom 50 percent, top 10 percent, and top 1 percent.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">us_hist</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s2">&quot;US_inequality.csv&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">us_hist</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s2">&quot;US_inequality.csv&quot;</span><span class="p">)</span>
 <span class="n">us_hist</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -571,7 +581,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">us_hist</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">105</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">us_hist</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">105</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -604,7 +614,7 @@
 <p>Let’s begin with some data cleaning: it seems like our 3 brackets are ‘vertically stacked’ on top of each other. Instead, we would like a table with 5 columns: <code class="docutils literal notranslate"><span class="pre">Year</span></code>, <code class="docutils literal notranslate"><span class="pre">bottom</span> <span class="pre">50%</span> <span class="pre">income</span> <span class="pre">share</span></code>, <code class="docutils literal notranslate"><span class="pre">top</span> <span class="pre">10%</span> <span class="pre">income</span> <span class="pre">share</span></code>, and <code class="docutils literal notranslate"><span class="pre">top</span> <span class="pre">1%</span> <span class="pre">income</span> <span class="pre">share</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bottom_50_us</span> <span class="o">=</span> <span class="n">us_hist</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s2">&quot;Percentile&quot;</span><span class="p">,</span> <span class="s2">&quot;p0p50&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;Percentile&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">relabeled</span><span class="p">(</span><span class="s2">&quot;Income Share&quot;</span><span class="p">,</span> <span class="s2">&quot;Bottom 50% Share&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bottom_50_us</span> <span class="o">=</span> <span class="n">us_hist</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s2">&quot;Percentile&quot;</span><span class="p">,</span> <span class="s2">&quot;p0p50&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;Percentile&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">relabeled</span><span class="p">(</span><span class="s2">&quot;Income Share&quot;</span><span class="p">,</span> <span class="s2">&quot;Bottom 50% Share&quot;</span><span class="p">)</span>
 <span class="n">top_10_us</span> <span class="o">=</span> <span class="n">us_hist</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s2">&quot;Percentile&quot;</span><span class="p">,</span> <span class="s2">&quot;p90p100&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;Percentile&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">relabeled</span><span class="p">(</span><span class="s2">&quot;Income Share&quot;</span><span class="p">,</span> <span class="s2">&quot;Top 10% Share&quot;</span><span class="p">)</span>
 <span class="n">top_1_us</span> <span class="o">=</span> <span class="n">us_hist</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s2">&quot;Percentile&quot;</span><span class="p">,</span> <span class="s2">&quot;p99p100&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;Percentile&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">relabeled</span><span class="p">(</span><span class="s2">&quot;Income Share&quot;</span><span class="p">,</span> <span class="s2">&quot;Top 1% Share&quot;</span><span class="p">)</span>
 <span class="n">us_hist_joined</span> <span class="o">=</span> <span class="n">bottom_50_us</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span> <span class="n">top_10_us</span><span class="p">)</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span> <span class="n">top_1_us</span><span class="p">)</span>
@@ -667,7 +677,7 @@
 <p>Now let’s examine the trends of income inequality in other parts of the world.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">world_hist</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s2">&quot;World_Inequality.csv&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">world_hist</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s2">&quot;World_Inequality.csv&quot;</span><span class="p">)</span>
 <span class="n">bottom_50_world</span> <span class="o">=</span> <span class="n">world_hist</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s2">&quot;Percentile&quot;</span><span class="p">,</span> <span class="s2">&quot;p0p50&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;Percentile&quot;</span><span class="p">)</span>
 <span class="n">top_10_world</span> <span class="o">=</span> <span class="n">world_hist</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s2">&quot;Percentile&quot;</span><span class="p">,</span> <span class="s2">&quot;p90p100&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;Percentile&quot;</span><span class="p">)</span>
 <span class="n">top_1_world</span> <span class="o">=</span> <span class="n">world_hist</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s2">&quot;Percentile&quot;</span><span class="p">,</span> <span class="s2">&quot;p99p100&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;Percentile&quot;</span><span class="p">)</span>
@@ -726,7 +736,7 @@
 <p>Also look at Russia: income inequality spiked up around 1991. This was likely caused by the fall of the USSR: the failing Soviet state left the ownership of state assets uncontested, which allowed former USSR officials to acquire state property through informal deals. This led to the rise of many Russian oligarchs - those who rapidly accumulated wealth during the era of Russian privatization directly follwing the dissolution of the Soviet Union.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">top_10_world</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span> <span class="s2">&quot;USA&quot;</span><span class="p">,</span> <span class="s2">&quot;Europe&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">top_10_world</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span> <span class="s2">&quot;USA&quot;</span><span class="p">,</span> <span class="s2">&quot;Europe&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Gini Coefficient&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Income Inequality over Time&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">);</span>
@@ -741,11 +751,11 @@
 <h2>The Elephant Graph<a class="headerlink" href="#the-elephant-graph" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-default" id="elephant-curve">
 <a class="reference internal image-reference" href="../../_images/elephant_curve.jpg"><img alt="../../_images/elephant_curve.jpg" src="../../_images/elephant_curve.jpg" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">The elephant curve <a class="bibtex reference internal" href="../references.html#inequality-elephantcurve" id="id1">[MIL16]</a></span><a class="headerlink" href="#elephant-curve" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">The elephant curve <span id="id1">[<a class="reference internal" href="../references.html#id5"><span>MIL16</span></a>]</span></span><a class="headerlink" href="#elephant-curve" title="Permalink to this image">¶</a></p>
 </div>
 <p>The elephant curve is a graph that shows the real income growth per adult across each income group’s percentile around the world.</p>
 <p>There are 3 key features of the elephant curve: a hump for the world’s poorest, valley for the middle class, and trunk for the upper class. The thump is made of the world’s poorest countries, most likely those from developing countries. The valley comprises the working class from the developed world and upper class from developing countries. The trunk is made of people from the upper class from developed countries. The hump and valley indicate growth among emerging countries, and the top global 1%’s growth is higher than any other income group, thus explaining the positively sloped shape of the trunk.</p>
-<p>A study done by the Brookings Institution] found that “poorer countries, and the lower income groups within those countries, have grown most rapidly in the past 20 years” <a class="bibtex reference internal" href="../references.html#inequality-brookings" id="id2">[KS]</a>. This supports the World Bank’s claim that inequality between countries and within countries is decreasing. The Brookings Institution used only household surveys, however, which usually excludes the top and bottom percentile of the population, due to non-response bias. Still, the study is useful in corroborating the trends and growth in global income inequality.</p>
+<p>A study done by the Brookings Institution] found that “poorer countries, and the lower income groups within those countries, have grown most rapidly in the past 20 years” <span id="id2">[<a class="reference internal" href="../references.html#id3"><span>KS</span></a>]</span>. This supports the World Bank’s claim that inequality between countries and within countries is decreasing. The Brookings Institution used only household surveys, however, which usually excludes the top and bottom percentile of the population, due to non-response bias. Still, the study is useful in corroborating the trends and growth in global income inequality.</p>
 </div>
 </div>
 <div class="section" id="factors-that-affect-income-inequality">
@@ -769,7 +779,7 @@
 <p>Now let’s look at the historical trends in marginal top tax rates, which is the % taxed at the highest tax bracket.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">toptax</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s2">&quot;toptaxrate.csv&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">toptax</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s2">&quot;toptaxrate.csv&quot;</span><span class="p">)</span>
 <span class="n">toptax</span>
 </pre></div>
 </div>
@@ -839,7 +849,7 @@
 <p>Below, we look at the unemployment rates for the past 20 years across many different countries. These are the same countries and regions that we will further study below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unemployment</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s2">&quot;Unemployment.csv&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unemployment</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s2">&quot;Unemployment.csv&quot;</span><span class="p">)</span>
 <span class="n">unemployment</span>
 </pre></div>
 </div>
@@ -897,7 +907,7 @@
 <img alt="../../_images/historical-inequality_30_0.png" src="../../_images/historical-inequality_30_0.png" />
 </div>
 </div>
-<p>The graphs above show a positive correlation between unemployment and income inequality. As unemployment increases, income inequality also increases. In 2011, Hanan Morsy, an Egyptian economist who serves as the Director of Macroeconomic Policy, Forecasting and Research at the African Development Bank, actually researched this topic <a class="bibtex reference internal" href="../references.html#inequality-morsy" id="id3">[Mor11]</a>. Her group examined the member nations of the Organization  for  Economic  Cooperation  and  Development  (OECD) between 1980 and 2005. She found that specific groups that were vulnerable to the economic shocks that led to an increase in income inequality:</p>
+<p>The graphs above show a positive correlation between unemployment and income inequality. As unemployment increases, income inequality also increases. In 2011, Hanan Morsy, an Egyptian economist who serves as the Director of Macroeconomic Policy, Forecasting and Research at the African Development Bank, actually researched this topic <span id="id3">[<a class="reference internal" href="../references.html#id6"><span>Mor11</span></a>]</span>. Her group examined the member nations of the Organization  for  Economic  Cooperation  and  Development  (OECD) between 1980 and 2005. She found that specific groups that were vulnerable to the economic shocks that led to an increase in income inequality:</p>
 <ul class="simple">
 <li><p>young workers</p></li>
 <li><p>low-skilled workers</p></li>
@@ -911,7 +921,7 @@
 <p>The table below shows how the population growth has changed for the same countries we saw above. We are only looking at data for the past 10 years.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pop_growth</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s2">&quot;Population Growth.csv&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pop_growth</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s2">&quot;Population Growth.csv&quot;</span><span class="p">)</span>
 <span class="n">pop_growth</span>
 </pre></div>
 </div>
@@ -969,7 +979,7 @@
 </div>
 </div>
 <p>The graphs above show that most countries high population growth between 1-2% during the 1980’s. The effects of this can be seen in the rising income inequality during the 90’s.</p>
-<p>Recent research by University of Toronto’s Marijn Bolhuis and Univeristy of Oxford’s Alexandra de Pleijt shows that there is a strong correlation between a country’s population growth (measured by birth rates) and its income inequality <a class="bibtex reference internal" href="../references.html#inequality-popgrowth" id="id4">[BdP]</a>. Their most recent study in 2016 analyzed income inequality and birth rates data between 1870 and 2000 across 67 countries. They concluded that if a country had 50% higher income inequality, then that country’s birth rate would be about twice as high as another country with the same level of economic development. Bolhuis says that these higher birth rates mean that economic growth has to be equal to or greater than the birth rate to offset the implications of higher birth rates.</p>
+<p>Recent research by University of Toronto’s Marijn Bolhuis and Univeristy of Oxford’s Alexandra de Pleijt shows that there is a strong correlation between a country’s population growth (measured by birth rates) and its income inequality <span id="id4">[<a class="reference internal" href="../references.html#id4"><span>BdP</span></a>]</span>. Their most recent study in 2016 analyzed income inequality and birth rates data between 1870 and 2000 across 67 countries. They concluded that if a country had 50% higher income inequality, then that country’s birth rate would be about twice as high as another country with the same level of economic development. Bolhuis says that these higher birth rates mean that economic growth has to be equal to or greater than the birth rate to offset the implications of higher birth rates.</p>
 <p>This is part of a larger debate about the relationship between birth rates and income inequality. Economist Thomas Piketty finds that low birth rates, rather than high birth rates, are causing today’s income inequality. With lower birth rates, fewer children per couple are being borne, so these children get more of their parents’ inheritance.</p>
 </div>
 </div>

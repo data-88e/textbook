@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Single Variable Regression &#8212; Data 88E: Economic Models Textbook</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
@@ -25,14 +25,16 @@
     href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/.ipynb_checkpoints/style-checkpoint.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
 
@@ -40,17 +42,12 @@
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
     <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/mystnb.js"></script>
     <script src="../../_static/plotly.min.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script src="../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -58,6 +55,8 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -92,7 +91,14 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="current nav sidenav_l1">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Data 88E: Economic Models
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../00-intro/index.html">
    Introduction
@@ -373,6 +379,10 @@
 
 </nav> <!-- To handle the deprecated key -->
 
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
 </div>
 
 
@@ -421,7 +431,7 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/ds-connectors/econ-models-Textbook"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/data-88e/textbook"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         
@@ -443,14 +453,14 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/ds-connectors/econ-models-Textbook/master?urlpath=tree/content/11-econometrics/single-variable.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/data-88e/textbook/master?urlpath=tree/content/11-econometrics/single-variable.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
         
         
-        <a class="jupyterhub-button" href="https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https://github.com/ds-connectors/econ-models-Textbook&urlpath=tree/econ-models-Textbook/content/11-econometrics/single-variable.ipynb&branch=master"><button type="button"
+        <a class="jupyterhub-button" href="https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https://github.com/data-88e/textbook&urlpath=tree/textbook/content/11-econometrics/single-variable.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="../../_static/images/logo_jupyterhub.svg"
@@ -525,7 +535,7 @@ x_{su} = \dfrac{x - \mu_x}{\sigma_x}
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">standard_units</span><span class="p">(</span><span class="n">array</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">standard_units</span><span class="p">(</span><span class="n">array</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">array</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">array</span><span class="p">))</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -533,7 +543,7 @@ x_{su} = \dfrac{x - \mu_x}{\sigma_x}
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x_standard</span> <span class="o">=</span> <span class="n">standard_units</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_standard</span> <span class="o">=</span> <span class="n">standard_units</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="n">y_standard</span> <span class="o">=</span> <span class="n">standard_units</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -547,7 +557,7 @@ x_{su} = \dfrac{x - \mu_x}{\sigma_x}
 <p>The plot looks the same as before, except now the axes are scaled such that we measure <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> in standard units. Now recall that <span class="math notranslate nohighlight">\(r\)</span> is calculated as the average of the product of two variables, when the variables are measured in standard units. Below we define a function that calculates <span class="math notranslate nohighlight">\(r\)</span>, assuming that the inputs have already been converted to standard units.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">correlation</span><span class="p">(</span><span class="n">array1</span><span class="p">,</span> <span class="n">array2</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">correlation</span><span class="p">(</span><span class="n">array1</span><span class="p">,</span> <span class="n">array2</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">array1</span> <span class="o">*</span> <span class="n">array2</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -556,12 +566,12 @@ x_{su} = \dfrac{x - \mu_x}{\sigma_x}
 <p>What is the correlation between these two variables?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">correlation</span><span class="p">(</span><span class="n">x_standard</span><span class="p">,</span> <span class="n">y_standard</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">correlation</span><span class="p">(</span><span class="n">x_standard</span><span class="p">,</span> <span class="n">y_standard</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.7351364076052979
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7351364076052979
 </pre></div>
 </div>
 </div>
@@ -585,7 +595,7 @@ y = \hat{\alpha} + \hat{\beta} x
 <p>Below we plot this line.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">correlation</span><span class="p">(</span><span class="n">x_standard</span><span class="p">,</span> <span class="n">y_standard</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">correlation</span><span class="p">(</span><span class="n">x_standard</span><span class="p">,</span> <span class="n">y_standard</span><span class="p">)</span>
 <span class="n">slope</span> <span class="o">=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="n">intercept</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">-</span> <span class="n">slope</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
@@ -600,7 +610,7 @@ y = \hat{\alpha} + \hat{\beta} x
 <p>Let’s take a closer look at the slope we found.</p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Slope:  1.3160907091507876
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Slope:  1.3160907091507876
 </pre></div>
 </div>
 </div>
@@ -608,7 +618,7 @@ y = \hat{\alpha} + \hat{\beta} x
 <p>To generate the data above, we started with some range of <span class="math notranslate nohighlight">\(x\)</span> values, and generated <span class="math notranslate nohighlight">\(y\)</span> as a linear function of <span class="math notranslate nohighlight">\(x\)</span> with some random noise added in. Take a look:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 <span class="n">noise</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4</span>
 <span class="n">y</span> <span class="o">=</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">noise</span>
@@ -626,7 +636,7 @@ y = 1.5 \cdot x + u
 <p>To highlight this fact, let’s repeat the procedure above but with a different <a class="reference external" href="https://en.wikipedia.org/wiki/Random_seed">random seed</a>, in order to get data with the same underlying relationship but different values.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">189</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">189</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 <span class="n">noise</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4</span>
 <span class="n">y</span> <span class="o">=</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">noise</span>
@@ -640,7 +650,7 @@ y = 1.5 \cdot x + u
 </div>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Slope:  1.5590151265266388
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Slope:  1.5590151265266388
 </pre></div>
 </div>
 <img alt="../../_images/single-variable_22_1.png" src="../../_images/single-variable_22_1.png" />
@@ -677,7 +687,7 @@ r = \frac{1}{n}\sum^n_{i=1} \left ( \frac{x_i - \hat{\mu}_x}{\hat{\sigma}_x} \ri
 <p>To calculate the RMSE, we will write an <code class="docutils literal notranslate"><span class="pre">rmse</span></code> function that makes use of sklearn’s <code class="docutils literal notranslate"><span class="pre">mean_squared_error</span></code> function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">rmse</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">pred</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">rmse</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">pred</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">pred</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -742,7 +752,7 @@ y = \alpha + \beta \cdot x + \varepsilon
 <p>Consider a case where we want to study how years of schooling relate to a person’s earnings. This should be of particular interest to college students. Below we import a dataset that has the hourly wage, years of schooling, and other information on thousands of people sampled in the March 2012 Current Population Survey.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cps</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s1">&#39;cps.csv&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cps</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s1">&#39;cps.csv&#39;</span><span class="p">)</span>
 <span class="n">cps</span>
 </pre></div>
 </div>
@@ -798,7 +808,7 @@ y = \alpha + \beta \cdot x + \varepsilon
 <p>Now let’s fit a least-squares regression line onto this data. First, we’ll do it manually in the Data 8 style above.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">educ_standard</span> <span class="o">=</span> <span class="n">standard_units</span><span class="p">(</span><span class="n">educ</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">educ_standard</span> <span class="o">=</span> <span class="n">standard_units</span><span class="p">(</span><span class="n">educ</span><span class="p">)</span>
 <span class="n">logwage_standard</span> <span class="o">=</span> <span class="n">standard_units</span><span class="p">(</span><span class="n">logwage</span><span class="p">)</span>
 
 <span class="n">r</span> <span class="o">=</span> <span class="n">correlation</span><span class="p">(</span><span class="n">logwage_standard</span><span class="p">,</span> <span class="n">educ_standard</span><span class="p">)</span>
@@ -810,7 +820,7 @@ y = \alpha + \beta \cdot x + \varepsilon
 </div>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Slope:  0.10781133924799272
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Slope:  0.10781133924799272
 Intercept:  1.472287673006932
 </pre></div>
 </div>
@@ -835,7 +845,7 @@ Intercept:  1.472287673006932
 <p>Let’s try to get an idea of how “certain” we can be of our estimate <span class="math notranslate nohighlight">\(\hat{\beta}\)</span>. We’ll do this in classic Data 8 style: bootstrapping. Using our existing sample data, we’ll create new samples by bootstrapping from the existing data. Then, for each sample, we’ll fit a line, and keep the slope of that line in a list with all of the other slopes. Then, we’ll find the standard deviation of that list of slopes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">slopes</span> <span class="o">=</span> <span class="n">make_array</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">slopes</span> <span class="o">=</span> <span class="n">make_array</span><span class="p">()</span>
 <span class="n">educ_logwage</span> <span class="o">=</span> <span class="n">cps</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;educ&quot;</span><span class="p">,</span> <span class="s2">&quot;logwage&quot;</span><span class="p">)</span>
 
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
@@ -852,7 +862,7 @@ Intercept:  1.472287673006932
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Standard dev. of bootstrapped slopes:  0.0015948419317821812
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Standard dev. of bootstrapped slopes:  0.0015948419317821812
 </pre></div>
 </div>
 <img alt="../../_images/single-variable_42_1.png" src="../../_images/single-variable_42_1.png" />
@@ -862,7 +872,7 @@ Intercept:  1.472287673006932
 <p>Armed with a standard error, we can now form a 95% confidence interval and perform a test of significance to see if <span class="math notranslate nohighlight">\(\hat{\beta}\)</span> is significantly different from 0.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Using our resampled slopes</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Using our resampled slopes</span>
 <span class="n">lower_bound</span> <span class="o">=</span> <span class="n">percentile</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">slopes</span><span class="p">)</span>
 <span class="n">upper_bound</span> <span class="o">=</span> <span class="n">percentile</span><span class="p">(</span><span class="mf">97.5</span><span class="p">,</span> <span class="n">slopes</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;95</span><span class="si">% c</span><span class="s1">onfidence interval: [</span><span class="si">{}</span><span class="s1">, </span><span class="si">{}</span><span class="s1">]&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">lower_bound</span><span class="p">,</span> <span class="n">upper_bound</span><span class="p">))</span>
@@ -870,7 +880,7 @@ Intercept:  1.472287673006932
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>95% confidence interval: [0.1045603129388414, 0.1109373558983047]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>95% confidence interval: [0.1045603129388414, 0.1109373558983047]
 </pre></div>
 </div>
 </div>
@@ -883,7 +893,7 @@ Intercept:  1.472287673006932
 <p>Let’s import a different dataset that has the following features. Some will be useful to us later.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nlsy</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s1">&#39;nlsy_cleaned_small.csv&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nlsy</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s1">&#39;nlsy_cleaned_small.csv&#39;</span><span class="p">)</span>
 <span class="n">nlsy</span>
 </pre></div>
 </div>
@@ -944,7 +954,7 @@ Intercept:  1.472287673006932
 <p>Now let’s fit a regression model:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">coll_standard</span> <span class="o">=</span> <span class="n">standard_units</span><span class="p">(</span><span class="n">coll</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coll_standard</span> <span class="o">=</span> <span class="n">standard_units</span><span class="p">(</span><span class="n">coll</span><span class="p">)</span>
 <span class="n">logearn_standard</span> <span class="o">=</span> <span class="n">standard_units</span><span class="p">(</span><span class="n">logearn</span><span class="p">)</span>
 
 <span class="n">r</span> <span class="o">=</span> <span class="n">correlation</span><span class="p">(</span><span class="n">logearn_standard</span><span class="p">,</span> <span class="n">coll_standard</span><span class="p">)</span>
@@ -956,7 +966,7 @@ Intercept:  1.472287673006932
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>y = 0.72389 * x + 10.27883
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>y = 0.72389 * x + 10.27883
 </pre></div>
 </div>
 </div>
@@ -975,7 +985,7 @@ Intercept:  1.472287673006932
 <p>When we perform a simple regression onto just a dummy variable, it is an important fact that <span class="math notranslate nohighlight">\(\hat{\alpha}\)</span> is the mean value of <span class="math notranslate nohighlight">\(y\)</span> for all observations in the sample where <span class="math notranslate nohighlight">\(x = 0\)</span>, and <span class="math notranslate nohighlight">\(\hat{\beta}\)</span> is the difference between the mean value of <span class="math notranslate nohighlight">\(y\)</span> for observations in the sample where <span class="math notranslate nohighlight">\(x = 1\)</span> and observations where <span class="math notranslate nohighlight">\(x = 0\)</span>. Proving this claim is beyond our scope this week, but let’s verify it with our data:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">avg_logearn_coll</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">logearn</span><span class="p">[</span><span class="n">coll</span> <span class="o">==</span> <span class="mi">1</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">avg_logearn_coll</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">logearn</span><span class="p">[</span><span class="n">coll</span> <span class="o">==</span> <span class="mi">1</span><span class="p">])</span>
 <span class="n">avg_logearn_nocoll</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">logearn</span><span class="p">[</span><span class="n">coll</span> <span class="o">==</span> <span class="mi">0</span><span class="p">])</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Avg logearn for coll = 1: &#39;</span><span class="p">,</span> <span class="n">avg_logearn_coll</span><span class="p">)</span>
@@ -985,7 +995,7 @@ Intercept:  1.472287673006932
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Avg logearn for coll = 1:  11.002722859240283
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Avg logearn for coll = 1:  11.002722859240283
 Avg logearn for coll = 0:  10.278831734712744
 Difference between the two:  0.7238911245275386
 </pre></div>
@@ -994,13 +1004,13 @@ Difference between the two:  0.7238911245275386
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Intercept: &#39;</span><span class="p">,</span> <span class="n">intercept</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Intercept: &#39;</span><span class="p">,</span> <span class="n">intercept</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Slope: &#39;</span><span class="p">,</span> <span class="n">slope</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Intercept:  10.278831734712744
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Intercept:  10.278831734712744
 Slope:  0.72389112452754
 </pre></div>
 </div>

@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cournot Competition &#8212; Data 88E: Economic Models Textbook</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
@@ -25,14 +25,16 @@
     href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/.ipynb_checkpoints/style-checkpoint.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
 
@@ -40,17 +42,12 @@
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
     <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/mystnb.js"></script>
     <script src="../../_static/plotly.min.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script src="../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -58,6 +55,8 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -92,7 +91,14 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="current nav sidenav_l1">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Data 88E: Economic Models
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../00-intro/index.html">
    Introduction
@@ -373,6 +379,10 @@
 
 </nav> <!-- To handle the deprecated key -->
 
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
 </div>
 
 
@@ -421,7 +431,7 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/ds-connectors/econ-models-Textbook"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/data-88e/textbook"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         
@@ -443,14 +453,14 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/ds-connectors/econ-models-Textbook/master?urlpath=tree/content/07-game-theory/cournot.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/data-88e/textbook/master?urlpath=tree/content/07-game-theory/cournot.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
         
         
-        <a class="jupyterhub-button" href="https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https://github.com/ds-connectors/econ-models-Textbook&urlpath=tree/econ-models-Textbook/content/07-game-theory/cournot.ipynb&branch=master"><button type="button"
+        <a class="jupyterhub-button" href="https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https://github.com/data-88e/textbook&urlpath=tree/textbook/content/07-game-theory/cournot.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="../../_static/images/logo_jupyterhub.svg"
@@ -572,7 +582,7 @@ r_1(q_1) &amp;= 2 \cdot d_1(q_1) - d_1(0) \\
 <p>Based on this graph, if Boeing’s prediction that Airbus will produce 20 units of output is correct, we can already tell what Boeing’s optimal output is; but instead, let’s use SymPy to calculate it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="mi">100</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="mi">100</span>
 <span class="n">q_1</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;q_1&quot;</span><span class="p">)</span>
 <span class="n">r_1</span> <span class="o">=</span> <span class="o">-</span><span class="mf">3.78</span> <span class="o">*</span> <span class="n">q_1</span> <span class="o">+</span> <span class="mf">111.09</span>
 
@@ -581,7 +591,7 @@ r_1(q_1) &amp;= 2 \cdot d_1(q_1) - d_1(0) \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>2.93386243386243
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.93386243386243
 </pre></div>
 </div>
 </div>
@@ -590,14 +600,14 @@ r_1(q_1) &amp;= 2 \cdot d_1(q_1) - d_1(0) \\
 <p>Now, however, let’s say that Boeing is unsure of it’s guess for <span class="math notranslate nohighlight">\(q_2\)</span>. How can we arrive at the <em>actual</em> Cournot equilibrium, the quantities at which both Boeing and Airbus should produce? We need to start by finding the monopoly quantity <span class="math notranslate nohighlight">\(q_m\)</span> and the perfect competition quantity <span class="math notranslate nohighlight">\(q_c\)</span>. We can find <span class="math notranslate nohighlight">\(q_m\)</span> by looking at Boeing’s marginal revenue when Airbus is assumed to produce 0 planes. In this case, <span class="math notranslate nohighlight">\(d_1 = P(q_1 + 0) = -1.89 q_1 + 148.89\)</span> and therefore <span class="math notranslate nohighlight">\(r_1 = -3.78 q_1 + 148.89\)</span>. We find <span class="math notranslate nohighlight">\(q_m\)</span> as the point at which this new marginal revenue curve intersects the marginal cost curve.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">r_1</span> <span class="o">=</span> <span class="o">-</span><span class="mf">3.78</span> <span class="o">*</span> <span class="n">q_1</span> <span class="o">+</span> <span class="mf">148.89</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r_1</span> <span class="o">=</span> <span class="o">-</span><span class="mf">3.78</span> <span class="o">*</span> <span class="n">q_1</span> <span class="o">+</span> <span class="mf">148.89</span>
 <span class="n">q_m</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">r_1</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
 <span class="n">q_m</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>12.9338624338624
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12.9338624338624
 </pre></div>
 </div>
 </div>
@@ -605,7 +615,7 @@ r_1(q_1) &amp;= 2 \cdot d_1(q_1) - d_1(0) \\
 <p>So the monopoly quantity is <span class="math notranslate nohighlight">\(q_m = 12.934\)</span>. To find the perfect competition quantity <span class="math notranslate nohighlight">\(q_c\)</span>, we need to find the point at which the market demand curve <span class="math notranslate nohighlight">\(P\)</span> intersects the marginal cost.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Q</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;Q&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Q</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;Q&quot;</span><span class="p">)</span>
 <span class="n">P</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.89</span> <span class="o">*</span> <span class="n">Q</span> <span class="o">+</span> <span class="mf">148.89</span>
 <span class="n">q_c</span> <span class="o">=</span>  <span class="n">solve</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
 <span class="n">q_c</span>
@@ -613,7 +623,7 @@ r_1(q_1) &amp;= 2 \cdot d_1(q_1) - d_1(0) \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>25.8677248677249
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25.8677248677249
 </pre></div>
 </div>
 </div>
@@ -621,7 +631,7 @@ r_1(q_1) &amp;= 2 \cdot d_1(q_1) - d_1(0) \\
 <p>And thus we get <span class="math notranslate nohighlight">\(q_c = 25.868\)</span>. Now, we know that when Airbus is producing at <span class="math notranslate nohighlight">\(q_c\)</span>, Boeing is producing 0 planes because their marginal revenue is below the marginal cost for every value above 0. When Airbus is producing 0 planes, Boeing produces at <span class="math notranslate nohighlight">\(p_m\)</span>. From this, we have two points with which we can draw Boeing’s reaction curve to Airbus’s quantity choice <span class="math notranslate nohighlight">\(q'_1(q_2)\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">q_m</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">q_m</span>
 <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span> <span class="o">=</span> <span class="n">q_c</span><span class="p">,</span> <span class="mi">0</span>
 
 <span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="n">y2</span> <span class="o">-</span> <span class="n">y1</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">x2</span> <span class="o">-</span> <span class="n">x1</span><span class="p">)</span>
@@ -632,7 +642,7 @@ r_1(q_1) &amp;= 2 \cdot d_1(q_1) - d_1(0) \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>y = -0.500000000000000 * x + 12.9338624338624
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>y = -0.500000000000000 * x + 12.9338624338624
 </pre></div>
 </div>
 </div>
@@ -646,7 +656,7 @@ r_1(q_1) &amp;= 2 \cdot d_1(q_1) - d_1(0) \\
 <p>To get the exact values, let’s use SymPy one last time:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">q_2</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;q_2&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">q_2</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;q_2&quot;</span><span class="p">)</span>
 <span class="n">q_1_prime</span> <span class="o">=</span> <span class="o">-.</span><span class="mi">5</span> <span class="o">*</span> <span class="n">q_2</span> <span class="o">+</span> <span class="n">q_m</span>
 <span class="n">q_2_prime</span> <span class="o">=</span> <span class="p">(</span><span class="n">q_2</span> <span class="o">-</span> <span class="n">q_m</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="o">-.</span><span class="mi">5</span><span class="p">)</span>
 
@@ -657,7 +667,7 @@ r_1(q_1) &amp;= 2 \cdot d_1(q_1) - d_1(0) \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>q_1_star = 8.62257495590830
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>q_1_star = 8.62257495590830
 q_2_star = 8.62257495590827
 </pre></div>
 </div>

@@ -7,7 +7,7 @@ execute:
   execute_notebooks: off
 
 repository:
-  url: https://github.com/ds-connectors/econ-models-Textbook
+  url: https://github.com/data-88e/textbook
 
 launch_buttons:
     binderhub_url: https://mybinder.org
@@ -17,3 +17,6 @@ html:
   favicon: content/images/favicon.ico
   use_repository_button: true
   navbar_number_sections: false
+
+bibtex_bibfiles:
+    - references.bib

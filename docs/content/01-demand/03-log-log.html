@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Log-log and Semi-log Demand Curves &#8212; Data 88E: Economic Models Textbook</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
@@ -25,14 +25,16 @@
     href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/.ipynb_checkpoints/style-checkpoint.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
 
@@ -40,17 +42,12 @@
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
     <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/mystnb.js"></script>
     <script src="../../_static/plotly.min.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script src="../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -58,6 +55,8 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -92,7 +91,14 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="current nav sidenav_l1">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Data 88E: Economic Models
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../00-intro/index.html">
    Introduction
@@ -373,6 +379,10 @@
 
 </nav> <!-- To handle the deprecated key -->
 
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
 </div>
 
 
@@ -421,7 +431,7 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/ds-connectors/econ-models-Textbook"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/data-88e/textbook"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         
@@ -443,14 +453,14 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/ds-connectors/econ-models-Textbook/master?urlpath=tree/content/01-demand/03-log-log.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/data-88e/textbook/master?urlpath=tree/content/01-demand/03-log-log.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
         
         
-        <a class="jupyterhub-button" href="https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https://github.com/ds-connectors/econ-models-Textbook&urlpath=tree/econ-models-Textbook/content/01-demand/03-log-log.ipynb&branch=master"><button type="button"
+        <a class="jupyterhub-button" href="https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https://github.com/data-88e/textbook&urlpath=tree/textbook/content/01-demand/03-log-log.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="../../_static/images/logo_jupyterhub.svg"
@@ -554,12 +564,12 @@ To highlight this fact, let’s actually consider how the variable GDP behaves. 
 <p>We’ve now uncovered a linear relationship between years and GDP! You can interpret the slope of this line as the approximate <em>percent change</em> in GDP for an increase in one year (you will later see why the slope is not exactly 0.05). To verify:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Slope between years 0 and 1: &#39;</span><span class="p">,</span> <span class="n">ln_GDPs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">ln_GDPs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Slope between years 0 and 1: &#39;</span><span class="p">,</span> <span class="n">ln_GDPs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">ln_GDPs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Slope between years 0 and 1:  0.04879016416943127
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Slope between years 0 and 1:  0.04879016416943127
 </pre></div>
 </div>
 </div>
@@ -571,7 +581,8 @@ To highlight this fact, let’s actually consider how the variable GDP behaves. 
 <div class="section" id="semi-log-demand-curves">
 <h2>Semi-log Demand Curves<a class="headerlink" href="#semi-log-demand-curves" title="Permalink to this headline">¶</a></h2>
 <p>Revisiting demand curves, suppose that a change in price by $1 leads to a m% change in quantity demanded. This means that our slope would be:</p>
-<p>$$\text{slope} = \frac{m \text{% change in quantity}}{\text{\$1 change in price}} \approx \frac{m \times 0.01 \text{ change in log-quantity}}{ \text{\$1 change in price}}$$</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\text{slope} = \frac{m \text{% change in quantity}}{\text{\\$1 change in price}} \approx \frac{m \times 0.01 \text{ change in log-quantity}}{ \text{\\$1 change in price}}\end{split}\]</div>
 <p>Using our intuition from above, we simply have to log transform our quantity-demanded variable to capture the above relationship. This is known as the semi-log demand curve, in which the price and log-quantity are linearly related:</p>
 <div class="math notranslate nohighlight">
 \[\ln{D(P)} = m\cdot P + b\]</div>
@@ -643,7 +654,7 @@ D(P+1) &amp;= e^b(P+1)^m \\
 <p>We will revisit the avocados dataset from the previous page, which features historical data on non-organic avocado prices and sales volumes in San Francisco from 2015 to 2018.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">avocados</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s2">&quot;avocados.csv&quot;</span><span class="p">)</span> <span class="c1"># is it avocados or avocadoes?</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">avocados</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s2">&quot;avocados.csv&quot;</span><span class="p">)</span> <span class="c1"># is it avocados or avocadoes?</span>
 <span class="n">avocados</span>
 </pre></div>
 </div>
@@ -693,7 +704,7 @@ D(P+1) &amp;= e^b(P+1)^m \\
 <p>Taking a look at the natural relationship between price and volume sold, we see a possible exponentially decaying relationship between volume and price. We will try using both semi-log and log-log transformations on the data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">avocados</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s2">&quot;Total Volume&quot;</span><span class="p">,</span> <span class="s2">&quot;Average Price&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">avocados</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s2">&quot;Total Volume&quot;</span><span class="p">,</span> <span class="s2">&quot;Average Price&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -705,7 +716,7 @@ D(P+1) &amp;= e^b(P+1)^m \\
 <h3>Semi-log<a class="headerlink" href="#semi-log" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">log_quantity</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">avocados</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Total Volume&quot;</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">log_quantity</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">avocados</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Total Volume&quot;</span><span class="p">))</span>
 
 <span class="n">slope</span><span class="p">,</span> <span class="n">intercept</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">avocados</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Average Price&quot;</span><span class="p">),</span> <span class="n">log_quantity</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The slope is: &quot;</span><span class="p">,</span> <span class="n">slope</span><span class="p">)</span>
@@ -714,7 +725,7 @@ D(P+1) &amp;= e^b(P+1)^m \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>The slope is:  -0.5792670374517227
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The slope is:  -0.5792670374517227
 The intercept is:  14.352506861683818
 </pre></div>
 </div>
@@ -738,7 +749,7 @@ The intercept is:  14.352506861683818
 <h3>Log-log<a class="headerlink" href="#log-log" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">log_quantity</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">avocados</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Total Volume&quot;</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">log_quantity</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">avocados</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Total Volume&quot;</span><span class="p">))</span>
 <span class="n">log_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">avocados</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Average Price&quot;</span><span class="p">))</span>
 
 <span class="n">slope</span><span class="p">,</span> <span class="n">intercept</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">log_price</span><span class="p">,</span> <span class="n">log_quantity</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
@@ -748,7 +759,7 @@ The intercept is:  14.352506861683818
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>The slope is:  -0.8157285894758461
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The slope is:  -0.8157285894758461
 The intercept is:  13.798460905495737
 </pre></div>
 </div>

@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SymPy &#8212; Data 88E: Economic Models Textbook</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
@@ -25,14 +25,16 @@
     href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/.ipynb_checkpoints/style-checkpoint.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
 
@@ -40,17 +42,12 @@
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
     <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/mystnb.js"></script>
     <script src="../../_static/plotly.min.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script src="../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -58,6 +55,8 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -92,7 +91,14 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="current nav sidenav_l1">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Data 88E: Economic Models
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../00-intro/index.html">
    Introduction
@@ -373,6 +379,10 @@
 
 </nav> <!-- To handle the deprecated key -->
 
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
 </div>
 
 
@@ -421,7 +431,7 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/ds-connectors/econ-models-Textbook"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/data-88e/textbook"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         
@@ -443,14 +453,14 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/ds-connectors/econ-models-Textbook/master?urlpath=tree/content/02-supply/04-sympy.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/data-88e/textbook/master?urlpath=tree/content/02-supply/04-sympy.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
         
         
-        <a class="jupyterhub-button" href="https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https://github.com/ds-connectors/econ-models-Textbook&urlpath=tree/econ-models-Textbook/content/02-supply/04-sympy.ipynb&branch=master"><button type="button"
+        <a class="jupyterhub-button" href="https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https://github.com/data-88e/textbook&urlpath=tree/textbook/content/02-supply/04-sympy.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="../../_static/images/logo_jupyterhub.svg"
@@ -479,7 +489,7 @@
 <p>Since SymPy helps with symbolic math, we start out by create a symbol using <code class="docutils literal notranslate"><span class="pre">Symbol</span></code>, which we assign to a variable name. Then, we can use the symbols to construct symbolic expressions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
 <span class="n">x</span>
 </pre></div>
 </div>
@@ -492,7 +502,7 @@
 <p>To define an upward sloping supply curve with price expressed as a function of quantity, we start off defining the symbol <span class="math notranslate nohighlight">\(Q\)</span>, which represents quantity. Then, we set up a negative relationship expressing <span class="math notranslate nohighlight">\(P_S\)</span>, which denotes the price of the supplied good (how much the producer earns), in terms of <span class="math notranslate nohighlight">\(Q\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Q</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;Q&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Q</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;Q&#39;</span><span class="p">)</span>
 <span class="n">P_S</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">Q</span> <span class="o">-</span> <span class="mi">3</span>
 <span class="n">P_S</span>
 </pre></div>
@@ -506,7 +516,7 @@
 <p>Note that both functions are of the variable <span class="math notranslate nohighlight">\(Q\)</span>; this will be important in allowing us to solve for the equilibrium.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">P_D</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">Q</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">P_D</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">Q</span>
 <span class="n">P_D</span>
 </pre></div>
 </div>
@@ -524,7 +534,7 @@ P_D = P_S\\
 <p>Using SymPy, we call <code class="docutils literal notranslate"><span class="pre">solve</span></code>, which takes in 2 arguments that represent the 2 sides of an equation and solves for the underlying variable such that the equation holds. Here, we pass in <span class="math notranslate nohighlight">\(P_D\)</span> and <span class="math notranslate nohighlight">\(P_S\)</span>, both represented in terms of <span class="math notranslate nohighlight">\(Q\)</span>, to solve for the value of <span class="math notranslate nohighlight">\(Q\)</span> such that <span class="math notranslate nohighlight">\(P_D=P_S\)</span>. It’s good to know that <code class="docutils literal notranslate"><span class="pre">solve</span></code> is a custom function built for this class, and will be provided in the notebooks for you.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Q_star</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">P_D</span><span class="p">,</span> <span class="n">P_S</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Q_star</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">P_D</span><span class="p">,</span> <span class="n">P_S</span><span class="p">)</span>
 <span class="n">Q_star</span>
 </pre></div>
 </div>
@@ -537,7 +547,7 @@ P_D = P_S\\
 <p>With <span class="math notranslate nohighlight">\(Q^*\)</span> determined, we can substitute this value as <span class="math notranslate nohighlight">\(Q\)</span> to thus calculate <span class="math notranslate nohighlight">\(P_D\)</span> or <span class="math notranslate nohighlight">\(P_S\)</span>. We substitute values using the <code class="docutils literal notranslate"><span class="pre">subs</span></code> function, which follows the syntax <code class="docutils literal notranslate"><span class="pre">expression.subs(symbol_we_want_to_substitute,</span> <span class="pre">value_to_substitute_with)</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">P_D</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">Q_star</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">P_D</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">Q_star</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -548,7 +558,7 @@ P_D = P_S\\
 <p>We can also substitute <span class="math notranslate nohighlight">\(Q^*\)</span> into <span class="math notranslate nohighlight">\(P_S\)</span>, and should get the same results.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">P_S</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">Q_star</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">P_S</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">Q_star</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -560,7 +570,7 @@ P_D = P_S\\
 <p>Let’s try another example. Suppose our demand function is <span class="math notranslate nohighlight">\(\text{Price}_{D}=-2 \cdot \text{Quantity} + 10\)</span>. Using SymPy, this would be</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">demand</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span> <span class="o">*</span> <span class="n">Q</span> <span class="o">+</span> <span class="mi">10</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">demand</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span> <span class="o">*</span> <span class="n">Q</span> <span class="o">+</span> <span class="mi">10</span>
 <span class="n">demand</span>
 </pre></div>
 </div>
@@ -572,7 +582,7 @@ P_D = P_S\\
 <p>In addition, let the supply function be <span class="math notranslate nohighlight">\(\text{Price}_{S}=3 \cdot \text{Quantity} + 1\)</span>. Using SymPy, this would be</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">supply</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">Q</span> <span class="o">+</span> <span class="mi">1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">supply</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">Q</span> <span class="o">+</span> <span class="mi">1</span>
 <span class="n">supply</span>
 </pre></div>
 </div>
@@ -586,7 +596,7 @@ P_D = P_S\\
 <p>First, we solve for the quantity equilibrium.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Q_star</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">demand</span><span class="p">,</span> <span class="n">supply</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Q_star</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">demand</span><span class="p">,</span> <span class="n">supply</span><span class="p">)</span>
 <span class="n">Q_star</span>
 </pre></div>
 </div>
@@ -598,7 +608,7 @@ P_D = P_S\\
 <p>Next, we plug the quantity equilibrium into our demand or supply expression to get the price equilibrium:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">demand</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">demand</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -609,7 +619,7 @@ P_D = P_S\\
 <p>Graphically, we can plot the supply and demand curves with quantity on the <span class="math notranslate nohighlight">\(x\)</span> axis and price on the <span class="math notranslate nohighlight">\(y\)</span> axis. The point at which they intersect is the equilibrium point.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_equation</span><span class="p">(</span><span class="n">equation</span><span class="p">,</span> <span class="n">price_start</span><span class="p">,</span> <span class="n">price_end</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_equation</span><span class="p">(</span><span class="n">equation</span><span class="p">,</span> <span class="n">price_start</span><span class="p">,</span> <span class="n">price_end</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="n">plot_prices</span> <span class="o">=</span> <span class="p">[</span><span class="n">price_start</span><span class="p">,</span> <span class="n">price_end</span><span class="p">]</span>
     <span class="n">plot_quantities</span> <span class="o">=</span> <span class="p">[</span><span class="n">equation</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">equation</span><span class="o">.</span><span class="n">free_symbols</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">plot_prices</span><span class="p">]</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">plot_prices</span><span class="p">,</span> <span class="n">plot_quantities</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">)</span>
