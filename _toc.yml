@@ -64,7 +64,11 @@
     - url: https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes
       title: LaTeX
 
-- file: content/06-development/index.md
+
+- file: content/06-inequality/index.md
+  sections:
+    - file: content/06-inequality/inequality.ipynb
+    - file: content/06-inequality/historical-inequality.ipynb
 
 - file: content/07-game-theory/index.md
   sections:
@@ -75,17 +79,14 @@
     - file: content/07-game-theory/bertrand.ipynb
     - file: content/07-game-theory/python-classes.ipynb
 
-- file: content/08-behavioral/index.md
+- file: content/08-development/index.md
 
-- file: content/09-finance/index.md
-  sections:
-    - file: content/09-finance/value-interest.ipynb
-    - file: content/09-finance/options.ipynb
+- file: content/09-macro/index.md
 
-- file: content/10-inequality/index.md
+- file: content/10-finance/index.md
   sections:
-    - file: content/10-inequality/inequality.ipynb
-    - file: content/10-inequality/historical-inequality.ipynb
+    - file: content/10-finance/value-interest.ipynb
+    - file: content/10-finance/options.ipynb
 
 - file: content/11-econometrics/index.md
   sections:
@@ -93,7 +94,5 @@
     - file: content/11-econometrics/statsmodels.ipynb
     - file: content/11-econometrics/multivariable.ipynb
     - file: content/11-econometrics/reading-econ-papers.ipynb
-
-- file: content/12-macro/index.md
 
 - file: content/references.md
