@@ -1,0 +1,22 @@
+title: 'Data 88E: Economic Models Textbook'
+author: Data 88E Course Staff
+logo: content/images/econ-models.png
+copyright: '2020'
+
+execute:
+  execute_notebooks: off
+
+repository:
+  url: https://github.com/data-88e/textbook
+
+launch_buttons:
+    binderhub_url: https://mybinder.org
+    jupyterhub_url: https://datahub.berkeley.edu
+
+html:
+  favicon: content/images/favicon.ico
+  use_repository_button: true
+  navbar_number_sections: false
+
+bibtex_bibfiles:
+    - references.bib
