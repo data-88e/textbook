@@ -1,0 +1,747 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>An Empirical Demand Curve &#8212; Data 88E: Economic Models Textbook</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/plotly.min.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Log-log and Semi-log Demand Curves" href="03-log-log.html" />
+    <link rel="prev" title="Demand Curves" href="01-demand.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/econ-models.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Data 88E: Economic Models Textbook</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Data 88E: Economic Models
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../00-intro/index.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
+   Demand and Elasticities
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01-demand.html">
+     Demand Curves
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     An Empirical Demand Curve
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03-log-log.html">
+     Log-log and Semi-log Demand Curves
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04-elasticity.html">
+     Elasticity
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02-supply/index.html">
+   Supply and Market Equilibrium
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-supply/01-supply.html">
+     The Supply Curve
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-supply/02-eep147-example.html">
+     An Empirical Example from EEP 147
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-supply/03-market-equilibria.html">
+     Market Equilibria
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-supply/04-sympy.html">
+     SymPy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03-public/index.html">
+   Public Economics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-public/taxes-subsidies.html">
+     Taxes and Subsidies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-public/surplus.html">
+     Surplus
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-public/govt-intervention.html">
+     Other Forms of Government Intervention
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../04-production/index.html">
+   Production
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-production/production.html">
+     Production and Cobb-Douglas Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-production/shifts.html">
+     Analyzing Shifts in
+     <span class="math notranslate nohighlight">
+      \(A\)
+     </span>
+     and
+     <span class="math notranslate nohighlight">
+      \(\alpha\)
+     </span>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05-utility/index.html">
+   Utility
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-utility/utility.html">
+     Utility Functions and Indifference Curves
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-utility/budget-constraints.html">
+     Budget Constraints and Utility Maximization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes">
+     LaTeX
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../06-inequality/index.html">
+   Inequality
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06-inequality/inequality.html">
+     Measurements of Inequality
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06-inequality/historical-inequality.html">
+     Income Inequality Historically
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../07-game-theory/index.html">
+   Game Theory
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07-game-theory/expected-utility.html">
+     Expected Utility Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07-game-theory/equilibria-oligopolies.html">
+     Equilibria &amp; Oligopolies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07-game-theory/cournot.html">
+     Cournot Competition
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07-game-theory/bertrand.html">
+     Bertrand Competition
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07-game-theory/python-classes.html">
+     Python Classes
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-development/index.html">
+   Development
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../09-macro/index.html">
+   Macroeconomic Policy
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../10-finance/index.html">
+   Finance
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10-finance/value-interest.html">
+     Present Value, Future Value, and Interest Rates
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10-finance/options.html">
+     Options
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../11-econometrics/index.html">
+   Econometrics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../11-econometrics/single-variable.html">
+     Single Variable Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../11-econometrics/statsmodels.html">
+     Using
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       statsmodels
+      </span>
+     </code>
+     for Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../11-econometrics/multivariable.html">
+     Multivariable Regression and Bias
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../11-econometrics/reading-econ-papers.html">
+     Reading Economics Papers
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/content/01-demand/02-example.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/data-88e/textbook"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/data-88e/textbook/master?urlpath=tree/content/01-demand/02-example.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        <a class="jupyterhub-button" href="https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https://github.com/data-88e/textbook&urlpath=tree/textbook/content/01-demand/02-example.ipynb&branch=master"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualizing-the-relationship-between-price-and-quantity">
+   Visualizing the Relationship between Price and Quantity
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fitting-a-linear-demand-curve">
+   Fitting a Linear Demand Curve
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#demand-with-price-as-a-function-of-quantity">
+     Demand with Price as a Function of Quantity
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#demand-with-quantity-as-a-function-of-price">
+     Demand with Quantity as a Function of Price
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="an-empirical-demand-curve">
+<h1>An Empirical Demand Curve<a class="headerlink" href="#an-empirical-demand-curve" title="Permalink to this headline">¶</a></h1>
+<p>Let’s examine some historical data on non-organic avocado prices and sales volumes in San Francisco from 2015 to 2018. The original dataset is taken from Kaggle and can be found <a class="reference external" href="https://www.kaggle.com/neuromusic/avocado-prices">here</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">avocados</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s2">&quot;avocados.csv&quot;</span><span class="p">)</span> <span class="c1"># is it avocados or avocadoes?</span>
+<span class="n">avocados</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>Date</th> <th>Average Price</th> <th>Total Volume</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>2015-12-27</td> <td>1.05         </td> <td>692206      </td>
+        </tr>
+        <tr>
+            <td>2015-12-20</td> <td>1.15         </td> <td>637091      </td>
+        </tr>
+        <tr>
+            <td>2015-12-13</td> <td>1.22         </td> <td>616016      </td>
+        </tr>
+        <tr>
+            <td>2015-12-06</td> <td>1.06         </td> <td>694982      </td>
+        </tr>
+        <tr>
+            <td>2015-11-29</td> <td>1.05         </td> <td>651639      </td>
+        </tr>
+        <tr>
+            <td>2015-11-22</td> <td>1.04         </td> <td>709444      </td>
+        </tr>
+        <tr>
+            <td>2015-11-15</td> <td>0.99         </td> <td>775849      </td>
+        </tr>
+        <tr>
+            <td>2015-11-08</td> <td>1.4          </td> <td>599884      </td>
+        </tr>
+        <tr>
+            <td>2015-11-01</td> <td>0.97         </td> <td>869927      </td>
+        </tr>
+        <tr>
+            <td>2015-10-25</td> <td>1.55         </td> <td>561342      </td>
+        </tr>
+    </tbody>
+</table>
+<p>... (159 rows omitted)</p></div></div>
+</div>
+<div class="section" id="visualizing-the-relationship-between-price-and-quantity">
+<h2>Visualizing the Relationship between Price and Quantity<a class="headerlink" href="#visualizing-the-relationship-between-price-and-quantity" title="Permalink to this headline">¶</a></h2>
+<p>To construct the demand curve, let’s first see what the relationship between price and quantity is. We would expect to see a downward-sloping line between price and quantity; if a product’s price increases, consumers will purchase less, and if a product’s price decreases, then consumers will purchase more.</p>
+<p>To find this, we will create a scatterplot and draw a regression line (by setting <code class="docutils literal notranslate"><span class="pre">fit_line</span> <span class="pre">=</span> <span class="pre">True</span></code> in the <code class="docutils literal notranslate"><span class="pre">tbl.scatter</span></code> call) between the points. Regression lines are helpful because they consolidate all the datapoints into a single line, helping us better understand the relationship between the two variables.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">avocados</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s2">&quot;Total Volume&quot;</span><span class="p">,</span> <span class="s2">&quot;Average Price&quot;</span><span class="p">,</span> <span class="n">fit_line</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">7</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">7</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Demand Curve for Avocados&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">16</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/02-example_4_0.png" src="../../_images/02-example_4_0.png" />
+</div>
+</div>
+<p>The visualization shows a negative relationship between quantity and price, which is exactly what we expected! As we’ve discussed, as the price increases, fewer consumers will purchase avocados, so the quantity demanded will decrease. This corresponds to a leftward movement along the demand curve. Alternatively, as the price decreases, the quantity sold will increase because consumers want to maximize their purchasing power and buy more avocados; this is shown by a rightward movement along the curve.</p>
+<p>As a quick refresher, scatterplots can show positive, negative, or neutral correlations among two variables:</p>
+<ul class="simple">
+<li><p>If two variables have a positive correlation, then as one variable increases, the other increases too.</p></li>
+<li><p>If two variables have a negative correlation, then as one variable increases, the other decreases.</p></li>
+<li><p>If two variables have a neutral correlation, then if one varible increases, the other variable is unaffected.</p></li>
+</ul>
+<p>Note that scatterplots do not show or prove causation between two variables– it is up to the data scientists to prove any causation.</p>
+</div>
+<div class="section" id="fitting-a-linear-demand-curve">
+<h2>Fitting a Linear Demand Curve<a class="headerlink" href="#fitting-a-linear-demand-curve" title="Permalink to this headline">¶</a></h2>
+<p>We will now quantify our demand curve using NumPy’s <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.polyfit.html"><code class="docutils literal notranslate"><span class="pre">np.polyfit</span></code> function</a>. <code class="docutils literal notranslate"><span class="pre">np.polyfit</span></code> returns an array of size 2, where the first element is the slope and the second is the <span class="math notranslate nohighlight">\(y\)</span>-intercept.</p>
+<p>It takes 3 parameters:</p>
+<ul class="simple">
+<li><p>array of x-coordinates</p></li>
+<li><p>array of y-coordinates</p></li>
+<li><p>degree of polynomial</p></li>
+</ul>
+<p>Because we are looking for a <strong>linear</strong> function to serve as the demand curve, we will use 1 for the degree of polynomial.</p>
+<p>The general template for the demand curve is <span class="math notranslate nohighlight">\(y = mx + b\)</span>, where <span class="math notranslate nohighlight">\(m\)</span> is the slope and <span class="math notranslate nohighlight">\(b\)</span> is <span class="math notranslate nohighlight">\(y\)</span>-intercept.</p>
+<div class="section" id="demand-with-price-as-a-function-of-quantity">
+<h3>Demand with Price as a Function of Quantity<a class="headerlink" href="#demand-with-price-as-a-function-of-quantity" title="Permalink to this headline">¶</a></h3>
+<p>First, we will fit a demand curve expressed in terms of price as a function of quantity. This aligns with the axes of supply and demand curves, in which the quantity is on the x-axis and price is on the y-axis:</p>
+<div class="math notranslate nohighlight">
+\[P(Q) = m\cdot Q + b\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">slope</span><span class="p">,</span> <span class="n">intercept</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">avocados</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Total Volume&quot;</span><span class="p">),</span> <span class="n">avocados</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Average Price&quot;</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The slope is:&quot;</span><span class="p">,</span> <span class="n">slope</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The intercept is:&quot;</span><span class="p">,</span> <span class="n">intercept</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The slope is: -1.0909269659806726e-06
+The intercept is: 2.2495304122570334
+</pre></div>
+</div>
+</div>
+</div>
+<p>Thus, our demand curve is <span class="math notranslate nohighlight">\(P(Q) = -0.00000109Q+ 2.2495\)</span>; The slope is -0.00000109 and <span class="math notranslate nohighlight">\(y\)</span>-intercept is 2.2495. This means that as the quantity demanded increases by 1 unit (in this case, 1 avocado), we would expect to see price to decrease by 0.00000109 units.</p>
+<p>We can plot this line on a graph. Notice that it is the same line as the one when we indicated <code class="docutils literal notranslate"><span class="pre">fit_line=True</span></code> above.</p>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<img alt="../../_images/02-example_12_0.png" src="../../_images/02-example_12_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="demand-with-quantity-as-a-function-of-price">
+<h3>Demand with Quantity as a Function of Price<a class="headerlink" href="#demand-with-quantity-as-a-function-of-price" title="Permalink to this headline">¶</a></h3>
+<p>Our interpretation of the demand curve and its slope above was probably not quite intuitive: changes in quantity demanded likely do not trigger changes in price, but instead it is the other way around. In addition, the slope was tiny: the marginal increase of one additional avocado sold had very little effect from the change in price.</p>
+<p>Thus, it is more intuitive to think the effect a one dollar change in price has on the quantity demanded, and to flip our axes:</p>
+<div class="math notranslate nohighlight">
+\[D(P) = Q(P) = m\cdot P + b\]</div>
+<p>In this course, we will write <span class="math notranslate nohighlight">\(Q(P)\)</span> and <span class="math notranslate nohighlight">\(D(P)\)</span> fairly interchangeably when referencing demand.</p>
+<p>One key thing to remember: our axes are flipped for this demand curve! If you want to plot it, note that the left hand side (dependent variable) is actually the x-axis variable, while the independent variable is the y-axis variable.</p>
+<p>Fitting our data using this function, we get:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">slope</span><span class="p">,</span> <span class="n">intercept</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">avocados</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Average Price&quot;</span><span class="p">),</span> <span class="n">avocados</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Total Volume&quot;</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The slope is:&quot;</span><span class="p">,</span> <span class="n">slope</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The intercept is:&quot;</span><span class="p">,</span> <span class="n">intercept</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The slope is: -476412.7189820772
+The intercept is: 1446951.6408050181
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here, our demand curve is roughly <span class="math notranslate nohighlight">\(Q(P) = -476413P+ 1446952\)</span>; the slope is -476413 and <span class="math notranslate nohighlight">\(y\)</span>-intercept is 1446952. This means that as the price increases by 1 unit (in this case, $1), we would expect to see quantity demanded to decrease by 476413 units (in this case, 476413 avocados).</p>
+<p>Note that this demand curve is not the same as the previous demand curve! It is not simply the inverse of the previous demand curve.</p>
+<p>Plotting this line on a graph, we see a slightly different demand curve: can you see what is different between the two?</p>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<img alt="../../_images/02-example_18_0.png" src="../../_images/02-example_18_0.png" />
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/01-demand"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="01-demand.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Demand Curves</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="03-log-log.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Log-log and Semi-log Demand Curves</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Data 88E Course Staff<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
