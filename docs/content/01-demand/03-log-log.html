@@ -637,14 +637,15 @@ D(P) &amp;= e^{m\cdot\ln{P} + b}\\
 &amp;= e^b(e^{\ln{P}})^m \\
 &amp;= e^bP^m \\
 \end{align*}\end{split}\]</div>
-<p>In this setup, <span class="math notranslate nohighlight">\(b\)</span> does not have as clear a meaning. For <span class="math notranslate nohighlight">\(m\)</span>, we can once again suppose that P goes up by one dollar:</p>
+<p>In this setup, <span class="math notranslate nohighlight">\(b\)</span> does not have as clear a meaning. For <span class="math notranslate nohighlight">\(m\)</span>, we can suppose that <span class="math notranslate nohighlight">\(P\)</span> goes up by one percent:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align*}
-D(P+1) &amp;= e^b(P+1)^m \\
-&amp;\approx e^b (1+m)P^m\\
+D(1.01P) &amp;= e^b(1.01P)^m \\
+&amp;= e^b 1.01^m P^m\\
+&amp;= 1.01^m D(P) \\
 &amp;\approx (1+m) D(P) 
 \end{align*}\end{split}\]</div>
-<p>Where we utilize the approximation that <span class="math notranslate nohighlight">\((P+1)^m \approx P^m \times (1+m)\)</span>. Our caveat from the previous section about <span class="math notranslate nohighlight">\(m\)</span> being small continues to be in place here: typically, we do not want our <span class="math notranslate nohighlight">\(m\)</span> to be larger than <span class="math notranslate nohighlight">\(0.2\)</span>, or else the approxmation will fall apart.</p>
+<p>Where we utilize the approximation that <span class="math notranslate nohighlight">\(1.01^m \approx 1+m\)</span>. Our caveat from the previous section about <span class="math notranslate nohighlight">\(m\)</span> not being large continues to be in place here: typically, we do not want our <span class="math notranslate nohighlight">\(m\)</span> to be larger than 30 (where <span class="math notranslate nohighlight">\(1.01^{30}\approx 1.35\)</span>), or else the approximation will fall apart.</p>
 <div class="section" id="visualizing-the-log-log-relationship">
 <h3>Visualizing the log-log relationship<a class="headerlink" href="#visualizing-the-log-log-relationship" title="Permalink to this headline">¶</a></h3>
 <p>From above, we can convert the linear log-log relationship into non-log terms for price and quantity, ultimately getting <span class="math notranslate nohighlight">\(D(P) = e^bP^m\)</span>. Plotting this relationship, we can see a demand curve that looks somewhat like an exponential decay curve:</p>
