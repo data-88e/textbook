@@ -520,6 +520,18 @@
    Trading Options
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#returns">
+   Returns
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculating-returns-using-an-api">
+     Calculating Returns Using an API
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
             </nav>
@@ -610,6 +622,359 @@ P &amp;= K \cdot e^{-r_{rf}T} \cdot N(-d_2) - S \cdot N(-d_1)
 <p>Suppose I only needed to put up enough collateral to cover a $20 increase in stock price. That means that I need to be able to afford buying stock at $110, and selling it to you at $100. That’s a difference of $10. But recall that option contracts actually deal with increments of 100 shares. So I will actually have to post $10 x 100 = $1000 in collateral. If the stock price does in fact jump to $110, my broker may then ask me to put even more money down for collateral, in the event that it continues to go up.</p>
 <p>If for some reason the rules specify that I need to completely cover all the risk of selling this call, no amount of money will be sufficient to cover the cost of buying shares at some unknown price in the future and selling at $100. This is because there is no theoretical limit to how high the price of a stock can reach. In this situation, I would actually have to post 100 shares of the stock as collateral at the same time that I sell you the call. This way, I am guaranteed to have 100 shares of stock to sell to you in the event that you use your call.</p>
 <p>Selling calls works similarly, but instead I need to have enough money down as collateral to afford to <em>buy</em> shares from you at the strike price.</p>
+</div>
+<div class="section" id="returns">
+<h2>Returns<a class="headerlink" href="#returns" title="Permalink to this headline">¶</a></h2>
+<p>This portion of the lecture is fairly simple. A return on security is essentially the money made or lost by investing in the security over a period of time.</p>
+<p>The return on security has two components:</p>
+<ol class="simple">
+<li><p>The change in price of the security</p></li>
+<li><p>Any cash flows associated with the security (dividends for stock, coupons for bonds)</p></li>
+</ol>
+<p>If we write the change in price over a time interval τ as
+<span class="math notranslate nohighlight">\(∆x_t = x_(t+τ) − x_t = x(t + τ) − x(t)\)</span>,
+then we can write the rate of return r as
+<span class="math notranslate nohighlight">\(r(t) = \frac{x(t + τ) −x(t) + income − costs}{x(t)}\)</span></p>
+<div class="section" id="calculating-returns-using-an-api">
+<h3>Calculating Returns Using an API<a class="headerlink" href="#calculating-returns-using-an-api" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#importing packages needed to access the API</span>
+<span class="o">!</span>pip install yfinance
+<span class="kn">import</span> <span class="nn">yfinance</span> <span class="k">as</span> <span class="nn">yf</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: yfinance in /Users/rohanjha/opt/anaconda3/lib/python3.8/site-packages (0.1.64)
+Requirement already satisfied: numpy&gt;=1.15 in /Users/rohanjha/opt/anaconda3/lib/python3.8/site-packages (from yfinance) (1.20.1)
+Requirement already satisfied: multitasking&gt;=0.0.7 in /Users/rohanjha/opt/anaconda3/lib/python3.8/site-packages (from yfinance) (0.0.9)
+Requirement already satisfied: pandas&gt;=0.24 in /Users/rohanjha/opt/anaconda3/lib/python3.8/site-packages (from yfinance) (1.2.4)
+Requirement already satisfied: lxml&gt;=4.5.1 in /Users/rohanjha/opt/anaconda3/lib/python3.8/site-packages (from yfinance) (4.6.3)
+Requirement already satisfied: requests&gt;=2.20 in /Users/rohanjha/opt/anaconda3/lib/python3.8/site-packages (from yfinance) (2.25.1)
+Requirement already satisfied: python-dateutil&gt;=2.7.3 in /Users/rohanjha/opt/anaconda3/lib/python3.8/site-packages (from pandas&gt;=0.24-&gt;yfinance) (2.8.1)
+Requirement already satisfied: pytz&gt;=2017.3 in /Users/rohanjha/opt/anaconda3/lib/python3.8/site-packages (from pandas&gt;=0.24-&gt;yfinance) (2021.1)
+Requirement already satisfied: six&gt;=1.5 in /Users/rohanjha/opt/anaconda3/lib/python3.8/site-packages (from python-dateutil&gt;=2.7.3-&gt;pandas&gt;=0.24-&gt;yfinance) (1.15.0)
+Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /Users/rohanjha/opt/anaconda3/lib/python3.8/site-packages (from requests&gt;=2.20-&gt;yfinance) (1.26.4)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /Users/rohanjha/opt/anaconda3/lib/python3.8/site-packages (from requests&gt;=2.20-&gt;yfinance) (2020.12.5)
+Requirement already satisfied: chardet&lt;5,&gt;=3.0.2 in /Users/rohanjha/opt/anaconda3/lib/python3.8/site-packages (from requests&gt;=2.20-&gt;yfinance) (4.0.0)
+Requirement already satisfied: idna&lt;3,&gt;=2.5 in /Users/rohanjha/opt/anaconda3/lib/python3.8/site-packages (from requests&gt;=2.20-&gt;yfinance) (2.10)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">yf</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s2">&quot;^GSPC&quot;</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="s2">&quot;1993-01-01&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;2021-01-01&quot;</span><span class="p">)</span>
+<span class="c1"># In code above, we input the ticker symbol for S&amp;P500 and specify the start and end time intervals</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[*********************100%***********************]  1 of 1 completed
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Open</th>
+      <th>High</th>
+      <th>Low</th>
+      <th>Close</th>
+      <th>Adj Close</th>
+      <th>Volume</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1993-01-04</th>
+      <td>435.700012</td>
+      <td>437.320007</td>
+      <td>434.480011</td>
+      <td>435.380005</td>
+      <td>435.380005</td>
+      <td>201210000</td>
+    </tr>
+    <tr>
+      <th>1993-01-05</th>
+      <td>435.380005</td>
+      <td>435.399994</td>
+      <td>433.549988</td>
+      <td>434.339996</td>
+      <td>434.339996</td>
+      <td>240350000</td>
+    </tr>
+    <tr>
+      <th>1993-01-06</th>
+      <td>434.339996</td>
+      <td>435.170013</td>
+      <td>432.519989</td>
+      <td>434.519989</td>
+      <td>434.519989</td>
+      <td>295240000</td>
+    </tr>
+    <tr>
+      <th>1993-01-07</th>
+      <td>434.519989</td>
+      <td>435.459991</td>
+      <td>429.760010</td>
+      <td>430.730011</td>
+      <td>430.730011</td>
+      <td>304850000</td>
+    </tr>
+    <tr>
+      <th>1993-01-08</th>
+      <td>430.730011</td>
+      <td>430.730011</td>
+      <td>426.880005</td>
+      <td>429.049988</td>
+      <td>429.049988</td>
+      <td>263470000</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2020-12-24</th>
+      <td>3694.030029</td>
+      <td>3703.820068</td>
+      <td>3689.320068</td>
+      <td>3703.060059</td>
+      <td>3703.060059</td>
+      <td>1885090000</td>
+    </tr>
+    <tr>
+      <th>2020-12-28</th>
+      <td>3723.030029</td>
+      <td>3740.510010</td>
+      <td>3723.030029</td>
+      <td>3735.360107</td>
+      <td>3735.360107</td>
+      <td>3527460000</td>
+    </tr>
+    <tr>
+      <th>2020-12-29</th>
+      <td>3750.010010</td>
+      <td>3756.120117</td>
+      <td>3723.310059</td>
+      <td>3727.040039</td>
+      <td>3727.040039</td>
+      <td>3387030000</td>
+    </tr>
+    <tr>
+      <th>2020-12-30</th>
+      <td>3736.189941</td>
+      <td>3744.629883</td>
+      <td>3730.209961</td>
+      <td>3732.040039</td>
+      <td>3732.040039</td>
+      <td>3145200000</td>
+    </tr>
+    <tr>
+      <th>2020-12-31</th>
+      <td>3733.270020</td>
+      <td>3760.199951</td>
+      <td>3726.879883</td>
+      <td>3756.070068</td>
+      <td>3756.070068</td>
+      <td>3172510000</td>
+    </tr>
+  </tbody>
+</table>
+<p>7052 rows × 6 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Open</th>
+      <th>High</th>
+      <th>Low</th>
+      <th>Close</th>
+      <th>Adj Close</th>
+      <th>Volume</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1993-01-04</th>
+      <td>435.700012</td>
+      <td>437.320007</td>
+      <td>434.480011</td>
+      <td>435.380005</td>
+      <td>435.380005</td>
+      <td>201210000</td>
+    </tr>
+    <tr>
+      <th>1993-01-05</th>
+      <td>435.380005</td>
+      <td>435.399994</td>
+      <td>433.549988</td>
+      <td>434.339996</td>
+      <td>434.339996</td>
+      <td>240350000</td>
+    </tr>
+    <tr>
+      <th>1993-01-06</th>
+      <td>434.339996</td>
+      <td>435.170013</td>
+      <td>432.519989</td>
+      <td>434.519989</td>
+      <td>434.519989</td>
+      <td>295240000</td>
+    </tr>
+    <tr>
+      <th>1993-01-07</th>
+      <td>434.519989</td>
+      <td>435.459991</td>
+      <td>429.760010</td>
+      <td>430.730011</td>
+      <td>430.730011</td>
+      <td>304850000</td>
+    </tr>
+    <tr>
+      <th>1993-01-08</th>
+      <td>430.730011</td>
+      <td>430.730011</td>
+      <td>426.880005</td>
+      <td>429.049988</td>
+      <td>429.049988</td>
+      <td>263470000</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2020-12-24</th>
+      <td>3694.030029</td>
+      <td>3703.820068</td>
+      <td>3689.320068</td>
+      <td>3703.060059</td>
+      <td>3703.060059</td>
+      <td>1885090000</td>
+    </tr>
+    <tr>
+      <th>2020-12-28</th>
+      <td>3723.030029</td>
+      <td>3740.510010</td>
+      <td>3723.030029</td>
+      <td>3735.360107</td>
+      <td>3735.360107</td>
+      <td>3527460000</td>
+    </tr>
+    <tr>
+      <th>2020-12-29</th>
+      <td>3750.010010</td>
+      <td>3756.120117</td>
+      <td>3723.310059</td>
+      <td>3727.040039</td>
+      <td>3727.040039</td>
+      <td>3387030000</td>
+    </tr>
+    <tr>
+      <th>2020-12-30</th>
+      <td>3736.189941</td>
+      <td>3744.629883</td>
+      <td>3730.209961</td>
+      <td>3732.040039</td>
+      <td>3732.040039</td>
+      <td>3145200000</td>
+    </tr>
+    <tr>
+      <th>2020-12-31</th>
+      <td>3733.270020</td>
+      <td>3760.199951</td>
+      <td>3726.879883</td>
+      <td>3756.070068</td>
+      <td>3756.070068</td>
+      <td>3172510000</td>
+    </tr>
+  </tbody>
+</table>
+<p>7052 rows × 6 columns</p>
+</div></div></div>
+</div>
+<p>We will now plot the graph for Close Price of S&amp;P500</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Close&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;purple&quot;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span> <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;S&amp;P500 Returns&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/options_14_0.png" src="../../_images/options_14_0.png" />
+</div>
+</div>
+<p>Calculating the return based on the previous time interval, the graph below shows the returns from S&amp;P500 as a function of time</p>
+</div>
 </div>
 </div>
 
