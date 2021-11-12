@@ -43,6 +43,8 @@ sections:
   - file: content/07-game-theory/python-classes.ipynb
 - file: content/08-development/index.md
 - file: content/09-macro/index.md
+  sections:
+  - file: content/09-macro/MacroChapter.ipynb
 - file: content/10-finance/index.md
   sections:
   - file: content/10-finance/value-interest.ipynb
