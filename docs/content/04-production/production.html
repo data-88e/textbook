@@ -1,0 +1,741 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Production and Cobb-Douglas Functions &#8212; Data 88E: Economic Models Textbook</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/plotly.min.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Analyzing Shifts in \(A\) and \(\alpha\)" href="shifts.html" />
+    <link rel="prev" title="Production" href="index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/econ-models.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Data 88E: Economic Models Textbook</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Data 88E: Economic Models
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../00-intro/index.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01-demand/index.html">
+   Demand and Elasticities
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-demand/01-demand.html">
+     Demand Curves
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-demand/02-example.html">
+     An Empirical Demand Curve
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-demand/03-log-log.html">
+     Log-log and Semi-log Demand Curves
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-demand/04-elasticity.html">
+     Elasticity
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02-supply/index.html">
+   Supply and Market Equilibrium
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-supply/01-supply.html">
+     The Supply Curve
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-supply/02-eep147-example.html">
+     An Empirical Example from EEP 147
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-supply/03-market-equilibria.html">
+     Market Equilibria
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-supply/04-sympy.html">
+     SymPy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03-public/index.html">
+   Public Economics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-public/taxes-subsidies.html">
+     Taxes and Subsidies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-public/surplus.html">
+     Surplus
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-public/govt-intervention.html">
+     Other Forms of Government Intervention
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
+   Production
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Production and Cobb-Douglas Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="shifts.html">
+     Analyzing Shifts in
+     <span class="math notranslate nohighlight">
+      \(A\)
+     </span>
+     and
+     <span class="math notranslate nohighlight">
+      \(\alpha\)
+     </span>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05-utility/index.html">
+   Utility
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-utility/utility.html">
+     Utility Functions and Indifference Curves
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-utility/budget-constraints.html">
+     Budget Constraints and Utility Maximization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes">
+     LaTeX
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../06-inequality/index.html">
+   Inequality
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06-inequality/inequality.html">
+     Measurements of Inequality
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06-inequality/historical-inequality.html">
+     Income Inequality Historically
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../07-game-theory/index.html">
+   Game Theory
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07-game-theory/expected-utility.html">
+     Expected Utility Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07-game-theory/equilibria-oligopolies.html">
+     Equilibria &amp; Oligopolies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07-game-theory/cournot.html">
+     Cournot Competition
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07-game-theory/bertrand.html">
+     Bertrand Competition
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07-game-theory/python-classes.html">
+     Python Classes
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-development/index.html">
+   Development
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../09-macro/index.html">
+   Macroeconomic Policy
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09-macro/MacroChapter.html">
+     Macroeconomic Indicators
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../10-finance/index.html">
+   Finance
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10-finance/value-interest.html">
+     Present Value, Future Value, and Interest Rates
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10-finance/options.html">
+     Options
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../11-econometrics/index.html">
+   Econometrics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../11-econometrics/single-variable.html">
+     Single Variable Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../11-econometrics/statsmodels.html">
+     Using
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       statsmodels
+      </span>
+     </code>
+     for Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../11-econometrics/multivariable.html">
+     Multivariable Regression and Bias
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../11-econometrics/reading-econ-papers.html">
+     Reading Economics Papers
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/content/04-production/production.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/data-88e/textbook"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/data-88e/textbook/master?urlpath=tree/content/04-production/production.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        <a class="jupyterhub-button" href="https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https://github.com/data-88e/textbook&urlpath=tree/textbook/content/04-production/production.ipynb&branch=master"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#production-in-the-economy">
+   Production in the Economy
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#total-factor-productivity">
+     Total Factor Productivity
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-cobb-douglas-production-function">
+   The Cobb-Douglas Production Function
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#capital">
+     Capital
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#labor">
+     Labor
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#implication-for-cross-country-comparisons">
+     Implication for Cross-Country Comparisons
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="production-and-cobb-douglas-functions">
+<h1>Production and Cobb-Douglas Functions<a class="headerlink" href="#production-and-cobb-douglas-functions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="production-in-the-economy">
+<h2>Production in the Economy<a class="headerlink" href="#production-in-the-economy" title="Permalink to this headline">¶</a></h2>
+<p>At the core of macroeconomics is the study of how a nation’s various resources are used as inputs in the production of goods and services. The aggregate value of what a nation produces is known as its Gross Domestic Product, which is calculated in many different ways. The focus of this lecture is on production and the functions that aim to model how much output a country can produce, when given a certain set of inputs.</p>
+<p>These set of inputs are known as factors of production:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(K\)</span>: Capital - a monetary value of the stock or value of productive assets.</p></li>
+<li><p><span class="math notranslate nohighlight">\(L\)</span>: Labor - the number of worker hours.</p></li>
+<li><p><span class="math notranslate nohighlight">\(A\)</span>: Total Factor Productivity - a measure of the effectiveness with which the two factors of production are used.</p></li>
+</ul>
+<p>This model of production in an economy provides a simple yet effective way of modeling output. It would be way too complicated to account for every possible input to production, especially as we are operating at the country level. However, the key simplication is that we can classify all of these different inputs as either capital or labor: anything physical or tangible is capital and any work done by humans is labor. Taking the monetary value of either of these, while a rough approximation, still yields great insight into the different ways countries produce goods and services. Even if two countries have very similar GDPs, one maybe more capital intensive than the other. Having this knowledge would greatly inform policy and would help governments direct funding towards areas of concern.</p>
+<p>We will see this in action during Project 2 where we will examine real life data from different countries and compare/contrast their usage of labor, capital and total factor productivity.</p>
+<p>This simplication has allowed economists to derive the following key notion:
+A nation’s output is a function of the amount of the factors of production that are utilized in its economy; that is to say output is a function of labor and capital.</p>
+<p>Thus, the economy’s production function is:</p>
+<div class="math notranslate nohighlight">
+\[Y = A \cdot f(K, L)\]</div>
+<p><span class="math notranslate nohighlight">\(f(K, L)\)</span> refers to any specific mathematical model of output. One such example is the Cobb-Douglas production function that we will be examining in the next section.</p>
+<div class="section" id="total-factor-productivity">
+<h3>Total Factor Productivity<a class="headerlink" href="#total-factor-productivity" title="Permalink to this headline">¶</a></h3>
+<p>In modern economies, one way to think about total factor producivity (TFP) is technology or research and development. A country with a high TFP (or technology) can produce far more goods and services than another with a lower TFP but the exact same amount of capital and labor. Think about it: a country with 5 factories utilizing robotic arms to assemble cars will be able to produce more than another nation that also has 5 factories but utilizes workers working in 8-hour shifts. The former country would have a higher TFP than the latter. Thus, it can be said that technology increases the efficiency with which the factors of production are used.</p>
+<p>There are three key differences between TFP and the other two factors of production:</p>
+<ol class="simple">
+<li><p>TFP “scales” production by some factor A. The other two are raised to an exponent that is less than 1, reducing its value relative to the input. Thus, TFP is very powerful as it creates a proportional increase in output.</p></li>
+<li><p>Technology is “non-rivalrous”, meaning that more than one person can use it at any given time. For example, robotics technology is not limited to one person, but a specific robotic arm can only be used by a single person at a time.</p></li>
+<li><p>Technology is “non-excludable”, meaning that one person cannot block another from using that factor. Even with the patent system, after expiry, technologies that were once protected now becomes free to use or adapt.</p></li>
+</ol>
+<p>Note that TFP has no intrinsic value by itself, but becomes informative when it is compared across nations. For example, a TFP of 1.4 means nothing. However, if one country has a TFP of 1.8 while the other is 1.4, then we can say that the first country is more effective at utilizing its resources to produce output.</p>
+</div>
+</div>
+<div class="section" id="the-cobb-douglas-production-function">
+<h2>The Cobb-Douglas Production Function<a class="headerlink" href="#the-cobb-douglas-production-function" title="Permalink to this headline">¶</a></h2>
+<p>The Cobb-Douglas Production Function is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+f(K, L) &amp;= K^\alpha L^\beta \\
+ Y &amp;= A \cdot f(K, L) \\
+ &amp;= A K^\alpha L^\beta
+\end{aligned}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> are exponents.</p>
+<p>A common simplification is that <span class="math notranslate nohighlight">\(\beta = 1 - \alpha\)</span>. We will later explore the implications of this statement. For now, let us rewrite the above function:</p>
+<div class="math notranslate nohighlight">
+\[
+Y = A K^\alpha L^{1 - \alpha}
+\]</div>
+<p>Note that this is a function of two variables, <span class="math notranslate nohighlight">\(K\)</span> and <span class="math notranslate nohighlight">\(L\)</span>. If we were to plot this function utilizing both variables, we would need a 3D plot with <span class="math notranslate nohighlight">\(K\)</span>, <span class="math notranslate nohighlight">\(L\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> each having their own axis. For now, let us gain greater insight of what this function will look like by holding one variable constant and plot the other versus output.</p>
+<div class="section" id="capital">
+<h3>Capital<a class="headerlink" href="#capital" title="Permalink to this headline">¶</a></h3>
+<p>For the first case, let us visualize the Cobb-Douglas Production Function with output as a function of capital, holding the amount of labor constant at <span class="math notranslate nohighlight">\(\bar L\)</span>.</p>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<img alt="../../_images/production_6_0.png" src="../../_images/production_6_0.png" />
+</div>
+</div>
+<p>Notice some of the properties of the function above:</p>
+<ol class="simple">
+<li><p>It is increasing. This is called increasing returns to capital wherein any increase in capital will lead to an increase in output, assuming that labor is held constant.</p></li>
+<li><p>It is concave (increasing at a decreasing rate). This is called diminishing marginal returns to capital wherein any additional unit of capital will lead to smaller and smaller increases in capital. For a better idea of this, let us take the partial derivative of the Cobb-Douglas function with respect to capital.</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+Y &amp;= A K^\alpha L^{1 - \alpha} \\
+\dfrac{\partial Y}{\partial K} &amp;= \alpha A \left ( \dfrac{L}{K} \right )^{1 - \alpha} 
+\end{aligned}\end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(\dfrac{\partial Y}{\partial K}\)</span> is called the <strong>marginal product of capital (MPK)</strong>. Let us plot this function, once again holding labor constant at <span class="math notranslate nohighlight">\(\bar L\)</span>.</p>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<img alt="../../_images/production_8_0.png" src="../../_images/production_8_0.png" />
+</div>
+</div>
+<p>Note that <span class="math notranslate nohighlight">\(\text{MPK} \cdot P = R\)</span> is the rental rate of capital less the cost of purchasing or renting an additional unit of capital.</p>
+<p>The MPK is monotonically decreasing, converging towards an asymptote at <span class="math notranslate nohighlight">\(\text{MPK} = 0\)</span>. This means that the rate of increase of output due to an increase in capital will become 0, meaning that the amount of output added per unit of additional capital will become constant. What would be the intuition behind this?</p>
+<p>Say a company making pizzas has 1 oven and 10 employees. There is a hard limit on how many pizzas can be baked in a given period of time. However, if the company purchases a second oven, suddenly the employees can bake more pizzas at the same time, thereby increasing the number that can be baked in the same amount of time. In this case, the MPK would be very high as output has greatly increased just by addding slightly to the company’s capital stock.</p>
+<p>Let us move to the case when the company has 100 ovens and 10 employees. Adding another oven would do little to increase output as the 10 employees can only do so much - the extra capacity would not be helpful. In this case, the MPK would be very low as output has not increased by much (if at all) even when the company’s capital stock increased.</p>
+</div>
+<div class="section" id="labor">
+<h3>Labor<a class="headerlink" href="#labor" title="Permalink to this headline">¶</a></h3>
+<p>We will now move to using the Cobb-Douglas function for output as a function of labor, holding the amount of capital constant at <span class="math notranslate nohighlight">\(\bar K\)</span>.</p>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<img alt="../../_images/production_11_0.png" src="../../_images/production_11_0.png" />
+</div>
+</div>
+<p>The properties of the Labor function are similar to that of the capital function. Let us take the partial derivative of the Cobb-Douglas function with respect to labor.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+Y &amp;= A K^\alpha L^{1 - \alpha} \\
+\dfrac{\partial Y}{\partial L} &amp;= A (1 - \alpha) \left ( \dfrac{K}{L} \right )^{\alpha}
+\end{aligned}\end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(\dfrac{\partial Y}{\partial L}\)</span> is called the <strong>marginal product of labor (MPL)</strong>. Let us plot this function, once again holding capital constant at <span class="math notranslate nohighlight">\(\bar K\)</span>.</p>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<img alt="../../_images/production_13_0.png" src="../../_images/production_13_0.png" />
+</div>
+</div>
+<p>Note that <span class="math notranslate nohighlight">\(\text{MPL} \cdot P = W\)</span>, the real wage rate less the cost of hiring an additional unit of labor.</p>
+<p>Similar to the MPK, the MPL is monotonically decreasing, converging towards an asymptote at <span class="math notranslate nohighlight">\(\text{MPL} = 0\)</span>. This means that the rate of increase of output due to an increase in labor will become 0.</p>
+<p>Say the same company making pizzas has 5 ovens and 5 employees. One oven per employee seems like overkill but provides significant extra capacity in terms of capital that would give great flexibility for the company when producing pizzas. However, if the company hires 1 more worker, each oven can be utilized more effectively, as another employee can go to prepping pizzas before baking. This greatly increasies the number of pizzas baked in a given unit of time. The MPL would be very high as output increases significantly with the addition of one more worker. On the above graph, we would be on the steep part of the function.</p>
+<p>If the company has 5 ovens but 20 employees, hiring an additional worker would do little to increase output. The kitchen would probably be too crowded and there are only so many servers needed. The MPL would be very low as output has not increased by much even when the company’s amount of labor has increased. We would be near the flat part of the graph, as the MPL approaches 0.</p>
+</div>
+<div class="section" id="implication-for-cross-country-comparisons">
+<h3>Implication for Cross-Country Comparisons<a class="headerlink" href="#implication-for-cross-country-comparisons" title="Permalink to this headline">¶</a></h3>
+<p>Work by Professors C.W. Cobb and P.H. Douglas found that production or output was a weighted average of the log of capital and labor. The equation for Cobb-Douglas production functions were the result of their research, especially when a log transformation was applied to the equation:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+Y &amp;= A K^\alpha L^{1 - \alpha} \\
+\ln Y &amp;= \ln A + \alpha \ln K + (1 - \alpha) \ln L
+\end{aligned}\end{split}\]</div>
+<p>Note that this is exactly the weighted average that Cobb &amp; Douglas found in their empirical findings: capital and labor are weighted by <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(1 - \alpha\)</span> respectively. However, this is still showing production as a function of two variables, <span class="math notranslate nohighlight">\(K\)</span> and <span class="math notranslate nohighlight">\(L\)</span>. Rearranging the equation yields something interesting:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\ln Y &amp;= \ln A + \alpha \ln K + \ln L - \alpha \ln L \\
+\ln Y- \ln L &amp;= \ln A + \alpha \left ( \ln K - \ln L \right ) \\
+\ln \frac{Y}{L} &amp;= \ln A + \alpha \ln \frac{K}{L}
+\end{aligned}\end{split}\]</div>
+<p>The Cobb-Douglas function is now an equation in 1 variable: <span class="math notranslate nohighlight">\(\ln \frac{K}{L}\)</span>. This provides a pathway for comparing values of <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(\alpha\)</span> across countries, and by extension how capital and labor are deployed in different ways between nations. We will explore this idea further in the next section.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/04-production"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="index.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Production</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="shifts.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Analyzing Shifts in <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(\alpha\)</span></p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Data 88E Course Staff<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
