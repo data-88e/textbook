@@ -5,58 +5,58 @@ sections:
 - file: content/00-intro/index.ipynb
 - file: content/01-demand/index.md
   sections:
-  - file: content/01-demand/01-demand.ipynb
-  - file: content/01-demand/02-example.ipynb
-  - file: content/01-demand/03-log-log.ipynb
-  - file: content/01-demand/04-elasticity.ipynb
+    - file: content/01-demand/01-demand.ipynb
+    - file: content/01-demand/02-example.ipynb
+    - file: content/01-demand/03-log-log.ipynb
+    - file: content/01-demand/04-elasticity.ipynb
 - file: content/02-supply/index.md
   sections:
-  - file: content/02-supply/01-supply.ipynb
-  - file: content/02-supply/02-eep147-example.ipynb
-  - file: content/02-supply/03-market-equilibria.ipynb
-  - file: content/02-supply/04-sympy.ipynb
+    - file: content/02-supply/01-supply.ipynb
+    - file: content/02-supply/02-eep147-example.ipynb
+    - file: content/02-supply/03-market-equilibria.ipynb
+    - file: content/02-supply/04-sympy.ipynb
 - file: content/03-public/index.md
   sections:
-  - file: content/03-public/taxes-subsidies.ipynb
-  - file: content/03-public/surplus.ipynb
-  - file: content/03-public/govt-intervention.ipynb
+    - file: content/03-public/taxes-subsidies.ipynb
+    - file: content/03-public/surplus.ipynb
+    - file: content/03-public/govt-intervention.ipynb
 - file: content/04-production/index.md
   sections:
-  - file: content/04-production/production.ipynb
-  - file: content/04-production/shifts.ipynb
+    - file: content/04-production/production.ipynb
+    - file: content/04-production/shifts.ipynb
 - file: content/05-utility/index.md
   sections:
-  - file: content/05-utility/utility.ipynb
-  - file: content/05-utility/budget-constraints.ipynb
-  - url: https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes
-    title: LaTeX
+    - file: content/05-utility/utility.ipynb
+    - file: content/05-utility/budget-constraints.ipynb
+    - url: https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes
+      title: LaTeX
 - file: content/06-inequality/index.md
   sections:
-  - file: content/06-inequality/inequality.ipynb
-  - file: content/06-inequality/historical-inequality.ipynb
+    - file: content/06-inequality/inequality.ipynb
+    - file: content/06-inequality/historical-inequality.ipynb
 - file: content/07-game-theory/index.md
   sections:
-  - file: content/07-game-theory/expected-utility.ipynb
-  - file: content/07-game-theory/equilibria-oligopolies.ipynb
-  - file: content/07-game-theory/cournot.ipynb
-  - file: content/07-game-theory/bertrand.ipynb
-  - file: content/07-game-theory/python-classes.ipynb
+    - file: content/07-game-theory/expected-utility.ipynb
+    - file: content/07-game-theory/equilibria-oligopolies.ipynb
+    - file: content/07-game-theory/cournot.ipynb
+    - file: content/07-game-theory/bertrand.ipynb
+    - file: content/07-game-theory/python-classes.ipynb
 - file: content/08-development/index.md
 - file: content/09-macro/index.md
   sections:
-  - file: content/09-macro/MacroChapter.ipynb
+    - file: content/09-macro/MacroChapter.ipynb
 - file: content/10-finance/index.md
   sections:
-  - file: content/10-finance/value-interest.ipynb
-  - file: content/10-finance/options.ipynb
+    - file: content/10-finance/value-interest.ipynb
+    - file: content/10-finance/options.ipynb
 - file: content/11-econometrics/index.md
   sections:
-  - file: content/11-econometrics/single-variable.ipynb
-  - file: content/11-econometrics/statsmodels.ipynb
-  - file: content/11-econometrics/multivariable.ipynb
-  - file: content/11-econometrics/reading-econ-papers.ipynb
+    - file: content/11-econometrics/single-variable.ipynb
+    - file: content/11-econometrics/statsmodels.ipynb
+    - file: content/11-econometrics/multivariable.ipynb
+    - file: content/11-econometrics/reading-econ-papers.ipynb
 - file: content/12-environmental/index.md
   sections:
-  - file: content/12-environmental/textbook1.ipynb
-  - file: content/12-environmental/KuznetsHypothesis-Copy1.ipynb
+    - file: content/12-environmental/textbook1.ipynb
+    - file: content/12-environmental/KuznetsHypothesis-Copy1.ipynb
 - file: content/references.md
