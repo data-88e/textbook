@@ -55,4 +55,8 @@ sections:
   - file: content/11-econometrics/statsmodels.ipynb
   - file: content/11-econometrics/multivariable.ipynb
   - file: content/11-econometrics/reading-econ-papers.ipynb
+- file: content/12-environmental/index.md
+  sections:
+  - file: content/12-environmental/textbook1.ipynb
+  - file: content/12-environmental/KuznetsHypothesis.ipynb
 - file: content/references.md
