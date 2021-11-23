@@ -541,6 +541,28 @@
   <a class="reference internal nav-link" href="#individual-country-graphs">
    Individual country graphs
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#usa">
+     USA
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#china">
+     China
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#india">
+     India
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#norway">
+     Norway
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#criticism-of-the-environmental-kuznets-curve-hypothesis">
@@ -698,6 +720,8 @@ However - could this hold for the potentially most important Pollutant C02, the 
 <h2>Individual country graphs<a class="headerlink" href="#individual-country-graphs" title="Permalink to this headline">¶</a></h2>
 <p>Lets look at some individual countries, starting with the US.<br />
 We can plot both total and logged quantities</p>
+<div class="section" id="usa">
+<h3>USA<a class="headerlink" href="#usa" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">US_table</span> <span class="o">=</span> <span class="n">co2_table</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="s1">&#39;United States&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="mi">1800</span><span class="p">,</span><span class="mi">2018</span><span class="p">))</span>
@@ -708,13 +732,16 @@ We can plot both total and logged quantities</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/KuznetsHypothesis-Copy1_13_0.png" src="../../_images/KuznetsHypothesis-Copy1_13_0.png" />
-<img alt="../../_images/KuznetsHypothesis-Copy1_13_1.png" src="../../_images/KuznetsHypothesis-Copy1_13_1.png" />
+<img alt="../../_images/KuznetsHypothesis-Copy1_14_0.png" src="../../_images/KuznetsHypothesis-Copy1_14_0.png" />
+<img alt="../../_images/KuznetsHypothesis-Copy1_14_1.png" src="../../_images/KuznetsHypothesis-Copy1_14_1.png" />
 </div>
 </div>
 <p><strong>Looks like we have a curve!</strong></p>
 <p>In the case of the US it does indeed look like the C02 per capita does indeed start to deline after about $40,000
 Somewhere around 2000-2004 the CO2 emissions leveled off and then began to decline</p>
+</div>
+<div class="section" id="china">
+<h3>China<a class="headerlink" href="#china" title="Permalink to this headline">¶</a></h3>
 <p>In COP26, China has been a large part of the discussion (and emissions). Let’s have a look at their curve!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -727,11 +754,14 @@ Somewhere around 2000-2004 the CO2 emissions leveled off and then began to decli
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/KuznetsHypothesis-Copy1_16_0.png" src="../../_images/KuznetsHypothesis-Copy1_16_0.png" />
-<img alt="../../_images/KuznetsHypothesis-Copy1_16_1.png" src="../../_images/KuznetsHypothesis-Copy1_16_1.png" />
+<img alt="../../_images/KuznetsHypothesis-Copy1_17_0.png" src="../../_images/KuznetsHypothesis-Copy1_17_0.png" />
+<img alt="../../_images/KuznetsHypothesis-Copy1_17_1.png" src="../../_images/KuznetsHypothesis-Copy1_17_1.png" />
 </div>
 </div>
 <p>Indeed it appears that China has an inflection point and is starting to level off in the Carbon intensity per capita</p>
+</div>
+<div class="section" id="india">
+<h3>India<a class="headerlink" href="#india" title="Permalink to this headline">¶</a></h3>
 <p>What about India?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -744,10 +774,13 @@ Somewhere around 2000-2004 the CO2 emissions leveled off and then began to decli
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/KuznetsHypothesis-Copy1_19_0.png" src="../../_images/KuznetsHypothesis-Copy1_19_0.png" />
-<img alt="../../_images/KuznetsHypothesis-Copy1_19_1.png" src="../../_images/KuznetsHypothesis-Copy1_19_1.png" />
+<img alt="../../_images/KuznetsHypothesis-Copy1_20_0.png" src="../../_images/KuznetsHypothesis-Copy1_20_0.png" />
+<img alt="../../_images/KuznetsHypothesis-Copy1_20_1.png" src="../../_images/KuznetsHypothesis-Copy1_20_1.png" />
 </div>
 </div>
+</div>
+<div class="section" id="norway">
+<h3>Norway<a class="headerlink" href="#norway" title="Permalink to this headline">¶</a></h3>
 <p>As I’m Norwegian, I thought it might be cool to see how things are going back home as well:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -760,8 +793,8 @@ Somewhere around 2000-2004 the CO2 emissions leveled off and then began to decli
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/KuznetsHypothesis-Copy1_21_0.png" src="../../_images/KuznetsHypothesis-Copy1_21_0.png" />
-<img alt="../../_images/KuznetsHypothesis-Copy1_21_1.png" src="../../_images/KuznetsHypothesis-Copy1_21_1.png" />
+<img alt="../../_images/KuznetsHypothesis-Copy1_22_0.png" src="../../_images/KuznetsHypothesis-Copy1_22_0.png" />
+<img alt="../../_images/KuznetsHypothesis-Copy1_22_1.png" src="../../_images/KuznetsHypothesis-Copy1_22_1.png" />
 </div>
 </div>
 <p>Turns out we’re ahead of the US in CO2 emissions per capita, but there’s still a long way to go until our development resembles a full Kuznets curve. However, it certainly looks like something! An almost vertical linear growth in terms of per capita CO2 emissions in the early economic stages stagnated into a period of fluctuations. As of now, it looks like it’s heading in a downward trend.</p>
@@ -776,7 +809,7 @@ Somewhere around 2000-2004 the CO2 emissions leveled off and then began to decli
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/KuznetsHypothesis-Copy1_23_0.png" src="../../_images/KuznetsHypothesis-Copy1_23_0.png" />
+<img alt="../../_images/KuznetsHypothesis-Copy1_24_0.png" src="../../_images/KuznetsHypothesis-Copy1_24_0.png" />
 </div>
 </div>
 <p>As in the US and Norway, these nations have experienced a boom, stagnation, and now to some extent a downward trend. Let’s finally plot all the previously observed nations together:</p>
@@ -791,11 +824,12 @@ Somewhere around 2000-2004 the CO2 emissions leveled off and then began to decli
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/KuznetsHypothesis-Copy1_25_0.png" src="../../_images/KuznetsHypothesis-Copy1_25_0.png" />
+<img alt="../../_images/KuznetsHypothesis-Copy1_26_0.png" src="../../_images/KuznetsHypothesis-Copy1_26_0.png" />
 </div>
 </div>
 <p>Here we see evidence for an Environmental Kuznets Curve.</p>
 <p>It seems, at least to some extent, that as nations develop economically, the level of environmental degradation reaches a peak and then declines, mapping a downward-facing U-curve.</p>
+</div>
 </div>
 <div class="section" id="criticism-of-the-environmental-kuznets-curve-hypothesis">
 <h2>Criticism of the Environmental Kuznets Curve Hypothesis<a class="headerlink" href="#criticism-of-the-environmental-kuznets-curve-hypothesis" title="Permalink to this headline">¶</a></h2>
