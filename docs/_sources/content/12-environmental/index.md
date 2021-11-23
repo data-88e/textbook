@@ -2,26 +2,29 @@
 
 ![windmills.png](attachment:windmills.png)
 
-In a broad sense, the field of Environmental Economics aims to relate and apply economic concepts (many of whom you're familiar with already) with the environment.
+In a broad sense, the field of Environmental Economics aims to relate and apply economic concepts to the environment.
  
-Central to Environmental Economics is the claim that the usage or degradation resources in the environment, our "environmental amenities", have an intrinsic value to humans that goes unaccounted for in the current market model. These unaccounted costs are considered *market failures* and carry *negative externalities*.
+One tenet of Environmental Economics is that the enjoyment of "environmental amenities"   (or conversely that the usage or degradation  of those resources) has an intrinsic value to humans that goes unaccounted for in the purely market-based model. These unaccounted costs are considered *market failures* and carry *negative externalities*.
  
-A great example of a negative externality is the emission of greenhouse gases (carbon dioxide, methane, nitrous oxide) from the combustion of hydrocarbons (gasoline, diesel, oil). The *true cost*  is not reflected in the lower price one pays at e.g the gas station. Consequently, the equilibrium quantity consumed is higher than the *socially optimal quantity*. As environmental economists, we're thus faced with the question: How could we reduce the quantity to the social optimum and weight in the *costs and benefits* of such a reduction? This is often a truly tricky question to answer!
+The greatest single example of a negative externality of global importance is the emission of greenhouse gases (carbon dioxide, methane, nitrous oxide) from the combustion of hydrocarbons (coal, gasoline, diesel, oil). The *true cost*  is not reflected in the lower price one pays at e.g the gas station. Consequently, the equilibrium quantity consumed is higher than the *socially optimal quantity*. Environmental economists seek to model the costs and benefits of a reduction.  How could we reduce the quantity to the social optimum and weigh in the *costs and benefits* of such a reduction?
  
-As a result, a major proportion of research and work within the field is devoted to building tools to reveal, address, and evaluate economic policies aimed at *internalizing* these externalities. Here, your knowledge from data science comes in handy! Very often, these tools are applied by a government which interferes with the market to a varying degree. Hence, we tend to divide the environmental economic policies into two subfields:
+As a result, a major proportion of research and work within the field is devoted to building tools to reveal, address, and evaluate economic policies aimed at *internalizing* these externalities. 
+
+Very often, these policy tools as applied by a government constitute interfering with the market to a varying degree. We can model environmental economic policies into two subsets:
  
-* **Prescriptive**: When the government manually controls a negative externality, e.g letting each emitter in the market emit a fixed amount of GHG gases.
+* **Command and Control**: When the government limits the amount of pollution to control a negative externality, e.g letting each emitter in the market emit a fixed amount of GHG gases.
  
-* **Market-based**: Where the government sets an emission goal, then introduces incentives or subsidies to alter market behaviour. It is left to each market actor to decide how much to emit. A carbon tax and a cap-and-trade (carbon quotas) are examples of marked-based interventions.
+* **Market-based**: Where the government sets an emission goal, then introduces incentives or subsidies to alter market behavior. It is left to each market actor to decide how much to emit. A carbon tax and a cap-and-trade (carbon quotas) are examples of marked-based interventions.
  
-A commonly used environmental economic tool is **The McKinsey Marginal Abatement Cost Curve (MAC)** which aims to reveal the *cost of abatement* (not emitting) greenhouse gases from the atmosphere using various strategies. It stems from the McKinsey 2009 "Pathways to a Low Carbon Economy" and is a splendid example of the applications of Environmental Economics in Data Science. In this notebook, we'll walk through the concepts of it and build one of our own! In another notebook, we'll attempt creating the **Environmental Kuznets Curve Hypothesis** through data, and look at reasons why it might be both wrong and right!
+A useful environmental economic model is **The Marginal Abatement Cost Curve (MAC)** which aims to describe the *cost of abatement* (not emitting) greenhouse gases into the atmosphere using various strategies. A famous version of this was contained in a report  McKinsey 2009 "Pathways to a Low Carbon Economy".  This example we will discuss as an  example of the intersection between of Environmental Economics and Data Science. In this notebook, we'll walk through the concepts of it and build one of our own! 
+
+Related to the discussion of global greenhouse gas emissions, we will also explore the **Environmental Kuznets Curve** through data, and compare the pathways of increasing emissions across countries and across time.  
  
-As you read through this, remember: This is just the tip of the iceberg in the applications of data science in environmental economics, and there is much more to explore if you chose to follow this exciting path.
+These are only a few of the applications of environmental economics, there are many more fields to explore, and even an entire major at UC Berkeley to explore.  
 
 ## Learning objectives
 
-* An introductory understanding of what the field of Environmental Economics is and what it aims to accomplish.
-* A thorough understanding of The McKinsey Greenhouse Gas (GHG) Abatement Cost Curve and its data science application.
-* A familiarity of the Marginal Abatement Curve's limitations and the concept of Capital Intensity.
-* An understanding of the important difference between static and dynamic cost.
-* An understanding of the Environmental Kuznets Curve Hypothesis and its data science applications.
+* An introduction to applications  of Environmental Economics with illustrations from global CO2 emissions
+* Motivation and understanding of the  Marginal Abatement Cost Curve for global Greenhouse Gas emissions, first by the (McKinsey 2009) curve for CO2, and then an application for Methane its data science application.
+* A discussion of the Marginal Abatement Curve's limitations with the concept of Capital Intensity and static vs dynamic costs.
+* An understanding of the Environmental Kuznets Curve Hypothesis and its data science applications

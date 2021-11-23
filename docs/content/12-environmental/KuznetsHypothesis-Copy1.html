@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Environmental Kuznets Curve Hypothesis &#8212; Data 88E: Economic Models Textbook</title>
+    <title>What is the Environmental Kuznets Curve Hypothesis? &#8212; Data 88E: Economic Models Textbook</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -54,8 +54,6 @@
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Bibliography" href="../references.html" />
-    <link rel="prev" title="Marginal Abatement Cost Curves" href="textbook1.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -92,7 +90,7 @@
   </a>
  </li>
 </ul>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../00-intro/index.html">
    Introduction
@@ -437,7 +435,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/content/12-environmental/textLecture2.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/content/12-environmental/KuznetsHypothesis-Copy1.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -475,14 +473,14 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/data-88e/textbook/master?urlpath=tree/content/12-environmental/textLecture2.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/data-88e/textbook/master?urlpath=tree/content/12-environmental/KuznetsHypothesis-Copy1.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
         
         
-        <a class="jupyterhub-button" href="https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https://github.com/data-88e/textbook&urlpath=tree/textbook/content/12-environmental/textLecture2.ipynb&branch=master"><button type="button"
+        <a class="jupyterhub-button" href="https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https://github.com/data-88e/textbook&urlpath=tree/textbook/content/12-environmental/KuznetsHypothesis-Copy1.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="../../_static/images/logo_jupyterhub.svg"
@@ -503,22 +501,51 @@
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   What is the Environmental Kuznets Curve Hypothesis?
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#building-our-own-environmental-kuznets-curve">
    Building our own Environmental Kuznets Curve
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#low-income-countries">
+     Low Income Countries
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#brics">
+     BRICS
+    </a>
+   </li>
+  </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#individual-country-graphs">
+   Individual country graphs
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#let-s-look-at-china">
+   Let’s look at China
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#criticism-of-the-environmental-kuznets-curve-hypothesis">
    Criticism of the Environmental Kuznets Curve Hypothesis
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-s-next">
+     What’s next?
+    </a>
+   </li>
+  </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-s-next">
-   What’s next?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#further-recommended-readings">
    Further recommended readings:
   </a>
@@ -547,18 +574,20 @@
 </div>
 </div>
 </div>
-<div class="section" id="environmental-kuznets-curve-hypothesis">
-<h1>Environmental Kuznets Curve Hypothesis<a class="headerlink" href="#environmental-kuznets-curve-hypothesis" title="Permalink to this headline">¶</a></h1>
-<p>The Environmental Kuznets curve hypothesises that the economic development of a nation (in GDP per capita) is associated with a downward-facing U-shape in terms of the level of environmental degradation (e.g pollution, water quality, deforestation). Today, we’ll look for an <em>association</em> between the amount of CO2 emitted per capita (t/CO2) and the growing GDP per capita (USD). This dataset is collected from Our World in Data, a great source of all sorts of data types!</p>
-<p><strong>Note:</strong> Our goal is not to establish any causality, solely observe the trends hypothesized.</p>
+<div class="section" id="what-is-the-environmental-kuznets-curve-hypothesis">
+<h1>What is the Environmental Kuznets Curve Hypothesis?<a class="headerlink" href="#what-is-the-environmental-kuznets-curve-hypothesis" title="Permalink to this headline">¶</a></h1>
+<p>The Environmental Kuznets curve hypothesis that the economic development of a nation is associated with a downward-facing U-shape.  The Y-axis is in terms of the level of environmental degradation (e.g pollution, water quality, deforestation.  The X-axis would be the GDP/capita.  The idea is that the environmental degradation worsens, until a certain level of income, and after which it gets better. In the US this could be seen in terms of air or water quality, where the skies or rivers were very polluted in the 1960s, until the Clean Air Act and Clean Water Act were passed and Air Quality and Water Quality improved.  Another motivation for the downward slope would be the idea that at some point a wealthier society demands environmental improvements.<br />
+However - could this hold for the potentially most important Pollutant C02, the main driver of anthropogenic climate change.  Controversially the impacts of global CO2 pollution are not experienced locally, but are experienced as global effects. So it is not clear whether the Environmental Kuznets hypothesis will hold.</p>
+<p>Today, we’ll look to build an C02 Kuznets curve for an <em>association</em> between the amount of CO2 emitted per capita (t/CO2) and the growing GDP per capita (USD). This dataset is collected from Our World in Data, a great source of all sorts of data types!</p>
 <p><img alt="kuznets.png" src="content/12-environmental/attachment:kuznets.png" /></p>
+</div>
 <div class="section" id="building-our-own-environmental-kuznets-curve">
-<h2>Building our own Environmental Kuznets Curve<a class="headerlink" href="#building-our-own-environmental-kuznets-curve" title="Permalink to this headline">¶</a></h2>
+<h1>Building our own Environmental Kuznets Curve<a class="headerlink" href="#building-our-own-environmental-kuznets-curve" title="Permalink to this headline">¶</a></h1>
 <p>We start by importing data on GDP per capita and Per Capita CO2 emissions for every country in the world for as long as it has been recorded.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Import data and create table</span>
-<span class="n">co2_table</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s1">&#39;co2-emissions-vs-gdp.csv&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;145446-annotations&#39;</span><span class="p">,</span><span class="s1">&#39;Total population (Gapminder, HYDE &amp; UN)&#39;</span><span class="p">,</span><span class="s1">&#39;Code&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">co2_table</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s1">&#39;co2-emissions-vs-gdp.csv&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;145446-annotations&#39;</span><span class="p">,</span><span class="s1">&#39;Total population (Gapminder, HYDE &amp; UN)&#39;</span><span class="p">,</span><span class="s1">&#39;Code&#39;</span><span class="p">)</span>
+<span class="n">co2_table</span> <span class="o">=</span> <span class="n">co2_table</span><span class="o">.</span><span class="n">relabeled</span><span class="p">(</span><span class="s1">&#39;Entity&#39;</span><span class="p">,</span> <span class="s1">&#39;Country&#39;</span><span class="p">)</span>
 <span class="n">co2_table</span>
 </pre></div>
 </div>
@@ -567,7 +596,7 @@
 <div class="output text_html"><table border="1" class="dataframe">
     <thead>
         <tr>
-            <th>Entity</th> <th>Year</th> <th>Per capita CO2 emissions</th> <th>GDP per capita</th> <th>Continent</th>
+            <th>Country</th> <th>Year</th> <th>Per capita CO2 emissions</th> <th>GDP per capita</th> <th>Continent</th>
         </tr>
     </thead>
     <tbody>
@@ -605,41 +634,67 @@
 </table>
 <p>... (53427 rows omitted)</p></div></div>
 </div>
-<p>Let’s think of what might strengthen our belief in the hypothesis: What do we expect when we scatter data from Low, Middle, and High-income nations across their GDP development over time? We start off by randomly checking 5 LIN-nations:</p>
+<div class="section" id="low-income-countries">
+<h2>Low Income Countries<a class="headerlink" href="#low-income-countries" title="Permalink to this headline">¶</a></h2>
+<p>Let’s start by selecting a set of Low Income Countries to graph the movement of CO2 intensity</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Low-Income Nations</span>
 <span class="n">LIH_array</span> <span class="o">=</span> <span class="n">make_array</span><span class="p">(</span><span class="s1">&#39;Haiti&#39;</span><span class="p">,</span> <span class="s1">&#39;Afghanistan&#39;</span><span class="p">,</span><span class="s1">&#39;Rwanda&#39;</span><span class="p">,</span><span class="s1">&#39;Pakistan&#39;</span><span class="p">,</span> <span class="s1">&#39;Nicaragua&#39;</span><span class="p">)</span>
-<span class="n">LIH_table</span> <span class="o">=</span> <span class="n">co2_table</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Entity&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">contained_in</span><span class="p">(</span><span class="n">LIH_array</span><span class="p">))</span>
+<span class="n">LIH_table</span> <span class="o">=</span> <span class="n">co2_table</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">contained_in</span><span class="p">(</span><span class="n">LIH_array</span><span class="p">))</span>
 <span class="n">LIH_table</span> <span class="o">=</span> <span class="n">LIH_table</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">above_or_equal_to</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Per capita CO2 emissions&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">above_or_equal_to</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
-<span class="n">LIH_table</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">,</span> <span class="s1">&#39;Per capita CO2 emissions&#39;</span><span class="p">,</span><span class="n">group</span><span class="o">=</span><span class="s1">&#39;Entity&#39;</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">250</span><span class="p">)</span>
+<span class="n">LIH_table</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">,</span> <span class="s1">&#39;Per capita CO2 emissions&#39;</span><span class="p">,</span><span class="n">group</span><span class="o">=</span><span class="s1">&#39;Country&#39;</span><span class="p">)</span> 
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/textLecture2_7_0.png" src="../../_images/textLecture2_7_0.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 2000x1500 with 0 Axes&gt;
+</pre></div>
+</div>
+<img alt="../../_images/KuznetsHypothesis-Copy1_7_1.png" src="../../_images/KuznetsHypothesis-Copy1_7_1.png" />
 </div>
 </div>
-<p>Here, it certainly looks like we see a sort of linear growth: As the GDP per capita grows in LIH-nations, it seems as if per capita CO2 emissions follow steadily. Note that every dot represents a nation at a given level of emissions and GDP per capita. Let’s have a look at a set of 5 middle-income nations: the BRICS nations.</p>
+<p>Note that each dot represents a nation at a given level of emissions and GDP per capita</p>
+<p>With these three countries we see a few different stories:</p>
+<ul class="simple">
+<li><p>In Afghanistan, Haiti and Rwanda we see little income growth and little CO2 intensity growth with a slight upward trend</p></li>
+<li><p>In Nicaragua we see some jumping around, in fact Nicaragua GDP per capita has gone up and down, as has CO2 per capita</p></li>
+<li><p>In Pakistan, a larger and more populous country we see strong linear upward growth in both GDP per capita and CO2 per capita, with no signs of turning down</p></li>
+</ul>
+<p>In these countries it is hard to tell the complete story without the exact time trend.</p>
+</div>
+<div class="section" id="brics">
+<h2>BRICS<a class="headerlink" href="#brics" title="Permalink to this headline">¶</a></h2>
+<p>Lets look at the BRICS countries, the rapidly growing upper middle income countries</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#5 BRICS Nations</span>
-<span class="n">BRICS_array</span> <span class="o">=</span> <span class="n">make_array</span><span class="p">(</span><span class="s1">&#39;Brazil&#39;</span><span class="p">,</span><span class="s1">&#39;Russia&#39;</span><span class="p">,</span><span class="s1">&#39;India&#39;</span><span class="p">,</span><span class="s1">&#39;China&#39;</span><span class="p">,</span><span class="s1">&#39;South Africa&#39;</span><span class="p">)</span>
-<span class="n">BRICS_table</span> <span class="o">=</span> <span class="n">co2_table</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Entity&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">contained_in</span><span class="p">(</span><span class="n">BRICS_array</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">BRICS_array</span> <span class="o">=</span> <span class="n">make_array</span><span class="p">(</span><span class="s1">&#39;Brazil&#39;</span><span class="p">,</span><span class="s1">&#39;Russia&#39;</span><span class="p">,</span><span class="s1">&#39;India&#39;</span><span class="p">,</span><span class="s1">&#39;China&#39;</span><span class="p">,</span><span class="s1">&#39;South Africa&#39;</span><span class="p">)</span>
+<span class="n">BRICS_table</span> <span class="o">=</span> <span class="n">co2_table</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">contained_in</span><span class="p">(</span><span class="n">BRICS_array</span><span class="p">))</span>
 <span class="n">BRICS_table</span> <span class="o">=</span> <span class="n">BRICS_table</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">above_or_equal_to</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Per capita CO2 emissions&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">above_or_equal_to</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
-<span class="n">BRICS_table</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">,</span> <span class="s1">&#39;Per capita CO2 emissions&#39;</span><span class="p">,</span><span class="n">group</span><span class="o">=</span><span class="s1">&#39;Entity&#39;</span><span class="p">)</span>
+<span class="n">BRICS_table</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">,</span> <span class="s1">&#39;Per capita CO2 emissions&#39;</span><span class="p">,</span><span class="n">group</span><span class="o">=</span><span class="s1">&#39;Country&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/textLecture2_9_0.png" src="../../_images/textLecture2_9_0.png" />
+<img alt="../../_images/KuznetsHypothesis-Copy1_10_0.png" src="../../_images/KuznetsHypothesis-Copy1_10_0.png" />
 </div>
 </div>
-<p>The BRICS nations seem to have experienced rapid growth in CO2 emissions per capita at the beginning of their economic growth. Some still continue on a linear path, while others seem to have stagnated: Perhaps they have reached a maximum? What about the country we reside in: the US? I’ve also included a log plot to illustrate how our data reacts to percentage changes in each variable.</p>
+<p>The BRICS nations seem to have a variety of development pathways but all show the linear trend of increasing emissions as wealth grows.</p>
+<ul class="simple">
+<li><p>Russia has an interesting dip while GDP per capita decrease and then increase again</p></li>
+<li><p>South Africa has a recent period where growth in both GDP per capita and CO2 per capita have stagnated</p></li>
+<li><p>China and India show linearly increasing trends, with China both wealthier and more CO2 intensive</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="individual-country-graphs">
+<h1>Individual country graphs<a class="headerlink" href="#individual-country-graphs" title="Permalink to this headline">¶</a></h1>
+<p>Lets look at some individual countries, starting with the US
+We can plot both total and logged quantities</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#US Example + LOG</span>
-<span class="n">US_table</span> <span class="o">=</span> <span class="n">co2_table</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Entity&#39;</span><span class="p">,</span> <span class="s1">&#39;United States&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="mi">1800</span><span class="p">,</span><span class="mi">2018</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">US_table</span> <span class="o">=</span> <span class="n">co2_table</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="s1">&#39;United States&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="mi">1800</span><span class="p">,</span><span class="mi">2018</span><span class="p">))</span>
 <span class="n">US_table</span> <span class="o">=</span> <span class="n">US_table</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="s1">&#39;LogGDP&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">US_table</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">)))</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="s1">&#39;LogCO2&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">US_table</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;Per capita CO2 emissions&#39;</span><span class="p">)))</span>
 <span class="n">US_table</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">,</span> <span class="s1">&#39;Per capita CO2 emissions&#39;</span><span class="p">)</span>
 <span class="n">US_table</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;LogGDP&#39;</span><span class="p">,</span> <span class="s1">&#39;LogCO2&#39;</span><span class="p">)</span>
@@ -647,15 +702,21 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/textLecture2_11_0.png" src="../../_images/textLecture2_11_0.png" />
-<img alt="../../_images/textLecture2_11_1.png" src="../../_images/textLecture2_11_1.png" />
+<img alt="../../_images/KuznetsHypothesis-Copy1_13_0.png" src="../../_images/KuznetsHypothesis-Copy1_13_0.png" />
+<img alt="../../_images/KuznetsHypothesis-Copy1_13_1.png" src="../../_images/KuznetsHypothesis-Copy1_13_1.png" />
 </div>
 </div>
+<p><strong>Looks like we have a curve!</strong></p>
+<p>In the case of the US it does indeed look like the C02 per capita does indeed start to deline after about $40,000
+Somewhere around 2000-2004 the CO2 emissions leveled off and then began to decline</p>
+</div>
+<div class="section" id="let-s-look-at-china">
+<h1>Let’s look at China<a class="headerlink" href="#let-s-look-at-china" title="Permalink to this headline">¶</a></h1>
 <p>In COP26, China has been a large part of the discussion (and emissions). Let’s have a look at their curve!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#China Example + LOG</span>
-<span class="n">NO_table</span> <span class="o">=</span> <span class="n">co2_table</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Entity&#39;</span><span class="p">,</span> <span class="s1">&#39;China&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="mi">1800</span><span class="p">,</span><span class="mi">2018</span><span class="p">))</span>
+<span class="n">NO_table</span> <span class="o">=</span> <span class="n">co2_table</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="s1">&#39;China&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="mi">1800</span><span class="p">,</span><span class="mi">2018</span><span class="p">))</span>
 <span class="n">NO_table</span> <span class="o">=</span> <span class="n">NO_table</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="s1">&#39;LogGDP&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">NO_table</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">)))</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="s1">&#39;LogCO2&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">NO_table</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;Per capita CO2 emissions&#39;</span><span class="p">)))</span>
 <span class="n">NO_table</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">,</span> <span class="s1">&#39;Per capita CO2 emissions&#39;</span><span class="p">)</span>
 <span class="n">NO_table</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;LogGDP&#39;</span><span class="p">,</span> <span class="s1">&#39;LogCO2&#39;</span><span class="p">)</span>
@@ -663,15 +724,16 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/textLecture2_13_0.png" src="../../_images/textLecture2_13_0.png" />
-<img alt="../../_images/textLecture2_13_1.png" src="../../_images/textLecture2_13_1.png" />
+<img alt="../../_images/KuznetsHypothesis-Copy1_16_0.png" src="../../_images/KuznetsHypothesis-Copy1_16_0.png" />
+<img alt="../../_images/KuznetsHypothesis-Copy1_16_1.png" src="../../_images/KuznetsHypothesis-Copy1_16_1.png" />
 </div>
 </div>
+<p>Indeed it appears that China has an inflection point and is starting to level off in the Carbon intensity per capita</p>
 <p>What about India?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#India Example + LOG</span>
-<span class="n">NO_table</span> <span class="o">=</span> <span class="n">co2_table</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Entity&#39;</span><span class="p">,</span> <span class="s1">&#39;India&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="mi">1800</span><span class="p">,</span><span class="mi">2018</span><span class="p">))</span>
+<span class="n">NO_table</span> <span class="o">=</span> <span class="n">co2_table</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="s1">&#39;India&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="mi">1800</span><span class="p">,</span><span class="mi">2018</span><span class="p">))</span>
 <span class="n">NO_table</span> <span class="o">=</span> <span class="n">NO_table</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="s1">&#39;LogGDP&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">NO_table</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">)))</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="s1">&#39;LogCO2&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">NO_table</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;Per capita CO2 emissions&#39;</span><span class="p">)))</span>
 <span class="n">NO_table</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">,</span> <span class="s1">&#39;Per capita CO2 emissions&#39;</span><span class="p">)</span>
 <span class="n">NO_table</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;LogGDP&#39;</span><span class="p">,</span> <span class="s1">&#39;LogCO2&#39;</span><span class="p">)</span>
@@ -679,15 +741,15 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/textLecture2_15_0.png" src="../../_images/textLecture2_15_0.png" />
-<img alt="../../_images/textLecture2_15_1.png" src="../../_images/textLecture2_15_1.png" />
+<img alt="../../_images/KuznetsHypothesis-Copy1_19_0.png" src="../../_images/KuznetsHypothesis-Copy1_19_0.png" />
+<img alt="../../_images/KuznetsHypothesis-Copy1_19_1.png" src="../../_images/KuznetsHypothesis-Copy1_19_1.png" />
 </div>
 </div>
 <p>As I’m Norwegian, I thought it might be cool to see how things are going back home as well:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Norway Example + LOG</span>
-<span class="n">NO_table</span> <span class="o">=</span> <span class="n">co2_table</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Entity&#39;</span><span class="p">,</span> <span class="s1">&#39;Norway&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="mi">1800</span><span class="p">,</span><span class="mi">2018</span><span class="p">))</span>
+<span class="n">NO_table</span> <span class="o">=</span> <span class="n">co2_table</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="s1">&#39;Norway&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="mi">1800</span><span class="p">,</span><span class="mi">2018</span><span class="p">))</span>
 <span class="n">NO_table</span> <span class="o">=</span> <span class="n">NO_table</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="s1">&#39;LogGDP&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">NO_table</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">)))</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="s1">&#39;LogCO2&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">NO_table</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;Per capita CO2 emissions&#39;</span><span class="p">)))</span>
 <span class="n">NO_table</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">,</span> <span class="s1">&#39;Per capita CO2 emissions&#39;</span><span class="p">)</span>
 <span class="n">NO_table</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;LogGDP&#39;</span><span class="p">,</span> <span class="s1">&#39;LogCO2&#39;</span><span class="p">)</span>
@@ -695,44 +757,45 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/textLecture2_17_0.png" src="../../_images/textLecture2_17_0.png" />
-<img alt="../../_images/textLecture2_17_1.png" src="../../_images/textLecture2_17_1.png" />
+<img alt="../../_images/KuznetsHypothesis-Copy1_21_0.png" src="../../_images/KuznetsHypothesis-Copy1_21_0.png" />
+<img alt="../../_images/KuznetsHypothesis-Copy1_21_1.png" src="../../_images/KuznetsHypothesis-Copy1_21_1.png" />
 </div>
 </div>
-<p>Turns out we’re ahead of the US in CO2 emissions per capita, but there’s still a long way to go until our development resembles a full Kuznets curve. However, it certainly looks like something! An almost vertical linear growth in terms of per capita CO2 emissions in the early economic stages stagnated into a period of fluctuations. As of now, it looks like it’s heading in a downward trend! What about other HIN-nations?</p>
+<p>Turns out we’re ahead of the US in CO2 emissions per capita, but there’s still a long way to go until our development resembles a full Kuznets curve. However, it certainly looks like something! An almost vertical linear growth in terms of per capita CO2 emissions in the early economic stages stagnated into a period of fluctuations. As of now, it looks like it’s heading in a downward trend.</p>
+<p>Let’s look at a set of other High Income Nations:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#5 High-Income Nations</span>
-<span class="n">HIN_array</span> <span class="o">=</span> <span class="n">make_array</span><span class="p">(</span><span class="s1">&#39;United States&#39;</span><span class="p">,</span> <span class="s1">&#39;Netherlands&#39;</span><span class="p">,</span> <span class="s1">&#39;United Kingdom&#39;</span><span class="p">,</span><span class="s1">&#39;Germany&#39;</span><span class="p">,</span><span class="s1">&#39;Canada&#39;</span><span class="p">)</span>
-<span class="n">HIN_table</span> <span class="o">=</span> <span class="n">co2_table</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Entity&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">contained_in</span><span class="p">(</span><span class="n">HIN_array</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">HIN_array</span> <span class="o">=</span> <span class="n">make_array</span><span class="p">(</span><span class="s1">&#39;United States&#39;</span><span class="p">,</span> <span class="s1">&#39;Netherlands&#39;</span><span class="p">,</span> <span class="s1">&#39;United Kingdom&#39;</span><span class="p">,</span><span class="s1">&#39;Germany&#39;</span><span class="p">,</span><span class="s1">&#39;Canada&#39;</span><span class="p">)</span>
+<span class="n">HIN_table</span> <span class="o">=</span> <span class="n">co2_table</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">contained_in</span><span class="p">(</span><span class="n">HIN_array</span><span class="p">))</span>
 <span class="n">HIN_table</span> <span class="o">=</span> <span class="n">HIN_table</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">above_or_equal_to</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Per capita CO2 emissions&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">above_or_equal_to</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
-<span class="n">HIN_table</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">,</span> <span class="s1">&#39;Per capita CO2 emissions&#39;</span><span class="p">,</span><span class="n">group</span><span class="o">=</span><span class="s1">&#39;Entity&#39;</span><span class="p">)</span>
+<span class="n">HIN_table</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">,</span> <span class="s1">&#39;Per capita CO2 emissions&#39;</span><span class="p">,</span><span class="n">group</span><span class="o">=</span><span class="s1">&#39;Country&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/textLecture2_19_0.png" src="../../_images/textLecture2_19_0.png" />
+<img alt="../../_images/KuznetsHypothesis-Copy1_23_0.png" src="../../_images/KuznetsHypothesis-Copy1_23_0.png" />
 </div>
 </div>
 <p>As in the US and Norway, these nations have experienced a boom, stagnation, and now to some extent a downward trend. Let’s finally plot all the previously observed nations together:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ALL_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">LIH_array</span><span class="p">,</span><span class="n">BRICS_array</span><span class="p">)),</span> <span class="n">HIN_array</span><span class="p">)</span>
-<span class="n">ALL_table</span> <span class="o">=</span> <span class="n">co2_table</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Entity&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">contained_in</span><span class="p">(</span><span class="n">ALL_array</span><span class="p">))</span>
+<span class="n">ALL_table</span> <span class="o">=</span> <span class="n">co2_table</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">contained_in</span><span class="p">(</span><span class="n">ALL_array</span><span class="p">))</span>
 <span class="n">ALL_table</span> <span class="o">=</span> <span class="n">ALL_table</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">above_or_equal_to</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Per capita CO2 emissions&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">above_or_equal_to</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
-<span class="n">ALL_table</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">,</span> <span class="s1">&#39;Per capita CO2 emissions&#39;</span><span class="p">,</span><span class="n">group</span><span class="o">=</span><span class="s1">&#39;Entity&#39;</span><span class="p">)</span>
+<span class="n">ALL_table</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">,</span> <span class="s1">&#39;Per capita CO2 emissions&#39;</span><span class="p">,</span><span class="n">group</span><span class="o">=</span><span class="s1">&#39;Country&#39;</span><span class="p">)</span>
 <span class="c1">#What do we see? Can we spot the Environmental Kuznets Curve?</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/textLecture2_21_0.png" src="../../_images/textLecture2_21_0.png" />
+<img alt="../../_images/KuznetsHypothesis-Copy1_25_0.png" src="../../_images/KuznetsHypothesis-Copy1_25_0.png" />
 </div>
 </div>
-<p>And there it is: The Environmental Kuznets Curve, right? It seems, at least to some extent, that as nations develop economically, the level of environmental degradation follows a downward-facing U-curve. However, does this leave room for blind optimism for the future?</p>
+<p>Here we see evidence for an Environmental Kuznets Curve.</p>
+<p>It seems, at least to some extent, that as nations develop economically, the level of environmental degradation reaches a peak and then declines, mapping a downward-facing U-curve.</p>
 </div>
 <div class="section" id="criticism-of-the-environmental-kuznets-curve-hypothesis">
-<h2>Criticism of the Environmental Kuznets Curve Hypothesis<a class="headerlink" href="#criticism-of-the-environmental-kuznets-curve-hypothesis" title="Permalink to this headline">¶</a></h2>
+<h1>Criticism of the Environmental Kuznets Curve Hypothesis<a class="headerlink" href="#criticism-of-the-environmental-kuznets-curve-hypothesis" title="Permalink to this headline">¶</a></h1>
 <p>Some questions we ought to ask ourselves in the end are:</p>
 <ul class="simple">
 <li><p>Do all types of environmental degradation follow the curve? What if we plot Energy, Land, &amp; Resource usage?</p></li>
@@ -740,16 +803,16 @@
 <li><p>What is the true long-term shape of the curve? Could it reshape itself to an “N” as an economy passes a certain threshold?</p></li>
 <li><p>What about its applicability on a global scale? Knowing that the HINs have a habit of exporting pollution to LINs, what will happen as LIN grow economically?</p></li>
 </ul>
-<p>These are just some questions environmental economists have asked themselves throughout the years since the curve was hypothesized in 1955. Some, including Perman and Stern (2003) conclude that the level of environmental degradation has much more to do with a constant “battle” between scale and time than income alone. As nations scale up (BRICS, for instance) the growth results in higher emissions, while countries with lower growth (LIN &amp; HIN) seem more influenced by the “time-effect”, which results in lower emissions. Others, among Krueger &amp; Grossman, argue that there is “no evidence that environmental quality deteriorates steadily with economic growth.” Didn’t we just observe that through our data analysis?</p>
-<p>More on these theories can be found in the “further recommended readings” below.</p>
-<p>As data scientists now deeply in love with environmental economics, we ought to go out and find these answers!</p>
-</div>
+<p>These are just some questions environmental economists have asked themselves throughout the years since the curve was hypothesized in 1955. Some, including Perman and Stern (2003) conclude that the level of environmental degradation has much more to do with a constant “battle” between scale and time than income alone. As nations scale up (BRICS, for instance) the growth results in higher emissions, while countries with lower growth (LIN &amp; HIN) seem more influenced by the “time-effect”, which results in lower emissions. Others, among Krueger &amp; Grossman, argue that there is “no evidence that environmental quality deteriorates steadily with economic growth.”</p>
+<p>More on these theories can be found in the recommended readings below.</p>
+<p>As data scientists motivated to help heal the plant with the tools of environmental economics, we can help to find these answers!</p>
 <div class="section" id="what-s-next">
 <h2>What’s next?<a class="headerlink" href="#what-s-next" title="Permalink to this headline">¶</a></h2>
-<p>Firstly, thank you for taking your time to explore topics of data science and environmental economics together with us today. We hope you had an interactive learning experience, and that it spurred further interest in the topics discussed. The road ahead is filled with even more fascinating topics, such as: finding the social cost of carbon, the valuation of our environment, and the economics of emissions trading. Besides purely economical modelling, the field of environmental data science is rapidly growing as we collect more and more data on our vulnerable planet. Applying the power of Satellite Imagery, Machine Learning, and Geographic Information Systems (GIS), one can follow both technology and policy-based paths, both ensured to have a positive impact in shaping a data-driven, sustainable future.</p>
+<p>If you are interested in this area, there are even more fascinating applications of Data Science to environmental topics such as: finding the social cost of carbon, the valuation of our environment, and the economics of emissions trading. Besides purely economical modeling, the field of environmental data science is rapidly growing as we collect more and more data on our planet and its resources. Applying the power of Satellite Imagery, Machine Learning, and Geographic Information Systems (GIS), one can follow both technology and policy-based paths, both ensured to have a positive impact in shaping a data-driven, sustainable future.</p>
+</div>
 </div>
 <div class="section" id="further-recommended-readings">
-<h2>Further recommended readings:<a class="headerlink" href="#further-recommended-readings" title="Permalink to this headline">¶</a></h2>
+<h1>Further recommended readings:<a class="headerlink" href="#further-recommended-readings" title="Permalink to this headline">¶</a></h1>
 <p>Levelized Cost of Carbon Abatement: An Improved Cost-Assessment Methodology for a Net-Zero Emissions World (also the main source of this Jupyter Notebook)</p>
 <p><a class="reference external" href="https://www.energypolicy.columbia.edu/sites/default/files/file-uploads/LCCA_CGEP-Report_101620.pdf">https://www.energypolicy.columbia.edu/sites/default/files/file-uploads/LCCA_CGEP-Report_101620.pdf</a></p>
 <p>Dynamic vs. Static costs are described further in K.Gillingham &amp; J.H Stock’s The Cost of Reducing Greenhouse Gas Emissions (italic) from 2018. - A highly recommended reading out of scope for this class.</p>
@@ -764,7 +827,6 @@
 <a class="reference external" href="https://github.com/aj-sykes92/ggmacc/blob/main/README_files/figure-gfm/full-macc-1.png">https://github.com/aj-sykes92/ggmacc/blob/main/README_files/figure-gfm/full-macc-1.png</a></p>
 <p>Aalborg University’s software:
 <a class="reference external" href="https://github.com/matpri/EPLANoptMAC">https://github.com/matpri/EPLANoptMAC</a></p>
-</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -796,24 +858,6 @@
 
 <div class='prev-next-bottom'>
     
-    <div id="prev">
-        <a class="left-prev" href="textbook1.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Marginal Abatement Cost Curves</p>
-            </div>
-        </a>
-    </div>
-     <div id="next">
-        <a class="right-next" href="../references.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Bibliography</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
 
 </div>
         
