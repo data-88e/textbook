@@ -386,10 +386,27 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="index.html">
    What is Environmental Economics?
   </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="textbook1.html">
+     Marginal Abatement Cost Curves
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     What is the Environmental Kuznets Curve Hypothesis?
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../references.html">
@@ -503,51 +520,22 @@
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   What is the Environmental Kuznets Curve Hypothesis?
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#building-our-own-environmental-kuznets-curve">
    Building our own Environmental Kuznets Curve
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#low-income-countries">
-     Low Income Countries
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#brics">
-     BRICS
-    </a>
-   </li>
-  </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#individual-country-graphs">
    Individual country graphs
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#let-s-look-at-china">
-   Let’s look at China
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#criticism-of-the-environmental-kuznets-curve-hypothesis">
    Criticism of the Environmental Kuznets Curve Hypothesis
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-s-next">
-     What’s next?
-    </a>
-   </li>
-  </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#further-recommended-readings">
    Further recommended readings:
   </a>
@@ -582,9 +570,8 @@
 However - could this hold for the potentially most important Pollutant C02, the main driver of anthropogenic climate change.  Controversially the impacts of global CO2 pollution are not experienced locally, but are experienced as global effects. So it is not clear whether the Environmental Kuznets hypothesis will hold.</p>
 <p>Today, we’ll look to build an C02 Kuznets curve for an <em>association</em> between the amount of CO2 emitted per capita (t/CO2) and the growing GDP per capita (USD). This dataset is collected from Our World in Data, a great source of all sorts of data types!</p>
 <p><img alt="kuznets.png" src="../../_images/kuznets.png" /></p>
-</div>
 <div class="section" id="building-our-own-environmental-kuznets-curve">
-<h1>Building our own Environmental Kuznets Curve<a class="headerlink" href="#building-our-own-environmental-kuznets-curve" title="Permalink to this headline">¶</a></h1>
+<h2>Building our own Environmental Kuznets Curve<a class="headerlink" href="#building-our-own-environmental-kuznets-curve" title="Permalink to this headline">¶</a></h2>
 <p>We start by importing data on GDP per capita and Per Capita CO2 emissions for every country in the world for as long as it has been recorded.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -636,9 +623,8 @@ However - could this hold for the potentially most important Pollutant C02, the 
 </table>
 <p>... (53427 rows omitted)</p></div></div>
 </div>
-<div class="section" id="low-income-countries">
-<h2>Low Income Countries<a class="headerlink" href="#low-income-countries" title="Permalink to this headline">¶</a></h2>
-<p>Let’s start by selecting a set of Low Income Countries to graph the movement of CO2 intensity</p>
+<p><strong>Low Income Countries</strong><br />
+Let’s start by selecting a set of Low Income Countries to graph the movement of CO2 intensity</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Low-Income Nations</span>
@@ -665,10 +651,8 @@ However - could this hold for the potentially most important Pollutant C02, the 
 <li><p>In Pakistan, a larger and more populous country we see strong linear upward growth in both GDP per capita and CO2 per capita, with no signs of turning down</p></li>
 </ul>
 <p>In these countries it is hard to tell the complete story without the exact time trend.</p>
-</div>
-<div class="section" id="brics">
-<h2>BRICS<a class="headerlink" href="#brics" title="Permalink to this headline">¶</a></h2>
-<p>Lets look at the BRICS countries, the rapidly growing upper middle income countries</p>
+<p><strong>BRICS</strong><br />
+Lets look at the BRICS countries, the rapidly growing upper middle income countries</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">BRICS_array</span> <span class="o">=</span> <span class="n">make_array</span><span class="p">(</span><span class="s1">&#39;Brazil&#39;</span><span class="p">,</span><span class="s1">&#39;Russia&#39;</span><span class="p">,</span><span class="s1">&#39;India&#39;</span><span class="p">,</span><span class="s1">&#39;China&#39;</span><span class="p">,</span><span class="s1">&#39;South Africa&#39;</span><span class="p">)</span>
@@ -689,9 +673,8 @@ However - could this hold for the potentially most important Pollutant C02, the 
 <li><p>China and India show linearly increasing trends, with China both wealthier and more CO2 intensive</p></li>
 </ul>
 </div>
-</div>
 <div class="section" id="individual-country-graphs">
-<h1>Individual country graphs<a class="headerlink" href="#individual-country-graphs" title="Permalink to this headline">¶</a></h1>
+<h2>Individual country graphs<a class="headerlink" href="#individual-country-graphs" title="Permalink to this headline">¶</a></h2>
 <p>Lets look at some individual countries, starting with the US
 We can plot both total and logged quantities</p>
 <div class="cell docutils container">
@@ -711,10 +694,8 @@ We can plot both total and logged quantities</p>
 <p><strong>Looks like we have a curve!</strong></p>
 <p>In the case of the US it does indeed look like the C02 per capita does indeed start to deline after about $40,000
 Somewhere around 2000-2004 the CO2 emissions leveled off and then began to decline</p>
-</div>
-<div class="section" id="let-s-look-at-china">
-<h1>Let’s look at China<a class="headerlink" href="#let-s-look-at-china" title="Permalink to this headline">¶</a></h1>
-<p>In COP26, China has been a large part of the discussion (and emissions). Let’s have a look at their curve!</p>
+<p><strong>Let’s look at China:</strong><br />
+In COP26, China has been a large part of the discussion (and emissions). Let’s have a look at their curve!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#China Example + LOG</span>
@@ -797,7 +778,7 @@ Somewhere around 2000-2004 the CO2 emissions leveled off and then began to decli
 <p>It seems, at least to some extent, that as nations develop economically, the level of environmental degradation reaches a peak and then declines, mapping a downward-facing U-curve.</p>
 </div>
 <div class="section" id="criticism-of-the-environmental-kuznets-curve-hypothesis">
-<h1>Criticism of the Environmental Kuznets Curve Hypothesis<a class="headerlink" href="#criticism-of-the-environmental-kuznets-curve-hypothesis" title="Permalink to this headline">¶</a></h1>
+<h2>Criticism of the Environmental Kuznets Curve Hypothesis<a class="headerlink" href="#criticism-of-the-environmental-kuznets-curve-hypothesis" title="Permalink to this headline">¶</a></h2>
 <p>Some questions we ought to ask ourselves in the end are:</p>
 <ul class="simple">
 <li><p>Do all types of environmental degradation follow the curve? What if we plot Energy, Land, &amp; Resource usage?</p></li>
@@ -808,13 +789,11 @@ Somewhere around 2000-2004 the CO2 emissions leveled off and then began to decli
 <p>These are just some questions environmental economists have asked themselves throughout the years since the curve was hypothesized in 1955. Some, including Perman and Stern (2003) conclude that the level of environmental degradation has much more to do with a constant “battle” between scale and time than income alone. As nations scale up (BRICS, for instance) the growth results in higher emissions, while countries with lower growth (LIN &amp; HIN) seem more influenced by the “time-effect”, which results in lower emissions. Others, among Krueger &amp; Grossman, argue that there is “no evidence that environmental quality deteriorates steadily with economic growth.”</p>
 <p>More on these theories can be found in the recommended readings below.</p>
 <p>As data scientists motivated to help heal the plant with the tools of environmental economics, we can help to find these answers!</p>
-<div class="section" id="what-s-next">
-<h2>What’s next?<a class="headerlink" href="#what-s-next" title="Permalink to this headline">¶</a></h2>
+<p><strong>What’s next?</strong></p>
 <p>If you are interested in this area, there are even more fascinating applications of Data Science to environmental topics such as: finding the social cost of carbon, the valuation of our environment, and the economics of emissions trading. Besides purely economical modeling, the field of environmental data science is rapidly growing as we collect more and more data on our planet and its resources. Applying the power of Satellite Imagery, Machine Learning, and Geographic Information Systems (GIS), one can follow both technology and policy-based paths, both ensured to have a positive impact in shaping a data-driven, sustainable future.</p>
 </div>
-</div>
 <div class="section" id="further-recommended-readings">
-<h1>Further recommended readings:<a class="headerlink" href="#further-recommended-readings" title="Permalink to this headline">¶</a></h1>
+<h2>Further recommended readings:<a class="headerlink" href="#further-recommended-readings" title="Permalink to this headline">¶</a></h2>
 <p>Levelized Cost of Carbon Abatement: An Improved Cost-Assessment Methodology for a Net-Zero Emissions World (also the main source of this Jupyter Notebook)</p>
 <p><a class="reference external" href="https://www.energypolicy.columbia.edu/sites/default/files/file-uploads/LCCA_CGEP-Report_101620.pdf">https://www.energypolicy.columbia.edu/sites/default/files/file-uploads/LCCA_CGEP-Report_101620.pdf</a></p>
 <p>Dynamic vs. Static costs are described further in K.Gillingham &amp; J.H Stock’s The Cost of Reducing Greenhouse Gas Emissions (italic) from 2018. - A highly recommended reading out of scope for this class.</p>
@@ -829,6 +808,7 @@ Somewhere around 2000-2004 the CO2 emissions leveled off and then began to decli
 <a class="reference external" href="https://github.com/aj-sykes92/ggmacc/blob/main/README_files/figure-gfm/full-macc-1.png">https://github.com/aj-sykes92/ggmacc/blob/main/README_files/figure-gfm/full-macc-1.png</a></p>
 <p>Aalborg University’s software:
 <a class="reference external" href="https://github.com/matpri/EPLANoptMAC">https://github.com/matpri/EPLANoptMAC</a></p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">

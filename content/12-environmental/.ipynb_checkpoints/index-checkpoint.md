@@ -1,6 +1,6 @@
-## What is Environmental Economics?
+# What is Environmental Economics?
 
-![windmills.png](attachment:windmills.png)
+![](windmills.png)
 
 In a broad sense, the field of Environmental Economics aims to relate and apply economic concepts to the environment.
  
@@ -22,8 +22,7 @@ Related to the discussion of global greenhouse gas emissions, we will also explo
  
 These are only a few of the applications of environmental economics, there are many more fields to explore, and even an entire major at UC Berkeley to explore.  
 
-## Learning objectives
-
+**Student Learning Outcomes:**
 * An introduction to applications  of Environmental Economics with illustrations from global CO2 emissions
 * Motivation and understanding of the  Marginal Abatement Cost Curve for global Greenhouse Gas emissions, first by the (McKinsey 2009) curve for CO2, and then an application for Methane its data science application.
 * A discussion of the Marginal Abatement Curve's limitations with the concept of Capital Intensity and static vs dynamic costs.

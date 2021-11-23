@@ -388,10 +388,27 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="index.html">
    What is Environmental Economics?
   </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Marginal Abatement Cost Curves
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="KuznetsHypothesis-Copy1.html">
+     What is the Environmental Kuznets Curve Hypothesis?
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../references.html">
@@ -526,30 +543,6 @@
   <a class="reference internal nav-link" href="#the-mac-curve-s-important-limitations">
    The MAC curve’s important limitations
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#limitation-1-introducing-capital-intensity">
-     Limitation 1: Introducing Capital Intensity
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#limitation-2-lack-of-dynamic-cost-assessment">
-     Limitation 2: Lack of Dynamic Cost Assessment
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#static-costs">
-       Static Costs
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#dynamic-costs">
-       Dynamic Costs
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#what-s-next">
@@ -865,8 +858,7 @@ Abatement Technologies [&#39;Replace pumps&#39; &#39;Blowdown capture&#39; &#39;
 <div class="section" id="the-mac-curve-s-important-limitations">
 <h2>The MAC curve’s important limitations<a class="headerlink" href="#the-mac-curve-s-important-limitations" title="Permalink to this headline">¶</a></h2>
 <p>Before moving on to the next topic of this chapter, we ought to consider the drawbacks of our newfound knowledge:</p>
-<div class="section" id="limitation-1-introducing-capital-intensity">
-<h3>Limitation 1: Introducing Capital Intensity<a class="headerlink" href="#limitation-1-introducing-capital-intensity" title="Permalink to this headline">¶</a></h3>
+<p><strong>Limitation 1: Introducing Capital Intensity</strong></p>
 <p>From the MAC curve for CO2 (see figure 1), we are interested in finding the <strong>capital intensity of an intervention</strong>. This is different from the <strong>Marginal Abatement Cost</strong>, as it does not take potential savings from e.g lower energy consumption in the future into its calculation. However, it’s a great measurement for which technologies require the highest <em>upfront capital</em> investment to abate an amount of GHG.</p>
 <p>The formula is as follows:</p>
 <div class="math notranslate nohighlight">
@@ -874,26 +866,19 @@ Abatement Technologies [&#39;Replace pumps&#39; &#39;Blowdown capture&#39; &#39;
 <p>Where Additional Investment is the the additional upfront investment for new technology relative to the Business as Usual (BAU) alternative).</p>
 <p>Had we re-arranged the MAC curve from figure 1 for capital intensity, it would have looked like this:</p>
 <p><img alt="Screen%20Shot%202021-08-11%20at%2012.41.27%20PM.png" src="../../_images/ci_curve.png" /></p>
-</div>
-<div class="section" id="limitation-2-lack-of-dynamic-cost-assessment">
-<h3>Limitation 2: Lack of Dynamic Cost Assessment<a class="headerlink" href="#limitation-2-lack-of-dynamic-cost-assessment" title="Permalink to this headline">¶</a></h3>
+<p><strong>Limitation 2: Lack of Dynamic Cost Assessment</strong></p>
 <p>The most crucial limitations of the MAC curve is its inability to consider <strong>Dynamic Costs</strong>. In 2009, when the MAC was first created, it only considered <strong>Static Costs</strong>. Let’s define them within the context of solar energy prices (graph below):</p>
-<div class="section" id="static-costs">
-<h4>Static Costs<a class="headerlink" href="#static-costs" title="Permalink to this headline">¶</a></h4>
+<p><strong>Static Costs</strong></p>
 <ul class="simple">
 <li><p>The fixed costs of a new intervention, unchanged over a lifetime of an investment. Think of it as the costs you observe from this current point of view in time and expect to pay years ahead. For example, the 1976 Solar Energy Price at +100 USD/Watt.</p></li>
 </ul>
-</div>
-<div class="section" id="dynamic-costs">
-<h4>Dynamic Costs<a class="headerlink" href="#dynamic-costs" title="Permalink to this headline">¶</a></h4>
+<p><strong>Dynamic Costs</strong></p>
 <ul class="simple">
 <li><p>Cost considering potential cost-reduction from increased efficiency, learning-by-doing, and other positive spillovers. For example, the actual cost of Solar Energy in 2019 at below 1 USD/Watt.</p></li>
 </ul>
 <p>As a result of this shortcoming, the MAC curve tends to <em>overestimate costs</em> and do not fully represent the required investments within the energy transition (Kesicki and Edwins, 2012; Vogt-Schilb et al., 2015). It is not hard to understand that people were skeptical of investing in solar energy when the static costs were that high! A current example of this is the Carbon Capture &amp; Storage (CCS) intervention: With high static costs, it might look like an unfavourable investment. What would it look like if we took dynamic costs into our calculations?</p>
 <p><strong>A final note on the MAC curve:</strong> As future data scientists, we have a responsibility to improve the MAC curve, and use our skills in prediction and analysis to assess dynamic costs in GHG abatement with higher certainty. The original McKinsey MAC has rounded its 10th year anniversary. Perhaps it’s time for you to build a new one?</p>
 <p><img alt="solar-pv-prices.png" src="../../_images/pv_prices.png" /></p>
-</div>
-</div>
 </div>
 <div class="section" id="what-s-next">
 <h2>What’s next?<a class="headerlink" href="#what-s-next" title="Permalink to this headline">¶</a></h2>
