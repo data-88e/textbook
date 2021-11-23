@@ -58,5 +58,5 @@ sections:
 - file: content/12-environmental/index.md
   sections:
   - file: content/12-environmental/textbook1.ipynb
-  - file: content/12-environmental/KuznetsHypothesis.ipynb
+  - file: content/12-environmental/KuznetsHypothesis-Copy1.ipynb
 - file: content/references.md

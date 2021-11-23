@@ -1,6 +1,6 @@
 ## What is Environmental Economics?
 
-![windmills.png](attachment:windmills.png)
+![](windmills.png)
 
 In a broad sense, the field of Environmental Economics aims to relate and apply economic concepts to the environment.
  

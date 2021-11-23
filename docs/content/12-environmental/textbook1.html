@@ -56,7 +56,7 @@
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Bibliography" href="../references.html" />
+    <link rel="next" title="What is the Environmental Kuznets Curve Hypothesis?" href="KuznetsHypothesis-Copy1.html" />
     <link rel="prev" title="What is Environmental Economics?" href="index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -597,10 +597,10 @@
 \[ \text{MC of Emission Abatement (\$/ton)} = \frac{\text{$\Delta$ Cost of Emissions Abatement (\$)}}{\text{$\Delta$ Quantity of Emission Abated (tons)}}\]</div>
 <p><strong>Government Intervention</strong></p>
 <p>Let’s say that Peter’s Pens Limited is operating in a market where the government aims to make firms <strong>internalize</strong> the negative externality created by <span class="math notranslate nohighlight">\(CO_2\)</span> pollution from their production. From earlier, we know that the government may choose between <strong>prescriptive</strong> or <strong>market-based</strong> policies, but for this case we assume they chose the latter. In that case, the government introduces a <em>Pigouvian tax</em> on per ton of <span class="math notranslate nohighlight">\(CO_2\)</span> emitted from all firms. As any Pigouvian tax, its rate is set to the <em>social marginal cost of the negative externality</em> it is set to internalize. This is the <em>social cost of carbon</em>, quantified by extensive research. In the big picture, it pushes the private marginal cost towards the higher social marginal cost of emissions. As with any price increase, we assume the ‘supplied’ quantity of emissions to be pushed leftwards (decreased). This results in a new equilibrium quantity of emissions at a higher price (= social marginal cost) and the quantity reached becomes the <em>optimal quantity</em> of emissions in society. Now, how does the management of Peter’s Pens Limited react to the new market conditions?</p>
-<p><img alt="pigouvian.png" src="content/12-environmental/attachment:pigouvian.png" /></p>
+<p><img alt="pigouvian.png" src="content/12-environmental/pigouvian.png" /></p>
 <p><strong>The Firm’s Reaction</strong></p>
 <p>From a ‘bottom-up-perspective’, the management at Peter’s Pens Limited is faced with two choices in reaction to the new emissions tax: The Business-as-Usual (BAU) alternative or the Emissions Abatement alternative. The firm can either choose to continue emitting and pay the tax or invest in new, environmentally friendly technologies that abate their <span class="math notranslate nohighlight">\(CO_2\)</span> emissions. A rational decision maker ought to invest in abatement technologies with a marginal cost of abatement up to the emissions tax put in place. Assuming they chose to pursue the latter, how would they prioritize investments within the firm? By observing the cost and abatement potential of each investment, the firm sorts its options from cheapest to most expensive and starts ‘picking’ the low-hanging fruits of <span class="math notranslate nohighlight">\(CO_2\)</span> abatement. At any given carbon tax rate, they reduce their tax bill to $0 and observe their total abatement as the sum of all technologies invested in. The resulting plot: The Marginal Abatement Cost (MAC) Curve of Peter’s Pens Limited. Here’s how a simple MAC for Peter’s Pens might look:</p>
-<p><img alt="SampleMACC_Nov23.png" src="content/12-environmental/attachment:SampleMACC_Nov23.png" /></p>
+<p><img alt="SampleMACC_Nov23.png" src="../../_images/SampleMACC_Nov23.png" /></p>
 <p>In this example, the firm has a few activities with a low cost of abatement, and then a few with higher cost of abatement. It would make sense for the firm to start with the lowest cost of abatement first.</p>
 <p><strong>Back to the Government</strong></p>
 <p>Returning to the government policymaker’s perspective, we can motivate this approach to a market wide perspective. Just as Peter’s Pens has their firm-specific MAC, society as a whole has one. Through research on policy and technological interventions, an environmental data science team can quantify the <em>abatement potential</em> and the <em>abatement cost</em> of different technologies (e.g electric cars, wind &amp; solar power generation), policies (e.g fuel standards), and land management projects (e.g  soil restoration). From here, public policy can start  ‘picking’ the low-hanging fruits of the lowest cost technology first.</p>
@@ -633,72 +633,46 @@ We start by importing a dataset on methane abatement from the International Envi
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="n">dace04e95288</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">abatement_table</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s2">&quot;abatement_data.csv&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Cost&#39;</span><span class="p">,</span><span class="n">are</span><span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="o">-</span><span class="mf">10.1</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Possible Savings&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">below</span><span class="p">(</span><span class="mi">200</span><span class="p">))</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;Emissions&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">relabel</span><span class="p">(</span><span class="s1">&#39;Possible Savings&#39;</span><span class="p">,</span> <span class="s1">&#39;Abatement Potential&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">relabel</span><span class="p">(</span><span class="s1">&#39;Cost&#39;</span><span class="p">,</span><span class="s1">&#39;Abatement Cost&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">abatement_table</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/datascience/tables.py</span> in <span class="ni">read_table</span><span class="nt">(cls, filepath_or_buffer, *args, **vargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">143</span>         <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">144</span>             <span class="k">pass</span>
-<span class="ne">--&gt; </span><span class="mi">145</span>         <span class="n">df</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">vargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">146</span>         <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">from_df</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">147</span> 
-
-<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/pandas/io/parsers.py</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, dialect, error_bad_lines, warn_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">608</span>     <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">609</span> 
-<span class="ne">--&gt; </span><span class="mi">610</span>     <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">611</span> 
-<span class="g g-Whitespace">    </span><span class="mi">612</span> 
-
-<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/pandas/io/parsers.py</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">460</span> 
-<span class="g g-Whitespace">    </span><span class="mi">461</span>     <span class="c1"># Create the parser.</span>
-<span class="ne">--&gt; </span><span class="mi">462</span>     <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">463</span> 
-<span class="g g-Whitespace">    </span><span class="mi">464</span>     <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/pandas/io/parsers.py</span> in <span class="ni">__init__</span><span class="nt">(self, f, engine, **kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">817</span>             <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">818</span> 
-<span class="ne">--&gt; </span><span class="mi">819</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">820</span> 
-<span class="g g-Whitespace">    </span><span class="mi">821</span>     <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/pandas/io/parsers.py</span> in <span class="ni">_make_engine</span><span class="nt">(self, engine)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1048</span>             <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1049</span>         <span class="c1"># error: Too many arguments for &quot;ParserBase&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1050</span>         <span class="k">return</span> <span class="n">mapping</span><span class="p">[</span><span class="n">engine</span><span class="p">](</span><span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">)</span>  <span class="c1"># type: ignore[call-arg]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1051</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1052</span>     <span class="k">def</span> <span class="nf">_failover_to_python</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/pandas/io/parsers.py</span> in <span class="ni">__init__</span><span class="nt">(self, src, **kwds)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1865</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1866</span>         <span class="c1"># open handles</span>
-<span class="ne">-&gt; </span><span class="mi">1867</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_open_handles</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1868</span>         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-<span class="g g-Whitespace">   </span><span class="mi">1869</span>         <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;storage_options&quot;</span><span class="p">,</span> <span class="s2">&quot;encoding&quot;</span><span class="p">,</span> <span class="s2">&quot;memory_map&quot;</span><span class="p">,</span> <span class="s2">&quot;compression&quot;</span><span class="p">):</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/pandas/io/parsers.py</span> in <span class="ni">_open_handles</span><span class="nt">(self, src, kwds)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1360</span>         <span class="n">Let</span> <span class="n">the</span> <span class="n">readers</span> <span class="nb">open</span> <span class="n">IOHanldes</span> <span class="n">after</span> <span class="n">they</span> <span class="n">are</span> <span class="n">done</span> <span class="k">with</span> <span class="n">their</span> <span class="n">potential</span> <span class="n">raises</span><span class="o">.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1361</span>         <span class="s2">&quot;&quot;&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1362</span><span class="s2">         self.handles = get_handle(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1363</span><span class="s2">             src,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1364</span><span class="s2">             &quot;r&quot;,</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/pandas/io/common.py</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">640</span><span class="s2">                 errors = &quot;replace&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">641</span><span class="s2">             # Encoding</span>
-<span class="ne">--&gt; </span><span class="mi">642</span><span class="s2">             handle = open(</span>
-<span class="g g-Whitespace">    </span><span class="mi">643</span><span class="s2">                 handle,</span>
-<span class="g g-Whitespace">    </span><span class="mi">644</span><span class="s2">                 ioargs.mode,</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;abatement_data.csv&#39;
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>Country</th> <th>Region</th> <th>Oil Gas</th> <th>Production source</th> <th>Upstream Downstream</th> <th>Reason</th> <th>Abatement technology</th> <th>Abatement Potential</th> <th>Abatement Cost</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Japan  </td> <td>Asia Pacific</td> <td>Gas    </td> <td>Onshore conventional gas</td> <td>Upstream           </td> <td>Vented</td> <td>Replace pumps                      </td> <td>0.25               </td> <td>-6.2          </td>
+        </tr>
+        <tr>
+            <td>Japan  </td> <td>Asia Pacific</td> <td>Oil    </td> <td>Onshore conventional oil</td> <td>Upstream           </td> <td>Vented</td> <td>Blowdown capture                   </td> <td>0                  </td> <td>-6.18         </td>
+        </tr>
+        <tr>
+            <td>Japan  </td> <td>Asia Pacific</td> <td>Gas    </td> <td>Offshore gas            </td> <td>Upstream           </td> <td>Vented</td> <td>Replace with instrument air systems</td> <td>0.02               </td> <td>-5.84         </td>
+        </tr>
+        <tr>
+            <td>Japan  </td> <td>Asia Pacific</td> <td>Oil    </td> <td>Offshore oil            </td> <td>Upstream           </td> <td>Vented</td> <td>Replace with instrument air systems</td> <td>0.01               </td> <td>-5.84         </td>
+        </tr>
+        <tr>
+            <td>Japan  </td> <td>Asia Pacific</td> <td>Gas    </td> <td>Downstream gas          </td> <td>Downstream         </td> <td>Vented</td> <td>Replace with instrument air systems</td> <td>0.62               </td> <td>-5.84         </td>
+        </tr>
+        <tr>
+            <td>Japan  </td> <td>Asia Pacific</td> <td>Oil    </td> <td>Offshore oil            </td> <td>Upstream           </td> <td>Vented</td> <td>Replace compressor seal or rod     </td> <td>0                  </td> <td>-5.58         </td>
+        </tr>
+        <tr>
+            <td>Japan  </td> <td>Asia Pacific</td> <td>Gas    </td> <td>Offshore gas            </td> <td>Upstream           </td> <td>Vented</td> <td>Replace compressor seal or rod     </td> <td>0                  </td> <td>-5.58         </td>
+        </tr>
+        <tr>
+            <td>Japan  </td> <td>Asia Pacific</td> <td>Gas    </td> <td>Onshore conventional gas</td> <td>Upstream           </td> <td>Vented</td> <td>Blowdown capture                   </td> <td>0.59               </td> <td>-5.57         </td>
+        </tr>
+        <tr>
+            <td>India  </td> <td>Asia Pacific</td> <td>Gas    </td> <td>Offshore gas            </td> <td>Upstream           </td> <td>Vented</td> <td>Replace with instrument air systems</td> <td>2.75               </td> <td>-5.33         </td>
+        </tr>
+        <tr>
+            <td>India  </td> <td>Asia Pacific</td> <td>Gas    </td> <td>Downstream gas          </td> <td>Downstream         </td> <td>Vented</td> <td>Replace with instrument air systems</td> <td>0.91               </td> <td>-5.33         </td>
+        </tr>
+    </tbody>
+</table>
+<p>... (8887 rows omitted)</p></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -708,6 +682,47 @@ We start by importing a dataset on methane abatement from the International Envi
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>Country</th> <th>Region</th> <th>Oil Gas</th> <th>Production source</th> <th>Upstream Downstream</th> <th>Reason</th> <th>Abatement technology</th> <th>Abatement Potential</th> <th>Abatement Cost</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Japan  </td> <td>Asia Pacific</td> <td>Gas    </td> <td>Onshore conventional gas</td> <td>Upstream           </td> <td>Vented</td> <td>Replace pumps                      </td> <td>0.25               </td> <td>-6.2          </td>
+        </tr>
+        <tr>
+            <td>Japan  </td> <td>Asia Pacific</td> <td>Oil    </td> <td>Onshore conventional oil</td> <td>Upstream           </td> <td>Vented</td> <td>Blowdown capture                   </td> <td>0                  </td> <td>-6.18         </td>
+        </tr>
+        <tr>
+            <td>Japan  </td> <td>Asia Pacific</td> <td>Gas    </td> <td>Offshore gas            </td> <td>Upstream           </td> <td>Vented</td> <td>Replace with instrument air systems</td> <td>0.02               </td> <td>-5.84         </td>
+        </tr>
+        <tr>
+            <td>Japan  </td> <td>Asia Pacific</td> <td>Oil    </td> <td>Offshore oil            </td> <td>Upstream           </td> <td>Vented</td> <td>Replace with instrument air systems</td> <td>0.01               </td> <td>-5.84         </td>
+        </tr>
+        <tr>
+            <td>Japan  </td> <td>Asia Pacific</td> <td>Gas    </td> <td>Downstream gas          </td> <td>Downstream         </td> <td>Vented</td> <td>Replace with instrument air systems</td> <td>0.62               </td> <td>-5.84         </td>
+        </tr>
+        <tr>
+            <td>Japan  </td> <td>Asia Pacific</td> <td>Oil    </td> <td>Offshore oil            </td> <td>Upstream           </td> <td>Vented</td> <td>Replace compressor seal or rod     </td> <td>0                  </td> <td>-5.58         </td>
+        </tr>
+        <tr>
+            <td>Japan  </td> <td>Asia Pacific</td> <td>Gas    </td> <td>Offshore gas            </td> <td>Upstream           </td> <td>Vented</td> <td>Replace compressor seal or rod     </td> <td>0                  </td> <td>-5.58         </td>
+        </tr>
+        <tr>
+            <td>Japan  </td> <td>Asia Pacific</td> <td>Gas    </td> <td>Onshore conventional gas</td> <td>Upstream           </td> <td>Vented</td> <td>Blowdown capture                   </td> <td>0.59               </td> <td>-5.57         </td>
+        </tr>
+        <tr>
+            <td>India  </td> <td>Asia Pacific</td> <td>Gas    </td> <td>Offshore gas            </td> <td>Upstream           </td> <td>Vented</td> <td>Replace with instrument air systems</td> <td>2.75               </td> <td>-5.33         </td>
+        </tr>
+        <tr>
+            <td>India  </td> <td>Asia Pacific</td> <td>Gas    </td> <td>Downstream gas          </td> <td>Downstream         </td> <td>Vented</td> <td>Replace with instrument air systems</td> <td>0.91               </td> <td>-5.33         </td>
+        </tr>
+    </tbody>
+</table>
+<p>... (1915 rows omitted)</p></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -771,6 +786,18 @@ We start by importing a dataset on methane abatement from the International Envi
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Methane: $4
+Methane tax:  4
+Total Abatement:  4579.399996707216
+
+Abatement Technologies [&#39;Replace pumps&#39; &#39;Blowdown capture&#39; &#39;Replace with instrument air systems&#39;
+ ... &#39;Downstream LDAR&#39; &#39;Replace with electric motor&#39;
+ &#39;Replace with electric motor&#39;]
+</pre></div>
+</div>
+<img alt="../../_images/textbook1_17_1.png" src="../../_images/textbook1_17_1.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -819,6 +846,18 @@ We start by importing a dataset on methane abatement from the International Envi
 <span class="n">mckinsey_curve</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Methane Tax: $3
+Methane tax:  3
+Total Abatement:  19371.639972971752
+
+Abatement Technologies [&#39;Replace pumps&#39; &#39;Blowdown capture&#39; &#39;Replace with instrument air systems&#39;
+ ... &#39;Install flares&#39; &#39;Install flares&#39; &#39;Replace with electric motor&#39;]
+</pre></div>
+</div>
+<img alt="../../_images/textbook1_20_1.png" src="../../_images/textbook1_20_1.png" />
+<img alt="../../_images/textbook1_20_2.png" src="../../_images/textbook1_20_2.png" />
 </div>
 </div>
 <p>What a plot! From here, we can differentiate the multiple methane abatement technologies on a cost basis, finding the most efficient ways of reducing methane emissions from gas production. We also observe the result of introducing a tax: With a tax of $3 per ton, we expect the total abatement to be almost 20.000 tons within our industry.</p>
@@ -918,10 +957,10 @@ We start by importing a dataset on methane abatement from the International Envi
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="../references.html" title="next page">
+        <a class="right-next" href="KuznetsHypothesis-Copy1.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Bibliography</p>
+                <p class="prevnext-title">What is the Environmental Kuznets Curve Hypothesis?</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
