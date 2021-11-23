@@ -524,6 +524,18 @@
   <a class="reference internal nav-link" href="#building-our-own-environmental-kuznets-curve">
    Building our own Environmental Kuznets Curve
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#low-income-countries">
+     Low Income Countries
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#brics">
+     BRICS
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#individual-country-graphs">
@@ -536,8 +548,13 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-s-next">
+   What’s next?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#further-recommended-readings">
-   Further recommended readings:
+   Further recommended readings
   </a>
  </li>
 </ul>
@@ -623,8 +640,9 @@ However - could this hold for the potentially most important Pollutant C02, the 
 </table>
 <p>... (53427 rows omitted)</p></div></div>
 </div>
-<p><strong>Low Income Countries</strong><br />
-Let’s start by selecting a set of Low Income Countries to graph the movement of CO2 intensity</p>
+<div class="section" id="low-income-countries">
+<h3>Low Income Countries<a class="headerlink" href="#low-income-countries" title="Permalink to this headline">¶</a></h3>
+<p>Let’s start by selecting a set of Low Income Countries to graph the movement of CO2 intensity</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Low-Income Nations</span>
@@ -651,8 +669,10 @@ Let’s start by selecting a set of Low Income Countries to graph the movement o
 <li><p>In Pakistan, a larger and more populous country we see strong linear upward growth in both GDP per capita and CO2 per capita, with no signs of turning down</p></li>
 </ul>
 <p>In these countries it is hard to tell the complete story without the exact time trend.</p>
-<p><strong>BRICS</strong><br />
-Lets look at the BRICS countries, the rapidly growing upper middle income countries</p>
+</div>
+<div class="section" id="brics">
+<h3>BRICS<a class="headerlink" href="#brics" title="Permalink to this headline">¶</a></h3>
+<p>Lets look at the BRICS countries, the rapidly growing upper middle income countries</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">BRICS_array</span> <span class="o">=</span> <span class="n">make_array</span><span class="p">(</span><span class="s1">&#39;Brazil&#39;</span><span class="p">,</span><span class="s1">&#39;Russia&#39;</span><span class="p">,</span><span class="s1">&#39;India&#39;</span><span class="p">,</span><span class="s1">&#39;China&#39;</span><span class="p">,</span><span class="s1">&#39;South Africa&#39;</span><span class="p">)</span>
@@ -673,9 +693,10 @@ Lets look at the BRICS countries, the rapidly growing upper middle income countr
 <li><p>China and India show linearly increasing trends, with China both wealthier and more CO2 intensive</p></li>
 </ul>
 </div>
+</div>
 <div class="section" id="individual-country-graphs">
 <h2>Individual country graphs<a class="headerlink" href="#individual-country-graphs" title="Permalink to this headline">¶</a></h2>
-<p>Lets look at some individual countries, starting with the US
+<p>Lets look at some individual countries, starting with the US.<br />
 We can plot both total and logged quantities</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -694,8 +715,7 @@ We can plot both total and logged quantities</p>
 <p><strong>Looks like we have a curve!</strong></p>
 <p>In the case of the US it does indeed look like the C02 per capita does indeed start to deline after about $40,000
 Somewhere around 2000-2004 the CO2 emissions leveled off and then began to decline</p>
-<p><strong>Let’s look at China:</strong><br />
-In COP26, China has been a large part of the discussion (and emissions). Let’s have a look at their curve!</p>
+<p>In COP26, China has been a large part of the discussion (and emissions). Let’s have a look at their curve!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#China Example + LOG</span>
@@ -789,11 +809,13 @@ In COP26, China has been a large part of the discussion (and emissions). Let’s
 <p>These are just some questions environmental economists have asked themselves throughout the years since the curve was hypothesized in 1955. Some, including Perman and Stern (2003) conclude that the level of environmental degradation has much more to do with a constant “battle” between scale and time than income alone. As nations scale up (BRICS, for instance) the growth results in higher emissions, while countries with lower growth (LIN &amp; HIN) seem more influenced by the “time-effect”, which results in lower emissions. Others, among Krueger &amp; Grossman, argue that there is “no evidence that environmental quality deteriorates steadily with economic growth.”</p>
 <p>More on these theories can be found in the recommended readings below.</p>
 <p>As data scientists motivated to help heal the plant with the tools of environmental economics, we can help to find these answers!</p>
-<p><strong>What’s next?</strong></p>
+</div>
+<div class="section" id="what-s-next">
+<h2>What’s next?<a class="headerlink" href="#what-s-next" title="Permalink to this headline">¶</a></h2>
 <p>If you are interested in this area, there are even more fascinating applications of Data Science to environmental topics such as: finding the social cost of carbon, the valuation of our environment, and the economics of emissions trading. Besides purely economical modeling, the field of environmental data science is rapidly growing as we collect more and more data on our planet and its resources. Applying the power of Satellite Imagery, Machine Learning, and Geographic Information Systems (GIS), one can follow both technology and policy-based paths, both ensured to have a positive impact in shaping a data-driven, sustainable future.</p>
 </div>
 <div class="section" id="further-recommended-readings">
-<h2>Further recommended readings:<a class="headerlink" href="#further-recommended-readings" title="Permalink to this headline">¶</a></h2>
+<h2>Further recommended readings<a class="headerlink" href="#further-recommended-readings" title="Permalink to this headline">¶</a></h2>
 <p>Levelized Cost of Carbon Abatement: An Improved Cost-Assessment Methodology for a Net-Zero Emissions World (also the main source of this Jupyter Notebook)</p>
 <p><a class="reference external" href="https://www.energypolicy.columbia.edu/sites/default/files/file-uploads/LCCA_CGEP-Report_101620.pdf">https://www.energypolicy.columbia.edu/sites/default/files/file-uploads/LCCA_CGEP-Report_101620.pdf</a></p>
 <p>Dynamic vs. Static costs are described further in K.Gillingham &amp; J.H Stock’s The Cost of Reducing Greenhouse Gas Emissions (italic) from 2018. - A highly recommended reading out of scope for this class.</p>

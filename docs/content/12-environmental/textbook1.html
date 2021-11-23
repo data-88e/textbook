@@ -523,6 +523,26 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#government-intervention">
+   Government Intervention
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-firms-reaction">
+   The Firm’s Reaction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#back-to-the-government">
+   Back to the Government
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion">
+   Conclusion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-mckinsey-marginal-abatement-cost-curve-mac">
    The McKinsey Marginal Abatement Cost Curve (MAC)
   </a>
@@ -543,6 +563,18 @@
   <a class="reference internal nav-link" href="#the-mac-curve-s-important-limitations">
    The MAC curve’s important limitations
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#limitation-1-introducing-capital-intensity">
+     Limitation 1: Introducing Capital Intensity
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#limitation-2-lack-of-dynamic-cost-assessment">
+     Limitation 2: Lack of Dynamic Cost Assessment
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#what-s-next">
@@ -551,7 +583,7 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#further-recommended-readings">
-   Further recommended readings:
+   Further recommended readings
   </a>
  </li>
 </ul>
@@ -588,20 +620,28 @@
 <p>And:</p>
 <div class="math notranslate nohighlight">
 \[ \text{MC of Emission Abatement (\$/ton)} = \frac{\text{$\Delta$ Cost of Emissions Abatement (\$)}}{\text{$\Delta$ Quantity of Emission Abated (tons)}}\]</div>
-<p><strong>Government Intervention</strong></p>
+<div class="section" id="government-intervention">
+<h2>Government Intervention<a class="headerlink" href="#government-intervention" title="Permalink to this headline">¶</a></h2>
 <p>Let’s say that Peter’s Pens Limited is operating in a market where the government aims to make firms <strong>internalize</strong> the negative externality created by <span class="math notranslate nohighlight">\(CO_2\)</span> pollution from their production. From earlier, we know that the government may choose between <strong>prescriptive</strong> or <strong>market-based</strong> policies, but for this case we assume they chose the latter. In that case, the government introduces a <em>Pigouvian tax</em> on per ton of <span class="math notranslate nohighlight">\(CO_2\)</span> emitted from all firms. As any Pigouvian tax, its rate is set to the <em>social marginal cost of the negative externality</em> it is set to internalize. This is the <em>social cost of carbon</em>, quantified by extensive research. In the big picture, it pushes the private marginal cost towards the higher social marginal cost of emissions. As with any price increase, we assume the ‘supplied’ quantity of emissions to be pushed leftwards (decreased). This results in a new equilibrium quantity of emissions at a higher price (= social marginal cost) and the quantity reached becomes the <em>optimal quantity</em> of emissions in society. Now, how does the management of Peter’s Pens Limited react to the new market conditions?</p>
 <p><img alt="" src="../../_images/tax.png" /></p>
-<p><strong>The Firm’s Reaction</strong></p>
+</div>
+<div class="section" id="the-firms-reaction">
+<h2>The Firm’s Reaction<a class="headerlink" href="#the-firms-reaction" title="Permalink to this headline">¶</a></h2>
 <p>From a ‘bottom-up-perspective’, the management at Peter’s Pens Limited is faced with two choices in reaction to the new emissions tax: The Business-as-Usual (BAU) alternative or the Emissions Abatement alternative. The firm can either choose to continue emitting and pay the tax or invest in new, environmentally friendly technologies that abate their <span class="math notranslate nohighlight">\(CO_2\)</span> emissions. A rational decision maker ought to invest in abatement technologies with a marginal cost of abatement up to the emissions tax put in place. Assuming they chose to pursue the latter, how would they prioritize investments within the firm? By observing the cost and abatement potential of each investment, the firm sorts its options from cheapest to most expensive and starts ‘picking’ the low-hanging fruits of <span class="math notranslate nohighlight">\(CO_2\)</span> abatement. At any given carbon tax rate, they reduce their tax bill to $0 and observe their total abatement as the sum of all technologies invested in. The resulting plot: The Marginal Abatement Cost (MAC) Curve of Peter’s Pens Limited. Here’s how a simple MAC for Peter’s Pens might look:</p>
 <p><img alt="SampleMACC_Nov23.png" src="../../_images/SampleMACC_Nov23.png" /></p>
 <p>In this example, the firm has a few activities with a low cost of abatement, and then a few with higher cost of abatement. It would make sense for the firm to start with the lowest cost of abatement first.</p>
-<p><strong>Back to the Government</strong></p>
+</div>
+<div class="section" id="back-to-the-government">
+<h2>Back to the Government<a class="headerlink" href="#back-to-the-government" title="Permalink to this headline">¶</a></h2>
 <p>Returning to the government policymaker’s perspective, we can motivate this approach to a market wide perspective. Just as Peter’s Pens has their firm-specific MAC, society as a whole has one. Through research on policy and technological interventions, an environmental data science team can quantify the <em>abatement potential</em> and the <em>abatement cost</em> of different technologies (e.g electric cars, wind &amp; solar power generation), policies (e.g fuel standards), and land management projects (e.g  soil restoration). From here, public policy can start  ‘picking’ the low-hanging fruits of the lowest cost technology first.</p>
 <p>Earlier, we described the effect of introducing a tax on the emissions ‘market’ and observed how rational decision-makers in individual firms react by constructing their own MAC curves. Now, let’s say that the government has set an emission reduction target but has not decided on a specific tax rate yet. How could they guarantee that the target is met? By taking the cumulative sum of the abatement potential of each intervention they expect to take place at a given rate, they should keep doing so until their sum equals the emission reduction target. From there, they observe the marginal abatement cost of the last intervention they added to the sum. This could be a way to set the emissions tax rate. Here’s how a simplified version could look:</p>
 <p><img alt="image.png" src="../../_images/image.png" /></p>
-<p><strong>Conclusion</strong></p>
+</div>
+<div class="section" id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
 <p>In conclusion, both an individual firm and society as a whole could be modeled to have MAC curves. By either choosing an emission reduction target or a emissions tax rate, one can arrive at a lowest cost level of abatement. Whenever an emission tax is introduced to the market, rational firms build their MAC curves and start investing in the cheapest relevant technologies up to the level of the given tax rate to avoid paying the tax. A rational policy maker can map out the different abatement opportunities in a society as a whole and prioritize the cheapest alternatives. Public policy could stop emissions abatement when the technology or policy we invest in has a higher marginal cost than the societal marginal cost of emissions. From there, any intervention reduces either individual (firm) or societal welfare.</p>
 <p>Now, let’s delve deeper into the  MAC curve and build one of our own for Methane Abatement.</p>
+</div>
 <div class="section" id="the-mckinsey-marginal-abatement-cost-curve-mac">
 <h2>The McKinsey Marginal Abatement Cost Curve (MAC)<a class="headerlink" href="#the-mckinsey-marginal-abatement-cost-curve-mac" title="Permalink to this headline">¶</a></h2>
 <p>As earlier described, the Marginal Abatement Cost Curve gives policy makers and firms an opportunity to differentiate the costs of the multiple approaches we have in reducing our carbon (CO2) emissions. It shows where society can get the best “bang for the buck” when the goal is to abate carbon emissions. The <strong>Abatement Potential (GtCO2 per year)</strong> follows the x-axis, and the ** Marginal Abatement Cost (€ per ton of CO2)** lies on the y-axis.</p>
@@ -858,7 +898,8 @@ Abatement Technologies [&#39;Replace pumps&#39; &#39;Blowdown capture&#39; &#39;
 <div class="section" id="the-mac-curve-s-important-limitations">
 <h2>The MAC curve’s important limitations<a class="headerlink" href="#the-mac-curve-s-important-limitations" title="Permalink to this headline">¶</a></h2>
 <p>Before moving on to the next topic of this chapter, we ought to consider the drawbacks of our newfound knowledge:</p>
-<p><strong>Limitation 1: Introducing Capital Intensity</strong></p>
+<div class="section" id="limitation-1-introducing-capital-intensity">
+<h3>Limitation 1: Introducing Capital Intensity<a class="headerlink" href="#limitation-1-introducing-capital-intensity" title="Permalink to this headline">¶</a></h3>
 <p>From the MAC curve for CO2 (see figure 1), we are interested in finding the <strong>capital intensity of an intervention</strong>. This is different from the <strong>Marginal Abatement Cost</strong>, as it does not take potential savings from e.g lower energy consumption in the future into its calculation. However, it’s a great measurement for which technologies require the highest <em>upfront capital</em> investment to abate an amount of GHG.</p>
 <p>The formula is as follows:</p>
 <div class="math notranslate nohighlight">
@@ -866,7 +907,9 @@ Abatement Technologies [&#39;Replace pumps&#39; &#39;Blowdown capture&#39; &#39;
 <p>Where Additional Investment is the the additional upfront investment for new technology relative to the Business as Usual (BAU) alternative).</p>
 <p>Had we re-arranged the MAC curve from figure 1 for capital intensity, it would have looked like this:</p>
 <p><img alt="Screen%20Shot%202021-08-11%20at%2012.41.27%20PM.png" src="../../_images/ci_curve.png" /></p>
-<p><strong>Limitation 2: Lack of Dynamic Cost Assessment</strong></p>
+</div>
+<div class="section" id="limitation-2-lack-of-dynamic-cost-assessment">
+<h3>Limitation 2: Lack of Dynamic Cost Assessment<a class="headerlink" href="#limitation-2-lack-of-dynamic-cost-assessment" title="Permalink to this headline">¶</a></h3>
 <p>The most crucial limitations of the MAC curve is its inability to consider <strong>Dynamic Costs</strong>. In 2009, when the MAC was first created, it only considered <strong>Static Costs</strong>. Let’s define them within the context of solar energy prices (graph below):</p>
 <p><strong>Static Costs</strong></p>
 <ul class="simple">
@@ -880,12 +923,13 @@ Abatement Technologies [&#39;Replace pumps&#39; &#39;Blowdown capture&#39; &#39;
 <p><strong>A final note on the MAC curve:</strong> As future data scientists, we have a responsibility to improve the MAC curve, and use our skills in prediction and analysis to assess dynamic costs in GHG abatement with higher certainty. The original McKinsey MAC has rounded its 10th year anniversary. Perhaps it’s time for you to build a new one?</p>
 <p><img alt="solar-pv-prices.png" src="../../_images/pv_prices.png" /></p>
 </div>
+</div>
 <div class="section" id="what-s-next">
 <h2>What’s next?<a class="headerlink" href="#what-s-next" title="Permalink to this headline">¶</a></h2>
 <p>If you are interested in this area, there are even more fascinating applications of Data Science to environmental topics such as: finding the social cost of carbon, the valuation of our environment, and the economics of emissions trading. Besides purely economical modeling, the field of environmental data science is rapidly growing as we collect more and more data on our planet and its resources. Data Science can apply to these problems the power of Satellite Imagery, Machine Learning, and Geographic Information Systems (GIS).  These tools can help to build a positive impact in shaping a data-informed, sustainable future.</p>
 </div>
 <div class="section" id="further-recommended-readings">
-<h2>Further recommended readings:<a class="headerlink" href="#further-recommended-readings" title="Permalink to this headline">¶</a></h2>
+<h2>Further recommended readings<a class="headerlink" href="#further-recommended-readings" title="Permalink to this headline">¶</a></h2>
 <p>Levelized Cost of Carbon Abatement: An Improved Cost-Assessment Methodology for a Net-Zero Emissions World (also the main source of this Jupyter Notebook)</p>
 <p><a class="reference external" href="https://www.energypolicy.columbia.edu/sites/default/files/file-uploads/LCCA_CGEP-Report_101620.pdf">https://www.energypolicy.columbia.edu/sites/default/files/file-uploads/LCCA_CGEP-Report_101620.pdf</a></p>
 <p>Dynamic vs. Static costs are described further in in K.Gillingham &amp; J.H Stock’s The Cost of Reducing Greenhouse Gas Emissions (italic) from 2018. - A highly recommended reading out of scope for this class.</p>
