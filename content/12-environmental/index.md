@@ -1,4 +1,4 @@
-# What is Environmental Economics?
+# Environmental Economics
 
 ![](windmills.png)
 
