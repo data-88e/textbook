@@ -1,0 +1,820 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Supply Curve &#8212; Data 88E: Economic Models Textbook</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/plotly.min.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="An Empirical Example from EEP 147" href="02-eep147-example.html" />
+    <link rel="prev" title="Supply and Market Equilibrium" href="index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/econ-models.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Data 88E: Economic Models Textbook</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   [Data 88E: Economic Models] (https://data-88e.github.io)
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../00-intro/index.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01-demand/index.html">
+   Demand and Elasticities
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-demand/01-demand.html">
+     Demand Curves
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-demand/02-example.html">
+     An Empirical Demand Curve
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-demand/03-log-log.html">
+     Log-log and Semi-log Demand Curves
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-demand/04-elasticity.html">
+     Elasticity
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
+   Supply and Market Equilibrium
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     The Supply Curve
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02-eep147-example.html">
+     An Empirical Example from EEP 147
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03-market-equilibria.html">
+     Market Equilibria
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04-sympy.html">
+     SymPy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03-public/index.html">
+   Public Economics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-public/taxes-subsidies.html">
+     Taxes and Subsidies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-public/surplus.html">
+     Surplus
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-public/govt-intervention.html">
+     Other Forms of Government Intervention
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../04-production/index.html">
+   Production
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-production/production.html">
+     Production and Cobb-Douglas Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-production/shifts.html">
+     Analyzing Shifts in
+     <span class="math notranslate nohighlight">
+      \(A\)
+     </span>
+     and
+     <span class="math notranslate nohighlight">
+      \(\alpha\)
+     </span>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05-utility/index.html">
+   Utility
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-utility/utility.html">
+     Utility Functions and Indifference Curves
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-utility/budget-constraints.html">
+     Budget Constraints and Utility Maximization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes">
+     LaTeX
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../06-inequality/index.html">
+   Inequality
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06-inequality/inequality.html">
+     Measurements of Inequality
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06-inequality/historical-inequality.html">
+     Income Inequality Historically
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../07-game-theory/index.html">
+   Game Theory
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07-game-theory/expected-utility.html">
+     Expected Utility Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07-game-theory/equilibria-oligopolies.html">
+     Equilibria &amp; Oligopolies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07-game-theory/cournot.html">
+     Cournot Competition
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07-game-theory/bertrand.html">
+     Bertrand Competition
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07-game-theory/python-classes.html">
+     Python Classes
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-development/index.html">
+   Development
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../09-macro/index.html">
+   Macroeconomic Policy
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09-macro/MacroChapter.html">
+     Macroeconomic Indicators
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../10-finance/index.html">
+   Finance
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10-finance/value-interest.html">
+     Present Value, Future Value, and Interest Rates
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10-finance/options.html">
+     Options
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../11-econometrics/index.html">
+   Econometrics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../11-econometrics/single-variable.html">
+     Single Variable Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../11-econometrics/statsmodels.html">
+     Using
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       statsmodels
+      </span>
+     </code>
+     for Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../11-econometrics/multivariable.html">
+     Multivariable Regression and Bias
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../11-econometrics/reading-econ-papers.html">
+     Reading Economics Papers
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../12-environmental/index.html">
+   Environmental Economics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../12-environmental/textbook1.html">
+     Marginal Abatement Cost Curves
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../12-environmental/KuznetsHypothesis-Copy1.html">
+     Environmental Kuznets Curve Hypothesis
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/content/02-supply/01-supply.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/data-88e/textbook"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/data-88e/textbook/master?urlpath=tree/content/02-supply/01-supply.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        <a class="jupyterhub-button" href="https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https://github.com/data-88e/textbook&urlpath=tree/textbook/content/02-supply/01-supply.ipynb&branch=master"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#costs">
+   Costs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#production-and-firm-behavior">
+   Production and Firm Behavior
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="the-supply-curve">
+<h1>The Supply Curve<a class="headerlink" href="#the-supply-curve" title="Permalink to this headline">¶</a></h1>
+<p>The supply of a commodity refers to the quantity for which producers or sellers are willing to produce and offer for sale, at a particular price in some given period of time. To answer questions like <em>“at a given price, what will be the supply of a good in the market?”</em>, we need to know the market supply curve. A supply curve is simply a curve (or graph) which shows the quantites of a good that can be produced and the prices they will be sold at.</p>
+<p>It is good to discern between individual and market supply. <strong>Individual supply</strong> refers to the supply offered by a single firm or producer, while <strong>market supply</strong> refers to the supply offered by all the firms or producers in a market. It is the horizontal summation of the individual supply curves in the market.</p>
+<p>The following table and graph will give an example of a market with two firms: A and B.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">market_supply</span> <span class="o">=</span> <span class="n">Table</span><span class="p">()</span><span class="o">.</span><span class="n">with_columns</span><span class="p">(</span>
+    <span class="s2">&quot;Price&quot;</span><span class="p">,</span> <span class="n">make_array</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
+    <span class="s2">&quot;Quantity supplied by A&quot;</span><span class="p">,</span> <span class="n">make_array</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">),</span>
+    <span class="s2">&quot;Quantity supplied by B&quot;</span><span class="p">,</span> <span class="n">make_array</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span>
+    <span class="s2">&quot;Market Supply&quot;</span><span class="p">,</span> <span class="n">make_array</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">market_supply</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>Price</th> <th>Quantity supplied by A</th> <th>Quantity supplied by B</th> <th>Market Supply</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>2    </td> <td>20                    </td> <td>30                    </td> <td>50           </td>
+        </tr>
+        <tr>
+            <td>3    </td> <td>30                    </td> <td>40                    </td> <td>70           </td>
+        </tr>
+        <tr>
+            <td>4    </td> <td>40                    </td> <td>50                    </td> <td>90           </td>
+        </tr>
+    </tbody>
+</table></div></div>
+</div>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<img alt="../../_images/01-supply_3_0.png" src="../../_images/01-supply_3_0.png" />
+</div>
+</div>
+<p>Market behavior relating to supply is based on the behavior of the individual firms that comprise it. Now, how does an individual firm make its decision about production? It does so based on the costs associated with production. If the price of a good is enough to recover the costs, the firm produces. Generally, costs increase with the quantity of production. So, to induce producers to increase the quantity supplied, the market prices need to be high enough to compensate for the increased costs.</p>
+<div class="section" id="costs">
+<h2>Costs<a class="headerlink" href="#costs" title="Permalink to this headline">¶</a></h2>
+<p>We will split costs into two categories: fixed costs and variable costs.</p>
+<div class="admonition-definition admonition">
+<p class="admonition-title">Definition</p>
+<p><strong>Fixed costs</strong> are costs associated with fixed factors (or inputs) of production. For example, land for a factory, capital equipment like machinery, etc. The quantity of these inputs cannot be changed quickly in the short term. A factory owner cannot purchase land quickly enough to ramp up production in a week. A key point to note is that fixed costs are irrespective of the quantity, i.e., they do not change with the quantity produced.</p>
+<p><strong>Variable costs</strong> are costs associated with variable factors (or inputs) of production. For example, labor, raw materials, etc. The quantity of these inputs can be changed quickly in the short term to adjust supply. A factory owner can hire more laborers or purchase more raw material to increase output. Variable costs change as the supply changes.</p>
+</div>
+<p>Another important cost calculation to consider is the marginal cost.</p>
+<div class="admonition-definition admonition">
+<p class="admonition-title">Definition</p>
+<p>The <strong>marginal cost</strong> is the additional cost to produce one more unit of output. It can be calculated as the difference between the total cost and the current level of output and the total cost at the previous level of output.</p>
+</div>
+<p>Below is a table with the following costs incurred by the firm:</p>
+<ul class="simple">
+<li><p><strong>Output:</strong> Units produced and supplied</p></li>
+<li><p><strong>Total Fixed Cost (TFC):</strong> Cost incurred by firm on usage of all fixed factors.</p></li>
+<li><p><strong>Total Variable Cost (TVC):</strong> Cost incurred by firm on usage of all variable factors.</p></li>
+<li><p><strong>Total Cost (TC):</strong> Sum of the total fixed and variable costs.</p></li>
+<li><p><strong>Marginal Cost (MC)</strong></p></li>
+<li><p><strong>Average Fixed Cost (AFC):</strong> Cost per unit of fixed factors. It can be calculated as the Total Fixed Cost divided by the corresponding output level.</p></li>
+<li><p><strong>Average Variable Cost (AVC):</strong> Cost per unit of variable factors. It can be calculated as the Total Variable Cost divided by the corresponding output level.</p></li>
+<li><p><strong>Average Total Cost (ATC):</strong> Total cost per unit. This is the sum of the Average Fixed Cost and the Average Variable Cost.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">individual_firm_costs</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s1">&#39;supply_textbook.csv&#39;</span><span class="p">)</span>
+<span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>Output</th> <th>Total Fixed Cost</th> <th>Total Variable Cost</th> <th>Total Cost</th> <th>Average Fixed Cost</th> <th>Average Variable Cost</th> <th>Average Total Cost</th> <th>Marginal Cost</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>0     </td> <td>50              </td> <td>0                  </td> <td>50        </td> <td>0                 </td> <td>0                    </td> <td>0                 </td> <td>0            </td>
+        </tr>
+        <tr>
+            <td>1     </td> <td>50              </td> <td>50                 </td> <td>100       </td> <td>50                </td> <td>50                   </td> <td>100               </td> <td>50           </td>
+        </tr>
+        <tr>
+            <td>2     </td> <td>50              </td> <td>78                 </td> <td>128       </td> <td>25                </td> <td>39                   </td> <td>64                </td> <td>28           </td>
+        </tr>
+        <tr>
+            <td>3     </td> <td>50              </td> <td>98                 </td> <td>148       </td> <td>16.6667           </td> <td>32.6667              </td> <td>49.3333           </td> <td>20           </td>
+        </tr>
+        <tr>
+            <td>4     </td> <td>50              </td> <td>112                </td> <td>162       </td> <td>12.5              </td> <td>28                   </td> <td>40.5              </td> <td>14           </td>
+        </tr>
+        <tr>
+            <td>5     </td> <td>50              </td> <td>130                </td> <td>180       </td> <td>10                </td> <td>26                   </td> <td>36                </td> <td>18           </td>
+        </tr>
+        <tr>
+            <td>6     </td> <td>50              </td> <td>150                </td> <td>200       </td> <td>8.33333           </td> <td>25                   </td> <td>33.3333           </td> <td>20           </td>
+        </tr>
+        <tr>
+            <td>7     </td> <td>50              </td> <td>175                </td> <td>225       </td> <td>7.14286           </td> <td>25                   </td> <td>32.1429           </td> <td>25           </td>
+        </tr>
+        <tr>
+            <td>8     </td> <td>50              </td> <td>204                </td> <td>254       </td> <td>6.25              </td> <td>25.5                 </td> <td>31.75             </td> <td>29           </td>
+        </tr>
+        <tr>
+            <td>9     </td> <td>50              </td> <td>242                </td> <td>292       </td> <td>5.55556           </td> <td>26.8889              </td> <td>32.4444           </td> <td>38           </td>
+        </tr>
+        <tr>
+            <td>10    </td> <td>50              </td> <td>300                </td> <td>350       </td> <td>5                 </td> <td>30                   </td> <td>35                </td> <td>58           </td>
+        </tr>
+        <tr>
+            <td>11    </td> <td>50              </td> <td>385                </td> <td>435       </td> <td>4.54545           </td> <td>35                   </td> <td>39.5455           </td> <td>85           </td>
+        </tr>
+    </tbody>
+</table></div></div>
+</div>
+<p>Let’s create some visualizations to understand the relationships of the different cost curves.</p>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<img alt="../../_images/01-supply_12_0.png" src="../../_images/01-supply_12_0.png" />
+</div>
+</div>
+<p>There are two important things to notice about the graph above. First, the total fixed cost is flat. This is because the fixed cost does not change regardless of quantity produced. Second, the vertical difference between the total variable cost and total cost is the TFC. This is because <span class="math notranslate nohighlight">\(\text{TC} = \text{TVC} + \text{TFC}\)</span>.</p>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<img alt="../../_images/01-supply_14_0.png" src="../../_images/01-supply_14_0.png" />
+</div>
+</div>
+<p>From the graph above, note that:</p>
+<ul class="simple">
+<li><p>The average fixed cost is decreasing throughout. This is because at higher levels of production, the fixed cost is divided across more units. This implies that the difference between the ATC and AVC decreases as we increase production, since <span class="math notranslate nohighlight">\(\text{ATC} = \text{AVC} + \text{AFC}\)</span>.</p></li>
+<li><p>The AVC and ATC slope down initially and then slope up. This represents decreasing and then increasing marginal cost. Marginal cost initially decreases due to efficiencies in producing at scale, but then increases due to the law of variable proportions.</p></li>
+</ul>
+<p>Now let’s introduce the marginal cost curve:</p>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<img alt="../../_images/01-supply_16_0.png" src="../../_images/01-supply_16_0.png" />
+</div>
+</div>
+<p>Notice that the MC curve intersects the ATC and AVC curves at their minima. This is because when MC is below the AVC and ATC, it brings down the average since it costs less to produce an additional unit. But as MC begins to increase and surpasses the ATC and AVC cost curves, it will surpass the intersection, and pulls up the AVC and ATC curves. Therefore, it intersects at the minima.</p>
+</div>
+<div class="section" id="production-and-firm-behavior">
+<h2>Production and Firm Behavior<a class="headerlink" href="#production-and-firm-behavior" title="Permalink to this headline">¶</a></h2>
+<p>A company decides to produce if the price is greater than or equal to its average variable cost. There are 3 different scenarios:</p>
+<ul class="simple">
+<li><p>A firm does not produce at all</p></li>
+<li><p>It produces at a loss-minimizing quantity</p></li>
+<li><p>It produces at a profit</p></li>
+</ul>
+<p>Profits are calculated as total revenue minus total costs, where total revenue is price times quantity. For any price that is less than AVC, the firm will not produce at all. This is because for any amount of production, they will lose money. In this case, they shut down and the loss is limited to its fixed costs. In this example, we can see this for prices 24 and below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">firm_behaviour</span><span class="p">(</span><span class="mi">24</span><span class="p">,</span> <span class="n">individual_firm_costs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No production
+</pre></div>
+</div>
+<img alt="../../_images/01-supply_19_1.png" src="../../_images/01-supply_19_1.png" />
+</div>
+</div>
+<p>For any price that lies above the AVC curve but below the ATC curve, the firm will produce at a loss-minimising quantity. This is because for some levels of production, they will make revenue that is more than the total variable cost of production but is still less than the total cost, which includes the fixed cost. While they still lose money, they have offset some of the losses they would have incurred from the fixed cost. In our example, we see this for prices between 25 and 31. The red patch in the plot shows the loss.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">firm_behaviour</span><span class="p">(</span><span class="mi">28</span><span class="p">,</span> <span class="n">individual_firm_costs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Production at loss minimising quantity
+</pre></div>
+</div>
+<img alt="../../_images/01-supply_21_1.png" src="../../_images/01-supply_21_1.png" />
+</div>
+</div>
+<p>If the price is above the ATC curve, the firm produces at a profit. In this example, it is at prices 32 and above. The green patch shows the profit.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">firm_behaviour</span><span class="p">(</span><span class="mi">36</span><span class="p">,</span> <span class="n">individual_firm_costs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Production at a profit
+</pre></div>
+</div>
+<img alt="../../_images/01-supply_23_1.png" src="../../_images/01-supply_23_1.png" />
+</div>
+</div>
+<p>So, we have seen that a firm produces if the price is above the AVC. The question now is: what is the level of production?</p>
+<p>A profit-maximising firm will produce until price is less than or equal to marginal cost. In the above example, the firm produces 8 units. At the 8th unit, the marginal cost to produce that unit is 28, which is less than the price of 36. Thus the firm gets more revenue for the 8th unit than the cost to produce that unit. But the 9th unit costs an additional 38 to produce. The price of 36 is not enough to cover it. Thus it does not produce the 9th unit.</p>
+<p>Therefore, based on the price, each firm looks at its costs and makes a decision to produce. At low prices, only the firms with the lowest production costs produce. As the price increases, firms with higher production costs find it feasible to produce and begin to supply. Thus, the market supply rises with higher prices. Firms with lower costs make extra profits.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/02-supply"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="index.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Supply and Market Equilibrium</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="02-eep147-example.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">An Empirical Example from EEP 147</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Data 88E Course Staff<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
