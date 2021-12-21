@@ -1,6 +1,6 @@
-title: 'Data 88E: Economic Models Textbook'
+title: '<a href="https://data-88e.github.io">  Data 88E: Economic Models Textbook </a>'
 author: Data 88E Course Staff
-logo: [content/images/econ-models.png](https://data-88e.github.io)
+logo: content/images/econ-models.png 
 copyright: '2020'
 
 execute:
