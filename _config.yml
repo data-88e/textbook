@@ -1,6 +1,6 @@
 title: 'Data 88E: Economic Models Textbook'
 author: Data 88E Course Staff
-logo: <a href="https://data-88e.github.io"> content/images/econ-models.png </a>
+logo: [content/images/econ-models.png](https://data-88e.github.io)
 copyright: '2020'
 
 execute:
