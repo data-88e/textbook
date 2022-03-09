@@ -525,6 +525,16 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cournot-profit-functions">
+   Cournot Profit Functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#best-response-functions">
+   Best Response Functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#cournot-equilibrium">
    Cournot Equilibrium
   </a>
@@ -533,11 +543,13 @@
   <a class="reference internal nav-link" href="#implications">
    Implications
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#applying-cournot">
-   Applying Cournot
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#applying-cournot">
+     Applying Cournot
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -552,167 +564,145 @@
                 
   <div class="section" id="cournot-competition">
 <h1>Cournot Competition<a class="headerlink" href="#cournot-competition" title="Permalink to this headline">¶</a></h1>
-<p>One model of understanding oligopolies comes in <strong>Cournot competition</strong>, named for Aontoine Cournot who first proposed it. Cournot competition is a model describing a market in which firms compete by changing their output. In Cournot competition, there are a fixed number of firms in a market that produce the same product. Firms do not collude but have <em>market power</em> (i.e. each firm’s output decisions affect the price of the good). Each firm knows the number of firms in the market and has its own cost function that it uses to determine its level of output.</p>
+<p>One model of understanding oligopolies comes in Cournot competition, named for Aontoine Cournot who first proposed it. Cournot competition is a model describing a market in which firms compete by changing their output. In Cournot competition, there are a fixed number of firms in a market that produce the same product. Firms do not collude but have market power (i.e. each firm’s output decisions affect the price of the good). Each firm knows the number of firms in the market and has its own cost function that it uses to determine its level of output.</p>
 <p>OPEC is a good example of a Cournot oligopoly: its participants affect prices by changing their output. OPEC also demonstrates a flaw in the reasoning behind Cournot competition: the equilibrium state of a Cournot oligopoly suggests that collusion by market participants is the rational policy, but in reality game theory shows us this cannot be the “true” equilibrium because cartel members undercut one another in a bid for market share.</p>
+<div class="section" id="cournot-profit-functions">
+<h2>Cournot Profit Functions<a class="headerlink" href="#cournot-profit-functions" title="Permalink to this headline">¶</a></h2>
+<p>For the purposes of this class, we will be analyzing the case of Cournot duopoly (i.e. when there are only 2 firms in a market). Throughout the course we will make these assumptions about the market: both firms have to follow a joint linear price function (meaning the market price is determined only by the quantity produced of both firms) and both firms have an equal constant marginal cost curve. To put this formally, <span class="math notranslate nohighlight">\(P=P(Q)=P(q_1+q_2)=m(q_1+q_2)+b\)</span> (where <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are parameters for the slope and intercept of the price functions). Costs for firm 1 can be represented as <span class="math notranslate nohighlight">\(C_1=cq_1\)</span> and costs for firm 2 can be represented as <span class="math notranslate nohighlight">\(C_2=cq_2\)</span>. To find the equilibrium of this game we will need to set up the profit functions for both firms. Starting with firm 1 we can put the last two equations together to get:
+\begin{equation} \label{eq1}
+\begin{split}
+\pi_1 &amp; =Pq_1-C_1 \
+&amp; =(m(q_1+q_2)+b)q_1-cq_1 \
+&amp; =mq_1^2+mq_1q_2+bq_1 -cq_1
+\end{split}
+\end{equation}</p>
+<p><br />
+Firm 2 follows a similar profit function:
+\begin{align*}
+\pi_2 &amp; =Pq_2-C_2\
+&amp; =mq_2^2+mq_1q_2+bq_2 -cq_2<br />
+\end{align*}</p>
+</div>
+<div class="section" id="best-response-functions">
+<h2>Best Response Functions<a class="headerlink" href="#best-response-functions" title="Permalink to this headline">¶</a></h2>
+<p>Similar to how in the utility unit individuals seek to maximize utility, in Cournot firms seek to maximize profit. So we will be using the same mathematical tool we learned last week (partial derivatives) to derive the equilibrium of this game. Specifically we will be solving for a <span class="math notranslate nohighlight">\(q_1^{*}\)</span> that satisfies <span class="math notranslate nohighlight">\( \underset{q_1}{\mathrm{argmax}}\ \pi_1 \ \textrm{or} \ \underset{q_1}{\mathrm{argmax}}\ (mq_1^2+mq_1q_2+bq_1 -cq_1)\)</span>. In english, this means we will be finding the value (or values) of <span class="math notranslate nohighlight">\(q_1\)</span> that maximize the profit function for player 1. We will also do the same thing for player 2. Starting with player 1, let’s take the partial derivative with respect to <span class="math notranslate nohighlight">\(q_1\)</span> and set that equation equal to 0. We can then solve that equation to obtain <span class="math notranslate nohighlight">\(q_1^{*}\)</span>.</p>
+<p>\begin{align*}
+\frac{\partial{\pi_1}}{\partial{q_1}}= 2mq_1 + mq_2+b - c \
+2mq_1 + mq_2+b - c = 0\
+q_1^{<em>}= \frac{c-mq_2-b}{2m}
+\end{align</em>}
+<br />
+This equation for <span class="math notranslate nohighlight">\(q_1\)</span> is called a best response function because it tells us player 1’s optimal output for every possible output player 2 can choose. Now, in order to get the equilibrium, we need to find player 2’s best response function. We will use the same approach to do this (i.e., we will solve for a <span class="math notranslate nohighlight">\(q_2^{*}\)</span> that satisfies <span class="math notranslate nohighlight">\(\underset{q_2}{\mathrm{argmax}}\ \pi_2 \ \textrm{or} \ \underset{q_2}{\mathrm{argmax}}\ mq_2^2+mq_1q_2+bq_2 -cq_2\)</span> ).</p>
+<p>\begin{align*}
+\frac{\partial{\pi_2}}{\partial{q_2}}= 2mq_2 + mq_1+b - c \
+2mq_2 + mq_1+b - c = 0\
+q_2^{<em>} = \frac{c-mq_1-b}{2m}
+\end{align</em>}</p>
+<p>If <span class="math notranslate nohighlight">\(q_2\)</span> was fixed at a certain price and we were to graph firm 1’s best response equation, it would look something like this:</p>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<img alt="../../_images/cournot_4_0.png" src="../../_images/cournot_4_0.png" />
+</div>
+</div>
+<p>This may make intuitive sense as if you recall from the demand and supply chapters, firms seek to produce where marginal revenue equals marginal cost. The partial derivative we took before did that automatically. We can verify this with the following calculation:<br />
+\begin{align*}
+MR=MC  \
+MR-MC=0  \
+\frac{\partial}{\partial{q_1}} (\textrm{Revenue - Cost}) = 0 \
+\frac{\partial}{\partial{q_1}} ((m(q_1+q_2)+b)q_1-cq_1) = 0 \
+2mq_1 + mq_2+b - c = 0
+\end{align*}</p>
+<p>However, this graph assumes a fixed value for <span class="math notranslate nohighlight">\(q_2\)</span>. Let’s try varying <span class="math notranslate nohighlight">\(q_2\)</span> and see what happens.</p>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<img alt="../../_images/cournot_6_0.png" src="../../_images/cournot_6_0.png" />
+</div>
+</div>
+<p>The orange marginal revenue curve represents a scenario where Firm 2 produces so little that Firm 1 can overtake the market and become a monopoly. The green marginal revenue curve is a scenario where Firm 2 produces so much that it is too costly for Firm 1 to remain in this market, causing Firm 1’s optimal output to become 0.</p>
+<p>Let’s now try to solve for the Nash Equilibrium of this game.</p>
+</div>
 <div class="section" id="cournot-equilibrium">
 <h2>Cournot Equilibrium<a class="headerlink" href="#cournot-equilibrium" title="Permalink to this headline">¶</a></h2>
-<p>To find the equilibrium state of a Cournot duopoly, let <span class="math notranslate nohighlight">\(c\)</span> be the (constant) marginal cost of both firms (i.e. each additional good costs the same amount to produce regardless of the number currently being produced), <span class="math notranslate nohighlight">\(p_1\)</span> and <span class="math notranslate nohighlight">\(p_2\)</span> be the prices of firms 1 and 2, respectively, and <span class="math notranslate nohighlight">\(q_1\)</span> and <span class="math notranslate nohighlight">\(q_2\)</span> their quantities. Let <span class="math notranslate nohighlight">\(P\)</span> be the price function for a given level of production. We know that the equilibrium price is <span class="math notranslate nohighlight">\(p_1 = p_2 = P(q_1 + q_2)\)</span>, and therefore firm 1’s profit is <span class="math notranslate nohighlight">\(q_1(P(q_1 + q_2) - c)\)</span> (since <span class="math notranslate nohighlight">\(c\)</span> is constant).</p>
-<p>The first step is to calculate firm 1’s residual demand. If firm 1 believes that firm 2 is going to produce <span class="math notranslate nohighlight">\(q_2\)</span> units of output, we can draw a <strong>residual demand curve</strong> for firm 1. If firm 1 decides to produce 0 units of output, then the price of the good is <span class="math notranslate nohighlight">\(P(0 + q_2) = P(q_2)\)</span>. If they produce <span class="math notranslate nohighlight">\(q_1\)</span> units, it’s <span class="math notranslate nohighlight">\(P(q_1 + q_2)\)</span>. Using this information, we can draw the residual demand curve. This curve will be called <span class="math notranslate nohighlight">\(d_1\)</span>.</p>
-<p>Now we need to determine firm 1’s optimal output, which occurs where the <strong>marginal revenue</strong> (the additional revenue gained by increasing production by one unit) intersects the marginal cost <span class="math notranslate nohighlight">\(c\)</span>. The marginal revenue curve is the line with twice the slope of the residual demand and the same <span class="math notranslate nohighlight">\(y\)</span>-intercept. We can show this by taking the derivative of the revenue function <span class="math notranslate nohighlight">\(\text{TR} = P(Q) \cdot Q\)</span> where <span class="math notranslate nohighlight">\(\text{TR}\)</span> is the total revenue. If the demand curve <span class="math notranslate nohighlight">\(P(Q)\)</span> has slope <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(y\)</span>-intercept <span class="math notranslate nohighlight">\(b\)</span>, this is</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-\text{TR} &amp;= Q (mQ + b) \\
-&amp;= m Q^2 + bQ \\
-\frac{\text{d}}{\text{d} Q} \text{TR} &amp;= 2mQ + b
-\end{aligned}\end{split}\]</div>
-<p>Thus, the marginal revenue curve is a line with slope <span class="math notranslate nohighlight">\(2m\)</span> and <span class="math notranslate nohighlight">\(y\)</span>-intercept <span class="math notranslate nohighlight">\(b\)</span>. The marginal revenue of firm 1 is denoted <span class="math notranslate nohighlight">\(r_1\)</span> and is a function of <span class="math notranslate nohighlight">\(q'_1\)</span>.</p>
-<p>Let <span class="math notranslate nohighlight">\(q'_1\)</span> be the optimum output for firm 1, such that <span class="math notranslate nohighlight">\(r_1(q'_1) = c\)</span>. The graph below shows the curves and their relationships to one another.</p>
-<div class="cell tag_remove_input docutils container">
-<div class="cell_output docutils container">
-<img alt="../../_images/cournot_3_0.png" src="../../_images/cournot_3_0.png" />
-</div>
-</div>
-<p><span class="math notranslate nohighlight">\(q'_1\)</span> is a function of <span class="math notranslate nohighlight">\(q_2\)</span> as firm 1’s optimal output depends on what it thinks firm 2 is going to produce. To find the equilibrium, we must define <span class="math notranslate nohighlight">\(q'_1\)</span> for all possible values of <span class="math notranslate nohighlight">\(q_2\)</span>. Consider the case when <span class="math notranslate nohighlight">\(q_2=0\)</span>; then firm 1’s residual demand is the same as the market demand, since <span class="math notranslate nohighlight">\(d_1\)</span> and <span class="math notranslate nohighlight">\(D\)</span> are separated horizontally by a difference of <span class="math notranslate nohighlight">\(q_2\)</span>. Firm 1 then produces the monopoly quantity <span class="math notranslate nohighlight">\(q_m\)</span>, since that is where its marginal revenue equals its marginal cost. If, however, firm 2 chooses to produce at a level of perfect competition, <span class="math notranslate nohighlight">\(q_c\)</span>, the optimum for firm 1 is to produce 0 output units, since their marginal revenue will intersect <span class="math notranslate nohighlight">\(c\)</span> at <span class="math notranslate nohighlight">\(q_1 = 0\)</span>. The graph below shows both of these cases.</p>
-<div class="cell tag_remove_input docutils container">
-<div class="cell_output docutils container">
-<img alt="../../_images/cournot_5_0.png" src="../../_images/cournot_5_0.png" />
-</div>
-</div>
-<p>When demand is linear and marginal cost is constant, the function <span class="math notranslate nohighlight">\(q'_1\)</span> is also linear. Because we have two points, <span class="math notranslate nohighlight">\(q'_1(0) = q_m\)</span> and <span class="math notranslate nohighlight">\(q'_1(q_c) = 0\)</span>, we can draw the curve <span class="math notranslate nohighlight">\(q'_1\)</span>. Remember that <span class="math notranslate nohighlight">\(q'_1\)</span> is a function of what firm 1 <em>thinks</em> firm 2 is going to produce.</p>
-<div class="cell tag_remove_input docutils container">
-<div class="cell_output docutils container">
-<img alt="../../_images/cournot_7_0.png" src="../../_images/cournot_7_0.png" />
-</div>
-</div>
-<p>Finally, we need to know firm 2’s reaction to firm 1’s production. Because both firms have the same cost function, firm 2’s optimum output <span class="math notranslate nohighlight">\(q'_2\)</span> given firm 1’s output <span class="math notranslate nohighlight">\(q_1\)</span> is the inverse of firm 1’s. The equilibrium of the model is at the intersection of these reaction functions.</p>
+<p>Recall that a Nash Equilibrium is where both the players are giving the best response to each other’s actions. Graphically, this is where the best response curves intersect.</p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <img alt="../../_images/cournot_9_0.png" src="../../_images/cournot_9_0.png" />
 </div>
 </div>
+<p>In this class, you will use Python to find that intersection. However, for future classes, it may be useful to see how you can find the intersection algebraically. Here’s the equation we must solve:
+\begin{align*}
+q_1=\frac{c-b-m(\frac{c-mq_1-b}{2m})}{2m}
+\end{align*}
+<br />
+To find player 1’s equilibrium strategy, we solve for <span class="math notranslate nohighlight">\(q_1\)</span>.
+\begin{align*}
+q_1=\frac{c-b-m(\frac{c-mq_1-b}{2m})}{2m} \
+2mq_1 = c-b-m(\frac{c-mq_1-b}{2m}) \
+2mq_1 = c-b-\frac{c-mq_1-b}{2}\
+2mq_1 - \frac{mq_1}{2} = c - \frac{c}{2} -b +\frac{b}{2} \
+\frac{3mq_1}{2} = \frac{c-b}{2} \
+3mq_1 = c-b \
+q_1^{<em>} = \frac{c-b}{3m}
+\end{align</em>}
+<br />
+Phew, that was a lot of math. However, we are not quite done yet - we still need to find player 2’s optimal output. The process for doing this is fairly similar to the process for finding player 1’s optimal output, as can be seen below.</p>
+<p>\begin{align*}
+q_2 = \frac{c-mq_1^{<em>}-b}{2m} = \frac{c-b-m(\frac{c-b}{3m})}{2m} \
+2mq_2 = c -\frac{c}{3} - b +\frac{b}{3} \
+2mq_2 = \frac{2(c-b)}{3}\
+q_2^{</em>} = q_2 = \frac{c-b}{3m}
+\end{align*}
+<br />
+This shows that the unique Nash Equilibrium of Cournot Duopoly is <span class="math notranslate nohighlight">\((q_1^{*},q_2^{*}) = (\frac{c-b}{3m},\frac{c-b}{3m})\)</span></p>
 </div>
 <div class="section" id="implications">
 <h2>Implications<a class="headerlink" href="#implications" title="Permalink to this headline">¶</a></h2>
-<p>The Cournot model implies that output is greater in a Cournot duopoly than in a monopoly, but still lower than perfect competition. Prices are also lower in a Cournot duopoly, but higher than perfect competition. Cournot equilibria are also a subset of Nash equilibria, and so the equilibrium we just derived is one from which neither player will likely deviate. As noted earlier, Cournot also indicates that members of a duopoly could form a cartel and raise profits by colluding.</p>
-</div>
+<p>The Cournot model implies that output is greater in a Cournot duopoly than in a monopoly but still lower than perfect competition. Prices are also lower in a Cournot duopoly, but higher than perfect competition. Cournot equilibria are also a subset of Nash equilibria, and so the equilibrium we just derived is one from which neither player will likely deviate. As noted earlier, Cournot also indicates that members of a duopoly could form a cartel and raise profits by colluding.</p>
 <div class="section" id="applying-cournot">
-<h2>Applying Cournot<a class="headerlink" href="#applying-cournot" title="Permalink to this headline">¶</a></h2>
-<p>Now that we have shown how to derive the Cournot equilibrium, let’s apply this to a problem. Consider the industry of airline manufacturing: there are two main competitors, Boeing and Airbus, and for this problem we will think of this market as a Cournot duopoly. Suppose the market demand curve is given by <span class="math notranslate nohighlight">\(P = -1.89 Q + 148.89\)</span> where the price is in millions of $ and that the marginal cost of both firms is constant at <span class="math notranslate nohighlight">\(c = 100\)</span>.</p>
-<div class="cell tag_remove_input docutils container">
-<div class="cell_output docutils container">
-<img alt="../../_images/cournot_12_0.png" src="../../_images/cournot_12_0.png" />
-</div>
-</div>
-<p>Now suppose we want to find the equilibrium and that Boeing believes that Airbus will produce at quantity <span class="math notranslate nohighlight">\(q_2 = 20\)</span>. To find the equilibrium, we need to start by finding Boeing’s residual demand curve. This is given by</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-d_1(q_1) &amp;= P(q_1 + q_2) \\
-&amp;= -1.89(q_1 + q_2) + 148.89 \\
-&amp;= -1.89(q_1 + 20) + 148.89 \\
-&amp;= -1.89 q_1 + 111.09
-\end{aligned}\end{split}\]</div>
-<p>Now we need the marginal revenue <span class="math notranslate nohighlight">\(r_1\)</span> of Boeing, which is the line with the same <span class="math notranslate nohighlight">\(y\)</span>-intercept but twice the slope. We can easily find <span class="math notranslate nohighlight">\(r_1\)</span> as <span class="math notranslate nohighlight">\(2 d_1(q_1) - d_1(0)\)</span> as this will double the slope for us but subtract out half of the doubled <span class="math notranslate nohighlight">\(y\)</span>-intercept.</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-r_1(q_1) &amp;= 2 \cdot d_1(q_1) - d_1(0) \\
-&amp;= -3.78 + 111.09
-\end{aligned}\end{split}\]</div>
-<div class="cell tag_remove_input docutils container">
-<div class="cell_output docutils container">
-<img alt="../../_images/cournot_14_0.png" src="../../_images/cournot_14_0.png" />
-</div>
-</div>
-<p>Based on this graph, if Boeing’s prediction that Airbus will produce 20 units of output is correct, we can already tell what Boeing’s optimal output is; but instead, let’s use SymPy to calculate it.</p>
+<h3>Applying Cournot<a class="headerlink" href="#applying-cournot" title="Permalink to this headline">¶</a></h3>
+<p>Now that we have shown how to derive the Cournot equilibrium, let’s apply this to a problem. Consider the industry of airline manufacturing: there are two main competitors, Boeing and Airbus, and for this problem, we will think of this market as a Cournot duopoly. Suppose the market demand curve is given by <span class="math notranslate nohighlight">\(P=-1.89Q+148.89\)</span> where the price is in millions of dollars and that the marginal cost of both firms is constant at <span class="math notranslate nohighlight">\(c=100\)</span>. Solve for the Nash Equilibrium.</p>
+<p><br />
+First we will want to derive both firms profit functions:
+\begin{align*}
+\pi_1 &amp; = Pq_1 -cq_1 \
+\pi_1 &amp; = (-1.89Q+148.89)q_1 - cq_1 \
+\pi_1 &amp; = (-1.89(q_1+q_2)+148.89)q_1 -cq_1 \
+\pi_1 &amp; = -1.89q_1^2-1.89q_1q_2+148.89q_1 - cq_1
+\end{align*}
+For firm 2 the profit function similarly looks like:
+\begin{align*}
+\pi_2 = -1.89q_2^2-1.89q_1q_2+148.89q_2 - cq_2
+\end{align*}
+<br />
+Now we will take the partial derivative to find the best response functions for both players. For firm 1 this looks like:
+\begin{align*}
+\frac{\partial{\pi_1}}{\partial{q_1}}= -3.78q_1 - 1.89q_2+148.89 - 100 = 0\
+q_1 = \frac{48.89-1.89q_2}{3.78}
+\end{align*}
+<br />
+For firm 2 this looks like:
+\begin{align*}
+\frac{\partial{\pi_2}}{\partial{q_2}}= -3.78q_2 - 1.89q_1+148.89 - 100 = 0\
+q_2 = \frac{48.89-1.89q_1}{3.78}
+\end{align*}
+Now while you can solve this algebraically, it takes much longer and leaves a lot of room for error, so as data scientists we will use Python to solve this problem. The code for this looks like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="mi">100</span>
-<span class="n">q_1</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;q_1&quot;</span><span class="p">)</span>
-<span class="n">r_1</span> <span class="o">=</span> <span class="o">-</span><span class="mf">3.78</span> <span class="o">*</span> <span class="n">q_1</span> <span class="o">+</span> <span class="mf">111.09</span>
-
-<span class="n">solve</span><span class="p">(</span><span class="n">r_1</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">q_1</span><span class="o">=</span><span class="n">sympy</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;q_1&quot;</span><span class="p">)</span> <span class="c1">#Create a symbol for q1</span>
+<span class="n">q_2</span><span class="o">=</span><span class="n">sympy</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;q_2&quot;</span><span class="p">)</span><span class="c1">#Create a symbol for q2</span>
+<span class="n">Br_q_1</span> <span class="o">=</span> <span class="p">(</span><span class="mf">48.89</span> <span class="o">-</span> <span class="mf">1.89</span><span class="o">*</span><span class="n">q_2</span><span class="p">)</span><span class="o">/</span><span class="mf">3.78</span> <span class="c1">#Create the best response function for firm 1</span>
+<span class="n">Br_q_2</span> <span class="o">=</span> <span class="p">(</span><span class="mf">48.89</span> <span class="o">-</span> <span class="mf">1.89</span><span class="o">*</span><span class="n">q_1</span><span class="p">)</span><span class="o">/</span><span class="mf">3.78</span> <span class="c1">#Create the best response function for firm 2</span>
+<span class="n">q1_Br_2</span> <span class="o">=</span> <span class="p">(</span><span class="mf">48.89</span><span class="o">-</span><span class="mf">3.78</span><span class="o">*</span><span class="n">q_2</span><span class="p">)</span><span class="o">/</span><span class="mf">1.89</span> <span class="c1">#Solve firm 2&#39;s best response function for q1</span>
+<span class="n">q_1_star</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">Br_q_1</span><span class="p">,</span><span class="n">q1_Br_2</span><span class="p">)</span> <span class="c1">#Use the solve function to solve the system of equations </span>
+<span class="n">q_2_star</span> <span class="o">=</span> <span class="n">Br_q_2</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">q_1</span><span class="p">,</span><span class="n">q_1_star</span> <span class="p">)</span> <span class="c1">#Substiute in the optimal q_1_star into firm 2&#39;s best response function</span>
+<span class="p">(</span><span class="n">q_1_star</span><span class="p">,</span><span class="n">q_2_star</span><span class="p">)</span> <span class="c1">#Nash Equilibrium</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.93386243386243
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(8.62257495590827, 8.62257495590830)
 </pre></div>
 </div>
-</div>
-</div>
-<p>Therefore, if Boeing thinks that Airbus will produce 20 planes, they should produce 3.</p>
-<p>Now, however, let’s say that Boeing is unsure of it’s guess for <span class="math notranslate nohighlight">\(q_2\)</span>. How can we arrive at the <em>actual</em> Cournot equilibrium, the quantities at which both Boeing and Airbus should produce? We need to start by finding the monopoly quantity <span class="math notranslate nohighlight">\(q_m\)</span> and the perfect competition quantity <span class="math notranslate nohighlight">\(q_c\)</span>. We can find <span class="math notranslate nohighlight">\(q_m\)</span> by looking at Boeing’s marginal revenue when Airbus is assumed to produce 0 planes. In this case, <span class="math notranslate nohighlight">\(d_1 = P(q_1 + 0) = -1.89 q_1 + 148.89\)</span> and therefore <span class="math notranslate nohighlight">\(r_1 = -3.78 q_1 + 148.89\)</span>. We find <span class="math notranslate nohighlight">\(q_m\)</span> as the point at which this new marginal revenue curve intersects the marginal cost curve.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r_1</span> <span class="o">=</span> <span class="o">-</span><span class="mf">3.78</span> <span class="o">*</span> <span class="n">q_1</span> <span class="o">+</span> <span class="mf">148.89</span>
-<span class="n">q_m</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">r_1</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
-<span class="n">q_m</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12.9338624338624
-</pre></div>
-</div>
-</div>
-</div>
-<p>So the monopoly quantity is <span class="math notranslate nohighlight">\(q_m = 12.934\)</span>. To find the perfect competition quantity <span class="math notranslate nohighlight">\(q_c\)</span>, we need to find the point at which the market demand curve <span class="math notranslate nohighlight">\(P\)</span> intersects the marginal cost.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Q</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;Q&quot;</span><span class="p">)</span>
-<span class="n">P</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.89</span> <span class="o">*</span> <span class="n">Q</span> <span class="o">+</span> <span class="mf">148.89</span>
-<span class="n">q_c</span> <span class="o">=</span>  <span class="n">solve</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
-<span class="n">q_c</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25.8677248677249
-</pre></div>
-</div>
-</div>
-</div>
-<p>And thus we get <span class="math notranslate nohighlight">\(q_c = 25.868\)</span>. Now, we know that when Airbus is producing at <span class="math notranslate nohighlight">\(q_c\)</span>, Boeing is producing 0 planes because their marginal revenue is below the marginal cost for every value above 0. When Airbus is producing 0 planes, Boeing produces at <span class="math notranslate nohighlight">\(p_m\)</span>. From this, we have two points with which we can draw Boeing’s reaction curve to Airbus’s quantity choice <span class="math notranslate nohighlight">\(q'_1(q_2)\)</span>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">q_m</span>
-<span class="n">x2</span><span class="p">,</span> <span class="n">y2</span> <span class="o">=</span> <span class="n">q_c</span><span class="p">,</span> <span class="mi">0</span>
-
-<span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="n">y2</span> <span class="o">-</span> <span class="n">y1</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">x2</span> <span class="o">-</span> <span class="n">x1</span><span class="p">)</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">y1</span> <span class="o">-</span> <span class="n">m</span> <span class="o">*</span> <span class="n">x1</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;y = </span><span class="si">{</span><span class="n">m</span><span class="si">}</span><span class="s2"> * x + </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>y = -0.500000000000000 * x + 12.9338624338624
-</pre></div>
-</div>
-</div>
-</div>
-<p>Because the marginal cost is constant and the same for both Boeing and Airbus, Airbus’s reaction function <span class="math notranslate nohighlight">\(q'_2(q_1)\)</span> is symmetrical to Boeing’s:</p>
-<div class="cell tag_remove_input docutils container">
-<div class="cell_output docutils container">
-<img alt="../../_images/cournot_24_0.png" src="../../_images/cournot_24_0.png" />
-</div>
-</div>
-<p>To get the exact values, let’s use SymPy one last time:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">q_2</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;q_2&quot;</span><span class="p">)</span>
-<span class="n">q_1_prime</span> <span class="o">=</span> <span class="o">-.</span><span class="mi">5</span> <span class="o">*</span> <span class="n">q_2</span> <span class="o">+</span> <span class="n">q_m</span>
-<span class="n">q_2_prime</span> <span class="o">=</span> <span class="p">(</span><span class="n">q_2</span> <span class="o">-</span> <span class="n">q_m</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="o">-.</span><span class="mi">5</span><span class="p">)</span>
-
-<span class="n">q_2_star</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">q_1_prime</span><span class="p">,</span> <span class="n">q_2_prime</span><span class="p">)</span>
-<span class="n">q_1_star</span> <span class="o">=</span> <span class="n">q_1_prime</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">q_2</span><span class="p">,</span> <span class="n">q_2_star</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;q_1_star = </span><span class="si">{</span><span class="n">q_1_star</span><span class="si">}</span><span class="se">\n</span><span class="s2">q_2_star = </span><span class="si">{</span><span class="n">q_2_star</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>q_1_star = 8.62257495590830
-q_2_star = 8.62257495590827
-</pre></div>
 </div>
 </div>
 </div>
