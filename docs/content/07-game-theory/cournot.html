@@ -579,14 +579,14 @@
 \end{split}
 \end{equation}
 \end{split}\]</div>
-<p><br />
-Firm 2 follows a similar profit function:
-$<span class="math notranslate nohighlight">\(
+<p>Firm 2 follows a similar profit function:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{align*}
 \pi_2 &amp; =Pq_2-C_2\\
  &amp; =mq_2^2+mq_1q_2+bq_2 -cq_2   
 \end{align*}
-\)</span>$</p>
+\end{split}\]</div>
 </div>
 <div class="section" id="best-response-functions">
 <h2>Best Response Functions<a class="headerlink" href="#best-response-functions" title="Permalink to this headline">¶</a></h2>
@@ -615,8 +615,9 @@ $<span class="math notranslate nohighlight">\(
 <img alt="../../_images/cournot_4_0.png" src="../../_images/cournot_4_0.png" />
 </div>
 </div>
-<p>This may make intuitive sense as if you recall from the demand and supply chapters, firms seek to produce where marginal revenue equals marginal cost. The partial derivative we took before did that automatically. We can verify this with the following calculation:<br />
-$<span class="math notranslate nohighlight">\(
+<p>This may make intuitive sense as if you recall from the demand and supply chapters, firms seek to produce where marginal revenue equals marginal cost. The partial derivative we took before did that automatically. We can verify this with the following calculation:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{align*}
     MR=MC  \\
     MR-MC=0  \\
@@ -624,7 +625,7 @@ $<span class="math notranslate nohighlight">\(
     \frac{\partial}{\partial{q_1}} ((m(q_1+q_2)+b)q_1-cq_1) = 0 \\
     2mq_1 + mq_2+b - c = 0 
 \end{align*}
-\)</span>$</p>
+\end{split}\]</div>
 <p>However, this graph assumes a fixed value for <span class="math notranslate nohighlight">\(q_2\)</span>. Let’s try varying <span class="math notranslate nohighlight">\(q_2\)</span> and see what happens.</p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
@@ -642,15 +643,17 @@ $<span class="math notranslate nohighlight">\(
 <img alt="../../_images/cournot_9_0.png" src="../../_images/cournot_9_0.png" />
 </div>
 </div>
-<p>In this class, you will use Python to find that intersection. However, for future classes, it may be useful to see how you can find the intersection algebraically. Here’s the equation we must solve:
-$<span class="math notranslate nohighlight">\(
+<p>In this class, you will use Python to find that intersection. However, for future classes, it may be useful to see how you can find the intersection algebraically. Here’s the equation we must solve:</p>
+<div class="math notranslate nohighlight">
+\[
 \begin{align*}
     q_1=\frac{c-b-m(\frac{c-mq_1-b}{2m})}{2m}
 \end{align*}
 \
-\)</span>$</p>
-<p>To find player 1’s equilibrium strategy, we solve for <span class="math notranslate nohighlight">\(q_1\)</span>.
-$<span class="math notranslate nohighlight">\(
+\]</div>
+<p>To find player 1’s equilibrium strategy, we solve for <span class="math notranslate nohighlight">\(q_1\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{align*}
     q_1=\frac{c-b-m(\frac{c-mq_1-b}{2m})}{2m} \\ 
     2mq_1 = c-b-m(\frac{c-mq_1-b}{2m}) \\
@@ -661,7 +664,7 @@ $<span class="math notranslate nohighlight">\(
     q_1^{*} = \frac{c-b}{3m}
 \end{align*}
 \
-\)</span>$</p>
+\end{split}\]</div>
 <p>Phew, that was a lot of math. However, we are not quite done yet - we still need to find player 2’s optimal output. The process for doing this is fairly similar to the process for finding player 1’s optimal output, as can be seen below.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -681,38 +684,41 @@ $<span class="math notranslate nohighlight">\(
 <div class="section" id="applying-cournot">
 <h3>Applying Cournot<a class="headerlink" href="#applying-cournot" title="Permalink to this headline">¶</a></h3>
 <p>Now that we have shown how to derive the Cournot equilibrium, let’s apply this to a problem. Consider the industry of airline manufacturing: there are two main competitors, Boeing and Airbus, and for this problem, we will think of this market as a Cournot duopoly. Suppose the market demand curve is given by <span class="math notranslate nohighlight">\(P=-1.89Q+148.89\)</span> where the price is in millions of dollars and that the marginal cost of both firms is constant at <span class="math notranslate nohighlight">\(c=100\)</span>. Solve for the Nash Equilibrium.</p>
-<p>First we will want to derive both firms profit functions:
-$<span class="math notranslate nohighlight">\(
+<p>First we will want to derive both firms profit functions:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{align*} 
     \pi_1 &amp; = Pq_1 -cq_1 \\
     \pi_1 &amp; = (-1.89Q+148.89)q_1 - cq_1 \\
     \pi_1 &amp; = (-1.89(q_1+q_2)+148.89)q_1 -cq_1 \\
     \pi_1 &amp; = -1.89q_1^2-1.89q_1q_2+148.89q_1 - cq_1
 \end{align*}
-\)</span><span class="math notranslate nohighlight">\(
-For firm 2 the profit function similarly looks like:
-\)</span><span class="math notranslate nohighlight">\(
+\end{split}\]</div>
+<p>For firm 2 the profit function similarly looks like:</p>
+<div class="math notranslate nohighlight">
+\[
 \begin{align*}
     \pi_2 = -1.89q_2^2-1.89q_1q_2+148.89q_2 - cq_2
 \end{align*}
-\
-\)</span><span class="math notranslate nohighlight">\(
-Now we will take the partial derivative to find the best response functions for both players. For firm 1 this looks like:
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<p>Now we will take the partial derivative to find the best response functions for both players. For firm 1 this looks like:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{align*}
     \frac{\partial{\pi_1}}{\partial{q_1}}= -3.78q_1 - 1.89q_2+148.89 - 100 = 0\\
     q_1 = \frac{48.89-1.89q_2}{3.78}
 \end{align*}
 \
-\)</span><span class="math notranslate nohighlight">\(
-For firm 2 this looks like:
-\)</span><span class="math notranslate nohighlight">\(
+\end{split}\]</div>
+<p>For firm 2 this looks like:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{align*}
     \frac{\partial{\pi_2}}{\partial{q_2}}= -3.78q_2 - 1.89q_1+148.89 - 100 = 0\\
     q_2 = \frac{48.89-1.89q_1}{3.78}
 \end{align*}
-\)</span>$
-Now while you can solve this algebraically, it takes much longer and leaves a lot of room for error, so as data scientists we will use Python to solve this problem. The code for this looks like this:</p>
+\end{split}\]</div>
+<p>Now while you can solve this algebraically, it takes much longer and leaves a lot of room for error, so as data scientists we will use Python to solve this problem. The code for this looks like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">q_1</span><span class="o">=</span><span class="n">sympy</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;q_1&quot;</span><span class="p">)</span> <span class="c1">#Create a symbol for q1</span>
