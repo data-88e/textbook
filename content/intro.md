@@ -11,7 +11,7 @@ The idea for the class is to take students through a series of exercises to moti
 
 **Course Instructor:** Eric Van Dusen
 
-**Textbook Developer:** [Christopher Pyles](https://chrispyles.io), Rohan Jha
+**Textbook Developers:** [Christopher Pyles](https://chrispyles.io), Rohan Jha
 
 **Content Developers:** [Alan Liang](http://alanliang.me/), Amal Bhatnagar, Andrei Caprau, [Christopher Pyles](https://chrispyles.io), Cole Ginter, Eric Van Dusen, Peter F. Grinde-Hollevik, Matthew Yep, Rohan Jha, Sreeja Apparaju, Shashank Dalmia, Sushil Vishwanathan, Umar Maniku
 
