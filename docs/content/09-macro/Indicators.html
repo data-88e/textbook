@@ -56,7 +56,7 @@
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Finance" href="../10-finance/index.html" />
+    <link rel="next" title="Fiscal Policy" href="fiscal_policy.html" />
     <link rel="prev" title="Macroeconomic Policy" href="index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -328,6 +328,26 @@
      Macroeconomic Indicators
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fiscal_policy.html">
+     Fiscal Policy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="phillips_curve.html">
+     Phillips Curve
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="is_curve.html">
+     IS-Curve
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="visualizations.html">
+     Visualizations
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -458,7 +478,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/content/09-macro/MacroChapter.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/content/09-macro/Indicators.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -496,14 +516,14 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/data-88e/textbook/master?urlpath=tree/content/09-macro/MacroChapter.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/data-88e/textbook/master?urlpath=tree/content/09-macro/Indicators.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
         
         
-        <a class="jupyterhub-button" href="https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https://github.com/data-88e/textbook&urlpath=tree/textbook/content/09-macro/MacroChapter.ipynb&branch=master"><button type="button"
+        <a class="jupyterhub-button" href="https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https://github.com/data-88e/textbook&urlpath=tree/textbook/content/09-macro/Indicators.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="../../_static/images/logo_jupyterhub.svg"
@@ -525,39 +545,29 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#gdp-y">
-   GDP (
-   <span class="math notranslate nohighlight">
-    \(Y\)
-   </span>
-   )
+  <a class="reference internal nav-link" href="#gross-domestic-product">
+   Gross Domestic Product (𝑌)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#unemployment-rate-u">
-   Unemployment Rate (
-   <span class="math notranslate nohighlight">
-    \(U\)
-   </span>
-   )
+  <a class="reference internal nav-link" href="#unemployment-rate">
+   <strong>
+    Unemployment Rate (𝑈)
+   </strong>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#inflation-rate-pi">
-   Inflation Rate (
-   <span class="math notranslate nohighlight">
-    \(\pi\)
-   </span>
-   )
+  <a class="reference internal nav-link" href="#inflation-rate">
+   <strong>
+    Inflation Rate (𝜋)
+   </strong>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#real-interest-rate-r">
-   Real Interest Rate (
-   <span class="math notranslate nohighlight">
-    \(r\)
-   </span>
-   )
+   <strong>
+    Real Interest Rate (𝑟)
+   </strong>
   </a>
  </li>
 </ul>
@@ -573,54 +583,53 @@
                 
   <div class="section" id="macroeconomic-indicators">
 <h1>Macroeconomic Indicators<a class="headerlink" href="#macroeconomic-indicators" title="Permalink to this headline">¶</a></h1>
-<p>The process of conducting macroeconomic policy often starts with studying and projecting the behavior of a variety of indicators that provide some information about the economy’s current or expected future performance. While there are many different variables one could look to depending on the interests and goals of the individual(s) or institution(s) involved, in this chapter we will focus specifically on four main indicators that tend to play a critical role in many policy decisions.</p>
-<div class="section" id="gdp-y">
-<h2>GDP (<span class="math notranslate nohighlight">\(Y\)</span>)<a class="headerlink" href="#gdp-y" title="Permalink to this headline">¶</a></h2>
-<p>Earlier, when studying Production, we introduced the concept of GDP briefly. To recap, we looked at how GDP aims to capture a country’s overall production over a given period of time. In theory it can then be used as a way to measure a country’s economic performance in a given quarter or year; the higher its GDP, the more that it’s produced, the better it’s doing economically, and vice versa. In this chapter, we’ll go into more detail on its significance and how it’s measured. By definition, GDP, often denoted as <span class="math notranslate nohighlight">\(Y\)</span>, is measured as the:</p>
-<ol class="simple">
-<li><p><strong>market value</strong> of</p></li>
-<li><p><strong>final</strong> goods and services</p></li>
-<li><p><strong>newly produced</strong></p></li>
-<li><p>in the <strong>domestic economy</strong></p></li>
-<li><p>over a <strong>specified period of time</strong></p></li>
-</ol>
+<p>The process of conducting macroeconomic policy often starts with studying and projecting the behavior of a variety of indicators that measure the economy’s current or expected future performance. While there are many different variables one could look to depending on the interests and goals of the individuals or institutions involved, in this chapter we will focus specifically on four main indicators that capture the overall health of the economy and thus tend to play a critical role in policy decisions. These are GDP, the unemployment rate, the inflation rate and the real interest rate.</p>
+<div class="section" id="gross-domestic-product">
+<h2>Gross Domestic Product (𝑌)<a class="headerlink" href="#gross-domestic-product" title="Permalink to this headline">¶</a></h2>
+<p>Earlier in the semester, when studying Production, we introduced the concept of GDP briefly. To recap, we looked at how GDP serves as a means of capturing a given country’s overall production over a given period of time. In theory it can then be used as a way to measure a country’s economic performance in a given quarter or year; the higher its GDP, the more that it’s produced, the better it’s doing economically, and vice versa. In this chapter, we’ll go into more detail on its significance and how it’s measured. By definition, GDP, often denoted as 𝑌, is measured as the:</p>
+<p><strong>market value</strong> of<br />
+<strong>final goods and services</strong><br />
+<strong>newly produced</strong><br />
+in the <strong>domestic economy</strong><br />
+over a <strong>specified period of time</strong></p>
 <p>Let’s dive into each of these individually:</p>
-<p>First, the <strong>market value</strong> refers to the market price of price goods and services, which sets a standard for how we value goods and services. This is especially useful when we are trying to add together products that may be quite different from one another.</p>
-<p>Second, <strong>final goods and services</strong> refers to those which <em>are not</em> used up in the production process. We only consider these in our calculation of GDP, because we don’t want to end up overrepresenting the overall level of production. Intermediate goods, which <em>are</em> used up in the production process, inherently add some value to the final product, and therefore if we were to consider these in our calculation, we would end up overstating the level of production.</p>
-<p>Third, <strong>newly produced</strong> tells us that we are only interested in goods and services that were made during the time period we are looking at. Since we are using GDP as a way to measure the level of production in the economy, it wouldn’t really make a whole lot of sense to include products that were produced outside the time period that we are looking at in our calculation.</p>
-<p>Fourth, <strong>in the domestic economy</strong> refers to the fact that in our calculation of GDP we only include goods and services that were produced within the geographical area of the country that we are looking at. Given that we are trying to measure the  level of production of a certain country, it makes sense that we wouldn’t want to consider products or services that are produced outside of the country in our calculation.</p>
-<p>Lastly, <strong>over a specified period of time</strong> simply points out that GDP is measured as a unit of time. This is important to consider when comparing countries based on their GDP, as we would want to make sure to consider the same time period for all of them.</p>
-<p>The above definition and approach to calculating GDP considers the production of goods and services in the economy. However, it’s important to note that GDP can also be calculated by looking at the total spending on those goods and services or total income earned from producing those goods and services. You may recall that in our discussion on Production, we often referred to output and income synonomously. This is because in theory, each of these approaches to calculating GDP (production, expenditure, and income) should all yield the same result, and indeed we find that for the most part they do. While we won’t go into detail on the income approach to calculating GDP, we will take a look at the expenditure approach later on in this chapter.</p>
+<p>First, the <em>market value</em> refers to the market price of goods and services, which sets a standard for how we value goods and services. This is especially useful when we are trying to add together products that may be quite different from one another.</p>
+<p>Second, <em>final goods and services</em> refer to those which are not used up in the production process. We only consider these in our calculation of GDP, because we don’t want to end up overrepresenting the overall level of production. Intermediate goods, which are used up in the production process, inherently add some value to the final product, and therefore if we were to consider these in our calculation, we would end up double counting and overstating the level of production.</p>
+<p>Third, <em>newly produced</em> refers  that we are only interested in goods and services that were made during the time period we are looking at. Since we are using GDP as a way to measure the level of production in the economy, it wouldn’t make a whole lot of sense to include products that were produced outside the time period that we are looking at in our calculation.</p>
+<p>Fourth, in the <em>domestic economy</em> refers to the fact that in our calculation of GDP, we only include goods and services that were produced within the geographical area of the area that we are looking at. Given that we are trying to measure the level of production of a certain country, we wouldn’t want to consider products or services that are produced outside of the country in our calculation.</p>
+<p>Lastly, over a <em>specified period of time</em> simply points out that GDP is measured within an interval of time. This is important to consider when comparing countries based on their GDP, as we would want to make sure to consider the same time period for all of them. This is also related to the newly produced aspect that we touched on earlier.</p>
+<p>The above definition and approach to calculating GDP considers the production of goods and services in the economy. However, it’s important to note that GDP can also be calculated by looking at the total spending on those goods and services or the total income earned from producing those goods and services. You may recall that in our discussion on Production, we often referred to output and income synonymously. This is because in theory, each of these approaches to calculating GDP (production, expenditure, and income) should all yield the same result, and indeed we find that for the most part they do.</p>
 </div>
-<div class="section" id="unemployment-rate-u">
-<h2>Unemployment Rate (<span class="math notranslate nohighlight">\(U\)</span>)<a class="headerlink" href="#unemployment-rate-u" title="Permalink to this headline">¶</a></h2>
-<p>The unemployment rate is also an important measure of a country’s economic performance, as it gives us some insight on the supply and demand of labor in the economy. By definition, the unemployment rate measures the percentage of the labor force – the sum of all employed and unemployed people – that is not currently employed, but is willing, able, and looking for work. Mathematically, this can be expressed by the following equation:</p>
+<div class="section" id="unemployment-rate">
+<h2><strong>Unemployment Rate (𝑈)</strong><a class="headerlink" href="#unemployment-rate" title="Permalink to this headline">¶</a></h2>
+<p>The unemployment rate is also an important measure of a country’s economic performance, as it gives us some insight on the supply and demand of labor in the economy. By definition, the unemployment rate measures the percentage of the labor force – the sum of all employed and unemployed people – that are not currently employed, but are willing to, able to, and looking for work. Mathematically, this can be expressed by the following equation:</p>
 <div class="math notranslate nohighlight">
-\[Unemployment Rate = \frac{Unemployed}{Labor Force}\]</div>
+\[ Unemployment Rate = \frac{Unemployed}{Labor Force}\]</div>
 <p>As stated before, the labor force is just the sum of all employed and unemployed persons in the population, so we can simplify the equation above to be</p>
 <div class="math notranslate nohighlight">
-\[Unemployment Rate = \frac{Unemployed}{Employed + Unemployed}\]</div>
-<p>An important thing to remember, is that in order to be considered unemployed, a person must be able, willing, and currently looking for work. This means that anyone who is unable to work or has stopped looking for a job is no longer considered part of the labor force and is therefore not included in the unemployment rate. Intuitively this makes sense for the most part, as it probably wouldn’t be very helpful to include retirees or stay-at-home parents or even students for that matter when calculating the unemployment rate. It’s worth considering, however, that this also means that people who have been unable to find any work and therefore stopped looking – often referred to as discouraged workers – would not be represented in the unemployment rate either.</p>
+\[ Unemployment Rate = \frac{Unemployed}{Employed + Unemployed}\]</div>
+<p>An important thing to remember is that in order to be considered unemployed, a person must be able to, willing to, and currently looking for work. This means that anyone who is unable to work or has stopped looking for a job is no longer considered part of the labor force and is therefore not included in the unemployment rate. Intuitively this makes sense for the most part, as it probably wouldn’t be very helpful to include retirees or stay-at-home parents or even students for that matter when calculating the unemployment rate. It’s worth considering, however, that this also means that people who have been unable to find any work and therefore stopped looking – often referred to as discouraged workers – would not be represented in the unemployment rate either.</p>
 </div>
-<div class="section" id="inflation-rate-pi">
-<h2>Inflation Rate (<span class="math notranslate nohighlight">\(\pi\)</span>)<a class="headerlink" href="#inflation-rate-pi" title="Permalink to this headline">¶</a></h2>
-<p>Generally speaking, the inflation rate in an economy measures the percent change in prices over a specified period of time, and it is usually calculated using a price index. While there are many different price indices that can be used to calculate inflation, one of the more common ones is the Consumer Price Index (CPI). The CPI measures the average price for a basket of goods and services relative to some defined base year, and is calculated by taking the value of said basket in any given year, dividing it by its value in the base year, and multiplying that by 100. Mathematically, this can be expressed as</p>
+<div class="section" id="inflation-rate">
+<h2><strong>Inflation Rate (𝜋)</strong><a class="headerlink" href="#inflation-rate" title="Permalink to this headline">¶</a></h2>
+<p>Generally speaking, the inflation rate in an economy measures the percent change in prices over a specified period of time, and it is usually calculated using a price index. While there are many different price indices that can be used to calculate inflation, one of the more common ones is the Consumer Price Index (CPI). The CPI measures the average price for a consistent basket of goods and services relative to some defined base year. It is calculated by taking the value of said basket in any given year, dividing it by its value in the base year, and multiplying that by 100. Mathematically, this can be expressed as</p>
 <div class="math notranslate nohighlight">
-\[ CPI_t = \frac{Price~of~Goods_t}{Price~of~Goods_0} * 100\]</div>
+\[CPI_t = \frac{Price of basket_t}{Price of basket_0} * 100 \]</div>
 <p>where t = 0 refers to the base year.</p>
 <p>We can then calculate the inflation rate for a given year as</p>
 <div class="math notranslate nohighlight">
-\[ \pi_t = \frac{CPI_t - CPI_{t-1}}{CPI_{t-1}} * 100\]</div>
-<p>The inflation rate is yet another key indicator that macroeconomists look at, as it also tends to be a representation of a country’s overall economic performance. A small, positive inflation rate is considered a good thing, as it’s usually an indication of a growing economy. However, inflation rates that are negative or too high can create a lot of problems, and as such the inflation rate tends to play an important role in guiding monetary policy decisions – something we will discuss more later in this chapter.</p>
+\[𝜋_t = \frac{CPI_t - CPI_{t-1}}{CPI_{t-1}} * 100 \]</div>
+<p>The inflation rate is yet another key indicator that macroeconomists look at, as it can reflect where or not the economy is growing. Generally, a small, positive inflation rate is considered a good thing, as it’s usually indicative of a growing economy. However, inflation rates that are negative or too high can create a lot of problems, and as such the inflation rate tends to play an important role in guiding monetary policy decisions – something we will discuss more later in this chapter.</p>
 </div>
 <div class="section" id="real-interest-rate-r">
-<h2>Real Interest Rate (<span class="math notranslate nohighlight">\(r\)</span>)<a class="headerlink" href="#real-interest-rate-r" title="Permalink to this headline">¶</a></h2>
-<p>If you have a bank account or own a credit card or have ever taken a loan, chances are that you’ve come across an interest rate at some point. In general, interest rates represent the cost of borrowing or on the flip side the return on saving or lending. There are many different interest rates that can be found in the economy from interest rates for savings accounts to interest rates charged for mortgages to interest rates set by the Central Bank. All of the interest rates that we observe in the economy are known as nominal interest rates – interest rates that are not adjusted for inflation.</p>
-<p>As discussed earlier, inflation measures the change in prices over a given time and can be used in some sense to measure the relative value of a dollar (or other unit of currency) over time. It makes sense then, that we might want to take into inflation into account, when deciding what interest rate would make sense to lend/borrow at. To do this, we use real interest rates, which are calculated by taking nominal interest rates and subtracting inflation. This relationship between inflation, nominal interest rates, and real interest rates is captured by what is known as the Fisher Equation</p>
+<h2><strong>Real Interest Rate (𝑟)</strong><a class="headerlink" href="#real-interest-rate-r" title="Permalink to this headline">¶</a></h2>
+<p>If you have a bank account or own a credit card or have ever taken a loan, chances are that you’ve come across an interest rate at some point. In general, interest rates represent the cost of borrowing. On the flip side, it also represents the return on saving or lending. In other words, you can think of interest rates as the opportunity cost of holding money.</p>
+<p>There are many different interest rates that can be found in the economy from interest rates for savings accounts to interest rates charged for mortgages to interest rates set by the Central Bank. All of the interest rates that we observe in the economy are known as nominal interest rates – meaning rates that are not adjusted for inflation.</p>
+<p>As discussed earlier, inflation measures the change in prices over a given time and can be used in some sense to measure the relative value of a dollar (or other unit of currency) over time. It makes sense then, that we might want to take inflation into account, when deciding what interest rate would make sense to lend/borrow at. To do so, we use real interest rates, which are calculated by taking nominal interest rates and subtracting inflation. This relationship between inflation, nominal interest rates, and real interest rates is captured by what is known as the Fisher Equation</p>
 <div class="math notranslate nohighlight">
-\[ r_t = i_t - \pi_t \]</div>
-<p>where <span class="math notranslate nohighlight">\(r_t\)</span> refers to the real interest rate, <span class="math notranslate nohighlight">\(i_t\)</span> refers to the nominal interest rate, and <span class="math notranslate nohighlight">\(\pi_t\)</span> refers to the inflation rate, all in a given time period.</p>
-<p>As a final note, we find that generally speaking all of the nominal interest rates present in the economy tend to be pretty strongly correlated with each other. Therefore, for purposes of simplification, macroeconomists will often refer to these rates in singular form in their models as simply the nominal interest rate or the real interest rate. As seen in the Fisher equation above, we use <span class="math notranslate nohighlight">\(i\)</span> to denote the nominal interest rate, and <span class="math notranslate nohighlight">\(r\)</span> to denote the real interest rate.</p>
+\[r_t = i_t - 𝜋_t\]</div>
+<p>where <span class="math notranslate nohighlight">\(r_t\)</span> refers to the real interest rate, <span class="math notranslate nohighlight">\(i_t\)</span> refers to the nominal interest rate, and <span class="math notranslate nohighlight">\(𝜋_𝑡\)</span> refers to the inflation rate, all in a given time period.</p>
+<p>As a final note, we find that generally speaking all of the nominal interest rates present in the economy tend to be pretty strongly correlated with one another. Therefore, for purposes of simplification, macroeconomists will often refer to these rates in singular form in their models as simply the nominal interest rate or the real interest rate. As seen in the Fisher equation above, we use 𝑖 to denote the nominal interest rate, and 𝑟 to denote the real interest rate.</p>
 </div>
 </div>
 
@@ -663,10 +672,10 @@
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="../10-finance/index.html" title="next page">
+        <a class="right-next" href="fiscal_policy.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Finance</p>
+                <p class="prevnext-title">Fiscal Policy</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
