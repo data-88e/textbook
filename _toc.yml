@@ -45,9 +45,10 @@ sections:
 - file: content/09-macro/index.md
   sections:
     - file: content/09-macro/Indicators.ipynb
-    - file: content/09-macro/fiscal_policy.ipynb
-    - file: content/09-macro/phillips_curve.ipynb
+    - file: content/09-macro/CentralBanks.ipynb
     - file: content/09-macro/is_curve.ipynb
+    - file: content/09-macro/phillips_curve.ipynb
+    - file: content/09-macro/fiscal_policy.ipynb
 - file: content/10-finance/index.md
   sections:
     - file: content/10-finance/value-interest.ipynb

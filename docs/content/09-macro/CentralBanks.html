@@ -1,0 +1,687 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Central Banks &#8212; Data 88E: Economic Models Textbook</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/plotly.min.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="IS-Curve" href="is_curve.html" />
+    <link rel="prev" title="Macroeconomic Indicators" href="Indicators.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/econ-models.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Data 88E: Economic Models Textbook</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   <a href="https://data-88e.github.io">
+    Data 88E: Economic Models
+   </a>
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../00-intro/index.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01-demand/index.html">
+   Demand and Elasticities
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-demand/01-demand.html">
+     Demand Curves
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-demand/02-example.html">
+     An Empirical Demand Curve
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-demand/03-log-log.html">
+     Log-log and Semi-log Demand Curves
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-demand/04-elasticity.html">
+     Elasticity
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02-supply/index.html">
+   Supply and Market Equilibrium
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-supply/01-supply.html">
+     The Supply Curve
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-supply/02-eep147-example.html">
+     An Empirical Example from EEP 147
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-supply/03-market-equilibria.html">
+     Market Equilibria
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-supply/04-sympy.html">
+     SymPy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03-public/index.html">
+   Public Economics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-public/taxes-subsidies.html">
+     Taxes and Subsidies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-public/surplus.html">
+     Surplus
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-public/govt-intervention.html">
+     Other Forms of Government Intervention
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../04-production/index.html">
+   Production
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-production/production.html">
+     Production and Cobb-Douglas Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-production/shifts.html">
+     Analyzing Shifts in
+     <span class="math notranslate nohighlight">
+      \(A\)
+     </span>
+     and
+     <span class="math notranslate nohighlight">
+      \(\alpha\)
+     </span>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05-utility/index.html">
+   Utility
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-utility/utility.html">
+     Utility Functions and Indifference Curves
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-utility/budget-constraints.html">
+     Budget Constraints and Utility Maximization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes">
+     LaTeX
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../06-inequality/index.html">
+   Inequality
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06-inequality/inequality.html">
+     Measurements of Inequality
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06-inequality/historical-inequality.html">
+     Income Inequality Historically
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../07-game-theory/index.html">
+   Game Theory
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07-game-theory/expected-utility.html">
+     Expected Utility Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07-game-theory/equilibria-oligopolies.html">
+     Equilibria &amp; Oligopolies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07-game-theory/cournot.html">
+     Cournot Competition
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07-game-theory/bertrand.html">
+     Bertrand Competition
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07-game-theory/python-classes.html">
+     Python Classes
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-development/index.html">
+   Development
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
+   Macroeconomic Policy
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="Indicators.html">
+     Macroeconomic Indicators
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Central Banks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="is_curve.html">
+     IS-Curve
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="phillips_curve.html">
+     Phillips Curve
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fiscal_policy.html">
+     Fiscal Policy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../10-finance/index.html">
+   Finance
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10-finance/value-interest.html">
+     Present Value, Future Value, and Interest Rates
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10-finance/options.html">
+     Options
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../11-econometrics/index.html">
+   Econometrics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../11-econometrics/single-variable.html">
+     Single Variable Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../11-econometrics/statsmodels.html">
+     Using
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       statsmodels
+      </span>
+     </code>
+     for Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../11-econometrics/multivariable.html">
+     Multivariable Regression and Bias
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../11-econometrics/reading-econ-papers.html">
+     Reading Economics Papers
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../12-environmental/index.html">
+   Environmental Economics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../12-environmental/textbook1.html">
+     Marginal Abatement Cost Curves
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../12-environmental/KuznetsHypothesis-Copy1.html">
+     Environmental Kuznets Curve Hypothesis
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/content/09-macro/CentralBanks.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/data-88e/textbook"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/data-88e/textbook/master?urlpath=tree/content/09-macro/CentralBanks.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        <a class="jupyterhub-button" href="https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https://github.com/data-88e/textbook&urlpath=tree/textbook/content/09-macro/CentralBanks.ipynb&branch=master"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="central-banks">
+<h1>Central Banks<a class="headerlink" href="#central-banks" title="Permalink to this headline">¶</a></h1>
+<p>Understanding the levels and relationships between the four main macro indicators mentioned in the previous section is of particular interest to a country’s central bank.</p>
+<p>One way to think about a central bank is that it acts as the “bankers’ bank”. Wells Fargo, Barclays, and many of the other commercial banks that we’re familiar with are regulated and overseen by a given country’s central bank. That’s just a simple way to consider it, but in practice central banks play a much larger role beyond this.</p>
+<p>Diving deeper, a central bank is a politically-independent financial institution that is responsible for overseeing the monetary system of a country. This mainly involves doing so by setting interest rates and regulating how much money circulates throughout the economy. Central banks closely monitor and forecast the aforementioned indicators in order to carry out these responsibilities and conduct monetary policy as needed. An important feature of central banks is that they exist independently from the government, meaning the actions they take are not influenced by political pressure nor do they have to go through a congressional body to carry out their policies.</p>
+<p>While central banks across countries differ slightly in their mandates, for the most part they share a common vision in their functions and responsibilities. For example, these include</p>
+<ul class="simple">
+<li><p>Keeping unemployment low</p></li>
+<li><p>Maintaining price stability while managing a healthy level of inflation</p></li>
+<li><p>Stimulating the economy in times of recession</p></li>
+<li><p>Overseeing the commercial banking system and serving as a lender of last resort</p></li>
+<li><p>Carrying out economic research and statistical analysis (yay data science!)</p></li>
+<li><p>and <a class="reference external" href="https://www.federalreserve.gov/aboutthefed/the-fed-explained.htm">much more</a></p></li>
+</ul>
+<p>When you hear the terms monetary policy or macroeconomic policy, you can think of it as encompassing what’s listed above. In short, <strong>monetary policy</strong> is the set of actions that a central bank takes to achieve sustainable economic growth, and much of it revolves around adjusting interest rates and the money supply.</p>
+<p>In this chapter we’ll take a closer look at the central bank that serves the United States, known as the <strong>Federal Reserve System.</strong></p>
+<p>The Fed was established in 1913 to promote stability and flexibility within the United States’ monetary and financial system.Led by the Chair and the Board of Governors, the Fed is comprised of a network of 12 regional banks that serve as the operating arms of the system. Together they guide monetary policy action as well as analyze domestic and international economic conditions.</p>
+<p><img alt="regionalbanks.png" src="../../_images/regionalbanks.png" /></p>
+<p><em>Here’s a graphic showing the locations of the 12 different regional banks. If you’re ever interested you can go take a tour of the Federal Reserve Branch in SF right on Market St!</em></p>
+<p>The current Federal Chairman is Jerome Powell, who you’ve probably heard about in the news lately. He’s got quite a bit on his plate with inflation running the highest it’s been in over four decades. Before him came Berkeley’s own Janet Yellen who served from 2014-2018 and was the first woman to hold the position, Ben Bernanke (2006-2014) who helped the US recover from the Great Recession, Alan Greenspan (1987-2006), the “rock star of economics, and Paul Volcker (1979-1987) who is famously known for setting incredibly high interest rates to combat high inflation in the 80s. There have been many <a class="reference external" href="https://www.federalreservehistory.org/people/federal-reserve-chair">other Chairs</a> as well since the Fed was first established in the early twentieth century.</p>
+<p><img alt="chairs.png" src="../../_images/chairs.png" /></p>
+<p><em>The Federal Funds Rate is a nominal interest rate like we discussed earlier in the chapter. Interest rates, which can be thought of as the cost of borrowing, are set low to stimulate the economy, and hiked up in times of inflation in order to “cool off” the economy. Inflation was incredibly high in the 80s after oil supply shocks in the 70s.</em></p>
+<p>While these Chairs have served as the face of monetary policy throughout history, there is a lot more that goes on behind the curtains. Namely, the <strong>Federal Open Market Committee</strong> is the team of 12 economists that serves as the Fed’s monetary policy-making body, and the Chair stands as the leader of this team. The other voting members of the FOMC include the 6 other governors from the Board of Governors, the president of the New York branch, and 4 of the presidents from the 11 other regional banks.</p>
+<p>The FOMC has 8 scheduled meetings throughout the year, at which they discuss the short and long run outlooks for the US economy as well as monetary policy options. Sometimes they have to hold emergency meetings when the situation appears to be particularly dire, for example when the coronavirus pandemic first hit, prompting a lowering of interest rates to near 0 percent.</p>
+<p>What is particularly important about these FOMC meetings is that the committee designs a course of action for staying committed to the Federal Reserve’s <strong>dual mandate</strong> and releases a statement outlining how they plan to do so. An example of this can be seen in an excerpt from the press release below,</p>
+<p><img alt="FOMC.png" src="../../_images/FOMC.png" /></p>
+<p>Note how the FOMC begins by describing the current state of the economy’s health in terms of the indicators that we learned about earlier in the chapter. They then outline and forecast what they plan to do in response to the situation at hand. This is important because it anchors peoples’ expectations.</p>
+<p>Employment and inflation are particularly relevant because these are the drivers that govern how the Fed designs monetary policy actions according to their dual mandate, which is to <strong>achieve maximum employment</strong> and <strong>maintain price stability</strong>. Adjusting interest rates is directly related to reaching a delicate balance between these two goals. For example, at this snapshot of time in January 2021, the Fed wanted to keep the federal funds rate low in order to provide a boost to an economy that was experiencing “weaker demand”.</p>
+<p>At first glance it is probably pretty confusing how all of these moving parts work hand in hand. But the intuition behind how employment, inflation and interest rates are all related to the dual mandate can best be captured by the <strong>The Taylor Rule</strong>.</p>
+<p>The Taylor Rule was first proposed in 1993 by the American economist John B. Taylor. It’s called a “rule” because it serves as a guide to monetary policy for how to set interest rates based on the inflation gap and output gap at a given time. The equation is as follows</p>
+<div class="math notranslate nohighlight">
+\[i = 2\% + \pi + 0.5(\pi - 2\%) + 0.5(\frac{Y - Y^P}{Y^P})\]</div>
+<p>And these are the variables</p>
+<ul class="simple">
+<li><p>i is the nominal interest rate (like we learned about earlier in the chapter)</p></li>
+<li><p>The first 2% is the equilibrium interest rate. You can think of this as the ideal interest rate when production has reached its potential and inflation is stable in the long run.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\pi\)</span> is the current inflation rate</p></li>
+<li><p>The second 2% is the target inflation rate. Note how this was mentioned in the FOMC press release above! The Fed wants to have some stable inflation in the long run because that is indicative of a growing economy
+<span class="math notranslate nohighlight">\(\frac{Y - Y^P}{Y^P}\)</span> is the output gap. <span class="math notranslate nohighlight">\(Y^P\)</span> is the potential output if we are at full employment, so this gap tells us how far off we are from that.</p></li>
+<li><p>The 0.5 coefficients reflect the relative balance between how much the Fed cares about inflation versus output. In the newspaper, you will often hear the terms “hawkish” or “dove-ish”. Those who support high rates to combat inflation are hawks, for example Chairman Volcker, whereas doves tend to favor lower interest rates.</p></li>
+</ul>
+<p>In English, you can think of the Taylor Rule as a means of prescribing how nominal interest rates should adjust in response to the observed gaps. For example, the annual inflation rate as of April 2022 is currently 8.5%. Thus the Taylor Rule says that nominal interest rates should go up by</p>
+<div class="math notranslate nohighlight">
+\[8.5\% + 0.5(8.5\% - 2\%)\]</div>
+<div class="math notranslate nohighlight">
+\[= 8.5\% + 0.5(6.5\%)\]</div>
+<div class="math notranslate nohighlight">
+\[= 11.75\%\]</div>
+<p>Now recall the Fisher equation that we learned about earlier the chapter, <span class="math notranslate nohighlight">\(r_t = i_t - \pi_t\)</span>. Plugging 11.75% and 8.5% in, we see that the Taylor Rule suggests real interest rates should increase to 3.25%. Indeed, this is similar to Jay Powell’s vision as the Federal Reserve is tentatively planning to hike up rates by 0.25% - 0.5% at 6 different occasions over the course of the next year.</p>
+<p>Another way that we can directly see how the Taylor Rule is related to the Fed’s dual mandate is to make a simplification using what is called <strong>Okun’s Law</strong>. It was proposed in 1962 by Yale professor Arthur Okun who studied the relationship between unemployment and production.</p>
+<div class="math notranslate nohighlight">
+\[\frac{Y - Y^P}{Y^P}= -C_{okun} (U - U^N)\]</div>
+<p>where</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\frac{Y - Y^P}{Y^P}\)</span> is the output gap as seen before</p></li>
+<li><p><span class="math notranslate nohighlight">\((U - U^N)\)</span> is the unemployment gap with <span class="math notranslate nohighlight">\(U\)</span> being the current level of unemployment and <span class="math notranslate nohighlight">\(U^N\)</span> being the natural rate of employment</p></li>
+<li><p>and <span class="math notranslate nohighlight">\(C_{okun}\)</span> is a coefficient that represents the sensitivity of the unemployment gap to changes in the output gap</p></li>
+</ul>
+<p>The intuition behind Okun’s Law is that the less unemployment there is, the more output that will be produced. This is because there will be more workers contributing to the country’s GDP. Thus the coefficient is negative, and empirically <span class="math notranslate nohighlight">\(C_{okun}\)</span> is approximately 2. By plugging Okun’s Law into our equation for the Taylor Rule we get,</p>
+<div class="math notranslate nohighlight">
+\[i = 2\% + \pi + 0.5(\pi - 2\%) - 0.5C_{okun}(U - U^N)\]</div>
+<p>Recall that the Federal Reserve’s dual mandate is to achieve maximum employment and a stable level of inflation close to their target. Therefore we can clearly see how this is captured by the Taylor Rule with Okun’s Law substituted into it. Moreover, this also illustrates how the nominal interest rate is the conventional tool that can allow the Fed to reach a balance between their two goals.</p>
+<p>In the next section we’ll talk about some of the graphs the Federal Reserve looks at to guide their understanding of the economy and its outlook in both the short and long run.</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/09-macro"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="Indicators.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Macroeconomic Indicators</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="is_curve.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">IS-Curve</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Data 88E Course Staff<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
