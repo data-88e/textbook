@@ -13,8 +13,8 @@ sections:
   sections:
     - file: content/02-supply/01-supply.ipynb
     - file: content/02-supply/02-eep147-example.ipynb
-    - file: content/02-supply/03-market-equilibria.ipynb
-    - file: content/02-supply/04-sympy.ipynb
+    - file: content/02-supply/03-sympy.ipynb
+    - file: content/02-supply/04-market-equilibria.ipynb
 - file: content/03-public/index.md
   sections:
     - file: content/03-public/taxes-subsidies.ipynb
