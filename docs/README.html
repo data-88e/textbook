@@ -179,6 +179,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 has-children"><a class="reference internal" href="content/02-supply/index.html">Supply and Market Equilibrium</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="content/02-supply/01-supply.html">The Supply Curve</a></li>
 <li class="toctree-l2"><a class="reference internal" href="content/02-supply/02-eep147-example.html">An Empirical Example from EEP 147</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/02-supply/03-sympy.html">SymPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/02-supply/04-market-equilibria.html">Market Equilibria</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="content/03-public/index.html">Public Economics</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -407,6 +409,11 @@ document.write(`
 <h1>textbook<a class="headerlink" href="#textbook" title="Permalink to this heading">#</a></h1>
 <p>Textbook for Data 88E: Economic Models at UC Berkeley</p>
 <p>Content is stored in the content folder. Order of textbook can be changed from _toc.yml file.</p>
+<p>To build the textbook, run</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span><span class="o">-</span><span class="n">book</span> <span class="n">build</span> <span class="o">.</span>
+</pre></div>
+</div>
+<p>This will output HTML to <code class="docutils literal notranslate"><span class="pre">_build/html</span></code>, which can be copied to <code class="docutils literal notranslate"><span class="pre">docs</span></code> in order to be served on GitHub Pages.</p>
 </section>
 
     <script type="text/x-thebe-config">
