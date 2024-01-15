@@ -474,12 +474,14 @@ document.write(`
 <h1>Elasticity<a class="headerlink" href="#elasticity" title="Permalink to this heading">#</a></h1>
 <p>Suppose you own a business but you find yourself struggling to make a profit lately. How would you resolve this? You might consider raising your prices. But surely if you were to raise your prices too much you might lose some of your customers. To relate to our discussions above regarding surplus, maybe some of your customers are already at their highest willingness to pay, and raising prices would push them away from your business. Depending on the situation, you might lose so many customers that the increased revenue from raising your prices are completely offset by a decline in customers. This is a problem. To answer the question of how much to raise prices without losing too many customers and therefore losing revenue, we would like a way to measure this concept of customers’ responsiveness to prices. We call this concept <em>elasticity</em>.</p>
 <p>How would we measure elasticity? In the above context, we want to see how much quantity demanded of your business’s goods or services changes in response to a change in price. It seems like a good place to start would be to define elasticity as the percent change in quantity over percent change in price. Let’s use the demand curve, assuming linear non-log demand curves, depicted below as an example.</p>
+<p>[Following image is a line of downward sloping Demand]</p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <img alt="../../_images/4cc0fbed121cb323cba7259b0184a72d59db7213dac2c504a6f130955bbb5bd3.png" src="../../_images/4cc0fbed121cb323cba7259b0184a72d59db7213dac2c504a6f130955bbb5bd3.png" />
 </div>
 </div>
 <p>Now let’s say our current price is 5, and we would like to increase the price to 6. We can see from the curve that this causes demand to drop from 5 to 4.</p>
+<p>[Following image is a line of downward sloping Demand with movement from 5 to 6]</p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <img alt="../../_images/76b1aa755dd05199646b9eba313626f1b886dd3fc2bc0152b28f78ff3e89483a.png" src="../../_images/76b1aa755dd05199646b9eba313626f1b886dd3fc2bc0152b28f78ff3e89483a.png" />
@@ -496,6 +498,7 @@ document.write(`
 \end{split}\]</div>
 <p><em>Note that we take the absolute value for elasticity.</em></p>
 <p>This tells us that in this specific example, the percent change in price is met with an equal percent change in quantity. But what happens if we start at a price of 6 and go down to a price of 5? This movement is just the opposite of what we did above, so is the elasticity also 1? Let’s see.</p>
+<p>[Following image is a line of downward sloping Demand with movement from 6 to 5]</p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <img alt="../../_images/9fb421e8f981a138278bfc8f8ff43274fe6501e14c48b1520b9262dc6c09508a.png" src="../../_images/9fb421e8f981a138278bfc8f8ff43274fe6501e14c48b1520b9262dc6c09508a.png" />
@@ -570,6 +573,7 @@ document.write(`
 </div>
 </div>
 <p>Notice how a price increase will increase revenue until a certain point, at which point revenue decreases again. Intuitively this makes sense. A firm can only increase its prices so much until it starts losing too many of its customers for the increase to be worthwhile. Let’s try and find when this happens in general. First let’s plot revenue as a function of price.</p>
+<p>[Following image is a u-shaped curve of revenue at different prices]</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">elast</span> <span class="o">=</span> <span class="p">[</span><span class="nb">abs</span><span class="p">(</span><span class="n">elasticity</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">demand_equation</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">x</span><span class="p">),</span><span class="n">demand_equation</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)))</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)]</span>
@@ -589,12 +593,14 @@ document.write(`
 </div>
 </div>
 <p>We notice that revenue reaches a maximun at a price of 5. What elasticity does this price point have?</p>
+<p>[Following image is an upward sloping line of elasticty at different prices ]</p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <img alt="../../_images/a0d4eca350931dbd40ef8cd108bf1741ce2f38602900dafc1287be1435ecc603.png" src="../../_images/a0d4eca350931dbd40ef8cd108bf1741ce2f38602900dafc1287be1435ecc603.png" />
 </div>
 </div>
 <p>Revenue is maximized when elasticity is 1! To further reinforce this, let’s plot revenue vs elasticity.</p>
+<p>[Following image is a line revenue vs elasticity]</p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <img alt="../../_images/da12584f19e9864d28ae90e63e16fe27a1cd20aaf294911bcddd9151d478bee3.png" src="../../_images/da12584f19e9864d28ae90e63e16fe27a1cd20aaf294911bcddd9151d478bee3.png" />
@@ -605,10 +611,12 @@ document.write(`
 </section>
 <section id="relative-elasticity">
 <h2>Relative Elasticity<a class="headerlink" href="#relative-elasticity" title="Permalink to this heading">#</a></h2>
-<p>Suppose that you are hiking in the mountains when a venomous snake bites you. Fortunately there is a hospital nearby. Unfortunately, it seems that their antivenom is very expensive. If the antivenom costs \<span class="math notranslate nohighlight">\(1000, would you pay? What if the price doubled to \\\)</span>2000? What is your max willingness to pay for this antivenom? In the moment, you would likely be willing to pay anything and everything for the antivenom, as any money you refuse to pay won’t be of much use to you if you’re dead.</p>
+<p>Suppose that you are hiking in the mountains when a venomous snake bites you. Fortunately there is a hospital nearby. Unfortunately, it seems that their antivenom is very expensive. If the antivenom costs <span class="math notranslate nohighlight">\(1000, would you pay? What if the price doubled to \)</span>2000? What is your max willingness to pay for this antivenom? In the moment, you would likely be willing to pay anything and everything for the antivenom, as any money you refuse to pay won’t be of much use to you if you’re dead.</p>
 <p>Contrast this with your demand for pizza. Imagine a pizza chain close to where you live doubles their prices from \<span class="math notranslate nohighlight">\(3 a slice to \\\)</span>6 a slice. Most people would be disuaded from buying pizza by this price increase, assuming that there are many alternatives to pizza close to where you live. Since pizza is not a very essential good, and there are plenty of other places to eat close to where you live, most wouldn’t see the point in getting pizza anymore.</p>
 <p>We can easily see that any change in price is unlikely to change the demand for antivenom in our example, and thus we say the demand for antivenom is inelastic. But this is a different kind of elasticity. We are not measuring the marginal change in quantity demanded at a given price point or interval, we are saying that in general, on the demand curve for antivenom the elasticity at any price is more inelastic than some other typical demand curve. Similarly, in our example we can say that the demand for pizza is relatively elastic, as the pizza chain cannot change their prices too much without significantly altering the quantity demanded for their pizza. The keyword in this concept is <em>relative</em>. It doesn’t really make much sense to say that the demand for antivenom is inelastic without there being at least one other kind of demand that is comparatively elastic.</p>
 <p>More specifically, our example of antivenom likely exhibits <em>perfect inelasticity</em>, meaning that demand for antivenom is the same at absolutely any price; the hospital can charge any price it wants for antivenom. Contrast this with our nearby pizza chain. If we make some further assumptions and say that the market for food around your house or apartment is perfectly competitive, such that any marginal increase in price of one food chain will cause them to lose all of their customers to other food chains, then the demand for the specific food of that chain is <em>perfectly elastic</em>. The chain cannot increase its prices or else it will lose all demand. These two extreme scenarios are depicted below.</p>
+<p>[Following image is a vertical line]
+[Following image is a horizontal line]</p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <img alt="../../_images/6c27440d9b421a5f99f42d501c0bbb4cc68d8caf04e19ac4d107028b4916717e.png" src="../../_images/6c27440d9b421a5f99f42d501c0bbb4cc68d8caf04e19ac4d107028b4916717e.png" />

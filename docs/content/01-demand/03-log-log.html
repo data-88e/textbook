@@ -491,6 +491,7 @@ document.write(`
 <p>Before we jump into our new demand models, we must first go over measuring proportional changes.
 To highlight this fact, let’s actually consider how the variable GDP behaves. GDP tends to grow by a certain percent each year; no one is particularly interested in how <em>much</em> GDP changes from one year to the next, or from one country to another, but rather by <em>what percent</em> it changes.</p>
 <p>If you were to plot GDP over time for a country, it might look something like this:</p>
+<p>[Following image is a line of increasing upward sloping growth of GDP over time]</p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <img alt="../../_images/7a4c7d020b0ddc83b280122395479e0365925df9793dab6f6925b0718fa53038.png" src="../../_images/7a4c7d020b0ddc83b280122395479e0365925df9793dab6f6925b0718fa53038.png" />
@@ -499,6 +500,7 @@ To highlight this fact, let’s actually consider how the variable GDP behaves. 
 <p>The starting value for GDP is 100, and GDP grows by 5 percent each year. Look at how how much GDP grows in the later years!</p>
 <p>While this phenomenon is impressive, it is misleading. At surface level, it seems to imply that something different happened at around year 50 or so that caused GDP to increase considerably in subsequent years. We know that this isn’t true, and that this is just a consequence of exponential growth.</p>
 <p>To counter this effect, <strong>for variables that tend to vary from one observation to the next by proportions rather than absolute amounts, we take the natural log of these variables</strong>. Let’s do that for GDP:</p>
+<p>[Following image is a line of constant upward sloping growth of GDP over time]</p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <img alt="../../_images/65e1c12ec8287e6f02727abe9462ec6cfe70e0042a11524f7ac19f052bd21de0.png" src="../../_images/65e1c12ec8287e6f02727abe9462ec6cfe70e0042a11524f7ac19f052bd21de0.png" />
@@ -523,7 +525,7 @@ To highlight this fact, let’s actually consider how the variable GDP behaves. 
 </section>
 <section id="semi-log-demand-curves">
 <h2>Semi-log Demand Curves<a class="headerlink" href="#semi-log-demand-curves" title="Permalink to this heading">#</a></h2>
-<p>Revisiting demand curves, suppose that a change in price by \<span class="math notranslate nohighlight">\(1 leads to a change in quantity demanded by a factor of \)</span>m$. This means that our slope would be:</p>
+<p>Revisiting demand curves, suppose that a change in price by <span class="math notranslate nohighlight">\(1 leads to a change in quantity demanded by a factor of \)</span>m$. This means that our slope would be:</p>
 <div class="math notranslate nohighlight">
 \[\text{slope} = \frac{\text{change in quantity by a factor of } m}{\text{ \$1 change in price}} \approx \frac{m \text{ change in log-quantity}}{\text{\$1 change in price}}\]</div>
 <p>Using our intuition from above, we simply have to log transform our quantity-demanded variable to capture the above relationship. This is known as the semi-log demand curve, in which the price and log-quantity are linearly related:</p>
@@ -550,6 +552,7 @@ D(P+1) &amp;= e^be^{m \cdot (P+1) }  \\
 <section id="visualizing-the-semi-log-relationship">
 <h3>Visualizing the semi-log relationship<a class="headerlink" href="#visualizing-the-semi-log-relationship" title="Permalink to this heading">#</a></h3>
 <p>From above, we can convert the linear semi-log relationship into non-log terms for price and quantity, ultimately getting <span class="math notranslate nohighlight">\(D(P) = e^be^{m\cdot P}\)</span>. Plotting this relationship, we get:</p>
+<p>[Following image is a line of downward sloping semi-log Demand]</p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <img alt="../../_images/b3f5827160f49a3e13b823843c5d7aa169267f30b258e8001f85e2313e3e11f8.png" src="../../_images/b3f5827160f49a3e13b823843c5d7aa169267f30b258e8001f85e2313e3e11f8.png" />
@@ -561,7 +564,7 @@ D(P+1) &amp;= e^be^{m \cdot (P+1) }  \\
 <h2>Log-log Demand Curves<a class="headerlink" href="#log-log-demand-curves" title="Permalink to this heading">#</a></h2>
 <p>Now suppose that a 1% change in price leads to an <span class="math notranslate nohighlight">\(m\)</span>% change in quantity demanded. This means that our slope would be:</p>
 <div class="math notranslate nohighlight">
-\[\text{slope} = \frac{m \text{% change in quantity}}{1 \text{% change in price}} \approx \frac{0.01m \text{ change in log-quantity}}{0.01 \text{ change in log-price}}\]</div>
+\[\text{slope} = \frac{m * \text{pct change in quantity}}{1 \text{pct change in price}} \approx \frac{0.01m \text{ change in log-quantity}}{0.01 \text{ change in log-price}}\]</div>
 <p>In this case, we have to log transform both our quantity-demanded variable as well as price variable to capture the above relationship. This is known as the log-log demand curve, in which the log-price and log-quantity are linearly related:</p>
 <div class="math notranslate nohighlight">
 \[\ln{D(P)} = m\cdot\ln{P} + b\]</div>
@@ -585,6 +588,7 @@ D(1.01P) &amp;= e^b(1.01P)^m \\
 <section id="visualizing-the-log-log-relationship">
 <h3>Visualizing the log-log relationship<a class="headerlink" href="#visualizing-the-log-log-relationship" title="Permalink to this heading">#</a></h3>
 <p>From above, we can convert the linear log-log relationship into non-log terms for price and quantity, ultimately getting <span class="math notranslate nohighlight">\(D(P) = e^bP^m\)</span>. Plotting this relationship, we can see a demand curve that looks somewhat like an exponential decay curve:</p>
+<p>[Following image is a line of downward sloping log-log Demand]</p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <img alt="../../_images/ede0e5347de91121813253cb77107e9813ea3191eeac0f79b5eb4f93f46b1278.png" src="../../_images/ede0e5347de91121813253cb77107e9813ea3191eeac0f79b5eb4f93f46b1278.png" />
@@ -646,6 +650,7 @@ D(1.01P) &amp;= e^b(1.01P)^m \\
 <p>... (159 rows omitted)</p></div></div>
 </div>
 <p>Taking a look at the natural relationship between price and volume sold, we see a possible exponentially decaying relationship between volume and price. We will try using both semi-log and log-log transformations on the data.</p>
+<p>[Following image is a scatter plot of Volume vs Price ]</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">avocados</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s2">&quot;Total Volume&quot;</span><span class="p">,</span> <span class="s2">&quot;Average Price&quot;</span><span class="p">)</span>
@@ -677,12 +682,14 @@ The intercept is:  14.352506861683818
 </div>
 <p>Interpreting the slope, we get that for every one dollar change in price of avocados, we would expect the change in quantity demanded to decrease by 57%. Take this result with a grain of salt – recall that our approximation typically is valid for small values of <span class="math notranslate nohighlight">\(m\)</span>, and here our <span class="math notranslate nohighlight">\(m=-0.57\)</span>.</p>
 <p>Now, let’s plot our semi-log demand curve. First, we will plot it on an axes in which the quantity is log-transformed, exhibiting a linear demand curve:</p>
+<p>[Following image is a straight line of downward sloping semi-log Demand]</p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <img alt="../../_images/45a4b7c894a004dad2cd0f73c318dca5d57433a33a2fa6606d8dd89e7a3c303a.png" src="../../_images/45a4b7c894a004dad2cd0f73c318dca5d57433a33a2fa6606d8dd89e7a3c303a.png" />
 </div>
 </div>
 <p>Next, let’s plot our semi-log demand curve in which neither axis is log-transformed:</p>
+<p>[Following image is a curved line of downward sloping semi-log Demand]</p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <img alt="../../_images/039a76ff5c29fb7c720b4b1892982f41e2d1a8e9451aca478c7d0d60c5fc3aef.png" src="../../_images/039a76ff5c29fb7c720b4b1892982f41e2d1a8e9451aca478c7d0d60c5fc3aef.png" />
@@ -711,12 +718,14 @@ The intercept is:  13.798460905495737
 </div>
 <p>Interpreting the slope, we get that for every 1% change in price of avocados, we would expect the change in quantity demanded to decrease by <span class="math notranslate nohighlight">\(-0.816\%\)</span>. Once again, keep in mind that our approximation typically is valid for small values of <span class="math notranslate nohighlight">\(m\)</span>, and here our <span class="math notranslate nohighlight">\(m=-0.816\)</span>.</p>
 <p>Plotting our log-log demand curve with both axes log-transformed, we observe a linear demand curve:</p>
+<p>[Following image is a straight line of downward sloping log-log Demand]</p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <img alt="../../_images/63f549444d842273fe3c3c8cc1f7a2f5ee0c0ed390a2ab62400ee0c846e38028.png" src="../../_images/63f549444d842273fe3c3c8cc1f7a2f5ee0c0ed390a2ab62400ee0c846e38028.png" />
 </div>
 </div>
 <p>Finally, let’s plot our log-log demand curve in which neither axis is log-transformed:</p>
+<p>[Following image is a curved line of downward sloping log-log Demand]</p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <img alt="../../_images/70e290cba2fb3710a9d80ca7b3c46a487e5f05927314182aac2e94549556359f.png" src="../../_images/70e290cba2fb3710a9d80ca7b3c46a487e5f05927314182aac2e94549556359f.png" />

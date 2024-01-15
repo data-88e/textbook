@@ -503,7 +503,7 @@ The term ‘other colleges’ is a fairly general one, and in this case we shall
 In this demo, we are combining 3 different datasets:</p>
 <ul class="simple">
 <li><p>The median income for each major at Cal was obtained from <a class="reference external" href="https://career.berkeley.edu/survey/survey">Cal’s 2019 First Destination survey</a>.</p></li>
-<li><p>The median income for each major overall was obtained from surveys conducted by the American Community Survey (ACS) from 2010 to 2012, a very popular data source for Economics Research! In the survey, ACS essentially calls college graduates and asked them their income as well as what they majored in at college. (As a side note, FiveThirtyEight later published this <a class="reference external" href="https://fivethirtyeight.com/features/the-economic-guide-to-picking-a-college-major/">article</a> using the results of the survey.) In this project, we will be using a modified version of the ACS survey - we will only be looking at the respondents who are 28 or younger. Can you think of why we would do this?</p></li>
+<li><p>The median income for each major overall was obtained from surveys conducted by the American Community Survey (ACS) from 2010 to 2012, a very popular data source for Economics Research! In the survey, ACS essentially calls college graduates and asked them their income as well as what they majored in at college. (As a side note, FiveThirtyEight later published this article:<a class="reference external" href="https://fivethirtyeight.com/features/the-economic-guide-to-picking-a-college-major/">The Economic Guide to Picking a College Major</a> using the results of the survey.) In this project, we will be using a modified version of the ACS survey - we will only be looking at the respondents who are 28 or younger. Can you think of why we would do this?</p></li>
 <li><p>The longitudinal data on long-run outcomes of UC Berkeley alumni was obtained from the <a class="reference external" href="https://www.universityofcalifornia.edu/infocenter/berkeley-outcomes">University of California webpage</a>. We will use this dataset later for a slightly different analysis.</p></li>
 </ul>
 <p>Take a moment to consider the ways in which the 3 different datasets were created.
@@ -678,7 +678,8 @@ For example, Electrical Engineering and Computer Science (EECS) is a popular maj
 Instead, the <code class="docutils literal notranslate"><span class="pre">majors</span></code> dataset had Electrical Engineering, Electrical Engineering Technologies and Computer Engineering as separate majors.
 Since in theory students in EECS focus more on computer engineering, we chose to use the computer engineering data for drawing comparions in our final, combined table.
 However, there’s room for ambiguity here and that is another potential flaw in our exploration!</p>
-<p>The below graph displays all the median salaries for all the majors in our dataset side by side. Feel free to look at the values for a few seconds - do you find anything interesting?</p>
+<p>The below graph displays all the median salaries for all the majors in our dataset side by side. Feel free to look at the values for a few seconds - do you find anything interesting?
+[Following image is a bar chart of Median Incomes for Selected Majors]</p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><html>
@@ -954,7 +955,7 @@ People derive utility from sources other than just their bank account; often, we
 <p>So far our exploration of the data has considered a rather general timeframe of “post graduation”, but perhaps it would be more insightful if we dove in and took a look at how incomes differed across various ages. We can do so using the table below that consists of data collected by the <a class="reference external" href="http://uccliometric.org/">UC ClioMetric History Project</a>.
 By compiling a database of digital student transcripts of all UC undergraduates and then linking California wages to individuals in the transcript database,
 they were able to produce comprehensive dashboards that visualize demographics, major choices, and long-run incomes of each UC campus’s alumni over the past 70 years.</p>
-<p>You can learn more about how they collected the data <a class="reference external" href="https://www.universityofcalifornia.edu/infocenter/long-run-methodology">here</a>, but for now we will just focus on a snapshot of the data.
+<p>You can learn more about how they collected the data in <a class="reference external" href="https://www.universityofcalifornia.edu/infocenter/long-run-methodology">Incomes Over Time </a>, but for now we will just focus on a snapshot of the data.
 In particular, we are interested in exploring how percentile incomes compare between Cal alumni who majored in computer science versus those who majored in economics. Run the following cell to check it out.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1009,6 +1010,7 @@ In particular, we are interested in exploring how percentile incomes compare bet
 It begins with age 23 (typically how old people are when getting their first job out of college), and goes up until age 62 (when people retire from the workforce).</p>
 <p>Let’s graph our data using some line plots: line plots are especially useful when trying to visualize trends that change over time.</p>
 <p>Run the following cell to visualize the data. The yellow lines correspond to CS incomes, while the blue lines correspond to Econ incomes.</p>
+<p>[Following image is a graph of “Comparing Incomes of Computer Science Majors vs Economics Majors”]</p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <img alt="../../_images/5abb7303a962d703938d4248f6615052837c774a000e88f89368a4166fc4b2ea.png" src="../../_images/5abb7303a962d703938d4248f6615052837c774a000e88f89368a4166fc4b2ea.png" />
@@ -1032,7 +1034,7 @@ Software engineering and related disciplines have a huge demand for fresh talent
 a top notch developer in the 75th percentile or a subpar developer in the 25th percentile, you will probably make a solid living. Since most CS majors typically end up pursuing similar careers in the realms of software development, there is less <strong>variance</strong> in the occupations. There is also less <strong>risk</strong>: most CS majors can expect to land a software engineering job and continue working as one twenty years into their career.</p>
 <p>The same story is less true for Economics majors: a top-notch Economics major will significantly out-earn a subpar Economics major. This is partly due to the vastly differing occupation types Economics majors become: analysts, bankers, consultants, just to name a few (Economics is a very versatile degree, afterall). Twenty years down the line, the top Economics majors will have higher ceilings perhaps with a lot of opportunity for leadership or executive positions. There is a lot more <strong>variance</strong> in the types of jobs and thus salaries that Economics majors will attain. In addition, there is a lot more <strong>risk</strong>: not every Economics major will become a top executive, and most end up with more ‘average’ jobs that earn less than that of similar percentile CS majors.</p>
 <p>This means that if you know you are at the top regardless of your major, you will tend to ultimately earn more income as an Economics major than a CS major. But a caveat: it’s impossible to guarantee that you will be in the top, no matter how hard you work. Often, life has uncertainties and involves a great deal of luck to become successful.</p>
-<p>The table and graph above only considered the percentile incomes of CS and Economics majors, but if you’re interested in drawing more comparisons, check out <a class="reference external" href="https://www.universityofcalifornia.edu/infocenter/berkeley-outcomes">this page</a>. You can compare between all types of popular majors at UC Berkeley, and even toggle around with more features like gender, ethnicity, or even specific courses.</p>
+<p>The table and graph above only considered the percentile incomes of CS and Economics majors, but if you’re interested in drawing more comparisons, check out <a class="reference external" href="https://www.universityofcalifornia.edu/infocenter/berkeley-outcomes">Long Rund outcomes for UC Berkeley Alumni</a>. You can compare between all types of popular majors at UC Berkeley, and even toggle around with more features like gender, ethnicity, or even specific courses.</p>
 </section>
 </section>
 <section id="an-afterword">

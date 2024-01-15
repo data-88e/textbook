@@ -567,6 +567,7 @@ document.write(`
 <p>... (1 rows omitted)</p></div></div>
 </div>
 <p>How will the Lorenz Curve for this income distribution look?</p>
+<p>[Following image is an line graph and a scatter plot of population share vs income share]</p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <img alt="../../_images/d4b379ef0daabc4bcdd19c541bf99da90a3afb3c6ae90144fbd5df2715b97199.png" src="../../_images/d4b379ef0daabc4bcdd19c541bf99da90a3afb3c6ae90144fbd5df2715b97199.png" />
@@ -699,6 +700,7 @@ document.write(`
 <p>... (1 rows omitted)</p></div></div>
 </div>
 <p>Plotting both countries’ Lorenz curves, can you tell which country has a higher level of income inequality?</p>
+<p>[Following image has 2 Lorenz Curves for different countries in population share vs income share]</p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <img alt="../../_images/1011d1973a79dbd2dade27d8d5fe6eff4a9d84e938c26b7fd7632c5de25de944.png" src="../../_images/1011d1973a79dbd2dade27d8d5fe6eff4a9d84e938c26b7fd7632c5de25de944.png" />
@@ -706,6 +708,7 @@ document.write(`
 </div>
 <p>In this case, we can see that country 2’s Lorenz curve is closer to the line of equality than that of country 1, which intuitively would suggest that country 2 is more equal. If we were to look at the numbers, we see that the bottom percentiles own a higher % of total national income in country 2 than in country 1, while top percentiles own less in country 2 than in country 1. This would suggest that country 2 is more equal in income than country 1, so that country 1 has a higher level of income inequality.</p>
 <p>But now let’s consider a different case; suppose country 3 has the following distribution:</p>
+<p>[Following image has 2 Lorenz Curves for different countries in population share vs income share]</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Country3</span> <span class="o">=</span> <span class="n">make_array</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">,</span> <span class="mf">0.07</span><span class="p">,</span> <span class="mf">0.12</span><span class="p">,</span> <span class="mf">0.18</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.33</span><span class="p">,</span> <span class="mf">0.42</span><span class="p">,</span> <span class="mf">0.54</span><span class="p">,</span> <span class="mf">0.73</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
@@ -779,6 +782,7 @@ document.write(`
 <section id="the-gini-coefficient">
 <h2>The Gini Coefficient<a class="headerlink" href="#the-gini-coefficient" title="Permalink to this heading">#</a></h2>
 <p>We can use the Gini coefficeint to quantify the level of income inequality.</p>
+<p>[Following image has two parts shaded within a 45 degree triangle, part A above Lorenz Curve and Part B below]</p>
 <figure class="align-default" id="gini-coefficient">
 <a class="reference internal image-reference" href="../../_images/Gini.png"><img alt="../../_images/Gini.png" src="../../_images/Gini.png" style="width: 500px;" /></a>
 <figcaption>
@@ -857,6 +861,7 @@ document.write(`
 <h2>Other Forms of Measurement<a class="headerlink" href="#other-forms-of-measurement" title="Permalink to this heading">#</a></h2>
 <p>The Gini coefficient is a fairly comprehensive and robust measure of inequality with just a single value: as we’ve seen above, we look at the entire population’s income distribution to determine the Gini coefficient. As a result, calculating the Gini is often a challenging task. In reality, we will never observe the true population Lorenz curve without conducting a census to know how much exactly each household earns. As a result, economists will often attempt to interpolate the Lorenz curve and consequent Gini coefficient from the data they have available. The Gini coefficient is also not as easy to understand or explain; the value by itself does not have significant meaning.</p>
 <p>Instead, another common measure of income inequality is the share of income earned by the “top <span class="math notranslate nohighlight">\(x\)</span>%” or the “bottom <span class="math notranslate nohighlight">\(y\)</span>%”. These measures are more often used in the media or by politicians in discussing the extent of inequality, since they are much easier to understand. Consider the chart below, which plots the share of income earned by the top 1%, bottom 90%, and the 90-99%:</p>
+<p>[Following image has line graphs for shares of wealth by wealth percentiles]</p>
 <figure class="align-default" id="id1">
 <img alt="../../_images/alt_measure.png" src="../../_images/alt_measure.png" />
 <figcaption>

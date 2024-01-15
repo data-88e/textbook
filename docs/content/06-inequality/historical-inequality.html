@@ -609,6 +609,7 @@ document.write(`
 <p>... (92 rows omitted)</p></div></div>
 </div>
 <p>Oh no, there are some <code class="docutils literal notranslate"><span class="pre">nan</span></code> values! NaN (not a number) values are very common in real world datasets: often, we may not have some observations simply because no data was collected, or perhaps the data collected was faulty. Sometimes, we can try to impute or replace NaN values in order to avoid having gaps in our data, but for now let’s ignore NaNs and when plotting to see what’s going on:</p>
+<p>[Following image has line graphs for different income shares over time]</p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <img alt="../../_images/65b0f2c24a7f1ba537b6f09c1b81f6693ef14fb877bdc8a3b015830e4909ad2f.png" src="../../_images/65b0f2c24a7f1ba537b6f09c1b81f6693ef14fb877bdc8a3b015830e4909ad2f.png" />
@@ -619,6 +620,7 @@ document.write(`
 <section class="tex2jax_ignore mathjax_ignore" id="income-inequality-for-the-rest-of-the-world">
 <h1>Income Inequality for the Rest of the World<a class="headerlink" href="#income-inequality-for-the-rest-of-the-world" title="Permalink to this heading">#</a></h1>
 <p>Now let’s examine the trends of income inequality in other parts of the world.</p>
+<p>[Following image has line graphs for different income shares over time across countries]</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">world_hist</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s2">&quot;World_Inequality.csv&quot;</span><span class="p">)</span>
@@ -678,6 +680,7 @@ document.write(`
 </div>
 <p>Just like the US, it seems global inequality has been rising around the world, especially in China, India, Russia, and across Europe. However, in absolute terms, the level of income inequality in Europe is much lower than that in the United States.</p>
 <p>Also look at Russia: income inequality spiked up around 1991. This was likely caused by the fall of the USSR: the failing Soviet state left the ownership of state assets uncontested, which allowed former USSR officials to acquire state property through informal deals. This led to the rise of many Russian oligarchs - those who rapidly accumulated wealth during the era of Russian privatization directly follwing the dissolution of the Soviet Union.</p>
+<p>[Following image has line graphs for different income shares over time in USA &amp; Europe]</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">top_10_world</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span> <span class="s2">&quot;USA&quot;</span><span class="p">,</span> <span class="s2">&quot;Europe&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
@@ -693,6 +696,7 @@ document.write(`
 </div>
 <section id="the-elephant-graph">
 <h2>The Elephant Graph<a class="headerlink" href="#the-elephant-graph" title="Permalink to this heading">#</a></h2>
+<p>[Following image has a line graph connecting points for the income growth vs income percentile]</p>
 <figure class="align-default" id="elephant-curve">
 <a class="reference internal image-reference" href="../../_images/elephant_curve.jpg"><img alt="../../_images/elephant_curve.jpg" src="../../_images/elephant_curve.jpg" style="width: 500px;" /></a>
 <figcaption>
@@ -725,6 +729,7 @@ document.write(`
 <p>The top marginal tax rate only applies to the portion of your income above a certain income level. For example, if you earned 19501 dollars in 2019, then you will pay 1940 dollars plus 12% of <span class="math notranslate nohighlight">\(19501-19401\)</span>, i.e. 12 dollars. For another example, if you earned 80000 dollars, then you will pay <span class="math notranslate nohighlight">\(9086 + 0.22(80000-78950) = 9317\)</span> dollars in tax, effectively a <span class="math notranslate nohighlight">\(\frac{9317}{80000} = 11.6\%\)</span> tax rate.</p>
 <p>In general, the idea is you will pay a lower tax rate for your first <span class="math notranslate nohighlight">\(x\)</span> dollars, but a higher rate for dollars earned over <span class="math notranslate nohighlight">\(x\)</span>.</p>
 <p>Now let’s look at the historical trends in marginal top tax rates, which is the % taxed at the highest tax bracket.</p>
+<p>[Following image has line graphs for the top tax rate over time]</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">toptax</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s2">&quot;toptaxrate.csv&quot;</span><span class="p">)</span>
@@ -845,6 +850,7 @@ document.write(`
 <p>... (19 rows omitted)</p></div></div>
 </div>
 <p>As we can see from the graph, the unemployment rates for China, India and the rest of the world have stayed somewhat steady. On the other hand, Brazil, the US, Russia and Europe are encountering drastically different unemployment situations than before.</p>
+<p>[Following image has line graphs for unemployment rates over time across countries]</p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <img alt="../../_images/03b063e01791665c4a1f58c6858a40771a5fe20bb0a73889357c5c8cba75ea86.png" src="../../_images/03b063e01791665c4a1f58c6858a40771a5fe20bb0a73889357c5c8cba75ea86.png" />
@@ -867,6 +873,7 @@ document.write(`
 <h2>Population growth<a class="headerlink" href="#population-growth" title="Permalink to this heading">#</a></h2>
 <p>As the number of people in a country’s population increase, it becomes more difficult for a country to distribute its public goods to everyone. This leads to many social consequences in which resources are not fairly distributed to all members of the population, cause inaccessibility for different parts of the population</p>
 <p>The table below shows how the population growth has changed for the same countries we saw above. We are only looking at data for the past 10 years.</p>
+<p>[Following image has line graphs for population growth rates over time]</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pop_growth</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s2">&quot;Population Growth.csv&quot;</span><span class="p">)</span>

@@ -475,7 +475,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="an-empirical-demand-curve">
 <h1>An Empirical Demand Curve<a class="headerlink" href="#an-empirical-demand-curve" title="Permalink to this heading">#</a></h1>
-<p>Let’s examine some historical data on non-organic avocado prices and sales volumes in San Francisco from 2015 to 2018. The original dataset is taken from Kaggle and can be found <a class="reference external" href="https://www.kaggle.com/neuromusic/avocado-prices">here</a>.</p>
+<p>Let’s examine some historical data on non-organic avocado prices and sales volumes in San Francisco from 2015 to 2018. The original dataset is taken from Kaggle and can be found here:<a class="reference external" href="https://www.kaggle.com/neuromusic/avocado-prices">Kaggle Dataset on Avocado Prices</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">avocados</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s2">&quot;avocados.csv&quot;</span><span class="p">)</span> <span class="c1"># is it avocados or avocadoes?</span>
@@ -529,6 +529,7 @@ document.write(`
 <h2>Visualizing the Relationship between Price and Quantity<a class="headerlink" href="#visualizing-the-relationship-between-price-and-quantity" title="Permalink to this heading">#</a></h2>
 <p>To construct the demand curve, let’s first see what the relationship between price and quantity is. We would expect to see a downward-sloping line between price and quantity; if a product’s price increases, consumers will purchase less, and if a product’s price decreases, then consumers will purchase more.</p>
 <p>To find this, we will create a scatterplot and draw a regression line (by setting <code class="docutils literal notranslate"><span class="pre">fit_line</span> <span class="pre">=</span> <span class="pre">True</span></code> in the <code class="docutils literal notranslate"><span class="pre">tbl.scatter</span></code> call) between the points. Regression lines are helpful because they consolidate all the datapoints into a single line, helping us better understand the relationship between the two variables.</p>
+<p>[Following image is a scatter plot of a demand curve for Avocados]</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">avocados</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s2">&quot;Total Volume&quot;</span><span class="p">,</span> <span class="s2">&quot;Average Price&quot;</span><span class="p">,</span> <span class="n">fit_line</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">7</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">7</span><span class="p">)</span>
@@ -582,6 +583,7 @@ The intercept is: 2.2495304122570334
 </div>
 <p>Thus, our demand curve is <span class="math notranslate nohighlight">\(P(Q) = -0.00000109Q+ 2.2495\)</span>; The slope is -0.00000109 and <span class="math notranslate nohighlight">\(y\)</span>-intercept is 2.2495. This means that as the quantity demanded increases by 1 unit (in this case, 1 avocado), we would expect to see price to decrease by 0.00000109 units.</p>
 <p>We can plot this line on a graph. Notice that it is the same line as the one when we indicated <code class="docutils literal notranslate"><span class="pre">fit_line=True</span></code> above.</p>
+<p>[Following image is a scatter plot of a demand curve for Avocados]</p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <img alt="../../_images/3128f87e589a66f7b5db24a345674d0908b5cce5cf4f234ed7400d1864f780a7.png" src="../../_images/3128f87e589a66f7b5db24a345674d0908b5cce5cf4f234ed7400d1864f780a7.png" />
@@ -615,6 +617,7 @@ The intercept is: 1446951.6408050181
 <p>Here, our demand curve is roughly <span class="math notranslate nohighlight">\(Q(P) = -476413P+ 1446952\)</span>; the slope is -476413 and <span class="math notranslate nohighlight">\(y\)</span>-intercept is 1446952. This means that as the price increases by 1 unit (in this case, $1), we would expect to see quantity demanded to decrease by 476413 units (in this case, 476413 avocados).</p>
 <p>Note that this demand curve is not the same as the previous demand curve! It is not simply the inverse of the previous demand curve.</p>
 <p>Plotting this line on a graph, we see a slightly different demand curve: can you see what is different between the two?</p>
+<p>[Following image is a scatter plot and fit line of a demand curve for Avocados]</p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <img alt="../../_images/a942b0be8b375439c50f0e3e1ad2fbf8f40b4f0411eb478457ff869ccc50a20f.png" src="../../_images/a942b0be8b375439c50f0e3e1ad2fbf8f40b4f0411eb478457ff869ccc50a20f.png" />
