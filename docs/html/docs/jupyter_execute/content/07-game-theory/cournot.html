@@ -1,0 +1,761 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Cournot Competition &#8212; Data 88E: Economic Models Textbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../_static/copybutton.js"></script>
+    <script src="../../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../_static/togglebutton.js"></script>
+    <script src="../../../../_static/plotly.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/jupyter_execute/content/07-game-theory/cournot';</script>
+    <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../../../content/intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../_static/econ-models.png" class="logo__image only-light" alt="Data 88E: Economic Models Textbook - Home"/>
+    <script>document.write(`<img src="../../../../_static/econ-models.png" class="logo__image only-dark" alt="Data 88E: Economic Models Textbook - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../../content/intro.html">
+                    <a href="https://data-88e.github.io"> Data 88E: Economic Models </a>
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../../content/00-intro/index.html">Introduction</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../content/01-demand/index.html">Demand and Elasticities</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/01-demand/01-demand.html">Demand Curves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/01-demand/02-example.html">An Empirical Demand Curve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/01-demand/03-log-log.html">Log-log and Semi-log Demand Curves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/01-demand/04-elasticity.html">Elasticity</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../content/02-supply/index.html">Supply and Market Equilibrium</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/02-supply/01-supply.html">The Supply Curve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/02-supply/02-eep147-example.html">An Empirical Example from EEP 147</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/02-supply/03-sympy.html">SymPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/02-supply/04-market-equilibria.html">Market Equilibria</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../content/03-public/index.html">Public Economics</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/03-public/taxes-subsidies.html">Taxes and Subsidies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/03-public/surplus.html">Surplus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/03-public/govt-intervention.html">Other Forms of Government Intervention</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../content/04-production/index.html">Production</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/04-production/production.html">Production and Cobb-Douglas Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/04-production/shifts.html">Analyzing Shifts in <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(\alpha\)</span></a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../content/05-utility/index.html">Utility</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/05-utility/utility.html">Utility Functions and Indifference Curves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/05-utility/budget-constraints.html">Budget Constraints and Utility Maximization</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes">LaTeX</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../content/06-inequality/index.html">Inequality</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/06-inequality/inequality.html">Measurements of Inequality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/06-inequality/historical-inequality.html">Income Inequality Historically</a></li>
+
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../content/07-game-theory/index.html">Game Theory</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/07-game-theory/expected-utility.html">Expected Utility Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/07-game-theory/equilibria-oligopolies.html">Equilibria &amp; Oligopolies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/07-game-theory/cournot.html">Cournot Competition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/07-game-theory/bertrand.html">Bertrand Competition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/07-game-theory/python-classes.html">Python Classes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../content/08-development/index.html">Development</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../content/09-macro/index.html">Macroeconomic Policy</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/09-macro/Indicators.html">Macroeconomic Indicators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/09-macro/CentralBanks.html">Central Banks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/09-macro/is_curve.html">IS-Curve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/09-macro/phillips_curve.html">Phillips Curve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/09-macro/fiscal_policy.html">Fiscal Policy</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../content/10-finance/index.html">Finance</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/10-finance/value-interest.html">Present Value, Future Value, and Interest Rates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/10-finance/options.html">Options</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../content/11-econometrics/index.html">Econometrics</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/11-econometrics/single-variable.html">Single Variable Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/11-econometrics/statsmodels.html">Using <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> for Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/11-econometrics/multivariable.html">Multivariable Regression and Bias</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/11-econometrics/reading-econ-papers.html">Reading Economics Papers</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../content/12-environmental/index.html">Environmental Economics</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/12-environmental/textbook1.html">Marginal Abatement Cost Curves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/12-environmental/KuznetsHypothesis-Copy1.html">Environmental Kuznets Curve Hypothesis</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../content/references.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/data-88e/textbook/master?urlpath=tree/docs/jupyter_execute/content/07-game-theory/cournot.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/data-88e/textbook&urlpath=tree/textbook/docs/jupyter_execute/content/07-game-theory/cournot.ipynb&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+<a href="https://github.com/data-88e/textbook" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../../_sources/docs/jupyter_execute/content/07-game-theory/cournot.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Cournot Competition</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cournot-profit-functions">Cournot Profit Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#best-response-functions">Best Response Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cournot-equilibrium">Cournot Equilibrium</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implications">Implications</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applying-cournot">Applying Cournot</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="cournot-competition">
+<h1>Cournot Competition<a class="headerlink" href="#cournot-competition" title="Permalink to this heading">#</a></h1>
+<p>One model of understanding oligopolies comes in Cournot competition, named for Aontoine Cournot who first proposed it. Cournot competition is a model describing a market in which firms compete by changing their output. In Cournot competition, there are a fixed number of firms in a market that produce the same product. Firms do not collude but have market power (i.e. each firm’s output decisions affect the price of the good). Each firm knows the number of firms in the market and has its own cost function that it uses to determine its level of output.</p>
+<p>OPEC is a good example of a Cournot oligopoly: its participants affect prices by changing their output. OPEC also demonstrates a flaw in the reasoning behind Cournot competition: the equilibrium state of a Cournot oligopoly suggests that collusion by market participants is the rational policy, but in reality game theory shows us this cannot be the “true” equilibrium because cartel members undercut one another in a bid for market share.</p>
+<section id="cournot-profit-functions">
+<h2>Cournot Profit Functions<a class="headerlink" href="#cournot-profit-functions" title="Permalink to this heading">#</a></h2>
+<p>For the purposes of this class, we will be analyzing the case of Cournot duopoly (i.e. when there are only 2 firms in a market). Throughout the course we will make these assumptions about the market: both firms have to follow a joint linear price function (meaning the market price is determined only by the quantity produced of both firms) and both firms have an equal constant marginal cost curve. To put this formally, <span class="math notranslate nohighlight">\(P=P(Q)=P(q_1+q_2)=m(q_1+q_2)+b\)</span> (where <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are parameters for the slope and intercept of the price functions). Costs for firm 1 can be represented as <span class="math notranslate nohighlight">\(C_1=cq_1\)</span> and costs for firm 2 can be represented as <span class="math notranslate nohighlight">\(C_2=cq_2\)</span>. To find the equilibrium of this game we will need to set up the profit functions for both firms. Starting with firm 1 we can put the last two equations together to get:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{equation} \label{eq1}
+\begin{split}
+\pi_1 &amp; =Pq_1-C_1 \\
+ &amp; =(m(q_1+q_2)+b)q_1-cq_1 \\
+ &amp; =mq_1^2+mq_1q_2+bq_1 -cq_1
+\end{split}
+\end{equation}
+\end{split}\]</div>
+<p>Firm 2 follows a similar profit function:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\pi_2 &amp; =Pq_2-C_2\\
+ &amp; =mq_2^2+mq_1q_2+bq_2 -cq_2   
+\end{align*}
+\end{split}\]</div>
+</section>
+<section id="best-response-functions">
+<h2>Best Response Functions<a class="headerlink" href="#best-response-functions" title="Permalink to this heading">#</a></h2>
+<p>Similar to how in the utility unit individuals seek to maximize utility, in Cournot firms seek to maximize profit. So we will be using the same mathematical tool we learned last week (partial derivatives) to derive the equilibrium of this game. Specifically we will be solving for a <span class="math notranslate nohighlight">\(q_1^{*}\)</span> that satisfies <span class="math notranslate nohighlight">\( \underset{q_1}{\mathrm{argmax}}\ \pi_1 \ \textrm{or} \ \underset{q_1}{\mathrm{argmax}}\ (mq_1^2+mq_1q_2+bq_1 -cq_1)\)</span>. In english, this means we will be finding the value (or values) of <span class="math notranslate nohighlight">\(q_1\)</span> that maximize the profit function for player 1. We will also do the same thing for player 2. Starting with player 1, let’s take the partial derivative with respect to <span class="math notranslate nohighlight">\(q_1\)</span> and set that equation equal to 0. We can then solve that equation to obtain <span class="math notranslate nohighlight">\(q_1^{*}\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+   \frac{\partial{\pi_1}}{\partial{q_1}}= 2mq_1 + mq_2+b - c \\
+   2mq_1 + mq_2+b - c = 0\\
+  q_1^{*}= \frac{c-mq_2-b}{2m}
+\end{align*}
+ \
+\end{split}\]</div>
+<p>This equation for <span class="math notranslate nohighlight">\(q_1\)</span> is called a best response function because it tells us player 1’s optimal output for every possible output player 2 can choose. Now, in order to get the equilibrium, we need to find player 2’s best response function. We will use the same approach to do this (i.e., we will solve for a <span class="math notranslate nohighlight">\(q_2^{*}\)</span> that satisfies <span class="math notranslate nohighlight">\(\underset{q_2}{\mathrm{argmax}}\ \pi_2 \ \textrm{or} \ \underset{q_2}{\mathrm{argmax}}\ mq_2^2+mq_1q_2+bq_2 -cq_2\)</span> ).</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+ \begin{align*}
+   \frac{\partial{\pi_2}}{\partial{q_2}}= 2mq_2 + mq_1+b - c \\ 
+   2mq_2 + mq_1+b - c = 0\\
+   q_2^{*} = \frac{c-mq_1-b}{2m}
+\end{align*}
+\end{split}\]</div>
+<p>If <span class="math notranslate nohighlight">\(q_2\)</span> was fixed at a certain price and we were to graph firm 1’s best response equation, it would look something like this:</p>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<img alt="../../../../_images/74261f6b06181626eaf55f115d4ecdc2c5a0977987a906948f3e15ae9dc8c806.png" src="../../../../_images/74261f6b06181626eaf55f115d4ecdc2c5a0977987a906948f3e15ae9dc8c806.png" />
+</div>
+</div>
+<p>This may make intuitive sense as if you recall from the demand and supply chapters, firms seek to produce where marginal revenue equals marginal cost. The partial derivative we took before did that automatically. We can verify this with the following calculation:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+    MR=MC  \\
+    MR-MC=0  \\
+    \frac{\partial}{\partial{q_1}} (\textrm{Revenue - Cost}) = 0 \\
+    \frac{\partial}{\partial{q_1}} ((m(q_1+q_2)+b)q_1-cq_1) = 0 \\
+    2mq_1 + mq_2+b - c = 0 
+\end{align*}
+\end{split}\]</div>
+<p>However, this graph assumes a fixed value for <span class="math notranslate nohighlight">\(q_2\)</span>. Let’s try varying <span class="math notranslate nohighlight">\(q_2\)</span> and see what happens.</p>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<img alt="../../../../_images/e46401c3641d90646a381aa6fbf1832937895fbcd68338456a5d73da9ecbe3a9.png" src="../../../../_images/e46401c3641d90646a381aa6fbf1832937895fbcd68338456a5d73da9ecbe3a9.png" />
+</div>
+</div>
+<p>The orange marginal revenue curve represents a scenario where Firm 2 produces so little that Firm 1 can overtake the market and become a monopoly. The green marginal revenue curve is a scenario where Firm 2 produces so much that it is too costly for Firm 1 to remain in this market, causing Firm 1’s optimal output to become 0.</p>
+<p>Let’s now try to solve for the Nash Equilibrium of this game.</p>
+</section>
+<section id="cournot-equilibrium">
+<h2>Cournot Equilibrium<a class="headerlink" href="#cournot-equilibrium" title="Permalink to this heading">#</a></h2>
+<p>Recall that a Nash Equilibrium is where both the players are giving the best response to each other’s actions. Graphically, this is where the best response curves intersect.</p>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<img alt="../../../../_images/31cbc757ec085cb4a04a179292a6e3ed4cb9e603b54a1d837b3b132d5da088a0.png" src="../../../../_images/31cbc757ec085cb4a04a179292a6e3ed4cb9e603b54a1d837b3b132d5da088a0.png" />
+</div>
+</div>
+<p>In this class, you will use Python to find that intersection. However, for future classes, it may be useful to see how you can find the intersection algebraically. Here’s the equation we must solve:</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{align*}
+    q_1=\frac{c-b-m(\frac{c-mq_1-b}{2m})}{2m}
+\end{align*}
+\
+\]</div>
+<p>To find player 1’s equilibrium strategy, we solve for <span class="math notranslate nohighlight">\(q_1\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+    q_1=\frac{c-b-m(\frac{c-mq_1-b}{2m})}{2m} \\ 
+    2mq_1 = c-b-m(\frac{c-mq_1-b}{2m}) \\
+    2mq_1 = c-b-\frac{c-mq_1-b}{2}\\
+    2mq_1 - \frac{mq_1}{2} = c - \frac{c}{2} -b +\frac{b}{2} \\
+    \frac{3mq_1}{2} = \frac{c-b}{2} \\ 
+    3mq_1 = c-b \\
+    q_1^{*} = \frac{c-b}{3m}
+\end{align*}
+\
+\end{split}\]</div>
+<p>Phew, that was a lot of math. However, we are not quite done yet - we still need to find player 2’s optimal output. The process for doing this is fairly similar to the process for finding player 1’s optimal output, as can be seen below.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+    q_2 = \frac{c-mq_1^{*}-b}{2m} = \frac{c-b-m(\frac{c-b}{3m})}{2m} \\
+    2mq_2 = c -\frac{c}{3} - b +\frac{b}{3} \\
+    2mq_2 = \frac{2(c-b)}{3}\\
+    q_2^{*} = q_2 = \frac{c-b}{3m}
+\end{align*}
+\
+\end{split}\]</div>
+<p>This shows that the unique Nash Equilibrium of Cournot Duopoly is <span class="math notranslate nohighlight">\((q_1^{*},q_2^{*}) = (\frac{c-b}{3m},\frac{c-b}{3m})\)</span></p>
+</section>
+<section id="implications">
+<h2>Implications<a class="headerlink" href="#implications" title="Permalink to this heading">#</a></h2>
+<p>The Cournot model implies that output is greater in a Cournot duopoly than in a monopoly but still lower than perfect competition. Prices are also lower in a Cournot duopoly, but higher than perfect competition. Cournot equilibria are also a subset of Nash equilibria, and so the equilibrium we just derived is one from which neither player will likely deviate. As noted earlier, Cournot also indicates that members of a duopoly could form a cartel and raise profits by colluding.</p>
+<section id="applying-cournot">
+<h3>Applying Cournot<a class="headerlink" href="#applying-cournot" title="Permalink to this heading">#</a></h3>
+<p>Now that we have shown how to derive the Cournot equilibrium, let’s apply this to a problem. Consider the industry of airline manufacturing: there are two main competitors, Boeing and Airbus, and for this problem, we will think of this market as a Cournot duopoly. Suppose the market demand curve is given by <span class="math notranslate nohighlight">\(P=-1.89Q+148.89\)</span> where the price is in millions of dollars and that the marginal cost of both firms is constant at <span class="math notranslate nohighlight">\(c=100\)</span>. Solve for the Nash Equilibrium.</p>
+<p>First we will want to derive both firms profit functions:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*} 
+    \pi_1 &amp; = Pq_1 -cq_1 \\
+    \pi_1 &amp; = (-1.89Q+148.89)q_1 - cq_1 \\
+    \pi_1 &amp; = (-1.89(q_1+q_2)+148.89)q_1 -cq_1 \\
+    \pi_1 &amp; = -1.89q_1^2-1.89q_1q_2+148.89q_1 - cq_1
+\end{align*}
+\end{split}\]</div>
+<p>For firm 2 the profit function similarly looks like:</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{align*}
+    \pi_2 = -1.89q_2^2-1.89q_1q_2+148.89q_2 - cq_2
+\end{align*}
+\]</div>
+<p>Now we will take the partial derivative to find the best response functions for both players. For firm 1 this looks like:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+    \frac{\partial{\pi_1}}{\partial{q_1}}= -3.78q_1 - 1.89q_2+148.89 - 100 = 0\\
+    q_1 = \frac{48.89-1.89q_2}{3.78}
+\end{align*}
+\
+\end{split}\]</div>
+<p>For firm 2 this looks like:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+    \frac{\partial{\pi_2}}{\partial{q_2}}= -3.78q_2 - 1.89q_1+148.89 - 100 = 0\\
+    q_2 = \frac{48.89-1.89q_1}{3.78}
+\end{align*}
+\end{split}\]</div>
+<p>Now while you can solve this algebraically, it takes much longer and leaves a lot of room for error, so as data scientists we will use Python to solve this problem. The code for this looks like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">q_1</span><span class="o">=</span><span class="n">sympy</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;q_1&quot;</span><span class="p">)</span> <span class="c1">#Create a symbol for q1</span>
+<span class="n">q_2</span><span class="o">=</span><span class="n">sympy</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;q_2&quot;</span><span class="p">)</span><span class="c1">#Create a symbol for q2</span>
+<span class="n">Br_q_1</span> <span class="o">=</span> <span class="p">(</span><span class="mf">48.89</span> <span class="o">-</span> <span class="mf">1.89</span><span class="o">*</span><span class="n">q_2</span><span class="p">)</span><span class="o">/</span><span class="mf">3.78</span> <span class="c1">#Create the best response function for firm 1</span>
+<span class="n">Br_q_2</span> <span class="o">=</span> <span class="p">(</span><span class="mf">48.89</span> <span class="o">-</span> <span class="mf">1.89</span><span class="o">*</span><span class="n">q_1</span><span class="p">)</span><span class="o">/</span><span class="mf">3.78</span> <span class="c1">#Create the best response function for firm 2</span>
+<span class="n">q1_Br_2</span> <span class="o">=</span> <span class="p">(</span><span class="mf">48.89</span><span class="o">-</span><span class="mf">3.78</span><span class="o">*</span><span class="n">q_2</span><span class="p">)</span><span class="o">/</span><span class="mf">1.89</span> <span class="c1">#Solve firm 2&#39;s best response function for q1</span>
+<span class="n">q_1_star</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">Br_q_1</span><span class="p">,</span><span class="n">q1_Br_2</span><span class="p">)</span> <span class="c1">#Use the solve function to solve the system of equations </span>
+<span class="n">q_2_star</span> <span class="o">=</span> <span class="n">Br_q_2</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">q_1</span><span class="p">,</span><span class="n">q_1_star</span> <span class="p">)</span> <span class="c1">#Substiute in the optimal q_1_star into firm 2&#39;s best response function</span>
+<span class="p">(</span><span class="n">q_1_star</span><span class="p">,</span><span class="n">q_2_star</span><span class="p">)</span> <span class="c1">#Nash Equilibrium</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(8.62257495590827, 8.62257495590830)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs/jupyter_execute/content/07-game-theory"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cournot-profit-functions">Cournot Profit Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#best-response-functions">Best Response Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cournot-equilibrium">Cournot Equilibrium</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implications">Implications</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applying-cournot">Applying Cournot</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Data 88E Course Staff
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2020.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
