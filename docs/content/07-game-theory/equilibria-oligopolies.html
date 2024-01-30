@@ -239,7 +239,6 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../12-environmental/index.html">Environmental Economics</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../12-environmental/textbook1.html">Marginal Abatement Cost Curves</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../12-environmental/KuznetsHypothesis-Copy1.html">Environmental Kuznets Curve Hypothesis</a></li>
 </ul>
 </li>
@@ -473,27 +472,7 @@ document.write(`
 <section id="equilibrium">
 <h2>Equilibrium<a class="headerlink" href="#equilibrium" title="Permalink to this heading">#</a></h2>
 <p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Prisoner%27s_dilemma">prisoner’s dilemma</a> is a classic game first discussed by Merrill Flood and Melvin Dresher in 1950. In this game, there are two prisoners who have been captured and are being interrogated. The prisoners cannot contact each other in any way. They have two options: they can <strong>defect</strong> (betray the other prisoner to the police) or they can <strong>cooperate</strong> (maintain their silence). If both defect, both receive 4 years in prison. If one defects and the other does not, the defector goes free and the cooperator receives 5 years in prison. If both cooperate (meaning neither talks to the police), then they each receive 2 years in prison. We define <strong>mutual defection</strong> as the case when both prisoners defect and <strong>mutual cooperation</strong> as the case when both cooperate. The purpose of this game is to consider how a completely rational person would be best advised to proceed, and how different strategies for playing this game can be more or less effective.</p>
-<table class="payoff-matrix" style="text-align: center; table-layout: fixed;">
-<tr>
-    <td colspan="2" rowspan="2" width="170" style="border-width: 0 1px 1px 0;"></td>
-    <td colspan="2">Prisoner B</td>
-</tr>
-<tr>
-    <td width="85">Cooperate</td>
-    <td width="85">Defect</td>
-</tr>
-<tr>
-    <td rowspan="2">Prisoner A</td>
-    <td>Cooperate</td>
-    <td>(2, 2)</td>
-    <td>(5, 0)</td>
-</tr>
-<tr>
-    <td>Defect</td>
-    <td>(0, 5)</td>
-    <td>(4, 4)</td>
-</tr>
-</table>
+<p><img alt="payoff2.png" src="../../_images/payoff2.png" /></p>
 <p>In the above payoff matrix, we see that if Prisoner A cooperates and Prisoner B defects, then Prisoner A gets 5 years in prisoner and Prisoner B gets none. It is important to note that the above payoff matrix is inverted; because we are talking about <em>years in prison</em> as opposed to utility, a higher value is <strong>worse</strong> for the player, and a player’s goal is to <em>minimize</em> their value in the payoff matrix, not maximize it as normally. We will use this payoff matrix convention when discussing the prisoner’s dilemma, but <em>not</em> with other games.</p>
 <p>An important concept in game theory is finding the equilibrium of a game. There are different types of equilibria, but the most common one considered is the <strong>Nash equilibrium</strong>, named for the mathematician John Forbes Nash, Jr. (who you may remember as a character played by Russel Crowe in <a class="reference external" href="https://en.wikipedia.org/wiki/A_Beautiful_Mind_(film)"><em>A Beautiful Mind</em></a>). A Nash equilibrium occurs when no player can increase their own payoff by changing only their own strategy.</p>
 <div class="admonition-definition admonition">
@@ -502,10 +481,10 @@ document.write(`
 </div>
 <p>Using this definition, what constitutes a Nash equilibrium for the prisoner’s dilemma? Well let’s consider the four possible combinations of strategies. (We use “D” as shorthand for “defect” and “C” for “cooperate” below.)</p>
 <ol class="arabic simple">
-<li><p><strong>Prisoner A: C, Prisoner B: C.</strong> In this case, both Prisoner A and Prisoner B get 4 years. However, if Prisoner A’s strategy remains unchanged, Prisoner B can get fewer years in prison by changing to D, and vice versa. Thus, this is <strong>not</strong> a Nash equilibrium.</p></li>
+<li><p><strong>Prisoner A: C, Prisoner B: C.</strong> In this case, both Prisoner A and Prisoner B get 2 years. However, if Prisoner A’s strategy remains unchanged, Prisoner B can get fewer years in prison by changing to D, and vice versa. Thus, this is <strong>not</strong> a Nash equilibrium.</p></li>
 <li><p><strong>Prisoner A: D, Prisoner B: C.</strong> In this case, Prisoner B can change to D and lower their years from 5 to 4. Thus, this is <strong>not</strong> a Nash equilibrium.</p></li>
 <li><p><strong>Prisoner A: C, Prisoner B: D.</strong> As with (2), Prisoner A can change to D and lower their years in prison. Thus, this is <strong>not</strong> a Nash equilibrium.</p></li>
-<li><p><strong>Prisoner A: D, Prisoner B: D.</strong> In this case, if Prisoner A changes to C, then their years in prison <em>increases</em> from 4 to 5, as with Prisoner B. Neither player can increase their winnings (decrease their years in prison) by changing their strategy. Thus, this <strong>is</strong> a Nash equilibrium.</p></li>
+<li><p><strong>Prisoner A: D, Prisoner B: D.</strong> In this case, if Prisoner A changes to C, then their years in prison <em>increases</em> from 4 to 5, as with Prisoner B. Neither player can increase their winnings (decrease their years in prison) by changing their strategy. Thus, this <strong>is</strong> a Nash equilibrium, with both Prisoner A and Prisoner B getting 4 years.</p></li>
 </ol>
 <p>By describing the four states of the game, we see that only mutual defection is a Nash equilibrium of the prisoner’s dilemma.</p>
 <div class="tip admonition">

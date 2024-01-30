@@ -241,7 +241,6 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../12-environmental/index.html">Environmental Economics</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../12-environmental/textbook1.html">Marginal Abatement Cost Curves</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../12-environmental/KuznetsHypothesis-Copy1.html">Environmental Kuznets Curve Hypothesis</a></li>
 </ul>
 </li>
@@ -484,27 +483,8 @@ document.write(`
 <section id="expected-utility">
 <h2>Expected Utility<a class="headerlink" href="#expected-utility" title="Permalink to this heading">#</a></h2>
 <p>The expected utility is a calculated value based on two pieces of information: an individual’s preferences for different outcomes and the probability of those outcomes occurring. Let’s illustrate this with an example: Suppose Alice is deciding whether to attend lecture today and her professor is deciding whether to take attendance today. If Alice goes to lecture, she will be bored but get her attendance counted if it’s taken. If she doesn’t, she won’t be bored, but she  won’t get her attendance point. We must define the utilities for Alice and her professor in order to construct a payoff matrix.</p>
-<table class="payoff-matrix" style="text-align: center; table-layout: fixed;">
-<tr>
-    <td colspan="2" rowspan="2" width="200" style="border-width: 0 1px 1px 0;"></td>
-    <td colspan="2">Professor</td>
-</tr>
-<tr>
-    <td width="125">Take Attendance</td>
-    <td width="125">No Attendance</td>
-</tr>
-<tr>
-    <td rowspan="2" width="100">Alice</td>
-    <td>Attend</td>
-    <td>(0, 2)</td>
-    <td>(-2, 0)</td>
-</tr>
-<tr>
-    <td>Don't Attend</td>
-    <td>(-5, 5)</td>
-    <td>(5, 3)</td>
-</tr>
-</table><div class="tip admonition">
+<p><img alt="payoff1.png" src="../../_images/payoff1.png" /></p>
+<div class="tip admonition">
 <p class="admonition-title">Reading a payoff matrix</p>
 <p>A payoff matrix specifies the payoffs of two players. The 2-tuples in each cell define the payoff for both players according to the combination of strategies corresponding to the row and column. For example, the bottom right cell above corresponds to the payoffs for Alice not attending and the professor not taking attendance. The tuples are formatted as <code class="docutils literal notranslate"><span class="pre">(row</span> <span class="pre">player,</span> <span class="pre">column</span> <span class="pre">player)</span></code>, so the first element is Alice’s payoff and the second is the professor’s. The payoff of (5, 0) indicates that that outcome has a utility of 5 for Alice and 0 for the professor.</p>
 </div>

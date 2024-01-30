@@ -241,7 +241,6 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../12-environmental/index.html">Environmental Economics</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../12-environmental/textbook1.html">Marginal Abatement Cost Curves</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../12-environmental/KuznetsHypothesis-Copy1.html">Environmental Kuznets Curve Hypothesis</a></li>
 </ul>
 </li>
@@ -476,7 +475,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="single-variable-regression">
 <h1>Single Variable Regression<a class="headerlink" href="#single-variable-regression" title="Permalink to this heading">#</a></h1>
-<p>Suppose we have some data that look like this:</p>
+<p>Suppose we have some data that looks like this on a scatter plot:</p>
 <p><img alt="title" src="../../_images/figure11.png" /></p>
 <p>In Data 8 we learned that <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> above have some <strong>correlation coefficient</strong> <span class="math notranslate nohighlight">\(r\)</span>, which is a measure of the strength of the linear relationship between the two variables.</p>
 <p>It looks like there is some positive linear association between <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> such that larger values of <span class="math notranslate nohighlight">\(x\)</span> correspond to larger values of <span class="math notranslate nohighlight">\(y\)</span>. We therefore expect <span class="math notranslate nohighlight">\(r\)</span> to be some positive number between 0 and 1, but not exactly 0 or exactly 1.</p>
@@ -503,10 +502,10 @@ x_{su} = \dfrac{x - \mu_x}{\sigma_x}
 </div>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<img alt="../../_images/faea274c534e6c82d8df7f944774a392d86c45e8764816c5a49c574fe9db3320.png" src="../../_images/faea274c534e6c82d8df7f944774a392d86c45e8764816c5a49c574fe9db3320.png" />
+<img alt="../../_images/ea081820a442f6dbbc771df72161574f5c995733492cc57cbff4e95b3a03bd99.png" src="../../_images/ea081820a442f6dbbc771df72161574f5c995733492cc57cbff4e95b3a03bd99.png" />
 </div>
 </div>
-<p>The plot looks the same as before, except now the axes are scaled such that we measure <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> in standard units. Now recall that <span class="math notranslate nohighlight">\(r\)</span> is calculated as the average of the product of two variables, when the variables are measured in standard units. Below we define a function that calculates <span class="math notranslate nohighlight">\(r\)</span>, assuming that the inputs have already been converted to standard units.</p>
+<p>The scatter plot looks the same as before, except now the axes are scaled such that we measure <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> in standard units. Now recall that <span class="math notranslate nohighlight">\(r\)</span> is calculated as the average of the product of two variables, when the variables are measured in standard units. Below we define a function that calculates <span class="math notranslate nohighlight">\(r\)</span>, assuming that the inputs have already been converted to standard units.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">correlation</span><span class="p">(</span><span class="n">array1</span><span class="p">,</span> <span class="n">array2</span><span class="p">):</span>
@@ -523,7 +522,7 @@ x_{su} = \dfrac{x - \mu_x}{\sigma_x}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7351364076052979
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.73513640760529786
 </pre></div>
 </div>
 </div>
@@ -544,7 +543,7 @@ x_{su} = \dfrac{x - \mu_x}{\sigma_x}
 y = \hat{\alpha} + \hat{\beta} x
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(\hat{\alpha}\)</span> is the intercept from above and <span class="math notranslate nohighlight">\(\hat{\beta}\)</span> the slope.</p>
-<p>Below we plot this line.</p>
+<p>Below we plot this line on the same scatter plot from before.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">correlation</span><span class="p">(</span><span class="n">x_standard</span><span class="p">,</span> <span class="n">y_standard</span><span class="p">)</span>
@@ -556,13 +555,13 @@ y = \hat{\alpha} + \hat{\beta} x
 </div>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<img alt="../../_images/d1f6fed49106bcbf322aa35d71c2e054ccba0b6d71c08b7f918109f22b362e59.png" src="../../_images/d1f6fed49106bcbf322aa35d71c2e054ccba0b6d71c08b7f918109f22b362e59.png" />
+<img alt="../../_images/84a7b79f1ad4c916a9bbeb30e64a326af88a411278918f485c387fe40972c1ba.png" src="../../_images/84a7b79f1ad4c916a9bbeb30e64a326af88a411278918f485c387fe40972c1ba.png" />
 </div>
 </div>
 <p>Let’s take a closer look at the slope we found.</p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Slope:  1.3160907091507876
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Slope:  1.31609070915
 </pre></div>
 </div>
 </div>
@@ -602,10 +601,10 @@ y = 1.5 \cdot x + u
 </div>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Slope:  1.5590151265266388
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Slope:  1.55901512653
 </pre></div>
 </div>
-<img alt="../../_images/0ff19b0a55aa4036b937e993735ed3719fe36b808f20ee3951e628001333229e.png" src="../../_images/0ff19b0a55aa4036b937e993735ed3719fe36b808f20ee3951e628001333229e.png" />
+<img alt="../../_images/363a41aa93c8e0358547ab16d90be264835b8693949da91a6aff6ff0e7a8e4c7.png" src="../../_images/363a41aa93c8e0358547ab16d90be264835b8693949da91a6aff6ff0e7a8e4c7.png" />
 </div>
 </div>
 <p>Now the estimated slope is roughly 1.6, even though the underlying data was still generated using a slope of 1.5. This is a very important concept that we will revisit soon.</p>
@@ -755,7 +754,7 @@ y = \alpha + \beta \cdot x + \varepsilon
 <p>We want to consider a person’s wage and years of schooling. But first, we will convert wage to log-wage. Wage is a variable that we would expect to increase proportionally (or, exponentially) with changes in years of schooling. And as such, we usually take the natural log of wage instead. Below we plot log wage and years of schooling for the CPS data.</p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<img alt="../../_images/19ab465bb8e7f6013ddc90196d2ad1e81337a2d44390b496dae3f80ac7c14033.png" src="../../_images/19ab465bb8e7f6013ddc90196d2ad1e81337a2d44390b496dae3f80ac7c14033.png" />
+<img alt="../../_images/221a9c751edab8a0ed9073770ed56280d95273f20744438ce790856c37cbb6b1.png" src="../../_images/221a9c751edab8a0ed9073770ed56280d95273f20744438ce790856c37cbb6b1.png" />
 </div>
 </div>
 <p>Now let’s fit a least-squares regression line onto this data. First, we’ll do it manually in the Data 8 style above.</p>
@@ -773,11 +772,11 @@ y = \alpha + \beta \cdot x + \varepsilon
 </div>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Slope:  0.10781133924799272
-Intercept:  1.472287673006932
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Slope:  0.107811339248
+Intercept:  1.47228767301
 </pre></div>
 </div>
-<img alt="../../_images/18c8394caf166b78468191c0c3f6f07799b6dd0648f4ed1f8317b998284b8d9c.png" src="../../_images/18c8394caf166b78468191c0c3f6f07799b6dd0648f4ed1f8317b998284b8d9c.png" />
+<img alt="../../_images/5804d4ef0c6f9542fa35e7edc91b0e602a4a69a2cc65586cdd6c4de69014cc61.png" src="../../_images/5804d4ef0c6f9542fa35e7edc91b0e602a4a69a2cc65586cdd6c4de69014cc61.png" />
 </div>
 </div>
 <p>So from the very simple and straight-forward model above, it seems that we estimate a slope of roughly 0.1, meaning we might expect that a one-year increase in schooling is associated with a 10% increase in wage, on average.</p>
@@ -815,10 +814,10 @@ Intercept:  1.472287673006932
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Standard dev. of bootstrapped slopes:  0.0015948419317821812
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Standard dev. of bootstrapped slopes:  0.00159484193178
 </pre></div>
 </div>
-<img alt="../../_images/8d1774cbf5135a6fa83bdcd3feddbb958c124379e3a45267cf3414ac55ddea80.png" src="../../_images/8d1774cbf5135a6fa83bdcd3feddbb958c124379e3a45267cf3414ac55ddea80.png" />
+<img alt="../../_images/3099ed3f65d5f64b40a79905b2db7b20168c9c17bff49afee2c20e1aaa110a77.png" src="../../_images/3099ed3f65d5f64b40a79905b2db7b20168c9c17bff49afee2c20e1aaa110a77.png" />
 </div>
 </div>
 <p>Our bootstrapped approximation standard error of 0.00159 is pretty close to the true standard error of 0.00144. <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code>, the package we will be using to perform regressions, actually uses a precise mathematical formula for finding the standard error whereas we tried to find this value through simulation, but the idea behind the standard error is the same.</p>
@@ -833,7 +832,7 @@ Intercept:  1.472287673006932
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>95% confidence interval: [0.1045603129388414, 0.1109373558983047]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>95% confidence interval: [0.10456031293885952, 0.11093735589830463]
 </pre></div>
 </div>
 </div>
@@ -896,12 +895,12 @@ Intercept:  1.472287673006932
 <p>Now let’s visualize log earnings vs. the binary variable corresponding to whether or not an observation went to college.</p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<img alt="../../_images/17d8d2704d394643d1d79e79e660315c2c10a7fb1c800368efc31772f7b379b6.png" src="../../_images/17d8d2704d394643d1d79e79e660315c2c10a7fb1c800368efc31772f7b379b6.png" />
+<img alt="../../_images/1869c0b9a53bd2209a3096ad2dab37be6e63c241df84ead3fbd233f96060e9fc.png" src="../../_images/1869c0b9a53bd2209a3096ad2dab37be6e63c241df84ead3fbd233f96060e9fc.png" />
 </div>
 </div>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<img alt="../../_images/3a31c31efb3478faf612e461642f26ded7b93ecfda74744893258ab3e11179c5.png" src="../../_images/3a31c31efb3478faf612e461642f26ded7b93ecfda74744893258ab3e11179c5.png" />
+<img alt="../../_images/20152df38637f67340740718d5db19fb03d415395a58b715b3ef7b7ae51be2b9.png" src="../../_images/20152df38637f67340740718d5db19fb03d415395a58b715b3ef7b7ae51be2b9.png" />
 </div>
 </div>
 <p>Now let’s fit a regression model:</p>
@@ -927,12 +926,12 @@ Intercept:  1.472287673006932
 <p>Wow! This regression would imply that we expect, on average, observations who went to college to have 70% higher earnings than those who did not go to college. Let’s now plot this line on the data:</p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<img alt="../../_images/d10aa9d5ad16cfd3efbee897875c02a73a603cdd8e73d313fabe0ba98d0ee2e7.png" src="../../_images/d10aa9d5ad16cfd3efbee897875c02a73a603cdd8e73d313fabe0ba98d0ee2e7.png" />
+<img alt="../../_images/73e3f62a9b5adf43d9705bcd6e0282e9fcf04e912ddc883b2233f9beebca5909.png" src="../../_images/73e3f62a9b5adf43d9705bcd6e0282e9fcf04e912ddc883b2233f9beebca5909.png" />
 </div>
 </div>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<img alt="../../_images/3eb2886e05098b2c3856a9a22ff5dc1b98eade9b062d0a0a0a9dbba3c5e294a2.png" src="../../_images/3eb2886e05098b2c3856a9a22ff5dc1b98eade9b062d0a0a0a9dbba3c5e294a2.png" />
+<img alt="../../_images/00ce75b3219d2cf05262dd438b4f094c70da8e3d51d63d9ded263a40b3bc3d84.png" src="../../_images/00ce75b3219d2cf05262dd438b4f094c70da8e3d51d63d9ded263a40b3bc3d84.png" />
 </div>
 </div>
 <p>When we perform a simple regression onto just a dummy variable, it is an important fact that <span class="math notranslate nohighlight">\(\hat{\alpha}\)</span> is the mean value of <span class="math notranslate nohighlight">\(y\)</span> for all observations in the sample where <span class="math notranslate nohighlight">\(x = 0\)</span>, and <span class="math notranslate nohighlight">\(\hat{\beta}\)</span> is the difference between the mean value of <span class="math notranslate nohighlight">\(y\)</span> for observations in the sample where <span class="math notranslate nohighlight">\(x = 1\)</span> and observations where <span class="math notranslate nohighlight">\(x = 0\)</span>. Proving this claim is beyond our scope this week, but let’s verify it with our data:</p>
@@ -948,9 +947,9 @@ Intercept:  1.472287673006932
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Avg logearn for coll = 1:  11.002722859240283
-Avg logearn for coll = 0:  10.278831734712744
-Difference between the two:  0.7238911245275386
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Avg logearn for coll = 1:  11.0027228592
+Avg logearn for coll = 0:  10.2788317347
+Difference between the two:  0.723891124528
 </pre></div>
 </div>
 </div>
@@ -963,8 +962,8 @@ Difference between the two:  0.7238911245275386
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Intercept:  10.278831734712744
-Slope:  0.72389112452754
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Intercept:  10.2788317347
+Slope:  0.723891124528
 </pre></div>
 </div>
 </div>

@@ -1,0 +1,912 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Market Equilibria &#8212; Data 88E: Economic Models Textbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+
+  
+  <link href="../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../_static/copybutton.js"></script>
+    <script src="../../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../_static/togglebutton.js"></script>
+    <script src="../../../../_static/plotly.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/jupyter_execute/content/02-supply/04-market-equilibria';</script>
+    <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../../../content/intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../_static/econ-models.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../../../_static/econ-models.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../../content/intro.html">
+                    <a href="https://data-88e.github.io"> Data 88E: Economic Models </a>
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../../content/00-intro/index.html">Introduction</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../content/01-demand/index.html">Demand and Elasticities</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/01-demand/01-demand.html">Demand Curves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/01-demand/02-example.html">An Empirical Demand Curve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/01-demand/03-log-log.html">Log-log and Semi-log Demand Curves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/01-demand/04-elasticity.html">Elasticity</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../content/02-supply/index.html">Supply and Market Equilibrium</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/02-supply/01-supply.html">The Supply Curve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/02-supply/02-eep147-example.html">An Empirical Example from EEP 147</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/02-supply/03-sympy.html">SymPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/02-supply/04-market-equilibria.html">Market Equilibria</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../content/03-public/index.html">Public Economics</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/03-public/taxes-subsidies.html">Taxes and Subsidies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/03-public/surplus.html">Surplus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/03-public/govt-intervention.html">Other Forms of Government Intervention</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../content/04-production/index.html">Production</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/04-production/production.html">Production and Cobb-Douglas Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/04-production/shifts.html">Analyzing Shifts in <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(\alpha\)</span></a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../content/05-utility/index.html">Utility</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/05-utility/utility.html">Utility Functions and Indifference Curves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/05-utility/budget-constraints.html">Budget Constraints and Utility Maximization</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes">LaTeX</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../content/06-inequality/index.html">Inequality</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/06-inequality/inequality.html">Measurements of Inequality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/06-inequality/historical-inequality.html">Income Inequality Historically</a></li>
+
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../content/07-game-theory/index.html">Game Theory</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/07-game-theory/expected-utility.html">Expected Utility Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/07-game-theory/equilibria-oligopolies.html">Equilibria &amp; Oligopolies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/07-game-theory/cournot.html">Cournot Competition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/07-game-theory/bertrand.html">Bertrand Competition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/07-game-theory/python-classes.html">Python Classes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../content/08-development/index.html">Development</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../content/09-macro/index.html">Macroeconomic Policy</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/09-macro/Indicators.html">Macroeconomic Indicators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/09-macro/CentralBanks.html">Central Banks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/09-macro/is_curve.html">IS-Curve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/09-macro/phillips_curve.html">Phillips Curve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/09-macro/fiscal_policy.html">Fiscal Policy</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../content/10-finance/index.html">Finance</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/10-finance/value-interest.html">Present Value, Future Value, and Interest Rates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/10-finance/options.html">Options</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../content/11-econometrics/index.html">Econometrics</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/11-econometrics/single-variable.html">Single Variable Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/11-econometrics/statsmodels.html">Using <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> for Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/11-econometrics/multivariable.html">Multivariable Regression and Bias</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/11-econometrics/reading-econ-papers.html">Reading Economics Papers</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../content/12-environmental/index.html">Environmental Economics</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/12-environmental/MAC.html">Marginal Abatement Cost Curves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/12-environmental/KuznetsHypothesis-Copy1.html">Environmental Kuznets Curve Hypothesis</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../content/references.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/data-88e/textbook/master?urlpath=tree/docs/jupyter_execute/content/02-supply/04-market-equilibria.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/data-88e/textbook&urlpath=tree/textbook/docs/jupyter_execute/content/02-supply/04-market-equilibria.ipynb&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+<a href="https://github.com/data-88e/textbook" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../../_sources/docs/jupyter_execute/content/02-supply/04-market-equilibria.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Market Equilibria</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-the-equilibrium">Finding the Equilibrium</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-preprocessing">Data Preprocessing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-the-relationship">Visualize the  Relationship</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fit-a-polynomial">Fit a Polynomial</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-the-demand-curve">Create the Demand Curve</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-the-supply-curve">Create the Supply Curve</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#find-the-price-equilibrium">Find the Price Equilibrium</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#find-the-quantity-equilibrium">Find the Quantity Equilibrium</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-the-market-equilibrium">Visualize the Market Equilibrium</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#movements-away-from-equilibrium">Movements Away from Equilibrium</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="market-equilibria">
+<h1>Market Equilibria<a class="headerlink" href="#market-equilibria" title="Permalink to this heading">#</a></h1>
+<p>We will now explore the relationship between price and quantity of oranges produced between 1924 and 1938. Since the data <span id="id1">[]</span> is from the 1920s and 1930s, it is important to remember that the prices are much lower than what they would be today because of inflation, competition, innovations, and other factors. For example, in 1924, a ton of oranges would have costed $6.63; that same amount in 2019 is $100.78.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fruitprice</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s1">&#39;fruitprice.csv&#39;</span><span class="p">)</span>
+<span class="n">fruitprice</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>Year</th> <th>Pear Price</th> <th>Pear Unloads (Tons)</th> <th>Plum Price</th> <th>Plum Unloads</th> <th>Peach Price</th> <th>Peach Unloads</th> <th>Orange Price</th> <th>Orange Unloads</th> <th>NY Factory Wages</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1924</td> <td>8.04      </td> <td>18489              </td> <td>8.86      </td> <td>6582        </td> <td>4.96       </td> <td>41880        </td> <td>6.63        </td> <td>21258         </td> <td>27.22           </td>
+        </tr>
+        <tr>
+            <td>1925</td> <td>5.67      </td> <td>21919              </td> <td>7.27      </td> <td>5526        </td> <td>4.87       </td> <td>38772        </td> <td>9.19        </td> <td>15426         </td> <td>28.03           </td>
+        </tr>
+        <tr>
+            <td>1926</td> <td>5.44      </td> <td>29328              </td> <td>6.68      </td> <td>5742        </td> <td>3.35       </td> <td>46516        </td> <td>7.2         </td> <td>24762         </td> <td>28.89           </td>
+        </tr>
+        <tr>
+            <td>1927</td> <td>7.15      </td> <td>17082              </td> <td>8.09      </td> <td>5758        </td> <td>5.7        </td> <td>32500        </td> <td>8.63        </td> <td>22766         </td> <td>29.14           </td>
+        </tr>
+        <tr>
+            <td>1928</td> <td>5.81      </td> <td>20708              </td> <td>7.41      </td> <td>6000        </td> <td>4.13       </td> <td>46820        </td> <td>10.71       </td> <td>18766         </td> <td>29.34           </td>
+        </tr>
+        <tr>
+            <td>1929</td> <td>7.6       </td> <td>13071              </td> <td>10.86     </td> <td>3504        </td> <td>6.7        </td> <td>36990        </td> <td>6.36        </td> <td>35702         </td> <td>29.97           </td>
+        </tr>
+        <tr>
+            <td>1930</td> <td>5.06      </td> <td>22068              </td> <td>6.23      </td> <td>7998        </td> <td>6.35       </td> <td>29680        </td> <td>10.5        </td> <td>23718         </td> <td>28.68           </td>
+        </tr>
+        <tr>
+            <td>1931</td> <td>5.4       </td> <td>19255              </td> <td>6.86      </td> <td>5638        </td> <td>3.91       </td> <td>50940        </td> <td>5.81        </td> <td>39263         </td> <td>26.35           </td>
+        </tr>
+        <tr>
+            <td>1932</td> <td>4.06      </td> <td>17293              </td> <td>6.09      </td> <td>7364        </td> <td>4.57       </td> <td>27642        </td> <td>4.71        </td> <td>38553         </td> <td>21.98           </td>
+        </tr>
+        <tr>
+            <td>1933</td> <td>4.78      </td> <td>11063              </td> <td>5.86      </td> <td>8136        </td> <td>3.57       </td> <td>35560        </td> <td>4.6         </td> <td>36540         </td> <td>22.26           </td>
+        </tr>
+    </tbody>
+</table>
+<p>... (5 rows omitted)</p></div></div>
+</div>
+<section id="finding-the-equilibrium">
+<h2>Finding the Equilibrium<a class="headerlink" href="#finding-the-equilibrium" title="Permalink to this heading">#</a></h2>
+<p>An important concept in econmics is the market equilibrium. This is the point at which the demand and supply curves meet and represents the “optimal” level of production and price in that market.</p>
+<div class="admonition-definition admonition">
+<p class="admonition-title">Definition</p>
+<p>The <strong>market equilibrium</strong> is the price and quantity at which the demand and supply curves intersect. The price and resulting transaction quantity at the equilibrium is what we would predict to observe in the market.</p>
+</div>
+<p>Let’s walk through how to the market equilibrium using the market for oranges as an example.</p>
+<section id="data-preprocessing">
+<h3>Data Preprocessing<a class="headerlink" href="#data-preprocessing" title="Permalink to this heading">#</a></h3>
+<p>Because we are only examining the relationship between prices and quantity for oranges, we can create a new table with the relevant columns: <code class="docutils literal notranslate"><span class="pre">Year</span></code>, <code class="docutils literal notranslate"><span class="pre">Orange</span> <span class="pre">Price</span></code>, and <code class="docutils literal notranslate"><span class="pre">Orange</span> <span class="pre">Unloads</span></code>. Here, <code class="docutils literal notranslate"><span class="pre">Orange</span> <span class="pre">Price</span></code> is measured in dollars, while <code class="docutils literal notranslate"><span class="pre">Orange</span> <span class="pre">Unloads</span></code> is measured in tons.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">oranges_raw</span> <span class="o">=</span> <span class="n">fruitprice</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span> <span class="s2">&quot;Orange Price&quot;</span><span class="p">,</span> <span class="s2">&quot;Orange Unloads&quot;</span><span class="p">)</span>
+<span class="n">oranges_raw</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>Year</th> <th>Orange Price</th> <th>Orange Unloads</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1924</td> <td>6.63        </td> <td>21258         </td>
+        </tr>
+        <tr>
+            <td>1925</td> <td>9.19        </td> <td>15426         </td>
+        </tr>
+        <tr>
+            <td>1926</td> <td>7.2         </td> <td>24762         </td>
+        </tr>
+        <tr>
+            <td>1927</td> <td>8.63        </td> <td>22766         </td>
+        </tr>
+        <tr>
+            <td>1928</td> <td>10.71       </td> <td>18766         </td>
+        </tr>
+        <tr>
+            <td>1929</td> <td>6.36        </td> <td>35702         </td>
+        </tr>
+        <tr>
+            <td>1930</td> <td>10.5        </td> <td>23718         </td>
+        </tr>
+        <tr>
+            <td>1931</td> <td>5.81        </td> <td>39263         </td>
+        </tr>
+        <tr>
+            <td>1932</td> <td>4.71        </td> <td>38553         </td>
+        </tr>
+        <tr>
+            <td>1933</td> <td>4.6         </td> <td>36540         </td>
+        </tr>
+    </tbody>
+</table>
+<p>... (5 rows omitted)</p></div></div>
+</div>
+<p>Next, we will rename our columns. In this case, let’s rename <code class="docutils literal notranslate"><span class="pre">Orange</span> <span class="pre">Unloads</span></code> to <code class="docutils literal notranslate"><span class="pre">Quantity</span></code> and <code class="docutils literal notranslate"><span class="pre">Orange</span> <span class="pre">Price</span></code> to <code class="docutils literal notranslate"><span class="pre">Price</span></code> for brevity and understandability.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">oranges</span> <span class="o">=</span> <span class="n">oranges_raw</span><span class="o">.</span><span class="n">relabel</span><span class="p">(</span><span class="s2">&quot;Orange Unloads&quot;</span><span class="p">,</span> <span class="s2">&quot;Quantity&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">relabel</span><span class="p">(</span><span class="s2">&quot;Orange Price&quot;</span><span class="p">,</span> <span class="s2">&quot;Price&quot;</span><span class="p">)</span>
+<span class="n">oranges</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>Year</th> <th>Price</th> <th>Quantity</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1924</td> <td>6.63 </td> <td>21258   </td>
+        </tr>
+        <tr>
+            <td>1925</td> <td>9.19 </td> <td>15426   </td>
+        </tr>
+        <tr>
+            <td>1926</td> <td>7.2  </td> <td>24762   </td>
+        </tr>
+        <tr>
+            <td>1927</td> <td>8.63 </td> <td>22766   </td>
+        </tr>
+        <tr>
+            <td>1928</td> <td>10.71</td> <td>18766   </td>
+        </tr>
+        <tr>
+            <td>1929</td> <td>6.36 </td> <td>35702   </td>
+        </tr>
+        <tr>
+            <td>1930</td> <td>10.5 </td> <td>23718   </td>
+        </tr>
+        <tr>
+            <td>1931</td> <td>5.81 </td> <td>39263   </td>
+        </tr>
+        <tr>
+            <td>1932</td> <td>4.71 </td> <td>38553   </td>
+        </tr>
+        <tr>
+            <td>1933</td> <td>4.6  </td> <td>36540   </td>
+        </tr>
+    </tbody>
+</table>
+<p>... (5 rows omitted)</p></div></div>
+</div>
+</section>
+<section id="visualize-the-relationship">
+<h3>Visualize the  Relationship<a class="headerlink" href="#visualize-the-relationship" title="Permalink to this heading">#</a></h3>
+<p>Let’s first take a look to see what the relationship between price and quantity is. We would expect to see a downward-sloping relationship between price and quantity; if a product’s price increases, consumers will purchase less, and if a product’s price decreases, then consumers will purchase more.</p>
+<p>We will create a scatterplot between the points.</p>
+<p>[Following image is a scatter plot for demand for oranges]</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">oranges</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s2">&quot;Quantity&quot;</span><span class="p">,</span> <span class="s2">&quot;Price&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Demand Curve for Oranges&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">16</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../_images/3b123f2e4e8ca8823029c00eafd9d5c0e21425f6ef5181f540905bb9cbd5e039.png" src="../../../../_images/3b123f2e4e8ca8823029c00eafd9d5c0e21425f6ef5181f540905bb9cbd5e039.png" />
+</div>
+</div>
+<p>The visualization shows a negative relationship between quantity and price, which is in line with our expectations: as the price increases, fewer consumers will purchase oranges, so the quantity demanded will decrease. This corresponds to a leftward movement along the demand curve. Alternatively, as the price decreases, the quantity sold will increase because consumers want to maximize their purchasing power and buy more oranges; this is shown by a rightward movement along the curve.</p>
+</section>
+<section id="fit-a-polynomial">
+<h3>Fit a Polynomial<a class="headerlink" href="#fit-a-polynomial" title="Permalink to this heading">#</a></h3>
+<p>We will now quantify our demand curve using NumPy’s <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.polyfit.html"><code class="docutils literal notranslate"><span class="pre">np.polyfit</span></code> function</a>. Recall that <code class="docutils literal notranslate"><span class="pre">np.polyfit</span></code> returns an array of size 2, where the first element is the slope and the second is the <span class="math notranslate nohighlight">\(y\)</span>-intercept.</p>
+<p>For this exercise, we will be expressing demand and supply as quantities in terms of price.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">oranges</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Price&quot;</span><span class="p">),</span> <span class="n">oranges</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Quantity&quot;</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-3432.84670093, 53625.8748401 ])
+</pre></div>
+</div>
+</div>
+</div>
+<p>This shows that the demand curve is <span class="math notranslate nohighlight">\(D(P) = -3433 P+ 53626\)</span>. The slope is -3433 and <span class="math notranslate nohighlight">\(y\)</span>-intercept is 53626. That means that as price increases by 1 unit (in this case, $1), quantity decreases by 3433 units (in this case, 3433 tons).</p>
+</section>
+<section id="create-the-demand-curve">
+<h3>Create the Demand Curve<a class="headerlink" href="#create-the-demand-curve" title="Permalink to this heading">#</a></h3>
+<p>We will now use SymPy to write out this demand curve. To do so, we start by creating a symbol <code class="docutils literal notranslate"><span class="pre">P</span></code> that we can use to create the equation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">P</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;P&quot;</span><span class="p">)</span>
+<span class="n">demand</span> <span class="o">=</span> <span class="o">-</span><span class="mf">3432.846</span> <span class="o">*</span> <span class="n">P</span> <span class="o">+</span> <span class="mf">53625.87</span>
+<span class="n">demand</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 53625.87 - 3432.846 P\]</div>
+</div>
+</div>
+</section>
+<section id="create-the-supply-curve">
+<h3>Create the Supply Curve<a class="headerlink" href="#create-the-supply-curve" title="Permalink to this heading">#</a></h3>
+<p>As you’ve learned, the supply curve is the relationship between the price of a good or service and the quantity of that good or service that the seller is willing to supply. It shows how much of a good suppliers are willing and able to supply at different prices. In this case, as the price of the oranges increases, the quantity of oranges that orange manufacturers are willing to supply increases. They capture the producer’s side of market decisions and are upward-sloping.</p>
+<p>Let’s now assume that the supply curve is given by <span class="math notranslate nohighlight">\(S(P) = 4348P\)</span>. (Note that this supply curve is not based on data.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">supply</span> <span class="o">=</span> <span class="mi">4348</span> <span class="o">*</span> <span class="n">P</span>
+<span class="n">supply</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 4348 P\]</div>
+</div>
+</div>
+<p>This means that as the price of oranges increases by 1, the quantity supplied increases by 4348. At a price of 0, no oranges are supplied.</p>
+</section>
+<section id="find-the-price-equilibrium">
+<h3>Find the Price Equilibrium<a class="headerlink" href="#find-the-price-equilibrium" title="Permalink to this heading">#</a></h3>
+<p>With the supply and demand curves known, we can solve the for equilibrium.
+The equilibrium is the point where the supply curve and demand curve intersect, and denotes the price and quantity of the good transacted in the market.</p>
+<p>The equilbrium consists of 2 components: the quantity equilbrium and price equilbrium.
+The price equilibrium is the price at which the supply curve and demand curve intersect: the price of the good that consumers desire to purchase at is equivalent to the price of the good that producers want to sell at. There is no shortage of surplus of the product at this price.</p>
+<p>Let’s find the price equilibrium. To do this, we will use the provided <code class="docutils literal notranslate"><span class="pre">solve</span></code> function. This is a custom function that leverages some SymPy magic and will be provided to you in assignments.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">P_star</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">demand</span><span class="p">,</span> <span class="n">supply</span><span class="p">)</span>
+<span class="n">P_star</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 6.89203590457901\]</div>
+</div>
+</div>
+<p>This means that the price of oranges that consumers want to purchase at and producers want to provide is about $6.89.</p>
+</section>
+<section id="find-the-quantity-equilibrium">
+<h3>Find the Quantity Equilibrium<a class="headerlink" href="#find-the-quantity-equilibrium" title="Permalink to this heading">#</a></h3>
+<p>Similarly, the quantity equilibrium is the quantity of the good that consumers desire to purchase is equivalent to the quantity of the good that producers supply; there is no shortage or surplus of the good at this quantity.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">demand</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">P_star</span><span class="p">)</span>
+<span class="n">supply</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">P_star</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 29966.5721131095\]</div>
+</div>
+</div>
+<p>This means that the number of tons of oranges that consumers want to purchase and producers want to provide in this market is about 29,967 tons of oranges.</p>
+</section>
+<section id="visualize-the-market-equilibrium">
+<h3>Visualize the Market Equilibrium<a class="headerlink" href="#visualize-the-market-equilibrium" title="Permalink to this heading">#</a></h3>
+<p>Now that we have our demand and supply curves and price and quantity equilibria, we can visualize them on a graph to see what they look like.</p>
+<p>There are 2 pre-made functions we will use: <code class="docutils literal notranslate"><span class="pre">plot_equation</span></code> and <code class="docutils literal notranslate"><span class="pre">plot_intercept</span></code>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">plot_equation</span></code>: It takes in the equation we made previously (either demand or supply) and visualizes the equations between the different prices we give it</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plot_intercept</span></code>: It takes in two different equations (demand and supply), finds the point at which the two intersect, and creates a scatter plot of the result</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_equation</span><span class="p">(</span><span class="n">equation</span><span class="p">,</span> <span class="n">price_start</span><span class="p">,</span> <span class="n">price_end</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">plot_prices</span> <span class="o">=</span> <span class="p">[</span><span class="n">price_start</span><span class="p">,</span> <span class="n">price_end</span><span class="p">]</span>
+    <span class="n">plot_quantities</span> <span class="o">=</span> <span class="p">[</span><span class="n">equation</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">equation</span><span class="o">.</span><span class="n">free_symbols</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">plot_prices</span><span class="p">]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">plot_quantities</span><span class="p">,</span> <span class="n">plot_prices</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">)</span>
+    
+<span class="k">def</span> <span class="nf">plot_intercept</span><span class="p">(</span><span class="n">eq1</span><span class="p">,</span> <span class="n">eq2</span><span class="p">):</span>
+    <span class="n">ex</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">eq1</span><span class="o">-</span><span class="n">eq2</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">why</span> <span class="o">=</span> <span class="n">eq1</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">eq1</span><span class="o">.</span><span class="n">free_symbols</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ex</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">([</span><span class="n">why</span><span class="p">],</span> <span class="p">[</span><span class="n">ex</span><span class="p">],</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:orange&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">ex</span><span class="p">,</span> <span class="n">why</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can leverage these functions and the equations we made earlier to create a graph that shows the market equilibrium.</p>
+<p>[Following image is a scatter plot for supply and demand for oranges]</p>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<img alt="../../../../_images/6dbddbbde7d64b656c12534cad5807835e0ec6dd380c69911eb4e0a768875b6b.png" src="../../../../_images/6dbddbbde7d64b656c12534cad5807835e0ec6dd380c69911eb4e0a768875b6b.png" />
+</div>
+</div>
+<p>You can also practice on your own and download additional data sets <a class="reference external" href="http://users.stat.ufl.edu/~winner/datasets.html">here</a>, courtesy of the University of Flordia’s Statistics Department.</p>
+</section>
+</section>
+<section id="movements-away-from-equilibrium">
+<h2>Movements Away from Equilibrium<a class="headerlink" href="#movements-away-from-equilibrium" title="Permalink to this heading">#</a></h2>
+<p>What happens to market equilibrium when either supply or demand shifts due to an exogenous shock?</p>
+<p>Let’s assume that consumers now prefer Green Tea as their hot beverage of choice moreso than before. We have an outward shift of the demand curve - quantity demanded is greater at every price. The market is no longer in equilibrium.</p>
+<p>[Following image is a hand drawn diagram of a shift in demand]</p>
+<figure class="align-default" id="demand-shift">
+<a class="reference internal image-reference" href="docs/jupyter_execute/content/02-supply/fig1-demand.png"><img alt="docs/jupyter_execute/content/02-supply/fig1-demand.png" src="docs/jupyter_execute/content/02-supply/fig1-demand.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-text">A shift in the demand curve</span><a class="headerlink" href="#demand-shift" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>At the same price level (the former equilibrium price), there is a shortage of Green Tea. The amount demanded by consumers exceeds that supplied by producers: <span class="math notranslate nohighlight">\(Q_D &gt; Q_S\)</span>. This is a seller’s market, as the excess quantity demanded gives producers leverage (or market power) over consumers. They are able to increase the price of Green Tea to clear the shortage. As prices increase, consumers who were willing and able to purchase tea at the previous equilibrium price would leave the market, reducing quantity demanded. <span class="math notranslate nohighlight">\(Q_S\)</span> and <span class="math notranslate nohighlight">\(Q_D\)</span> move up along their respective curves until the new equilibrium is achieved where <span class="math notranslate nohighlight">\(Q_S = Q_D\)</span>.</p>
+<p>This dual effect of increasing <span class="math notranslate nohighlight">\(Q_S\)</span> and <span class="math notranslate nohighlight">\(Q_D\)</span> is sometimes referred to as the “invisible hand”. Sans government intervention, it clears out the shortage or surplus in the market, resulting in the eventual convergence to a new equilibrium level of quantity <span class="math notranslate nohighlight">\(Q^*\)</span> and price <span class="math notranslate nohighlight">\(P^*\)</span>.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs/jupyter_execute/content/02-supply"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-the-equilibrium">Finding the Equilibrium</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-preprocessing">Data Preprocessing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-the-relationship">Visualize the  Relationship</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fit-a-polynomial">Fit a Polynomial</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-the-demand-curve">Create the Demand Curve</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-the-supply-curve">Create the Supply Curve</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#find-the-price-equilibrium">Find the Price Equilibrium</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#find-the-quantity-equilibrium">Find the Quantity Equilibrium</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-the-market-equilibrium">Visualize the Market Equilibrium</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#movements-away-from-equilibrium">Movements Away from Equilibrium</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Data 88E Course Staff
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2020.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -69,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Bibliography" href="../references.html" />
-    <link rel="prev" title="Marginal Abatement Cost Curves" href="textbook1.html" />
+    <link rel="prev" title="Marginal Abatement Cost Curves" href="MAC.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -239,7 +239,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Environmental Economics</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="textbook1.html">Marginal Abatement Cost Curves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MAC.html">Marginal Abatement Cost Curves</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Environmental Kuznets Curve Hypothesis</a></li>
 </ul>
 </li>
@@ -460,10 +460,9 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#individual-country-graphs">Individual country graphs</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usa">USA</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#united-states">United States</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#china">China</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#india">India</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#norway">Norway</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#criticism-of-the-environmental-kuznets-curve-hypothesis">Criticism of the Environmental Kuznets Curve Hypothesis</a></li>
@@ -480,25 +479,11 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># HIDDEN</span>
-<span class="c1">#Importing packages</span>
-<span class="kn">from</span> <span class="nn">datascience</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">patches</span>
-<span class="o">%</span><span class="k">matplotlib</span> inline
-</pre></div>
-</div>
-</div>
-</div>
-<section class="tex2jax_ignore mathjax_ignore" id="environmental-kuznets-curve-hypothesis">
+  <section class="tex2jax_ignore mathjax_ignore" id="environmental-kuznets-curve-hypothesis">
 <h1>Environmental Kuznets Curve Hypothesis<a class="headerlink" href="#environmental-kuznets-curve-hypothesis" title="Permalink to this heading">#</a></h1>
 <p>The Environmental Kuznets curve hypothesis that the economic development of a nation is associated with a downward-facing U-shape.  The Y-axis is in terms of the level of environmental degradation (e.g pollution, water quality, deforestation.  The X-axis would be the GDP/capita.  The idea is that the environmental degradation worsens, until a certain level of income, and after which it gets better. In the US this could be seen in terms of air or water quality, where the skies or rivers were very polluted in the 1960s, until the Clean Air Act and Clean Water Act were passed and Air Quality and Water Quality improved.  Another motivation for the downward slope would be the idea that at some point a wealthier society demands environmental improvements.<br />
 However - could this hold for the potentially most important Pollutant C02, the main driver of anthropogenic climate change.  Controversially the impacts of global CO2 pollution are not experienced locally, but are experienced as global effects. So it is not clear whether the Environmental Kuznets hypothesis will hold.</p>
-<p>Today, we’ll look to build an C02 Kuznets curve for an <em>association</em> between the amount of CO2 emitted per capita (t/CO2) and the growing GDP per capita (USD). This dataset is collected from Our World in Data, a great source of all sorts of data types!</p>
+<p>Today, we’ll look to build an C02 Kuznets Curve (as below) for an <em>association</em> between the amount of CO2 emitted per capita (t/CO2) and the growing GDP per capita (USD). This dataset is collected from Our World in Data, a great source of all sorts of data types!</p>
 <p><img alt="kuznets.png" src="../../_images/kuznets.png" /></p>
 <section id="building-our-own-environmental-kuznets-curve">
 <h2>Building our own Environmental Kuznets Curve<a class="headerlink" href="#building-our-own-environmental-kuznets-curve" title="Permalink to this heading">#</a></h2>
@@ -555,23 +540,23 @@ However - could this hold for the potentially most important Pollutant C02, the 
 </div>
 <section id="low-income-countries">
 <h3>Low Income Countries<a class="headerlink" href="#low-income-countries" title="Permalink to this heading">#</a></h3>
-<p>Let’s start by selecting a set of Low Income Countries to graph the movement of CO2 intensity</p>
+<p>Let’s start by selecting a set of Low Income Countries to graph a scatter plot on the movement of CO2 intensity per capita based on GDP per capita.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Low-Income Nations</span>
 <span class="n">LIH_array</span> <span class="o">=</span> <span class="n">make_array</span><span class="p">(</span><span class="s1">&#39;Haiti&#39;</span><span class="p">,</span> <span class="s1">&#39;Afghanistan&#39;</span><span class="p">,</span><span class="s1">&#39;Rwanda&#39;</span><span class="p">,</span><span class="s1">&#39;Pakistan&#39;</span><span class="p">,</span> <span class="s1">&#39;Nicaragua&#39;</span><span class="p">)</span>
 <span class="n">LIH_table</span> <span class="o">=</span> <span class="n">co2_table</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">contained_in</span><span class="p">(</span><span class="n">LIH_array</span><span class="p">))</span>
 <span class="n">LIH_table</span> <span class="o">=</span> <span class="n">LIH_table</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">above_or_equal_to</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Per capita CO2 emissions&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">above_or_equal_to</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">250</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">18</span><span class="p">,</span><span class="mi">12</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">250</span><span class="p">)</span>
 <span class="n">LIH_table</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">,</span> <span class="s1">&#39;Per capita CO2 emissions&#39;</span><span class="p">,</span><span class="n">group</span><span class="o">=</span><span class="s1">&#39;Country&#39;</span><span class="p">)</span> 
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 2000x1500 with 0 Axes&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 4500x3000 with 0 Axes&gt;
 </pre></div>
 </div>
-<img alt="../../_images/b970ae323e2338f11a6b9547ee0cba7d23acbd74cd7fbff903d39d91d10c4340.png" src="../../_images/b970ae323e2338f11a6b9547ee0cba7d23acbd74cd7fbff903d39d91d10c4340.png" />
+<img alt="../../_images/886058d29e2a2de9e50f70e73b73fbcdabdfa5bd04783c64442a62d4161ccaea.png" src="../../_images/886058d29e2a2de9e50f70e73b73fbcdabdfa5bd04783c64442a62d4161ccaea.png" />
 </div>
 </div>
 <p>Note that each dot represents a nation at a given level of emissions and GDP per capita</p>
@@ -585,18 +570,22 @@ However - could this hold for the potentially most important Pollutant C02, the 
 </section>
 <section id="brics">
 <h3>BRICS<a class="headerlink" href="#brics" title="Permalink to this heading">#</a></h3>
-<p>Lets look at the BRICS countries, the rapidly growing upper middle income countries</p>
+<p>Let’s plot a similar scatter plot to examine some of the BRICS countries (rapidly growing upper middle income countries).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">BRICS_array</span> <span class="o">=</span> <span class="n">make_array</span><span class="p">(</span><span class="s1">&#39;Brazil&#39;</span><span class="p">,</span><span class="s1">&#39;Russia&#39;</span><span class="p">,</span><span class="s1">&#39;India&#39;</span><span class="p">,</span><span class="s1">&#39;China&#39;</span><span class="p">,</span><span class="s1">&#39;South Africa&#39;</span><span class="p">)</span>
 <span class="n">BRICS_table</span> <span class="o">=</span> <span class="n">co2_table</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">contained_in</span><span class="p">(</span><span class="n">BRICS_array</span><span class="p">))</span>
 <span class="n">BRICS_table</span> <span class="o">=</span> <span class="n">BRICS_table</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">above_or_equal_to</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Per capita CO2 emissions&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">above_or_equal_to</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">18</span><span class="p">,</span><span class="mi">12</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">250</span><span class="p">)</span>
 <span class="n">BRICS_table</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">,</span> <span class="s1">&#39;Per capita CO2 emissions&#39;</span><span class="p">,</span><span class="n">group</span><span class="o">=</span><span class="s1">&#39;Country&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/06cda8428676b8642c401ac465b27bbc2f9d89846920a025bdaf26e70e15f52a.png" src="../../_images/06cda8428676b8642c401ac465b27bbc2f9d89846920a025bdaf26e70e15f52a.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 4500x3000 with 0 Axes&gt;
+</pre></div>
+</div>
+<img alt="../../_images/911c49538076e28f1ce63d0a99bbe8f3141fe8d072c1ca9df23eab925b3d0334.png" src="../../_images/911c49538076e28f1ce63d0a99bbe8f3141fe8d072c1ca9df23eab925b3d0334.png" />
 </div>
 </div>
 <p>The BRICS nations seem to have a variety of development pathways but all show the linear trend of increasing emissions as wealth grows.</p>
@@ -609,31 +598,39 @@ However - could this hold for the potentially most important Pollutant C02, the 
 </section>
 <section id="individual-country-graphs">
 <h2>Individual country graphs<a class="headerlink" href="#individual-country-graphs" title="Permalink to this heading">#</a></h2>
-<p>Lets look at some individual countries, starting with the US.<br />
-We can plot both total and logged quantities</p>
-<section id="usa">
-<h3>USA<a class="headerlink" href="#usa" title="Permalink to this heading">#</a></h3>
+<p>Let’s look at some individual countries, starting with the United States.<br />
+We can plot both total and logged quantities on a scatter plot:</p>
+<section id="united-states">
+<h3>United States<a class="headerlink" href="#united-states" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">US_table</span> <span class="o">=</span> <span class="n">co2_table</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="s1">&#39;United States&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="mi">1800</span><span class="p">,</span><span class="mi">2018</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#US Example + LOG</span>
+<span class="n">US_table</span> <span class="o">=</span> <span class="n">co2_table</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="s1">&#39;United States&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="mi">1800</span><span class="p">,</span><span class="mi">2018</span><span class="p">))</span>
 <span class="n">US_table</span> <span class="o">=</span> <span class="n">US_table</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="s1">&#39;LogGDP&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">US_table</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">)))</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="s1">&#39;LogCO2&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">US_table</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;Per capita CO2 emissions&#39;</span><span class="p">)))</span>
 <span class="n">US_table</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">,</span> <span class="s1">&#39;Per capita CO2 emissions&#39;</span><span class="p">)</span>
 <span class="n">US_table</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;LogGDP&#39;</span><span class="p">,</span> <span class="s1">&#39;LogCO2&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">18</span><span class="p">,</span><span class="mi">12</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">250</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/4e43f2fd8747a315388b534a8514bc672f827dfdf801817a6fb691c224adfdf3.png" src="../../_images/4e43f2fd8747a315388b534a8514bc672f827dfdf801817a6fb691c224adfdf3.png" />
-<img alt="../../_images/b7aa422664ce1f97802328be5eaed7e47b36097801e65a47a2ab90b252e27954.png" src="../../_images/b7aa422664ce1f97802328be5eaed7e47b36097801e65a47a2ab90b252e27954.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 4500x3000 with 0 Axes&gt;
+</pre></div>
+</div>
+<img alt="../../_images/2472e9f346aa1fff8a67a466365a00720916724224223bdb77decb4fd985385e.png" src="../../_images/2472e9f346aa1fff8a67a466365a00720916724224223bdb77decb4fd985385e.png" />
+<img alt="../../_images/5e95089c03ed55bcb30243e0957eeda205fe0a7abf1096b849a9831c988decf8.png" src="../../_images/5e95089c03ed55bcb30243e0957eeda205fe0a7abf1096b849a9831c988decf8.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 4500x3000 with 0 Axes&gt;
+</pre></div>
+</div>
 </div>
 </div>
 <p><strong>Looks like we have a curve!</strong></p>
 <p>In the case of the US it does indeed look like the C02 per capita does indeed start to deline after about $40,000
-Somewhere around 2000-2004 the CO2 emissions leveled off and then began to decline</p>
+Somewhere around 2000-2004 the CO2 emissions leveled off and then began to decline.</p>
 </section>
 <section id="china">
 <h3>China<a class="headerlink" href="#china" title="Permalink to this heading">#</a></h3>
-<p>In COP26, China has been a large part of the discussion (and emissions). Let’s have a look at their curve!</p>
+<p>In COP26, China has been a large part of the discussion (and emissions). Let’s have a look at their scatter plot!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#China Example + LOG</span>
@@ -641,19 +638,26 @@ Somewhere around 2000-2004 the CO2 emissions leveled off and then began to decli
 <span class="n">NO_table</span> <span class="o">=</span> <span class="n">NO_table</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="s1">&#39;LogGDP&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">NO_table</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">)))</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="s1">&#39;LogCO2&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">NO_table</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;Per capita CO2 emissions&#39;</span><span class="p">)))</span>
 <span class="n">NO_table</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">,</span> <span class="s1">&#39;Per capita CO2 emissions&#39;</span><span class="p">)</span>
 <span class="n">NO_table</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;LogGDP&#39;</span><span class="p">,</span> <span class="s1">&#39;LogCO2&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">18</span><span class="p">,</span><span class="mi">12</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">250</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/c4680b6c2541c5f10ddbab8ba80d5753b4a485b946f673b2d8178799a32d4f0e.png" src="../../_images/c4680b6c2541c5f10ddbab8ba80d5753b4a485b946f673b2d8178799a32d4f0e.png" />
-<img alt="../../_images/beb80ecfcecb589a0851e563240cc3607889210737d4e660ffc41ea33de7dd73.png" src="../../_images/beb80ecfcecb589a0851e563240cc3607889210737d4e660ffc41ea33de7dd73.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 4500x3000 with 0 Axes&gt;
+</pre></div>
+</div>
+<img alt="../../_images/82e01bfe04a84fc82b9fa63a9fbc8c89971eb0ea45f1ca78cfe67adf63f67b9a.png" src="../../_images/82e01bfe04a84fc82b9fa63a9fbc8c89971eb0ea45f1ca78cfe67adf63f67b9a.png" />
+<img alt="../../_images/22385bfefb3cc6ae4d528e75a27958a1df21391437f52b2d9b1743499de29c8d.png" src="../../_images/22385bfefb3cc6ae4d528e75a27958a1df21391437f52b2d9b1743499de29c8d.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 4500x3000 with 0 Axes&gt;
+</pre></div>
+</div>
 </div>
 </div>
 <p>Indeed it appears that China has an inflection point and is starting to level off in the Carbon intensity per capita</p>
 </section>
 <section id="india">
 <h3>India<a class="headerlink" href="#india" title="Permalink to this heading">#</a></h3>
-<p>What about India?</p>
+<p>What about India’s scatter plot?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#India Example + LOG</span>
@@ -661,34 +665,21 @@ Somewhere around 2000-2004 the CO2 emissions leveled off and then began to decli
 <span class="n">NO_table</span> <span class="o">=</span> <span class="n">NO_table</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="s1">&#39;LogGDP&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">NO_table</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">)))</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="s1">&#39;LogCO2&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">NO_table</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;Per capita CO2 emissions&#39;</span><span class="p">)))</span>
 <span class="n">NO_table</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">,</span> <span class="s1">&#39;Per capita CO2 emissions&#39;</span><span class="p">)</span>
 <span class="n">NO_table</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;LogGDP&#39;</span><span class="p">,</span> <span class="s1">&#39;LogCO2&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">18</span><span class="p">,</span><span class="mi">12</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">250</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/5adc9d2aa7d55eaba645b1a1589707ab1b248d7f808a141cbba9eb62a4280d46.png" src="../../_images/5adc9d2aa7d55eaba645b1a1589707ab1b248d7f808a141cbba9eb62a4280d46.png" />
-<img alt="../../_images/68fb17efbdf4963bf2a943d8cce583c55075cdb2c673af9dbc333ea22d0f3c34.png" src="../../_images/68fb17efbdf4963bf2a943d8cce583c55075cdb2c673af9dbc333ea22d0f3c34.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 4500x3000 with 0 Axes&gt;
+</pre></div>
 </div>
-</div>
-</section>
-<section id="norway">
-<h3>Norway<a class="headerlink" href="#norway" title="Permalink to this heading">#</a></h3>
-<p>As I’m Norwegian, I thought it might be cool to see how things are going back home as well:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Norway Example + LOG</span>
-<span class="n">NO_table</span> <span class="o">=</span> <span class="n">co2_table</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="s1">&#39;Norway&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="mi">1800</span><span class="p">,</span><span class="mi">2018</span><span class="p">))</span>
-<span class="n">NO_table</span> <span class="o">=</span> <span class="n">NO_table</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="s1">&#39;LogGDP&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">NO_table</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">)))</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="s1">&#39;LogCO2&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">NO_table</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;Per capita CO2 emissions&#39;</span><span class="p">)))</span>
-<span class="n">NO_table</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">,</span> <span class="s1">&#39;Per capita CO2 emissions&#39;</span><span class="p">)</span>
-<span class="n">NO_table</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;LogGDP&#39;</span><span class="p">,</span> <span class="s1">&#39;LogCO2&#39;</span><span class="p">)</span>
+<img alt="../../_images/8c8f88467026b798554e2e5f7e409a1faf004397b3f614fa3affbfa91e43653e.png" src="../../_images/8c8f88467026b798554e2e5f7e409a1faf004397b3f614fa3affbfa91e43653e.png" />
+<img alt="../../_images/1b9d2fcd687d9919fbb461de9c7f5355335d6de91d7180fee3b208c720e5f64c.png" src="../../_images/1b9d2fcd687d9919fbb461de9c7f5355335d6de91d7180fee3b208c720e5f64c.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 4500x3000 with 0 Axes&gt;
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/eb52d87a10bfd958172066b06c4593f873b96c90b7795443707718f175749bd4.png" src="../../_images/eb52d87a10bfd958172066b06c4593f873b96c90b7795443707718f175749bd4.png" />
-<img alt="../../_images/1c9e1fec88c3738aba3bdb6856b787ea3092cd4b2d4dd92d7f2437a24c6177c6.png" src="../../_images/1c9e1fec88c3738aba3bdb6856b787ea3092cd4b2d4dd92d7f2437a24c6177c6.png" />
 </div>
-</div>
-<p>Turns out we’re ahead of the US in CO2 emissions per capita, but there’s still a long way to go until our development resembles a full Kuznets curve. However, it certainly looks like something! An almost vertical linear growth in terms of per capita CO2 emissions in the early economic stages stagnated into a period of fluctuations. As of now, it looks like it’s heading in a downward trend.</p>
 <p>Let’s look at a set of other High Income Nations:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -696,26 +687,39 @@ Somewhere around 2000-2004 the CO2 emissions leveled off and then began to decli
 <span class="n">HIN_table</span> <span class="o">=</span> <span class="n">co2_table</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">contained_in</span><span class="p">(</span><span class="n">HIN_array</span><span class="p">))</span>
 <span class="n">HIN_table</span> <span class="o">=</span> <span class="n">HIN_table</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">above_or_equal_to</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Per capita CO2 emissions&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">above_or_equal_to</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
 <span class="n">HIN_table</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">,</span> <span class="s1">&#39;Per capita CO2 emissions&#39;</span><span class="p">,</span><span class="n">group</span><span class="o">=</span><span class="s1">&#39;Country&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">18</span><span class="p">,</span><span class="mi">12</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">250</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/da88824885fb013a81f2d1c56bd536cc5556556a538a0a405435175eee2fca5f.png" src="../../_images/da88824885fb013a81f2d1c56bd536cc5556556a538a0a405435175eee2fca5f.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 4500x3000 with 0 Axes&gt;
+</pre></div>
+</div>
+<img alt="../../_images/5b8644169d2a112c62e0925f52aa3c383f393020a4108a6d81546d66d7bee259.png" src="../../_images/5b8644169d2a112c62e0925f52aa3c383f393020a4108a6d81546d66d7bee259.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 4500x3000 with 0 Axes&gt;
+</pre></div>
 </div>
 </div>
-<p>As in the US and Norway, these nations have experienced a boom, stagnation, and now to some extent a downward trend. Let’s finally plot all the previously observed nations together:</p>
+</div>
+<p>As in the US and Norway, these nations have experienced a boom, stagnation, and now to some extent a downward trend. Let’s finally plot all the previously observed nations together in one singular scatter plot:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ALL_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">LIH_array</span><span class="p">,</span><span class="n">BRICS_array</span><span class="p">)),</span> <span class="n">HIN_array</span><span class="p">)</span>
 <span class="n">ALL_table</span> <span class="o">=</span> <span class="n">co2_table</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">contained_in</span><span class="p">(</span><span class="n">ALL_array</span><span class="p">))</span>
 <span class="n">ALL_table</span> <span class="o">=</span> <span class="n">ALL_table</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">above_or_equal_to</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Per capita CO2 emissions&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">above_or_equal_to</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
 <span class="n">ALL_table</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">,</span> <span class="s1">&#39;Per capita CO2 emissions&#39;</span><span class="p">,</span><span class="n">group</span><span class="o">=</span><span class="s1">&#39;Country&#39;</span><span class="p">)</span>
-<span class="c1">#What do we see? Can we spot the Environmental Kuznets Curve?</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">18</span><span class="p">,</span><span class="mi">12</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">250</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/c0005f55a4e74aa74995d9d3dd22b1f2fe6f4c46008306011baeb7cc971a75f7.png" src="../../_images/c0005f55a4e74aa74995d9d3dd22b1f2fe6f4c46008306011baeb7cc971a75f7.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 4500x3000 with 0 Axes&gt;
+</pre></div>
+</div>
+<img alt="../../_images/9cc095803daa7a9217c74d08bb3dbf31e37526c642c78900272dd92b934a8a18.png" src="../../_images/9cc095803daa7a9217c74d08bb3dbf31e37526c642c78900272dd92b934a8a18.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 4500x3000 with 0 Axes&gt;
+</pre></div>
+</div>
 </div>
 </div>
 <p>Here we see evidence for an Environmental Kuznets Curve.</p>
@@ -789,7 +793,7 @@ Somewhere around 2000-2004 the CO2 emissions leveled off and then began to decli
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="textbook1.html"
+       href="MAC.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
@@ -827,10 +831,9 @@ Somewhere around 2000-2004 the CO2 emissions leveled off and then began to decli
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#individual-country-graphs">Individual country graphs</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usa">USA</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#united-states">United States</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#china">China</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#india">India</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#norway">Norway</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#criticism-of-the-environmental-kuznets-curve-hypothesis">Criticism of the Environmental Kuznets Curve Hypothesis</a></li>

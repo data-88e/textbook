@@ -241,7 +241,6 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../12-environmental/index.html">Environmental Economics</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../12-environmental/textbook1.html">Marginal Abatement Cost Curves</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../12-environmental/KuznetsHypothesis-Copy1.html">Environmental Kuznets Curve Hypothesis</a></li>
 </ul>
 </li>
@@ -511,7 +510,7 @@ y = \alpha + \beta_1 x_{1} + \beta_2 x_{2} + \epsilon
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([9.95595982e+00, 4.30179178e-01, 8.37569589e-03])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([  9.95595982e+00,   4.30179178e-01,   8.37569589e-03])
 </pre></div>
 </div>
 </div>
@@ -540,10 +539,10 @@ y = \alpha + \beta_1 x_{1} + \beta_2 x_{2} + \epsilon
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   388.5</td> 
 </tr>
 <tr>
-  <th>Date:</th>             <td>Sun, 19 Jul 2020</td> <th>  Prob (F-statistic):</th> <td>2.12e-158</td>
+  <th>Date:</th>             <td>Thu, 18 Jan 2024</td> <th>  Prob (F-statistic):</th> <td>2.12e-158</td>
 </tr>
 <tr>
-  <th>Time:</th>                 <td>14:07:49</td>     <th>  Log-Likelihood:    </th> <td> -7421.0</td> 
+  <th>Time:</th>                 <td>13:38:46</td>     <th>  Log-Likelihood:    </th> <td> -7421.0</td> 
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>  5413</td>      <th>  AIC:               </th> <td>1.485e+04</td>
@@ -585,7 +584,7 @@ y = \alpha + \beta_1 x_{1} + \beta_2 x_{2} + \epsilon
 <tr>
   <th>Kurtosis:</th>       <td>14.415</td>  <th>  Cond. No.          </th> <td>    155.</td> 
 </tr>
-</table><br/><br/>Warnings:<br/>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</div></div>
+</table><br/><br/>Notes:<br/>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</div></div>
 </div>
 <p>Here <span class="math notranslate nohighlight">\(\hat{\beta}_1\)</span> is 0.43, compared to 0.72 from the earlier biased (single variable) regression. That’s huge! This implies that when we control for a person’s ability (i.e. we get rid of that source of bias), we only see that on average going to college is associated with a 43% increase in earnings instead of 72%. Furthermore, looking at the 95% confidence interval for <span class="math notranslate nohighlight">\(\hat{\beta}_2\)</span>, we see that it does not contain 0, which would imply that AFQT score has a strong non-zero association with earnings.</p>
 <p>These observations validate our claim that AFQT was probably an omitted variable causing <span class="math notranslate nohighlight">\(\hat{\beta}_1\)</span> to be biased. When interpreting <span class="math notranslate nohighlight">\(\hat{\beta}\)</span> coefficients, you should always be mindful of potential sources of bias that could make your coefficients misleading and not useful from an econometric context.</p>
@@ -595,19 +594,22 @@ y = \alpha + \beta_1 x_{1} + \beta_2 x_{2} + \epsilon
 <p>The 3D plots below show us our variables of interest and the regression plane from two different angles.</p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<img alt="../../_images/9a7de3a5ddd76b8d543a348ebe9ef89450527f97a7351807bbd01d7a375d25fd.png" src="../../_images/9a7de3a5ddd76b8d543a348ebe9ef89450527f97a7351807bbd01d7a375d25fd.png" />
+<img alt="../../_images/0a7682d40c05b74e56f93105ed15c1ab3755760ae232ddd1bfa280bd3056a0dd.png" src="../../_images/0a7682d40c05b74e56f93105ed15c1ab3755760ae232ddd1bfa280bd3056a0dd.png" />
 </div>
 </div>
+<p>Scatter plot in 3D showing data points related to AFQT, college, and log_earn_1999.</p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<img alt="../../_images/14398940bd939be08b5a708472c440de18636e7e00c0adbf896867f2a4049ecd.png" src="../../_images/14398940bd939be08b5a708472c440de18636e7e00c0adbf896867f2a4049ecd.png" />
+<img alt="../../_images/c0f9494e4f2f037145d421bd8271abf189f5b62c0e367daddc8966408c16887b.png" src="../../_images/c0f9494e4f2f037145d421bd8271abf189f5b62c0e367daddc8966408c16887b.png" />
 </div>
 </div>
+<p>Scatter plot in 3D with a visible regression plane. Data points are related to AFQT, college, and log_earn_1999. Regression plane represented by a surface.</p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<img alt="../../_images/e882d35573409a312f37b284b47b5aff33d6171876d4d1b1cfe27f89bfb635ba.png" src="../../_images/e882d35573409a312f37b284b47b5aff33d6171876d4d1b1cfe27f89bfb635ba.png" />
+<img alt="../../_images/e4e2349346d6566c43e51dea84be9fe93fb296a42da0de7cffb98815a69db3f0.png" src="../../_images/e4e2349346d6566c43e51dea84be9fe93fb296a42da0de7cffb98815a69db3f0.png" />
 </div>
 </div>
+<p>Scatter plot in 3D with a rotated view of data points related to college, AFQT, and log_earn_1999. Regression plane represented by a semi-transparent surface.</p>
 <p>The regression plane, instead of the regression line, represents the values for log earnings that the regression model would predict for any given college and AFQT input. It’s a plane now because there are two possible inputs, as opposed to one.</p>
 </section>
 </section>

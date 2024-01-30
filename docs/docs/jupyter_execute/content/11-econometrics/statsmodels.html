@@ -1,0 +1,681 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Using statsmodels for Regression &#8212; Data 88E: Economic Models Textbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+
+  
+  <link href="../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../_static/copybutton.js"></script>
+    <script src="../../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../_static/togglebutton.js"></script>
+    <script src="../../../../_static/plotly.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/jupyter_execute/content/11-econometrics/statsmodels';</script>
+    <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../../../content/intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../_static/econ-models.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../../../_static/econ-models.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../../content/intro.html">
+                    <a href="https://data-88e.github.io"> Data 88E: Economic Models </a>
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../../content/00-intro/index.html">Introduction</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../content/01-demand/index.html">Demand and Elasticities</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/01-demand/01-demand.html">Demand Curves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/01-demand/02-example.html">An Empirical Demand Curve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/01-demand/03-log-log.html">Log-log and Semi-log Demand Curves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/01-demand/04-elasticity.html">Elasticity</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../content/02-supply/index.html">Supply and Market Equilibrium</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/02-supply/01-supply.html">The Supply Curve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/02-supply/02-eep147-example.html">An Empirical Example from EEP 147</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/02-supply/03-sympy.html">SymPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/02-supply/04-market-equilibria.html">Market Equilibria</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../content/03-public/index.html">Public Economics</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/03-public/taxes-subsidies.html">Taxes and Subsidies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/03-public/surplus.html">Surplus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/03-public/govt-intervention.html">Other Forms of Government Intervention</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../content/04-production/index.html">Production</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/04-production/production.html">Production and Cobb-Douglas Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/04-production/shifts.html">Analyzing Shifts in <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(\alpha\)</span></a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../content/05-utility/index.html">Utility</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/05-utility/utility.html">Utility Functions and Indifference Curves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/05-utility/budget-constraints.html">Budget Constraints and Utility Maximization</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes">LaTeX</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../content/06-inequality/index.html">Inequality</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/06-inequality/inequality.html">Measurements of Inequality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/06-inequality/historical-inequality.html">Income Inequality Historically</a></li>
+
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../content/07-game-theory/index.html">Game Theory</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/07-game-theory/expected-utility.html">Expected Utility Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/07-game-theory/equilibria-oligopolies.html">Equilibria &amp; Oligopolies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/07-game-theory/cournot.html">Cournot Competition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/07-game-theory/bertrand.html">Bertrand Competition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/07-game-theory/python-classes.html">Python Classes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../content/08-development/index.html">Development</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../content/09-macro/index.html">Macroeconomic Policy</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/09-macro/Indicators.html">Macroeconomic Indicators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/09-macro/CentralBanks.html">Central Banks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/09-macro/is_curve.html">IS-Curve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/09-macro/phillips_curve.html">Phillips Curve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/09-macro/fiscal_policy.html">Fiscal Policy</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../content/10-finance/index.html">Finance</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/10-finance/value-interest.html">Present Value, Future Value, and Interest Rates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/10-finance/options.html">Options</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../content/11-econometrics/index.html">Econometrics</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/11-econometrics/single-variable.html">Single Variable Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/11-econometrics/statsmodels.html">Using <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> for Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/11-econometrics/multivariable.html">Multivariable Regression and Bias</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/11-econometrics/reading-econ-papers.html">Reading Economics Papers</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../content/12-environmental/index.html">Environmental Economics</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/12-environmental/MAC.html">Marginal Abatement Cost Curves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/12-environmental/KuznetsHypothesis-Copy1.html">Environmental Kuznets Curve Hypothesis</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../content/references.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/data-88e/textbook/master?urlpath=tree/docs/jupyter_execute/content/11-econometrics/statsmodels.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/data-88e/textbook&urlpath=tree/textbook/docs/jupyter_execute/content/11-econometrics/statsmodels.ipynb&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+<a href="https://github.com/data-88e/textbook" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../../_sources/docs/jupyter_execute/content/11-econometrics/statsmodels.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Using statsmodels for Regression</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="using-statsmodels-for-regression">
+<h1>Using <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> for Regression<a class="headerlink" href="#using-statsmodels-for-regression" title="Permalink to this heading">#</a></h1>
+<p>In the previous section, we used functions in NumPy and concepts taught in Data 8 to perform single variable regressions. It turns out that there are (several) Python packages that can perform these regressions for us and which extend nicely into the types of regressions we will cover in the next few sections. In this section, we introduce <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> for performing single variable regressions, a foundation upon which we will build our discussion of multivariable regression.</p>
+<p><code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> is a popular Python package used to create and analyze various statistical models. To create a linear regression model in <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code>, which is generally import as <code class="docutils literal notranslate"><span class="pre">sm</span></code>, we use the following skeleton code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">features</span><span class="p">)</span><span class="o">.</span><span class="n">values</span>            <span class="c1"># Separate features (independent variables) </span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">target</span><span class="p">)</span><span class="o">.</span><span class="n">values</span>              <span class="c1"># Separate target (outcome variable)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>       <span class="c1"># Initialize the OLS regression model</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>                        <span class="c1"># Fit the regression model and save it to a variable</span>
+<span class="n">result</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>                            <span class="c1"># Display a summary of results</span>
+</pre></div>
+</div>
+<p><em>You must manually add a constant column of all 1’s to your independent features. <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> will not do this for you and if you fail to do this you will perform a regression without an intercept <span class="math notranslate nohighlight">\(\alpha\)</span> term. This is performed in the third line by calling <code class="docutils literal notranslate"><span class="pre">sm.add_constant</span></code> on <code class="docutils literal notranslate"><span class="pre">x</span></code>.</em> Also note that we call <code class="docutils literal notranslate"><span class="pre">.values</span></code> after we select the columns in <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>; this gives us <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> arrays containing the corresponding values, since <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> can’t process <code class="docutils literal notranslate"><span class="pre">Table</span></code>s.</p>
+<p>Recall the <code class="docutils literal notranslate"><span class="pre">cps</span></code> dataset we used in the previous section:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cps</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>state</th> <th>age</th> <th>wagesal</th> <th>imm</th> <th>hispanic</th> <th>black</th> <th>asian</th> <th>educ</th> <th>wage</th> <th>logwage</th> <th>female</th> <th>fedwkr</th> <th>statewkr</th> <th>localwkr</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>11   </td> <td>44  </td> <td>18000  </td> <td>0   </td> <td>0       </td> <td>0    </td> <td>0    </td> <td>14  </td> <td>9.10931</td> <td>2.2093 </td> <td>1     </td> <td>1     </td> <td>0       </td> <td>0       </td>
+        </tr>
+        <tr>
+            <td>11   </td> <td>39  </td> <td>18000  </td> <td>0   </td> <td>0       </td> <td>0    </td> <td>0    </td> <td>14  </td> <td>18     </td> <td>2.89037</td> <td>0     </td> <td>0     </td> <td>0       </td> <td>0       </td>
+        </tr>
+        <tr>
+            <td>11   </td> <td>39  </td> <td>35600  </td> <td>0   </td> <td>0       </td> <td>0    </td> <td>0    </td> <td>12  </td> <td>17.1154</td> <td>2.83998</td> <td>0     </td> <td>0     </td> <td>0       </td> <td>1       </td>
+        </tr>
+        <tr>
+            <td>11   </td> <td>39  </td> <td>8000   </td> <td>0   </td> <td>0       </td> <td>0    </td> <td>0    </td> <td>14  </td> <td>5.12821</td> <td>1.63476</td> <td>1     </td> <td>0     </td> <td>0       </td> <td>0       </td>
+        </tr>
+        <tr>
+            <td>11   </td> <td>39  </td> <td>100000 </td> <td>0   </td> <td>0       </td> <td>0    </td> <td>0    </td> <td>16  </td> <td>38.4615</td> <td>3.64966</td> <td>0     </td> <td>1     </td> <td>0       </td> <td>0       </td>
+        </tr>
+        <tr>
+            <td>11   </td> <td>43  </td> <td>25000  </td> <td>0   </td> <td>0       </td> <td>0    </td> <td>0    </td> <td>12  </td> <td>10     </td> <td>2.30259</td> <td>0     </td> <td>0     </td> <td>0       </td> <td>0       </td>
+        </tr>
+        <tr>
+            <td>11   </td> <td>38  </td> <td>25000  </td> <td>0   </td> <td>0       </td> <td>0    </td> <td>0    </td> <td>16  </td> <td>27.1739</td> <td>3.30226</td> <td>1     </td> <td>0     </td> <td>0       </td> <td>0       </td>
+        </tr>
+        <tr>
+            <td>11   </td> <td>39  </td> <td>26000  </td> <td>0   </td> <td>0       </td> <td>0    </td> <td>0    </td> <td>13  </td> <td>16.6667</td> <td>2.81341</td> <td>1     </td> <td>0     </td> <td>0       </td> <td>0       </td>
+        </tr>
+        <tr>
+            <td>11   </td> <td>39  </td> <td>52000  </td> <td>0   </td> <td>0       </td> <td>0    </td> <td>0    </td> <td>16  </td> <td>16.6667</td> <td>2.81341</td> <td>0     </td> <td>0     </td> <td>0       </td> <td>0       </td>
+        </tr>
+        <tr>
+            <td>11   </td> <td>37  </td> <td>4500   </td> <td>0   </td> <td>0       </td> <td>0    </td> <td>0    </td> <td>13  </td> <td>4      </td> <td>1.38629</td> <td>1     </td> <td>0     </td> <td>0       </td> <td>0       </td>
+        </tr>
+    </tbody>
+</table>
+<p>... (21897 rows omitted)</p></div></div>
+</div>
+<p>Let’s use <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> to perform our regression of <code class="docutils literal notranslate"><span class="pre">logwage</span></code> on <code class="docutils literal notranslate"><span class="pre">educ</span></code> again.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">cps</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;educ&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">values</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">cps</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;logwage&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">values</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="n">results</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="simpletable">
+<caption>OLS Regression Results</caption>
+<tr>
+  <th>Dep. Variable:</th>            <td>y</td>        <th>  R-squared:         </th> <td>   0.204</td> 
+</tr>
+<tr>
+  <th>Model:</th>                   <td>OLS</td>       <th>  Adj. R-squared:    </th> <td>   0.204</td> 
+</tr>
+<tr>
+  <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   5600.</td> 
+</tr>
+<tr>
+  <th>Date:</th>             <td>Wed, 10 Jun 2020</td> <th>  Prob (F-statistic):</th>  <td>  0.00</td>  
+</tr>
+<tr>
+  <th>Time:</th>                 <td>10:43:19</td>     <th>  Log-Likelihood:    </th> <td> -20513.</td> 
+</tr>
+<tr>
+  <th>No. Observations:</th>      <td> 21907</td>      <th>  AIC:               </th> <td>4.103e+04</td>
+</tr>
+<tr>
+  <th>Df Residuals:</th>          <td> 21905</td>      <th>  BIC:               </th> <td>4.105e+04</td>
+</tr>
+<tr>
+  <th>Df Model:</th>              <td>     1</td>      <th>                     </th>     <td> </td>    
+</tr>
+<tr>
+  <th>Covariance Type:</th>      <td>nonrobust</td>    <th>                     </th>     <td> </td>    
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+    <td></td>       <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>const</th> <td>    1.4723</td> <td>    0.021</td> <td>   71.483</td> <td> 0.000</td> <td>    1.432</td> <td>    1.513</td>
+</tr>
+<tr>
+  <th>x1</th>    <td>    0.1078</td> <td>    0.001</td> <td>   74.831</td> <td> 0.000</td> <td>    0.105</td> <td>    0.111</td>
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+  <th>Omnibus:</th>       <td>989.972</td> <th>  Durbin-Watson:     </th> <td>   1.873</td>
+</tr>
+<tr>
+  <th>Prob(Omnibus):</th> <td> 0.000</td>  <th>  Jarque-Bera (JB):  </th> <td>2802.765</td>
+</tr>
+<tr>
+  <th>Skew:</th>          <td> 0.201</td>  <th>  Prob(JB):          </th> <td>    0.00</td>
+</tr>
+<tr>
+  <th>Kurtosis:</th>      <td> 4.706</td>  <th>  Cond. No.          </th> <td>    70.9</td>
+</tr>
+</table><br/><br/>Warnings:<br/>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</div></div>
+</div>
+<p>The summary above provides us with a lot of information. Let’s start with the most important pieces: the values of <span class="math notranslate nohighlight">\(\hat{\alpha}\)</span> and <span class="math notranslate nohighlight">\(\hat{\beta}\)</span>. The middle table contains these values for us as <code class="docutils literal notranslate"><span class="pre">const</span></code> and <code class="docutils literal notranslate"><span class="pre">x1</span></code>’s <code class="docutils literal notranslate"><span class="pre">coef</span></code> values: we have <span class="math notranslate nohighlight">\(\hat{\alpha}\)</span> is 1.4723 and <span class="math notranslate nohighlight">\(\hat{\beta}\)</span> is 0.1078.</p>
+<p>Recall also our discussion of uncertainty in <span class="math notranslate nohighlight">\(\hat{\beta}\)</span>. <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> provides us with our calculated standard error in the <code class="docutils literal notranslate"><span class="pre">std</span> <span class="pre">err</span></code> column, and we see that the standard error of <span class="math notranslate nohighlight">\(\hat{\beta}\)</span> is 0.001, matching our empirical estimate via bootstrapping from the last section. We can also see the 95% confidence interval that we calculated in the two rightmost columns.</p>
+<p><img alt="" src="docs/jupyter_execute/content/11-econometrics/statsmodels-coeffs.png" /></p>
+<p>Earlier we said that <span class="math notranslate nohighlight">\(\hat{\beta}\)</span> has some normal distribution with mean <span class="math notranslate nohighlight">\(\beta\)</span> if certain assumptions are satisfied. We now can see that the standard deviation of that normal distribution is the standard error of <span class="math notranslate nohighlight">\(\hat{\beta}\)</span>. We can also use this to test a null hypothesis that <span class="math notranslate nohighlight">\(\beta = 0\)</span>. To do so, construct a <a class="reference external" href="https://en.wikipedia.org/wiki/T-statistic">t-statistic</a> (which <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> does for you) that indicates how many standard deviations away <span class="math notranslate nohighlight">\(\hat{\beta}\)</span> is from 0, assuming that the distribution of <span class="math notranslate nohighlight">\(\hat{\beta}\)</span> is in fact centered at 0.</p>
+<p>We can see that <span class="math notranslate nohighlight">\(\hat{\beta}\)</span> is 74 standard deviations away from the null hypothesis mean of 0, which is an enormous number. How likely do you think it is to draw a random number roughly 74 standard deviations away from the mean, assuming a standard normal distribution? Essentially 0. This is strong evidence that the mean of the distribution (the mean of <span class="math notranslate nohighlight">\(\hat{\beta}\)</span> is the true value <span class="math notranslate nohighlight">\(\beta\)</span>) is not 0. Accompanying the t-statistic is a p-value that indicates the statistical significance.</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs/jupyter_execute/content/11-econometrics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Data 88E Course Staff
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2020.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

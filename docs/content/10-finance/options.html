@@ -241,7 +241,6 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../12-environmental/index.html">Environmental Economics</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../12-environmental/textbook1.html">Marginal Abatement Cost Curves</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../12-environmental/KuznetsHypothesis-Copy1.html">Environmental Kuznets Curve Hypothesis</a></li>
 </ul>
 </li>
@@ -491,6 +490,7 @@ document.write(`
 <p>One way to achieve this is to buy “insurance” on your stock. You might want an insurance contract that will cover losses if the value of your stock goes below a certain number. This type of contract exists, and they are called <em>puts</em>.</p>
 <p>The simplest way to think about a put is that it is a contract that pays you a dollar for each dollar that your stock does below some specified number. So for instance, if you own a stock that trades at $110, and you don’t want to lose more than $10 in value from owning the stock, you might buy a put with a <em>strike</em> of $100. The strike of the put is this pre-specified number below which you don’t want to lose money. Now, let’s say your stock starts going down in value. Going down from $110 to $100, there’s nothing that your put can do. But starting at $100, each dollar that your stock goes down in value, your put pays you one dollar. Therefore, when you own this put <em>in combination</em> with the stock, the overall value of this combination cannot go below $100.</p>
 <p>Let’s call this combination of stock and put a <em>portfolio</em>. Your portfolio’s value depends on the value of the stock, and the portfolio’s value looks like this:</p>
+<p>[Figure Payoff Diagram - Value on Y-axis, price of underlying stock on X-axis, line is flat then upward sloping ]</p>
 <p><img alt="title" src="../../_images/figure1.png" /></p>
 <p>Now that we have the basic intuition down, let’s get more specific. While a put behaves like insurance, the way a put is technically defined is a bit different. A put contract says the following:</p>
 <blockquote>
@@ -512,15 +512,21 @@ document.write(`
 <p>Similarly, if the stock is trading above $100, the put has no payoff. If you were to buy the stock at its price and use your put to sell at $100, you would lose money. This is because it cost you more than $100 to buy the stock, but you only sold for $100. Since you are never actually obligated to use a put, you would not use it in this case, and it has 0 payoff.</p>
 <p><strong>Notice that all of this occured without you ever owning the stock to begin with.</strong></p>
 <p>Now let’s plot the payoff of this put with a strike of $100, given the price of the underlying stock.</p>
+<p>[Figure Payoff Diagram - Value on Y-axis, price of underlying stock on X-axis, line is downward sloping then flat at zero ]</p>
 <p><img alt="title" src="../../_images/figure2.png" /></p>
 <p>The payoff of a call works similarly. Remember that a call gives you the right to buy a stock at a certain price. So if you own a call with a strike of $100, and the underlying stock is trading at $110, the call has a payoff of $10. This is because you could use your call to buy the stock for $100, and then sell it for $110, since this is the market price of the stock. And again, if the stock is trading below $100 the call has no payoff. This is because if you were to use your call to purchase the stock at $100, you could only sell it for less than $100, thus losing money. A rational investor would never use the call for this, and therefore it has no payoff. Below is the payoff diagram for a call with a strike of $100.</p>
+<p>[Figure Payoff Diagram - Value on Y-axis, price of underlying stock on X-axis, line is flat at zero then upward sloping ]</p>
 <p><img alt="title" src="../../_images/figure3.png" /></p>
 <p>And quickly, here are the payoff diagrams for being long and short a stock, which should appear trivial by now. These diagrams ignore the price of the stock when you bought/shorted it. In other words, if you purchased the stock at $100, and sold at $100, the diagram implies a payoff of $100. This is to be consistent with the above diagrams, in which we implicitly assumed that there is no cost in buying an option, a claim which we will examine below.</p>
+<p>[Figure Payoff Diagram - Value on Y-axis, price of underlying stock on X-axis, line is upward sloping ]</p>
 <p><img alt="title" src="../../_images/figure4.png" /></p>
+<p>[Figure Payoff Diagram - Value on Y-axis, price of underlying stock on X-axis, line is downward sloping ]</p>
 <p><img alt="title" src="../../_images/figure5.png" /></p>
 <p>Now, we see how we can generate the payoff diagram for the portfolio of a stock and a put from above. The diagram for that portfolio is copied below.</p>
+<p>[Figure Payoff Diagram - Value on Y-axis, price of underlying stock on X-axis, line is flat and then upward sloping ]</p>
 <p><img alt="title" src="../../_images/figure1.png" /></p>
 <p>Notice how we can generate this by adding the payoff diagrams of a stock and a put. We have shown that the payoff diagram of a portfolio can be represented as the sum of payoff diagrams of its components.</p>
+<p>[Figure Payoff Diagram - Value on Y-axis, price of underlying stock on X-axis, there are lines for Put, Stock and Portfolio overlaid ]</p>
 <p><img alt="title" src="../../_images/figure6.png" /></p>
 </section>
 <section id="pricing-options">
@@ -898,7 +904,8 @@ Requirement already satisfied: idna&lt;3,&gt;=2.5 in /Users/rohanjha/opt/anacond
 <p>7052 rows × 6 columns</p>
 </div></div></div>
 </div>
-<p>Let’s plot the graph for the closing price of S&amp;P500.</p>
+<p>Let’s plot the graph for the closing price of S&amp;P500.’</p>
+<p>[Figure returns for S&amp;P 500 stock index - Value on Y-axis, Time on X-axis ]</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Close&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;purple&quot;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span> <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;S&amp;P500 Returns&#39;</span><span class="p">);</span>
@@ -910,6 +917,7 @@ Requirement already satisfied: idna&lt;3,&gt;=2.5 in /Users/rohanjha/opt/anacond
 </div>
 </div>
 <p>The graph below shows the returns from S&amp;P500 as a function of time over the previous time interval.</p>
+<p>[Figure Returns - Value of Returns on Y-axis, time on X-axis]</p>
 <p><img alt="title" src="../../_images/figure9.png" /></p>
 </section>
 </section>
