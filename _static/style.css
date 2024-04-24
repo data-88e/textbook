@@ -13,3 +13,7 @@ table.payoff-matrix td {
 b, strong {
     font-weight: 900;
 }
+
+html[data-theme=light] {
+    --pst-color-link-hover: #0b6c3b;
+}
