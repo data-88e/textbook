@@ -1,6 +1,5 @@
 # Requirements for the demo notebooks
 # Useful for MyBinder configuration
-setuptools<58.0.0
 pandas
 numpy
 datascience
