@@ -1,0 +1,889 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Environmental Kuznets Curve Hypothesis &#8212; Data 88E: Economic Models Textbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../../../../../../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../../../../../../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+
+  
+  <link href="../../../../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/style.css?v=9f39b2ca" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="../../../../../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="../../../../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+
+    <script src="../../../../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/jupyter_execute/docs/jupyter_execute/content/12-environmental/KuznetsHypothesis-Copy1';</script>
+    <script src="../../../../../../_static/plotly.min.js?v=7525fa7a"></script>
+    <link rel="icon" href="../../../../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../../../../content/intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../../../_static/econ-models.png" class="logo__image only-light" alt="Data 88E: Economic Models Textbook - Home"/>
+    <script>document.write(`<img src="../../../../../../_static/econ-models.png" class="logo__image only-dark" alt="Data 88E: Economic Models Textbook - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../../../../content/intro.html">
+                    <a href="https://data-88e.github.io"> Data 88E: Economic Models </a>
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../content/00-intro/index.html">Introduction</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../../content/01-demand/index.html">Demand and Elasticities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../content/01-demand/01-demand.html">Demand Curves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../content/01-demand/02-example.html">An Empirical Demand Curve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../content/01-demand/03-log-log.html">Log-log and Semi-log Demand Curves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../content/01-demand/04-elasticity.html">Elasticity</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../../content/02-supply/index.html">Supply and Market Equilibrium</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../content/02-supply/01-supply.html">The Supply Curve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../content/02-supply/02-eep147-example.html">An Empirical Example from EEP 147</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../content/02-supply/03-sympy.html">SymPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../content/02-supply/04-market-equilibria.html">Market Equilibria</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../../content/03-public/index.html">Public Economics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../content/03-public/taxes-subsidies.html">Taxes and Subsidies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../content/03-public/surplus.html">Surplus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../content/03-public/govt-intervention.html">Other Forms of Government Intervention</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../../content/04-production/index.html">Production</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../content/04-production/production.html">Production and Cobb-Douglas Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../content/04-production/shifts.html">Analyzing Shifts in <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(\alpha\)</span></a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../../content/05-utility/index.html">Utility</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../content/05-utility/utility.html">Utility Functions and Indifference Curves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../content/05-utility/budget-constraints.html">Budget Constraints and Utility Maximization</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes">LaTeX</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../../content/06-inequality/index.html">Inequality</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../content/06-inequality/inequality.html">Measurements of Inequality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../content/06-inequality/historical-inequality.html">Income Inequality Historically</a></li>
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../../content/07-game-theory/index.html">Game Theory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../content/07-game-theory/expected-utility.html">Expected Utility Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../content/07-game-theory/equilibria-oligopolies.html">Equilibria &amp; Oligopolies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../content/07-game-theory/cournot.html">Cournot Competition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../content/07-game-theory/bertrand.html">Bertrand Competition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../content/07-game-theory/python-classes.html">Python Classes</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../content/08-development/index.html">Development</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../../content/09-macro/index.html">Macroeconomic Policy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../content/09-macro/Indicators.html">Macroeconomic Indicators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../content/09-macro/CentralBanks.html">Central Banks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../content/09-macro/is_curve.html">IS-Curve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../content/09-macro/phillips_curve.html">Phillips Curve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../content/09-macro/fiscal_policy.html">Fiscal Policy</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../../content/10-finance/index.html">Finance</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../content/10-finance/value-interest.html">Present Value, Future Value, and Interest Rates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../content/10-finance/options.html">Options</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../../content/11-econometrics/index.html">Econometrics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../content/11-econometrics/single-variable.html">Single Variable Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../content/11-econometrics/statsmodels.html">Using <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> for Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../content/11-econometrics/multivariable.html">Multivariable Regression and Bias</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../content/11-econometrics/reading-econ-papers.html">Reading Economics Papers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../../content/12-environmental/index.html">Environmental Economics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../content/12-environmental/MAC.html">Marginal Abatement Cost Curves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../content/12-environmental/KuznetsHypothesis-Copy1.html">Environmental Kuznets Curve Hypothesis</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../content/references.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/data-88e/textbook/master?urlpath=tree/docs/jupyter_execute/docs/jupyter_execute/content/12-environmental/KuznetsHypothesis-Copy1.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../../../../../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/data-88e/textbook&urlpath=tree/textbook/docs/jupyter_execute/docs/jupyter_execute/content/12-environmental/KuznetsHypothesis-Copy1.ipynb&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on JupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="JupyterHub logo" src="../../../../../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+<a href="https://github.com/data-88e/textbook" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../../../../_sources/docs/jupyter_execute/docs/jupyter_execute/content/12-environmental/KuznetsHypothesis-Copy1.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Environmental Kuznets Curve Hypothesis</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-our-own-environmental-kuznets-curve">Building our own Environmental Kuznets Curve</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#low-income-countries">Low Income Countries</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brics">BRICS</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#individual-country-graphs">Individual country graphs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usa">USA</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#china">China</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#india">India</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#norway">Norway</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#criticism-of-the-environmental-kuznets-curve-hypothesis">Criticism of the Environmental Kuznets Curve Hypothesis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-s-next">What’s next?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-recommended-readings">Further recommended readings</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># HIDDEN</span>
+<span class="c1">#Importing packages</span>
+<span class="kn">from</span> <span class="nn">datascience</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">patches</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="environmental-kuznets-curve-hypothesis">
+<h1>Environmental Kuznets Curve Hypothesis<a class="headerlink" href="#environmental-kuznets-curve-hypothesis" title="Link to this heading">#</a></h1>
+<p>The Environmental Kuznets curve hypothesis that the economic development of a nation is associated with a downward-facing U-shape.  The Y-axis is in terms of the level of environmental degradation (e.g pollution, water quality, deforestation.  The X-axis would be the GDP/capita.  The idea is that the environmental degradation worsens, until a certain level of income, and after which it gets better. In the US this could be seen in terms of air or water quality, where the skies or rivers were very polluted in the 1960s, until the Clean Air Act and Clean Water Act were passed and Air Quality and Water Quality improved.  Another motivation for the downward slope would be the idea that at some point a wealthier society demands environmental improvements.<br />
+However - could this hold for the potentially most important Pollutant C02, the main driver of anthropogenic climate change.  Controversially the impacts of global CO2 pollution are not experienced locally, but are experienced as global effects. So it is not clear whether the Environmental Kuznets hypothesis will hold.</p>
+<p>Today, we’ll look to build an C02 Kuznets curve for an <em>association</em> between the amount of CO2 emitted per capita (t/CO2) and the growing GDP per capita (USD). This dataset is collected from Our World in Data, a great source of all sorts of data types!</p>
+<p><img alt="kuznets.png" src="docs/jupyter_execute/docs/jupyter_execute/content/12-environmental/kuznets.png" /></p>
+<section id="building-our-own-environmental-kuznets-curve">
+<h2>Building our own Environmental Kuznets Curve<a class="headerlink" href="#building-our-own-environmental-kuznets-curve" title="Link to this heading">#</a></h2>
+<p>We start by importing data on GDP per capita and Per Capita CO2 emissions for every country in the world for as long as it has been recorded.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">co2_table</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s1">&#39;co2-emissions-vs-gdp.csv&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;145446-annotations&#39;</span><span class="p">,</span><span class="s1">&#39;Total population (Gapminder, HYDE &amp; UN)&#39;</span><span class="p">,</span><span class="s1">&#39;Code&#39;</span><span class="p">)</span>
+<span class="n">co2_table</span> <span class="o">=</span> <span class="n">co2_table</span><span class="o">.</span><span class="n">relabeled</span><span class="p">(</span><span class="s1">&#39;Entity&#39;</span><span class="p">,</span> <span class="s1">&#39;Country&#39;</span><span class="p">)</span>
+<span class="n">co2_table</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>Country</th> <th>Year</th> <th>Per capita CO2 emissions</th> <th>GDP per capita</th> <th>Continent</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Abkhazia   </td> <td>2015</td> <td>nan                     </td> <td>nan           </td> <td>Asia     </td>
+        </tr>
+        <tr>
+            <td>Afghanistan</td> <td>1949</td> <td>0.00191237              </td> <td>nan           </td> <td>nan      </td>
+        </tr>
+        <tr>
+            <td>Afghanistan</td> <td>1950</td> <td>0.010871                </td> <td>1156          </td> <td>nan      </td>
+        </tr>
+        <tr>
+            <td>Afghanistan</td> <td>1951</td> <td>0.0116837               </td> <td>1170          </td> <td>nan      </td>
+        </tr>
+        <tr>
+            <td>Afghanistan</td> <td>1952</td> <td>0.0115423               </td> <td>1189          </td> <td>nan      </td>
+        </tr>
+        <tr>
+            <td>Afghanistan</td> <td>1953</td> <td>0.0132159               </td> <td>1240          </td> <td>nan      </td>
+        </tr>
+        <tr>
+            <td>Afghanistan</td> <td>1954</td> <td>0.0130359               </td> <td>1245          </td> <td>nan      </td>
+        </tr>
+        <tr>
+            <td>Afghanistan</td> <td>1955</td> <td>0.0186057               </td> <td>1246          </td> <td>nan      </td>
+        </tr>
+        <tr>
+            <td>Afghanistan</td> <td>1956</td> <td>0.0218121               </td> <td>1278          </td> <td>nan      </td>
+        </tr>
+        <tr>
+            <td>Afghanistan</td> <td>1957</td> <td>0.0343433               </td> <td>1253          </td> <td>nan      </td>
+        </tr>
+    </tbody>
+</table>
+<p>... (53427 rows omitted)</p></div></div>
+</div>
+<section id="low-income-countries">
+<h3>Low Income Countries<a class="headerlink" href="#low-income-countries" title="Link to this heading">#</a></h3>
+<p>Let’s start by selecting a set of Low Income Countries to graph the movement of CO2 intensity</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Low-Income Nations</span>
+<span class="n">LIH_array</span> <span class="o">=</span> <span class="n">make_array</span><span class="p">(</span><span class="s1">&#39;Haiti&#39;</span><span class="p">,</span> <span class="s1">&#39;Afghanistan&#39;</span><span class="p">,</span><span class="s1">&#39;Rwanda&#39;</span><span class="p">,</span><span class="s1">&#39;Pakistan&#39;</span><span class="p">,</span> <span class="s1">&#39;Nicaragua&#39;</span><span class="p">)</span>
+<span class="n">LIH_table</span> <span class="o">=</span> <span class="n">co2_table</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">contained_in</span><span class="p">(</span><span class="n">LIH_array</span><span class="p">))</span>
+<span class="n">LIH_table</span> <span class="o">=</span> <span class="n">LIH_table</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">above_or_equal_to</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Per capita CO2 emissions&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">above_or_equal_to</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">250</span><span class="p">)</span>
+<span class="n">LIH_table</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">,</span> <span class="s1">&#39;Per capita CO2 emissions&#39;</span><span class="p">,</span><span class="n">group</span><span class="o">=</span><span class="s1">&#39;Country&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 2000x1500 with 0 Axes&gt;
+</pre></div>
+</div>
+<img alt="../../../../../../_images/b970ae323e2338f11a6b9547ee0cba7d23acbd74cd7fbff903d39d91d10c4340.png" src="../../../../../../_images/b970ae323e2338f11a6b9547ee0cba7d23acbd74cd7fbff903d39d91d10c4340.png" />
+</div>
+</div>
+<p>Note that each dot represents a nation at a given level of emissions and GDP per capita</p>
+<p>With these three countries we see a few different stories:</p>
+<ul class="simple">
+<li><p>In Afghanistan, Haiti and Rwanda we see little income growth and little CO2 intensity growth with a slight upward trend</p></li>
+<li><p>In Nicaragua we see some jumping around, in fact Nicaragua GDP per capita has gone up and down, as has CO2 per capita</p></li>
+<li><p>In Pakistan, a larger and more populous country we see strong linear upward growth in both GDP per capita and CO2 per capita, with no signs of turning down</p></li>
+</ul>
+<p>In these countries it is hard to tell the complete story without the exact time trend.</p>
+</section>
+<section id="brics">
+<h3>BRICS<a class="headerlink" href="#brics" title="Link to this heading">#</a></h3>
+<p>Lets look at the BRICS countries, the rapidly growing upper middle income countries</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">BRICS_array</span> <span class="o">=</span> <span class="n">make_array</span><span class="p">(</span><span class="s1">&#39;Brazil&#39;</span><span class="p">,</span><span class="s1">&#39;Russia&#39;</span><span class="p">,</span><span class="s1">&#39;India&#39;</span><span class="p">,</span><span class="s1">&#39;China&#39;</span><span class="p">,</span><span class="s1">&#39;South Africa&#39;</span><span class="p">)</span>
+<span class="n">BRICS_table</span> <span class="o">=</span> <span class="n">co2_table</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">contained_in</span><span class="p">(</span><span class="n">BRICS_array</span><span class="p">))</span>
+<span class="n">BRICS_table</span> <span class="o">=</span> <span class="n">BRICS_table</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">above_or_equal_to</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Per capita CO2 emissions&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">above_or_equal_to</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<span class="n">BRICS_table</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">,</span> <span class="s1">&#39;Per capita CO2 emissions&#39;</span><span class="p">,</span><span class="n">group</span><span class="o">=</span><span class="s1">&#39;Country&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../../../_images/06cda8428676b8642c401ac465b27bbc2f9d89846920a025bdaf26e70e15f52a.png" src="../../../../../../_images/06cda8428676b8642c401ac465b27bbc2f9d89846920a025bdaf26e70e15f52a.png" />
+</div>
+</div>
+<p>The BRICS nations seem to have a variety of development pathways but all show the linear trend of increasing emissions as wealth grows.</p>
+<ul class="simple">
+<li><p>Russia has an interesting dip while GDP per capita decrease and then increase again</p></li>
+<li><p>South Africa has a recent period where growth in both GDP per capita and CO2 per capita have stagnated</p></li>
+<li><p>China and India show linearly increasing trends, with China both wealthier and more CO2 intensive</p></li>
+</ul>
+</section>
+</section>
+<section id="individual-country-graphs">
+<h2>Individual country graphs<a class="headerlink" href="#individual-country-graphs" title="Link to this heading">#</a></h2>
+<p>Lets look at some individual countries, starting with the US.<br />
+We can plot both total and logged quantities</p>
+<section id="usa">
+<h3>USA<a class="headerlink" href="#usa" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">US_table</span> <span class="o">=</span> <span class="n">co2_table</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="s1">&#39;United States&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="mi">1800</span><span class="p">,</span><span class="mi">2018</span><span class="p">))</span>
+<span class="n">US_table</span> <span class="o">=</span> <span class="n">US_table</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="s1">&#39;LogGDP&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">US_table</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">)))</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="s1">&#39;LogCO2&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">US_table</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;Per capita CO2 emissions&#39;</span><span class="p">)))</span>
+<span class="n">US_table</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">,</span> <span class="s1">&#39;Per capita CO2 emissions&#39;</span><span class="p">)</span>
+<span class="n">US_table</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;LogGDP&#39;</span><span class="p">,</span> <span class="s1">&#39;LogCO2&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../../../_images/4e43f2fd8747a315388b534a8514bc672f827dfdf801817a6fb691c224adfdf3.png" src="../../../../../../_images/4e43f2fd8747a315388b534a8514bc672f827dfdf801817a6fb691c224adfdf3.png" />
+<img alt="../../../../../../_images/b7aa422664ce1f97802328be5eaed7e47b36097801e65a47a2ab90b252e27954.png" src="../../../../../../_images/b7aa422664ce1f97802328be5eaed7e47b36097801e65a47a2ab90b252e27954.png" />
+</div>
+</div>
+<p><strong>Looks like we have a curve!</strong></p>
+<p>In the case of the US it does indeed look like the C02 per capita does indeed start to deline after about $40,000
+Somewhere around 2000-2004 the CO2 emissions leveled off and then began to decline</p>
+</section>
+<section id="china">
+<h3>China<a class="headerlink" href="#china" title="Link to this heading">#</a></h3>
+<p>In COP26, China has been a large part of the discussion (and emissions). Let’s have a look at their curve!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#China Example + LOG</span>
+<span class="n">NO_table</span> <span class="o">=</span> <span class="n">co2_table</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="s1">&#39;China&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="mi">1800</span><span class="p">,</span><span class="mi">2018</span><span class="p">))</span>
+<span class="n">NO_table</span> <span class="o">=</span> <span class="n">NO_table</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="s1">&#39;LogGDP&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">NO_table</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">)))</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="s1">&#39;LogCO2&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">NO_table</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;Per capita CO2 emissions&#39;</span><span class="p">)))</span>
+<span class="n">NO_table</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">,</span> <span class="s1">&#39;Per capita CO2 emissions&#39;</span><span class="p">)</span>
+<span class="n">NO_table</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;LogGDP&#39;</span><span class="p">,</span> <span class="s1">&#39;LogCO2&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../../../_images/c4680b6c2541c5f10ddbab8ba80d5753b4a485b946f673b2d8178799a32d4f0e.png" src="../../../../../../_images/c4680b6c2541c5f10ddbab8ba80d5753b4a485b946f673b2d8178799a32d4f0e.png" />
+<img alt="../../../../../../_images/beb80ecfcecb589a0851e563240cc3607889210737d4e660ffc41ea33de7dd73.png" src="../../../../../../_images/beb80ecfcecb589a0851e563240cc3607889210737d4e660ffc41ea33de7dd73.png" />
+</div>
+</div>
+<p>Indeed it appears that China has an inflection point and is starting to level off in the Carbon intensity per capita</p>
+</section>
+<section id="india">
+<h3>India<a class="headerlink" href="#india" title="Link to this heading">#</a></h3>
+<p>What about India?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#India Example + LOG</span>
+<span class="n">NO_table</span> <span class="o">=</span> <span class="n">co2_table</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="s1">&#39;India&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="mi">1800</span><span class="p">,</span><span class="mi">2018</span><span class="p">))</span>
+<span class="n">NO_table</span> <span class="o">=</span> <span class="n">NO_table</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="s1">&#39;LogGDP&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">NO_table</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">)))</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="s1">&#39;LogCO2&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">NO_table</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;Per capita CO2 emissions&#39;</span><span class="p">)))</span>
+<span class="n">NO_table</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">,</span> <span class="s1">&#39;Per capita CO2 emissions&#39;</span><span class="p">)</span>
+<span class="n">NO_table</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;LogGDP&#39;</span><span class="p">,</span> <span class="s1">&#39;LogCO2&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../../../_images/5adc9d2aa7d55eaba645b1a1589707ab1b248d7f808a141cbba9eb62a4280d46.png" src="../../../../../../_images/5adc9d2aa7d55eaba645b1a1589707ab1b248d7f808a141cbba9eb62a4280d46.png" />
+<img alt="../../../../../../_images/68fb17efbdf4963bf2a943d8cce583c55075cdb2c673af9dbc333ea22d0f3c34.png" src="../../../../../../_images/68fb17efbdf4963bf2a943d8cce583c55075cdb2c673af9dbc333ea22d0f3c34.png" />
+</div>
+</div>
+</section>
+<section id="norway">
+<h3>Norway<a class="headerlink" href="#norway" title="Link to this heading">#</a></h3>
+<p>As I’m Norwegian, I thought it might be cool to see how things are going back home as well:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Norway Example + LOG</span>
+<span class="n">NO_table</span> <span class="o">=</span> <span class="n">co2_table</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="s1">&#39;Norway&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="mi">1800</span><span class="p">,</span><span class="mi">2018</span><span class="p">))</span>
+<span class="n">NO_table</span> <span class="o">=</span> <span class="n">NO_table</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="s1">&#39;LogGDP&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">NO_table</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">)))</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="s1">&#39;LogCO2&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">NO_table</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;Per capita CO2 emissions&#39;</span><span class="p">)))</span>
+<span class="n">NO_table</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">,</span> <span class="s1">&#39;Per capita CO2 emissions&#39;</span><span class="p">)</span>
+<span class="n">NO_table</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;LogGDP&#39;</span><span class="p">,</span> <span class="s1">&#39;LogCO2&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../../../_images/eb52d87a10bfd958172066b06c4593f873b96c90b7795443707718f175749bd4.png" src="../../../../../../_images/eb52d87a10bfd958172066b06c4593f873b96c90b7795443707718f175749bd4.png" />
+<img alt="../../../../../../_images/1c9e1fec88c3738aba3bdb6856b787ea3092cd4b2d4dd92d7f2437a24c6177c6.png" src="../../../../../../_images/1c9e1fec88c3738aba3bdb6856b787ea3092cd4b2d4dd92d7f2437a24c6177c6.png" />
+</div>
+</div>
+<p>Turns out we’re ahead of the US in CO2 emissions per capita, but there’s still a long way to go until our development resembles a full Kuznets curve. However, it certainly looks like something! An almost vertical linear growth in terms of per capita CO2 emissions in the early economic stages stagnated into a period of fluctuations. As of now, it looks like it’s heading in a downward trend.</p>
+<p>Let’s look at a set of other High Income Nations:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">HIN_array</span> <span class="o">=</span> <span class="n">make_array</span><span class="p">(</span><span class="s1">&#39;United States&#39;</span><span class="p">,</span> <span class="s1">&#39;Netherlands&#39;</span><span class="p">,</span> <span class="s1">&#39;United Kingdom&#39;</span><span class="p">,</span><span class="s1">&#39;Germany&#39;</span><span class="p">,</span><span class="s1">&#39;Canada&#39;</span><span class="p">)</span>
+<span class="n">HIN_table</span> <span class="o">=</span> <span class="n">co2_table</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">contained_in</span><span class="p">(</span><span class="n">HIN_array</span><span class="p">))</span>
+<span class="n">HIN_table</span> <span class="o">=</span> <span class="n">HIN_table</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">above_or_equal_to</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Per capita CO2 emissions&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">above_or_equal_to</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<span class="n">HIN_table</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">,</span> <span class="s1">&#39;Per capita CO2 emissions&#39;</span><span class="p">,</span><span class="n">group</span><span class="o">=</span><span class="s1">&#39;Country&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../../../_images/da88824885fb013a81f2d1c56bd536cc5556556a538a0a405435175eee2fca5f.png" src="../../../../../../_images/da88824885fb013a81f2d1c56bd536cc5556556a538a0a405435175eee2fca5f.png" />
+</div>
+</div>
+<p>As in the US and Norway, these nations have experienced a boom, stagnation, and now to some extent a downward trend. Let’s finally plot all the previously observed nations together:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ALL_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">LIH_array</span><span class="p">,</span><span class="n">BRICS_array</span><span class="p">)),</span> <span class="n">HIN_array</span><span class="p">)</span>
+<span class="n">ALL_table</span> <span class="o">=</span> <span class="n">co2_table</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">contained_in</span><span class="p">(</span><span class="n">ALL_array</span><span class="p">))</span>
+<span class="n">ALL_table</span> <span class="o">=</span> <span class="n">ALL_table</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">above_or_equal_to</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Per capita CO2 emissions&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">above_or_equal_to</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<span class="n">ALL_table</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">,</span> <span class="s1">&#39;Per capita CO2 emissions&#39;</span><span class="p">,</span><span class="n">group</span><span class="o">=</span><span class="s1">&#39;Country&#39;</span><span class="p">)</span>
+<span class="c1">#What do we see? Can we spot the Environmental Kuznets Curve?</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../../../_images/c0005f55a4e74aa74995d9d3dd22b1f2fe6f4c46008306011baeb7cc971a75f7.png" src="../../../../../../_images/c0005f55a4e74aa74995d9d3dd22b1f2fe6f4c46008306011baeb7cc971a75f7.png" />
+</div>
+</div>
+<p>Here we see evidence for an Environmental Kuznets Curve.</p>
+<p>It seems, at least to some extent, that as nations develop economically, the level of environmental degradation reaches a peak and then declines, mapping a downward-facing U-curve.</p>
+</section>
+</section>
+<section id="criticism-of-the-environmental-kuznets-curve-hypothesis">
+<h2>Criticism of the Environmental Kuznets Curve Hypothesis<a class="headerlink" href="#criticism-of-the-environmental-kuznets-curve-hypothesis" title="Link to this heading">#</a></h2>
+<p>Some questions we ought to ask ourselves in the end are:</p>
+<ul class="simple">
+<li><p>Do all types of environmental degradation follow the curve? What if we plot Energy, Land, &amp; Resource usage?</p></li>
+<li><p>What we plotted today shows the ratio between GDP and CO2 per capita, but what about the <em>absolute</em> numbers of emissions?</p></li>
+<li><p>What is the true long-term shape of the curve? Could it reshape itself to an “N” as an economy passes a certain threshold?</p></li>
+<li><p>What about its applicability on a global scale? Knowing that the HINs have a habit of exporting pollution to LINs, what will happen as LIN grow economically?</p></li>
+</ul>
+<p>These are just some questions environmental economists have asked themselves throughout the years since the curve was hypothesized in 1955. Some, including Perman and Stern (2003) conclude that the level of environmental degradation has much more to do with a constant “battle” between scale and time than income alone. As nations scale up (BRICS, for instance) the growth results in higher emissions, while countries with lower growth (LIN &amp; HIN) seem more influenced by the “time-effect”, which results in lower emissions. Others, among Krueger &amp; Grossman, argue that there is “no evidence that environmental quality deteriorates steadily with economic growth.”</p>
+<p>More on these theories can be found in the recommended readings below.</p>
+<p>As data scientists motivated to help heal the plant with the tools of environmental economics, we can help to find these answers!</p>
+</section>
+<section id="what-s-next">
+<h2>What’s next?<a class="headerlink" href="#what-s-next" title="Link to this heading">#</a></h2>
+<p>If you are interested in this area, there are even more fascinating applications of Data Science to environmental topics such as: finding the social cost of carbon, the valuation of our environment, and the economics of emissions trading. Besides purely economical modeling, the field of environmental data science is rapidly growing as we collect more and more data on our planet and its resources. Applying the power of Satellite Imagery, Machine Learning, and Geographic Information Systems (GIS), one can follow both technology and policy-based paths, both ensured to have a positive impact in shaping a data-driven, sustainable future.</p>
+</section>
+<section id="further-recommended-readings">
+<h2>Further recommended readings<a class="headerlink" href="#further-recommended-readings" title="Link to this heading">#</a></h2>
+<p>Levelized Cost of Carbon Abatement: An Improved Cost-Assessment Methodology for a Net-Zero Emissions World (also the main source of this Jupyter Notebook)</p>
+<p><a class="reference external" href="https://www.energypolicy.columbia.edu/sites/default/files/file-uploads/LCCA_CGEP-Report_101620.pdf">https://www.energypolicy.columbia.edu/sites/default/files/file-uploads/LCCA_CGEP-Report_101620.pdf</a></p>
+<p>Dynamic vs. Static costs are described further in K.Gillingham &amp; J.H Stock’s The Cost of Reducing Greenhouse Gas Emissions (italic) from 2018. - A highly recommended reading out of scope for this class.</p>
+<p><a class="reference external" href="https://scholar.harvard.edu/files/stock/files/gillingham_stock_cost_080218_posted.pdf">https://scholar.harvard.edu/files/stock/files/gillingham_stock_cost_080218_posted.pdf</a></p>
+<p>Goldman Sachs Research: Carbonomics: The Future of Energy in the Age of Climate Change</p>
+<p><a class="reference external" href="https://www.goldmansachs.com/insights/pages/carbonomics.html">https://www.goldmansachs.com/insights/pages/carbonomics.html</a></p>
+<p>EPA article on the Economics of Climate Change:
+<a class="reference external" href="https://www.epa.gov/environmental-economics/economics-climate-change">https://www.epa.gov/environmental-economics/economics-climate-change</a></p>
+<p>Draw your own curve program:
+<a class="reference external" href="https://tamc.github.io/macc/">https://tamc.github.io/macc/</a></p>
+<p>Abatement curve for crops:
+<a class="github reference external" href="https://github.com/aj-sykes92/ggmacc/blob/main/README_files/figure-gfm/full-macc-1.png">aj-sykes92/ggmacc</a></p>
+<p>Aalborg University’s software:
+<a class="github reference external" href="https://github.com/matpri/EPLANoptMAC">matpri/EPLANoptMAC</a></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs/jupyter_execute/docs/jupyter_execute/content/12-environmental"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-our-own-environmental-kuznets-curve">Building our own Environmental Kuznets Curve</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#low-income-countries">Low Income Countries</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brics">BRICS</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#individual-country-graphs">Individual country graphs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usa">USA</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#china">China</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#india">India</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#norway">Norway</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#criticism-of-the-environmental-kuznets-curve-hypothesis">Criticism of the Environmental Kuznets Curve Hypothesis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-s-next">What’s next?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-recommended-readings">Further recommended readings</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Data 88E Course Staff
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2020.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="../../../../../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

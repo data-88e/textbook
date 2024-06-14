@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Log-log and Semi-log Demand Curves &#8212; Data 88E: Economic Models Textbook</title>
   
@@ -15,59 +14,55 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.css?v=9f39b2ca" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
-  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
-    <script src="../../_static/plotly.min.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/01-demand/03-log-log';</script>
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <script src="../../_static/plotly.min.js?v=7525fa7a"></script>
+    <link rel="icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Elasticity" href="04-elasticity.html" />
@@ -81,28 +76,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -124,12 +114,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -144,6 +142,7 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../intro.html">
@@ -162,7 +161,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -174,78 +184,78 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../00-intro/index.html">Introduction</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Demand and Elasticities</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Demand and Elasticities</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="01-demand.html">Demand Curves</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02-example.html">An Empirical Demand Curve</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Log-log and Semi-log Demand Curves</a></li>
 <li class="toctree-l2"><a class="reference internal" href="04-elasticity.html">Elasticity</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../02-supply/index.html">Supply and Market Equilibrium</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02-supply/index.html">Supply and Market Equilibrium</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../02-supply/01-supply.html">The Supply Curve</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../02-supply/02-eep147-example.html">An Empirical Example from EEP 147</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../02-supply/03-sympy.html">SymPy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../02-supply/04-market-equilibria.html">Market Equilibria</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../03-public/index.html">Public Economics</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-public/index.html">Public Economics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../03-public/taxes-subsidies.html">Taxes and Subsidies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../03-public/surplus.html">Surplus</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../03-public/govt-intervention.html">Other Forms of Government Intervention</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../04-production/index.html">Production</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04-production/index.html">Production</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../04-production/production.html">Production and Cobb-Douglas Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../04-production/shifts.html">Analyzing Shifts in <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(\alpha\)</span></a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../05-utility/index.html">Utility</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../05-utility/index.html">Utility</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../05-utility/utility.html">Utility Functions and Indifference Curves</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../05-utility/budget-constraints.html">Budget Constraints and Utility Maximization</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes">LaTeX</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../06-inequality/index.html">Inequality</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../06-inequality/index.html">Inequality</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../06-inequality/inequality.html">Measurements of Inequality</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../06-inequality/historical-inequality.html">Income Inequality Historically</a></li>
 
 
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../07-game-theory/index.html">Game Theory</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../07-game-theory/index.html">Game Theory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../07-game-theory/expected-utility.html">Expected Utility Theory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../07-game-theory/equilibria-oligopolies.html">Equilibria &amp; Oligopolies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../07-game-theory/cournot.html">Cournot Competition</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../07-game-theory/bertrand.html">Bertrand Competition</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../07-game-theory/python-classes.html">Python Classes</a></li>
 </ul>
-</li>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../08-development/index.html">Development</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../09-macro/index.html">Macroeconomic Policy</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../09-macro/index.html">Macroeconomic Policy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../09-macro/Indicators.html">Macroeconomic Indicators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../09-macro/CentralBanks.html">Central Banks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../09-macro/is_curve.html">IS-Curve</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../09-macro/phillips_curve.html">Phillips Curve</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../09-macro/fiscal_policy.html">Fiscal Policy</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../10-finance/index.html">Finance</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../10-finance/index.html">Finance</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../10-finance/value-interest.html">Present Value, Future Value, and Interest Rates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../10-finance/options.html">Options</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../11-econometrics/index.html">Econometrics</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../11-econometrics/index.html">Econometrics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../11-econometrics/single-variable.html">Single Variable Regression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../11-econometrics/statsmodels.html">Using <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> for Regression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../11-econometrics/multivariable.html">Multivariable Regression and Bias</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../11-econometrics/reading-econ-papers.html">Reading Economics Papers</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../12-environmental/index.html">Environmental Economics</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../12-environmental/textbook1.html">Marginal Abatement Cost Curves</a></li>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../12-environmental/index.html">Environmental Economics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../12-environmental/MAC.html">Marginal Abatement Cost Curves</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../12-environmental/KuznetsHypothesis-Copy1.html">Environmental Kuznets Curve Hypothesis</a></li>
 </ul>
-</li>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../references.html">Bibliography</a></li>
 </ul>
 
@@ -262,7 +272,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -271,14 +281,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -303,14 +313,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://mybinder.org/v2/gh/data-88e/textbook/master?urlpath=tree/content/01-demand/03-log-log.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
+   title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../../_static/images/logo_binder.svg">
+    <img alt="Binder logo" src="../../_static/images/logo_binder.svg">
   </span>
 <span class="btn__text-container">Binder</span>
 </a>
@@ -321,14 +331,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/data-88e/textbook&urlpath=tree/textbook/content/01-demand/03-log-log.ipynb&branch=master" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onJupyterHub"
+   title="Launch on JupyterHub"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../../_static/images/logo_jupyterhub.svg">
+    <img alt="JupyterHub logo" src="../../_static/images/logo_jupyterhub.svg">
   </span>
 <span class="btn__text-container">JupyterHub</span>
 </a>
@@ -417,6 +427,7 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -427,6 +438,7 @@ document.write(`
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -434,9 +446,9 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -480,15 +492,15 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="log-log-and-semi-log-demand-curves">
-<h1>Log-log and Semi-log Demand Curves<a class="headerlink" href="#log-log-and-semi-log-demand-curves" title="Permalink to this heading">#</a></h1>
+<h1>Log-log and Semi-log Demand Curves<a class="headerlink" href="#log-log-and-semi-log-demand-curves" title="Link to this heading">#</a></h1>
 <p>So far, we have examined demand curves assuming that they were linear. Specifically, we’ve assumed that the relationship between quantity demanded and price was linear: for a $1 change in price, we can expect a fixed change in units demanded at any price level.</p>
 <p>Is this intuitively true? Probably not. For example, a $1 decrease from $100 is trivial compared to a $1 decrease from an original price of $2. As humans, we think about changes as proportions, and this fact should be reflected in the supply and demand curves. What this implies is that these curves should be exponential in nature: at higher prices, a larger change in price will yield the same change quantity as compared to that in lower prices.</p>
 <p>Perhaps a better model for demand, then, is that a 1% change in price will lead to a fixed absolute change in units demanded, or a fixed percentage change in units demanded. To model this, we turn to log-log and semi-log demand curves, respectively.</p>
 <section id="using-logarithms-for-proportional-changes">
-<h2>Using Logarithms for Proportional Changes<a class="headerlink" href="#using-logarithms-for-proportional-changes" title="Permalink to this heading">#</a></h2>
+<h2>Using Logarithms for Proportional Changes<a class="headerlink" href="#using-logarithms-for-proportional-changes" title="Link to this heading">#</a></h2>
 <p>Before we jump into our new demand models, we must first go over measuring proportional changes.
 To highlight this fact, let’s actually consider how the variable GDP behaves. GDP tends to grow by a certain percent each year; no one is particularly interested in how <em>much</em> GDP changes from one year to the next, or from one country to another, but rather by <em>what percent</em> it changes.</p>
 <p>If you were to plot GDP over time for a country, it might look something like this:</p>
@@ -525,7 +537,7 @@ To highlight this fact, let’s actually consider how the variable GDP behaves. 
 \[\text{slope} = \frac{\text{% change in GDP}}{\text{Change in time (1 year)}} \approx \frac{\text{Change in log-GDP} \times 100}{\text{Change in time (1 year)}} \]</div>
 </section>
 <section id="semi-log-demand-curves">
-<h2>Semi-log Demand Curves<a class="headerlink" href="#semi-log-demand-curves" title="Permalink to this heading">#</a></h2>
+<h2>Semi-log Demand Curves<a class="headerlink" href="#semi-log-demand-curves" title="Link to this heading">#</a></h2>
 <p>Revisiting demand curves, suppose that a change in price by <span class="math notranslate nohighlight">\(1 leads to a change in quantity demanded by a factor of \)</span>m$. This means that our slope would be:</p>
 <div class="math notranslate nohighlight">
 \[\text{slope} = \frac{\text{change in quantity by a factor of } m}{\text{ \$1 change in price}} \approx \frac{m \text{ change in log-quantity}}{\text{\$1 change in price}}\]</div>
@@ -551,7 +563,7 @@ D(P+1) &amp;= e^be^{m \cdot (P+1) }  \\
 \end{align*}\end{split}\]</div>
 <p>The last line relies on the fact <span class="math notranslate nohighlight">\(e^{x} \approx (1+x)\)</span> when <span class="math notranslate nohighlight">\(x\)</span> is small. This is why in our GDP example, our slope was not exactly 0.05. Thus, our results leads to the caveat that our transformation is only approximate and only valid when our <span class="math notranslate nohighlight">\(m\)</span> is small. Typically, we do not want <span class="math notranslate nohighlight">\(m\)</span> to be larger than <span class="math notranslate nohighlight">\(0.2\)</span>, or else the approximation will start to diverge.</p>
 <section id="visualizing-the-semi-log-relationship">
-<h3>Visualizing the semi-log relationship<a class="headerlink" href="#visualizing-the-semi-log-relationship" title="Permalink to this heading">#</a></h3>
+<h3>Visualizing the semi-log relationship<a class="headerlink" href="#visualizing-the-semi-log-relationship" title="Link to this heading">#</a></h3>
 <p>From above, we can convert the linear semi-log relationship into non-log terms for price and quantity, ultimately getting <span class="math notranslate nohighlight">\(D(P) = e^be^{m\cdot P}\)</span>. Plotting this relationship, we get:</p>
 <p>[Following image is a line of downward sloping semi-log Demand]</p>
 <div class="cell tag_remove_input docutils container">
@@ -562,7 +574,7 @@ D(P+1) &amp;= e^be^{m \cdot (P+1) }  \\
 </section>
 </section>
 <section id="log-log-demand-curves">
-<h2>Log-log Demand Curves<a class="headerlink" href="#log-log-demand-curves" title="Permalink to this heading">#</a></h2>
+<h2>Log-log Demand Curves<a class="headerlink" href="#log-log-demand-curves" title="Link to this heading">#</a></h2>
 <p>Now suppose that a 1% change in price leads to an <span class="math notranslate nohighlight">\(m\)</span>% change in quantity demanded. This means that our slope would be:</p>
 <div class="math notranslate nohighlight">
 \[\text{slope} = \frac{m * \text{pct change in quantity}}{1 \text{pct change in price}} \approx \frac{0.01m \text{ change in log-quantity}}{0.01 \text{ change in log-price}}\]</div>
@@ -587,7 +599,7 @@ D(1.01P) &amp;= e^b(1.01P)^m \\
 \end{align*}\end{split}\]</div>
 <p>Where we utilize the approximation that <span class="math notranslate nohighlight">\(1.01^m \approx 1 + 0.01m\)</span>. Our caveat from the previous section about <span class="math notranslate nohighlight">\(m\)</span> not being large continues to be in place here: typically, we do not want our <span class="math notranslate nohighlight">\(m\)</span> to be larger than 30 (where <span class="math notranslate nohighlight">\(1.01^{30}\approx 1.35\)</span>), or else the approximation will fall apart.</p>
 <section id="visualizing-the-log-log-relationship">
-<h3>Visualizing the log-log relationship<a class="headerlink" href="#visualizing-the-log-log-relationship" title="Permalink to this heading">#</a></h3>
+<h3>Visualizing the log-log relationship<a class="headerlink" href="#visualizing-the-log-log-relationship" title="Link to this heading">#</a></h3>
 <p>From above, we can convert the linear log-log relationship into non-log terms for price and quantity, ultimately getting <span class="math notranslate nohighlight">\(D(P) = e^bP^m\)</span>. Plotting this relationship, we can see a demand curve that looks somewhat like an exponential decay curve:</p>
 <p>[Following image is a line of downward sloping log-log Demand]</p>
 <div class="cell tag_remove_input docutils container">
@@ -599,7 +611,7 @@ D(1.01P) &amp;= e^b(1.01P)^m \\
 </section>
 </section>
 <section id="revisiting-avocados">
-<h2>Revisiting Avocados<a class="headerlink" href="#revisiting-avocados" title="Permalink to this heading">#</a></h2>
+<h2>Revisiting Avocados<a class="headerlink" href="#revisiting-avocados" title="Link to this heading">#</a></h2>
 <p>We will revisit the avocados dataset from the previous page, which features historical data on non-organic avocado prices and sales volumes in San Francisco from 2015 to 2018.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -663,7 +675,7 @@ D(1.01P) &amp;= e^b(1.01P)^m \\
 </div>
 </div>
 <section id="semi-log">
-<h3>Semi-log<a class="headerlink" href="#semi-log" title="Permalink to this heading">#</a></h3>
+<h3>Semi-log<a class="headerlink" href="#semi-log" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">log_quantity</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">avocados</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Total Volume&quot;</span><span class="p">))</span>
@@ -698,7 +710,7 @@ The intercept is:  14.352506861683818
 </div>
 </section>
 <section id="log-log">
-<h3>Log-log<a class="headerlink" href="#log-log" title="Permalink to this heading">#</a></h3>
+<h3>Log-log<a class="headerlink" href="#log-log" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">log_quantity</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">avocados</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Total Volume&quot;</span><span class="p">))</span>
@@ -765,8 +777,8 @@ The intercept is:  13.798460905495737
               
               
               
-                <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                <footer class="prev-next-footer d-print-none">
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="02-example.html"
@@ -794,6 +806,7 @@ The intercept is:  13.798460905495737
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -836,6 +849,7 @@ By Data 88E Course Staff
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2020.
@@ -862,8 +876,8 @@ By Data 88E Course Staff
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
 
   <footer class="bd-footer">
   </footer>

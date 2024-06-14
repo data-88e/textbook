@@ -1,0 +1,804 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Multivariable Regression and Bias &#8212; Data 88E: Economic Models Textbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../../../../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+
+  
+  <link href="../../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/style.css?v=9f39b2ca" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="../../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+
+    <script src="../../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/jupyter_execute/content/11-econometrics/multivariable';</script>
+    <script src="../../../../_static/plotly.min.js?v=7525fa7a"></script>
+    <link rel="icon" href="../../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../../content/intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../_static/econ-models.png" class="logo__image only-light" alt="Data 88E: Economic Models Textbook - Home"/>
+    <script>document.write(`<img src="../../../../_static/econ-models.png" class="logo__image only-dark" alt="Data 88E: Economic Models Textbook - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../../content/intro.html">
+                    <a href="https://data-88e.github.io"> Data 88E: Economic Models </a>
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../../content/00-intro/index.html">Introduction</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../content/01-demand/index.html">Demand and Elasticities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/01-demand/01-demand.html">Demand Curves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/01-demand/02-example.html">An Empirical Demand Curve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/01-demand/03-log-log.html">Log-log and Semi-log Demand Curves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/01-demand/04-elasticity.html">Elasticity</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../content/02-supply/index.html">Supply and Market Equilibrium</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/02-supply/01-supply.html">The Supply Curve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/02-supply/02-eep147-example.html">An Empirical Example from EEP 147</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/02-supply/03-sympy.html">SymPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/02-supply/04-market-equilibria.html">Market Equilibria</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../content/03-public/index.html">Public Economics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/03-public/taxes-subsidies.html">Taxes and Subsidies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/03-public/surplus.html">Surplus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/03-public/govt-intervention.html">Other Forms of Government Intervention</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../content/04-production/index.html">Production</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/04-production/production.html">Production and Cobb-Douglas Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/04-production/shifts.html">Analyzing Shifts in <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(\alpha\)</span></a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../content/05-utility/index.html">Utility</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/05-utility/utility.html">Utility Functions and Indifference Curves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/05-utility/budget-constraints.html">Budget Constraints and Utility Maximization</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes">LaTeX</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../content/06-inequality/index.html">Inequality</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/06-inequality/inequality.html">Measurements of Inequality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/06-inequality/historical-inequality.html">Income Inequality Historically</a></li>
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../content/07-game-theory/index.html">Game Theory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/07-game-theory/expected-utility.html">Expected Utility Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/07-game-theory/equilibria-oligopolies.html">Equilibria &amp; Oligopolies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/07-game-theory/cournot.html">Cournot Competition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/07-game-theory/bertrand.html">Bertrand Competition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/07-game-theory/python-classes.html">Python Classes</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../content/08-development/index.html">Development</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../content/09-macro/index.html">Macroeconomic Policy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/09-macro/Indicators.html">Macroeconomic Indicators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/09-macro/CentralBanks.html">Central Banks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/09-macro/is_curve.html">IS-Curve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/09-macro/phillips_curve.html">Phillips Curve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/09-macro/fiscal_policy.html">Fiscal Policy</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../content/10-finance/index.html">Finance</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/10-finance/value-interest.html">Present Value, Future Value, and Interest Rates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/10-finance/options.html">Options</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../content/11-econometrics/index.html">Econometrics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/11-econometrics/single-variable.html">Single Variable Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/11-econometrics/statsmodels.html">Using <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> for Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/11-econometrics/multivariable.html">Multivariable Regression and Bias</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/11-econometrics/reading-econ-papers.html">Reading Economics Papers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../content/12-environmental/index.html">Environmental Economics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/12-environmental/MAC.html">Marginal Abatement Cost Curves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../content/12-environmental/KuznetsHypothesis-Copy1.html">Environmental Kuznets Curve Hypothesis</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../content/references.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/data-88e/textbook/master?urlpath=tree/docs/jupyter_execute/content/11-econometrics/multivariable.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../../../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/data-88e/textbook&urlpath=tree/textbook/docs/jupyter_execute/content/11-econometrics/multivariable.ipynb&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on JupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="JupyterHub logo" src="../../../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+<a href="https://github.com/data-88e/textbook" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../../_sources/docs/jupyter_execute/content/11-econometrics/multivariable.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Multivariable Regression and Bias</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multivariable-regression">Multivariable Regression</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-multivariable-regression">Visualizing Multivariable Regression</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#colinearity-and-dummy-variables">Colinearity and Dummy Variables</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="multivariable-regression-and-bias">
+<h1>Multivariable Regression and Bias<a class="headerlink" href="#multivariable-regression-and-bias" title="Link to this heading">#</a></h1>
+<p>Our procedure earlier showed that we expect to see roughly a 70% increase in earnings in people who went to college vs. people who did not go to college. Does this imply that your decision to go to college was worthwhile, and now you can expect to have roughly 70% higher earnings compared to the version of you who did not go to college?</p>
+<p>Let’s go back to our discussion of experiments from earlier. In an ideal experiment, we would want a good sample of people who are about to graduate high school, and then randomly assign them to either a treatment group that gets sent to college, and a control group that does not. If you are in the treatment group you <em>must</em> go to college, and if you are in the control group you <em>cannot</em> go to college. Since the decision to go to college in this case is completely random, we can safely assume that the treatment and control groups are on average identical in attributes, apart from college attendance. We can therefore compare their log earnings in the future to see the effect of going to college.</p>
+<p>Clearly this experiment is impossible to perform. We cannot randomly assign people to go to college. What’s different between this ideal experiment and our regression from earlier? What’s the issue with comparing the differences in log earnings for people in our sample who happened to go to college and those who did not?</p>
+<p>In our sample, the treatment (went to college) and control (did not go to college) groups are not identical in every way except for college! People aren’t randomly assigned college, they <em>choose</em> to go to college. The factors that cause someone to go to college are complex and lead to differences between people who chose to go to college and those who did not. When we perform regression on the variable <code class="docutils literal notranslate"><span class="pre">college</span></code>, since the groups in the sample are different, not only are we capturing the effect of going to college, but we are also capturing the effects of everything else that is different about the two groups that also affects earnings.</p>
+<p>Imagine another variable that captures the wealth of your family. College can be very expensive, so it might be the case that the wealthier your family is, the more likely you are to go to college. Also, it’s easy to imagine that the wealthier your family is, the wealthier you are likely to be in the future. This implies that the group of people in the sample who went to college will tend to be wealthier than the group that did not. Also, the group of people who went to college is expected to earn more not necessarily because they went to college, but simply because they are wealthier.</p>
+<p>Therefore, when we do regression to measure the differences in earnings between people who went to college and those who did not, we also capture differences in earnings between people who grew up wealthier and those who did not. Because of this, we <em>over-estimate</em> the effect of going to college. <span class="math notranslate nohighlight">\(\hat{\beta}\)</span> captures the average observed benefit of going to college <em>and</em> being wealthier, but we’re only interested in college. This is called <em>omitted variable bias</em>. Family wealth is an omitted variable in this regression and it’s causing our results to be biased.</p>
+<p>Let’s think of another example of omitted variable bias. In the NLSY dataset, there is a variable called <code class="docutils literal notranslate"><span class="pre">AFQT</span></code>. AFQT is a score on a particular standardized test that all people in the sample took. Let’s use AFQT as a proxy measurement for the abstract idea of academic capability. While a standardized test is by no means the sole indication of someone’s ability or intelligence, let’s ignore that very complicated issue for now and assume that AFQT does an O.K. job at capturing this ability variable that is otherwise very difficult to measure.</p>
+<p>Is there omitted variable bias from AFQT? Almost certainly. It seems fair to believe that people who choose to go to college are on average more academically-capable, and it also seems fair to say that on average we expect more capable people to earn more. Therefore, <span class="math notranslate nohighlight">\(\hat{\beta}\)</span> above might be capturing the effects of being more capable, along with the effects of going to college.</p>
+<p>How can we fix this issue? Multivariable regression.</p>
+<section id="multivariable-regression">
+<h2>Multivariable Regression<a class="headerlink" href="#multivariable-regression" title="Link to this heading">#</a></h2>
+<p>So far we have only been regressing outcome variable <span class="math notranslate nohighlight">\(y\)</span> onto one explanatory variable <span class="math notranslate nohighlight">\(x\)</span>. To find the regression line, we choose <span class="math notranslate nohighlight">\(\hat{\alpha}\)</span> and <span class="math notranslate nohighlight">\(\hat{\beta}\)</span> that minimize the mean squared error. But what if we believe that <span class="math notranslate nohighlight">\(y\)</span> is actually determined by two variables, <span class="math notranslate nohighlight">\(x_1\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span>? Specifically, what if the “true” model is</p>
+<div class="math notranslate nohighlight">
+\[
+y = \alpha + \beta_1 x_{1} + \beta_2 x_{2} + \epsilon
+\]</div>
+<p>and we would like to estimate</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{y} = \hat{\alpha} + \hat{\beta}_1 x_{1} + \hat{\beta}_2 x_{2}
+\]</div>
+<p>Now our challenge is choosing <span class="math notranslate nohighlight">\(\hat{\alpha}\)</span>, <span class="math notranslate nohighlight">\(\hat{\beta}_1\)</span>, <em>and</em> <span class="math notranslate nohighlight">\(\hat{\beta}_2\)</span> that minimize the mean squared error. To this end, we will use the <code class="docutils literal notranslate"><span class="pre">minimize</span></code> function to minimize a function <code class="docutils literal notranslate"><span class="pre">to_minimize</span></code> that takes in model parameters and returns the model’s RMSE.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">rmse</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">pred</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">pred</span><span class="p">))</span> 
+
+<span class="k">def</span> <span class="nf">to_minimize</span><span class="p">(</span><span class="n">intercept</span><span class="p">,</span> <span class="n">beta_1</span><span class="p">,</span> <span class="n">beta_2</span><span class="p">):</span>
+    <span class="n">predictions</span> <span class="o">=</span> <span class="n">intercept</span> <span class="o">+</span> <span class="n">beta_1</span> <span class="o">*</span> <span class="n">nlsy</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;college&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">beta_2</span> <span class="o">*</span> <span class="n">nlsy</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;AFQT&quot;</span><span class="p">)</span>
+    <span class="n">actual</span> <span class="o">=</span> <span class="n">nlsy</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;log_earn_1999&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">rmse</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span> <span class="n">actual</span><span class="p">)</span>
+
+<span class="n">minimize</span><span class="p">(</span><span class="n">to_minimize</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([9.95595982e+00, 4.30179178e-01, 8.37569589e-03])
+</pre></div>
+</div>
+</div>
+</div>
+<p>We see that <code class="docutils literal notranslate"><span class="pre">minimize</span></code> return an <span class="math notranslate nohighlight">\(\hat{\alpha}\)</span> of 9.956, a <span class="math notranslate nohighlight">\(\hat{\beta}_1\)</span> of 0.430, and a <span class="math notranslate nohighlight">\(\hat{\beta}_2\)</span> of 0.008. Let’s perform the regression using <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> and see what we get.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">nlsy</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;log_earn_1999&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">values</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">nlsy</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;college&#39;</span><span class="p">,</span> <span class="s1">&#39;AFQT&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">values</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">X</span><span class="p">))</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="simpletable">
+<caption>OLS Regression Results</caption>
+<tr>
+  <th>Dep. Variable:</th>            <td>y</td>        <th>  R-squared:         </th> <td>   0.126</td> 
+</tr>
+<tr>
+  <th>Model:</th>                   <td>OLS</td>       <th>  Adj. R-squared:    </th> <td>   0.125</td> 
+</tr>
+<tr>
+  <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   388.5</td> 
+</tr>
+<tr>
+  <th>Date:</th>             <td>Sun, 19 Jul 2020</td> <th>  Prob (F-statistic):</th> <td>2.12e-158</td>
+</tr>
+<tr>
+  <th>Time:</th>                 <td>14:07:49</td>     <th>  Log-Likelihood:    </th> <td> -7421.0</td> 
+</tr>
+<tr>
+  <th>No. Observations:</th>      <td>  5413</td>      <th>  AIC:               </th> <td>1.485e+04</td>
+</tr>
+<tr>
+  <th>Df Residuals:</th>          <td>  5410</td>      <th>  BIC:               </th> <td>1.487e+04</td>
+</tr>
+<tr>
+  <th>Df Model:</th>              <td>     2</td>      <th>                     </th>     <td> </td>    
+</tr>
+<tr>
+  <th>Covariance Type:</th>      <td>nonrobust</td>    <th>                     </th>     <td> </td>    
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+    <td></td>       <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>const</th> <td>    9.9563</td> <td>    0.025</td> <td>  401.520</td> <td> 0.000</td> <td>    9.908</td> <td>   10.005</td>
+</tr>
+<tr>
+  <th>x1</th>    <td>    0.4301</td> <td>    0.037</td> <td>   11.731</td> <td> 0.000</td> <td>    0.358</td> <td>    0.502</td>
+</tr>
+<tr>
+  <th>x2</th>    <td>    0.0084</td> <td>    0.001</td> <td>   16.083</td> <td> 0.000</td> <td>    0.007</td> <td>    0.009</td>
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+  <th>Omnibus:</th>       <td>2898.806</td> <th>  Durbin-Watson:     </th> <td>   1.923</td> 
+</tr>
+<tr>
+  <th>Prob(Omnibus):</th>  <td> 0.000</td>  <th>  Jarque-Bera (JB):  </th> <td>34192.355</td>
+</tr>
+<tr>
+  <th>Skew:</th>           <td>-2.307</td>  <th>  Prob(JB):          </th> <td>    0.00</td> 
+</tr>
+<tr>
+  <th>Kurtosis:</th>       <td>14.415</td>  <th>  Cond. No.          </th> <td>    155.</td> 
+</tr>
+</table><br/><br/>Warnings:<br/>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</div></div>
+</div>
+<p>Here <span class="math notranslate nohighlight">\(\hat{\beta}_1\)</span> is 0.43, compared to 0.72 from the earlier biased (single variable) regression. That’s huge! This implies that when we control for a person’s ability (i.e. we get rid of that source of bias), we only see that on average going to college is associated with a 43% increase in earnings instead of 72%. Furthermore, looking at the 95% confidence interval for <span class="math notranslate nohighlight">\(\hat{\beta}_2\)</span>, we see that it does not contain 0, which would imply that AFQT score has a strong non-zero association with earnings.</p>
+<p>These observations validate our claim that AFQT was probably an omitted variable causing <span class="math notranslate nohighlight">\(\hat{\beta}_1\)</span> to be biased. When interpreting <span class="math notranslate nohighlight">\(\hat{\beta}\)</span> coefficients, you should always be mindful of potential sources of bias that could make your coefficients misleading and not useful from an econometric context.</p>
+<p><strong>Note:</strong> A linear regression model makes predictions for <span class="math notranslate nohighlight">\(y\)</span> which we’ve been calling <span class="math notranslate nohighlight">\(\hat{y}\)</span>. If you imagine that you are the model and are tasked with predicting people’s earnings, you will almost certainly want more than just their years of schooling to make an accurate prediction. The more relevant variables you are given, the better predictions you are likely to make compared to just using one variable. The Variable needs to be relevant though; the day of the week a person was born on is probably not useful in predicting earnings. This is just another way of thinking about the usefulness of multivariable regression.</p>
+<section id="visualizing-multivariable-regression">
+<h3>Visualizing Multivariable Regression<a class="headerlink" href="#visualizing-multivariable-regression" title="Link to this heading">#</a></h3>
+<p>The 3D plots below show us our variables of interest and the regression plane from two different angles.</p>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<img alt="../../../../_images/9a7de3a5ddd76b8d543a348ebe9ef89450527f97a7351807bbd01d7a375d25fd.png" src="../../../../_images/9a7de3a5ddd76b8d543a348ebe9ef89450527f97a7351807bbd01d7a375d25fd.png" />
+</div>
+</div>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<img alt="../../../../_images/14398940bd939be08b5a708472c440de18636e7e00c0adbf896867f2a4049ecd.png" src="../../../../_images/14398940bd939be08b5a708472c440de18636e7e00c0adbf896867f2a4049ecd.png" />
+</div>
+</div>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<img alt="../../../../_images/e882d35573409a312f37b284b47b5aff33d6171876d4d1b1cfe27f89bfb635ba.png" src="../../../../_images/e882d35573409a312f37b284b47b5aff33d6171876d4d1b1cfe27f89bfb635ba.png" />
+</div>
+</div>
+<p>The regression plane, instead of the regression line, represents the values for log earnings that the regression model would predict for any given college and AFQT input. It’s a plane now because there are two possible inputs, as opposed to one.</p>
+</section>
+</section>
+<section id="colinearity-and-dummy-variables">
+<h2>Colinearity and Dummy Variables<a class="headerlink" href="#colinearity-and-dummy-variables" title="Link to this heading">#</a></h2>
+<p>When we do regression onto the variable <code class="docutils literal notranslate"><span class="pre">college</span></code>, why don’t we also include a variable that measures not going to college? In other words, why don’t we regress on college and the opposite of college so that way we can get an estimate of the average earnings of college-goers and non-college-goers. Why do we do this roundabout way of using the intercept term and a difference in means?</p>
+<p>Imagine we have a dataset with a variable for college, a variable for not going to college, and the intercept term. The issue with this is that there is now redundant information.</p>
+<p>Let’s look at just one element of the sample. Let’s say this person went to college, so this person’s features are the following:</p>
+<ul class="simple">
+<li><p>College = 1</p></li>
+<li><p>Not College = 0</p></li>
+<li><p>Intercept term = 1</p></li>
+</ul>
+<p>Clearly there is a redundancy here; you can guess one of the variables from the others. More specifically, by redundancy we mean that <em>one variable can be written as a linear combination of the other variables</em>. In fact, there are three different combinations:</p>
+<ul class="simple">
+<li><p>Intercept = College + Not College</p></li>
+<li><p>Not College = Intercept - College</p></li>
+<li><p>College = Intercept - Not College</p></li>
+</ul>
+<p>These equalities aren’t just true for this one person; they actually hold true for any possible person in the sample. This is because of the way we defined “college” and “not college”. You can’t simultaneously be in both, and so adding them together you get 1, which is just the intercept term.</p>
+<p>In general, we have redundancy whenever we have <em>mutually exclusive</em> and <em>exhaustive</em> dummy variables in combination with an intercept term.</p>
+<ul class="simple">
+<li><p>Mutually exclusive: You cannot be in more than one dummy variable.</p></li>
+<li><p>Exhaustive: You must be in at least one dummy variable.</p></li>
+</ul>
+<p>You can see that “college” and “not college” satisfy these conditions. So why is this redundancy an issue? It becomes ambiguous what the values for <span class="math notranslate nohighlight">\(\hat{\alpha}\)</span>, <span class="math notranslate nohighlight">\(\hat{\beta}_1\)</span>, and <span class="math notranslate nohighlight">\(\hat{\beta}_2\)</span> should be in the model where we include all three terms:</p>
+<div class="math notranslate nohighlight">
+\[
+\text{log earnings} = \hat{\alpha} + \hat{\beta}_1 \text{college} + \hat{\beta}_2 \text{not college}
+\]</div>
+<p>Consider a case where we expect people who went to college to have log earnings of 10 and those who did not go to college to have log earnings of 8. What values for <span class="math notranslate nohighlight">\(\hat{\beta}\)</span> and <span class="math notranslate nohighlight">\(\hat{\alpha}\)</span> make sense?</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\hat{\beta}_1 = 10\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\beta}_2 = 8\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\alpha} = 0\)</span></p></li>
+</ul>
+<p>make sense. These are valid values for <span class="math notranslate nohighlight">\(\hat{\beta}\)</span> and <span class="math notranslate nohighlight">\(\hat{\alpha}\)</span> that satisfy the condition above. To see why, consider a person with college:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\text{log earnings} &amp;= \hat{\alpha} + \hat{\beta}_1 \cdot 1 + \hat{\beta}_2 \cdot 0 \\
+\text{log earnings} &amp;= \hat{\alpha} + \hat{\beta}_1 \\
+\text{log earnings} &amp;= 0 + 10 = 10
+\end{aligned}\end{split}\]</div>
+<p>and a person without college:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\text{log earnings} &amp;= \hat{\alpha} + \hat{\beta}_1 \cdot 0 + \hat{\beta}_2 \cdot 1 \\
+\text{log earnings} &amp;= \hat{\alpha} + \hat{\beta}_2 \\
+\text{log earnings} &amp;= 0 + 8 = 8
+\end{aligned}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\hat{\beta}_1 = 2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\beta}_2 = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\alpha} = 8\)</span></p></li>
+</ul>
+<p>also make sense. To see why, consider a person with college:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\text{log earnings} &amp;= \hat{\alpha} + \hat{\beta}_1 \cdot 1 + \hat{\beta}_2 \cdot 0 \\
+\text{log earnings} &amp;= \hat{\alpha} + \hat{\beta}_1 \\
+\text{log earnings} &amp;= 8 + 2 = 10
+\end{aligned}\end{split}\]</div>
+<p>and a person without college:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\text{log earnings} &amp;= \hat{\alpha} + \hat{\beta}_1 \cdot 0 + \hat{\beta}_2 \cdot 1 \\
+\text{log earnings} &amp;= \hat{\alpha} + \hat{\beta}_2 \\
+\text{log earnings} &amp;= 8 + 0 = 8
+\end{aligned}\end{split}\]</div>
+<p>It turns out, there are actually infinitely many solutions for <span class="math notranslate nohighlight">\(\hat{\beta}\)</span> that satisfy the condition where people who went to college have mean log earnings of 10 and people who did not go to college have mean log earnings of 8. This holds true for all situations where you regress on a constant and a set of mutually exclusive and exhaustive dummies. There is no unique solution for <span class="math notranslate nohighlight">\(\hat{\beta}\)</span>, which is a problem for econometricians who want unique and interpretable coefficients.</p>
+<p>In fact, there is mathematical justification for this as well. At some point in the math involved in performing regression, having redundant variables causes a division by 0. This is particularly upsetting for your computer, and it will complain.</p>
+<p>So how do we avoid this problem? We deliberately exclude one of the variables. It can technically either be one of the dummy variables or the intercept term, but we usually really want to have an intercept term present in our regression for other reasons. So we usually get rid of one of the dummy variables. Notice that we implicitly did this earlier. We did not include “not college” in our first regression.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs/jupyter_execute/content/11-econometrics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multivariable-regression">Multivariable Regression</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-multivariable-regression">Visualizing Multivariable Regression</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#colinearity-and-dummy-variables">Colinearity and Dummy Variables</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Data 88E Course Staff
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2020.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
