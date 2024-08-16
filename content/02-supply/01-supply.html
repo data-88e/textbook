@@ -524,7 +524,7 @@ document.write(`
 </div>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<img alt="../../_images/73cc2bbca3ab3652ab32c018356db6c31e652390b420a564e8c924ed7559554a.png" src="../../_images/73cc2bbca3ab3652ab32c018356db6c31e652390b420a564e8c924ed7559554a.png" />
+<img alt="../../_images/b77d7abf459122761dd893433a39a14e4efa6906d218be1b124c4dfa5d13de0a.png" src="../../_images/b77d7abf459122761dd893433a39a14e4efa6906d218be1b124c4dfa5d13de0a.png" />
 </div>
 </div>
 <p>Market behavior relating to supply is based on the behavior of the individual firms that comprise it. Now, how does an individual firm make its decision about production? It does so based on the costs associated with production. If the price of a good is enough to recover the costs, the firm produces. Generally, costs increase with the quantity of production. So, to induce producers to increase the quantity supplied, the market prices need to be high enough to compensate for the increased costs.</p>
@@ -610,14 +610,14 @@ document.write(`
 <p>[Following image is a graph of Total, Fixed and Variable Costs]</p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<img alt="../../_images/92c24dbff8c946c9c2a11e41d9005a36540c827017a774d3e5cd938f6da8d1cf.png" src="../../_images/92c24dbff8c946c9c2a11e41d9005a36540c827017a774d3e5cd938f6da8d1cf.png" />
+<img alt="../../_images/90bb8ea0b89e32711ccaefe2dc6dbfa1d9a2cb81d48ea21a4017c9257b53dc3e.png" src="../../_images/90bb8ea0b89e32711ccaefe2dc6dbfa1d9a2cb81d48ea21a4017c9257b53dc3e.png" />
 </div>
 </div>
 <p>There are two important things to notice about the graph above. First, the total fixed cost is flat. This is because the fixed cost does not change regardless of quantity produced. Second, the vertical difference between the total variable cost and total cost is the TFC. This is because <span class="math notranslate nohighlight">\(\text{TC} = \text{TVC} + \text{TFC}\)</span>.</p>
 <p>[Following image is a graph of Average Total, Fixed, and Variable Costs]</p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<img alt="../../_images/6d30858ce6369b066fa37f034b94995a9fc3c9974b73e634a14cd8751c03efb3.png" src="../../_images/6d30858ce6369b066fa37f034b94995a9fc3c9974b73e634a14cd8751c03efb3.png" />
+<img alt="../../_images/2e872448aa5af2b9b46d6c894813dc2b6d981f25491447195f1f159046559a88.png" src="../../_images/2e872448aa5af2b9b46d6c894813dc2b6d981f25491447195f1f159046559a88.png" />
 </div>
 </div>
 <p>From the graph above, note that:</p>
@@ -629,7 +629,7 @@ document.write(`
 <p>[Following image is a graph of Average Total and Variable Cost and Marginal Cost]</p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<img alt="../../_images/523ec66c753cfc951ea0d47a6a5ef29351bca88df21e8e6602481c103bcbe2f0.png" src="../../_images/523ec66c753cfc951ea0d47a6a5ef29351bca88df21e8e6602481c103bcbe2f0.png" />
+<img alt="../../_images/76e99aa55472869055d7a051c054d513b186bc2fd27e05d0100c01380379c5ff.png" src="../../_images/76e99aa55472869055d7a051c054d513b186bc2fd27e05d0100c01380379c5ff.png" />
 </div>
 </div>
 <p>Notice that the MC curve intersects the ATC and AVC curves at their minima. This is because when MC is below the AVC and ATC, it brings down the average since it costs less to produce an additional unit. But as MC begins to increase and surpasses the ATC and AVC cost curves, it will surpass the intersection, and pulls up the AVC and ATC curves. Therefore, it intersects at the minima.</p>
@@ -651,10 +651,22 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No production
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">20</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">firm_behaviour</span><span class="p">(</span><span class="mi">24</span><span class="p">,</span> <span class="n">individual_firm_costs</span><span class="p">)</span>
+
+<span class="nn">File c:\Users\lynnc\OneDrive\Documents\GitHub\textbook\content\02-supply\utils.py:14,</span> in <span class="ni">firm_behaviour</span><span class="nt">(price, individual_firm_costs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">output</span> <span class="o">=</span> <span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Output&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="n">mc</span> <span class="o">=</span> <span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Marginal Cost&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="ne">---&gt; </span><span class="mi">14</span> <span class="n">sp_mc</span> <span class="o">=</span> <span class="n">csaps</span><span class="o">.</span><span class="n">UnivariateCubicSmoothingSpline</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">mc</span><span class="p">,</span> <span class="n">smooth</span><span class="o">=</span><span class="mf">0.85</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="n">output_s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">output</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">output</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">150</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="n">mc_s</span> <span class="o">=</span> <span class="n">sp_mc</span><span class="p">(</span><span class="n">output_s</span><span class="p">)</span>
+
+<span class="ne">AttributeError</span>: module &#39;csaps&#39; has no attribute &#39;UnivariateCubicSmoothingSpline&#39;
 </pre></div>
 </div>
-<img alt="../../_images/6d6fcafc092c9bfa1a5e4ee9c7bf870184beb377fa64074e94b2abc6553cf3c9.png" src="../../_images/6d6fcafc092c9bfa1a5e4ee9c7bf870184beb377fa64074e94b2abc6553cf3c9.png" />
+<img alt="../../_images/30bd87965de4bad26b9480db5e70c7544c1d9fe5bf87e8d88319c886d2aa0f2f.png" src="../../_images/30bd87965de4bad26b9480db5e70c7544c1d9fe5bf87e8d88319c886d2aa0f2f.png" />
 </div>
 </div>
 <p>For any price that lies above the AVC curve but below the ATC curve, the firm will produce at a loss-minimising quantity. This is because for some levels of production, they will make revenue that is more than the total variable cost of production but is still less than the total cost, which includes the fixed cost. While they still lose money, they have offset some of the losses they would have incurred from the fixed cost. In our example, we see this for prices between 25 and 31. The red patch in the plot shows the loss.</p>
@@ -666,10 +678,22 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Production at loss minimising quantity
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">21</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">firm_behaviour</span><span class="p">(</span><span class="mi">28</span><span class="p">,</span> <span class="n">individual_firm_costs</span><span class="p">)</span>
+
+<span class="nn">File c:\Users\lynnc\OneDrive\Documents\GitHub\textbook\content\02-supply\utils.py:14,</span> in <span class="ni">firm_behaviour</span><span class="nt">(price, individual_firm_costs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">output</span> <span class="o">=</span> <span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Output&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="n">mc</span> <span class="o">=</span> <span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Marginal Cost&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="ne">---&gt; </span><span class="mi">14</span> <span class="n">sp_mc</span> <span class="o">=</span> <span class="n">csaps</span><span class="o">.</span><span class="n">UnivariateCubicSmoothingSpline</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">mc</span><span class="p">,</span> <span class="n">smooth</span><span class="o">=</span><span class="mf">0.85</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="n">output_s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">output</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">output</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">150</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="n">mc_s</span> <span class="o">=</span> <span class="n">sp_mc</span><span class="p">(</span><span class="n">output_s</span><span class="p">)</span>
+
+<span class="ne">AttributeError</span>: module &#39;csaps&#39; has no attribute &#39;UnivariateCubicSmoothingSpline&#39;
 </pre></div>
 </div>
-<img alt="../../_images/d70dcb74fe5ae5359850cff59fee5108b6f6bfb2bed70f49f770da0e3656c282.png" src="../../_images/d70dcb74fe5ae5359850cff59fee5108b6f6bfb2bed70f49f770da0e3656c282.png" />
+<img alt="../../_images/30bd87965de4bad26b9480db5e70c7544c1d9fe5bf87e8d88319c886d2aa0f2f.png" src="../../_images/30bd87965de4bad26b9480db5e70c7544c1d9fe5bf87e8d88319c886d2aa0f2f.png" />
 </div>
 </div>
 <p>If the price is above the ATC curve, the firm produces at a profit. In this example, it is at prices 32 and above. The green patch shows the profit.</p>
@@ -681,10 +705,22 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Production at a profit
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">24</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">firm_behaviour</span><span class="p">(</span><span class="mi">36</span><span class="p">,</span> <span class="n">individual_firm_costs</span><span class="p">)</span>
+
+<span class="nn">File c:\Users\lynnc\OneDrive\Documents\GitHub\textbook\content\02-supply\utils.py:14,</span> in <span class="ni">firm_behaviour</span><span class="nt">(price, individual_firm_costs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">output</span> <span class="o">=</span> <span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Output&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="n">mc</span> <span class="o">=</span> <span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Marginal Cost&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="ne">---&gt; </span><span class="mi">14</span> <span class="n">sp_mc</span> <span class="o">=</span> <span class="n">csaps</span><span class="o">.</span><span class="n">UnivariateCubicSmoothingSpline</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">mc</span><span class="p">,</span> <span class="n">smooth</span><span class="o">=</span><span class="mf">0.85</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="n">output_s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">output</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">output</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">150</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="n">mc_s</span> <span class="o">=</span> <span class="n">sp_mc</span><span class="p">(</span><span class="n">output_s</span><span class="p">)</span>
+
+<span class="ne">AttributeError</span>: module &#39;csaps&#39; has no attribute &#39;UnivariateCubicSmoothingSpline&#39;
 </pre></div>
 </div>
-<img alt="../../_images/a8b504857651cb2b8a8d7a5d8af67a38698f83492491547c0164c745fb65e995.png" src="../../_images/a8b504857651cb2b8a8d7a5d8af67a38698f83492491547c0164c745fb65e995.png" />
+<img alt="../../_images/30bd87965de4bad26b9480db5e70c7544c1d9fe5bf87e8d88319c886d2aa0f2f.png" src="../../_images/30bd87965de4bad26b9480db5e70c7544c1d9fe5bf87e8d88319c886d2aa0f2f.png" />
 </div>
 </div>
 <p>So, we have seen that a firm produces if the price is above the AVC. The question now is: what is the level of production?</p>
