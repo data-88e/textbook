@@ -670,7 +670,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/3b123f2e4e8ca8823029c00eafd9d5c0e21425f6ef5181f540905bb9cbd5e039.png" src="../../_images/3b123f2e4e8ca8823029c00eafd9d5c0e21425f6ef5181f540905bb9cbd5e039.png" />
+<img alt="../../_images/be523a4a44183a6795f0bf0ef08ef37a7fc28df983a93a2d8ffa898b9b48acfa.png" src="../../_images/be523a4a44183a6795f0bf0ef08ef37a7fc28df983a93a2d8ffa898b9b48acfa.png" />
 </div>
 </div>
 <p>The visualization shows a negative relationship between quantity and price, which is in line with our expectations: as the price increases, fewer consumers will purchase oranges, so the quantity demanded will decrease. This corresponds to a leftward movement along the demand curve. Alternatively, as the price decreases, the quantity sold will increase because consumers want to maximize their purchasing power and buy more oranges; this is shown by a rightward movement along the curve.</p>
@@ -686,7 +686,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-3432.84670093, 53625.8748401 ])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ -3432.84670093,  53625.8748401 ])
 </pre></div>
 </div>
 </div>
@@ -776,15 +776,15 @@ The price equilibrium is the price at which the supply curve and demand curve in
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_equation</span><span class="p">(</span><span class="n">equation</span><span class="p">,</span> <span class="n">price_start</span><span class="p">,</span> <span class="n">price_end</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_equation</span><span class="p">(</span><span class="n">equation</span><span class="p">,</span> <span class="n">price_start</span><span class="p">,</span> <span class="n">price_end</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="n">plot_prices</span> <span class="o">=</span> <span class="p">[</span><span class="n">price_start</span><span class="p">,</span> <span class="n">price_end</span><span class="p">]</span>
     <span class="n">plot_quantities</span> <span class="o">=</span> <span class="p">[</span><span class="n">equation</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">equation</span><span class="o">.</span><span class="n">free_symbols</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">plot_prices</span><span class="p">]</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">plot_quantities</span><span class="p">,</span> <span class="n">plot_prices</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">plot_quantities</span><span class="p">,</span> <span class="n">plot_prices</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="n">linestyle</span><span class="p">)</span>
     
 <span class="k">def</span> <span class="nf">plot_intercept</span><span class="p">(</span><span class="n">eq1</span><span class="p">,</span> <span class="n">eq2</span><span class="p">):</span>
     <span class="n">ex</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">eq1</span><span class="o">-</span><span class="n">eq2</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">why</span> <span class="o">=</span> <span class="n">eq1</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">eq1</span><span class="o">.</span><span class="n">free_symbols</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ex</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">([</span><span class="n">why</span><span class="p">],</span> <span class="p">[</span><span class="n">ex</span><span class="p">],</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:orange&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">([</span><span class="n">why</span><span class="p">],</span> <span class="p">[</span><span class="n">ex</span><span class="p">],</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">ex</span><span class="p">,</span> <span class="n">why</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -794,7 +794,7 @@ The price equilibrium is the price at which the supply curve and demand curve in
 <p>[Following image is a scatter plot for supply and demand for oranges]</p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<img alt="../../_images/6dbddbbde7d64b656c12534cad5807835e0ec6dd380c69911eb4e0a768875b6b.png" src="../../_images/6dbddbbde7d64b656c12534cad5807835e0ec6dd380c69911eb4e0a768875b6b.png" />
+<img alt="../../_images/9c6c3e1b1aada8e5afcd98fdbc85259cdbf4d79ad70c04e9df4ea8835ca973aa.png" src="../../_images/9c6c3e1b1aada8e5afcd98fdbc85259cdbf4d79ad70c04e9df4ea8835ca973aa.png" />
 </div>
 </div>
 <p>You can also practice on your own and download additional data sets <a class="reference external" href="http://users.stat.ufl.edu/~winner/datasets.html">here</a>, courtesy of the University of Flordia’s Statistics Department.</p>

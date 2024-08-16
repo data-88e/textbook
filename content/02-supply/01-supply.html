@@ -651,22 +651,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">20</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">firm_behaviour</span><span class="p">(</span><span class="mi">24</span><span class="p">,</span> <span class="n">individual_firm_costs</span><span class="p">)</span>
-
-<span class="nn">File c:\Users\lynnc\OneDrive\Documents\GitHub\textbook\content\02-supply\utils.py:14,</span> in <span class="ni">firm_behaviour</span><span class="nt">(price, individual_firm_costs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">output</span> <span class="o">=</span> <span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Output&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:]</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="n">mc</span> <span class="o">=</span> <span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Marginal Cost&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:]</span>
-<span class="ne">---&gt; </span><span class="mi">14</span> <span class="n">sp_mc</span> <span class="o">=</span> <span class="n">csaps</span><span class="o">.</span><span class="n">UnivariateCubicSmoothingSpline</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">mc</span><span class="p">,</span> <span class="n">smooth</span><span class="o">=</span><span class="mf">0.85</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="n">output_s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">output</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">output</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">150</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="n">mc_s</span> <span class="o">=</span> <span class="n">sp_mc</span><span class="p">(</span><span class="n">output_s</span><span class="p">)</span>
-
-<span class="ne">AttributeError</span>: module &#39;csaps&#39; has no attribute &#39;UnivariateCubicSmoothingSpline&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No production
 </pre></div>
 </div>
-<img alt="../../_images/30bd87965de4bad26b9480db5e70c7544c1d9fe5bf87e8d88319c886d2aa0f2f.png" src="../../_images/30bd87965de4bad26b9480db5e70c7544c1d9fe5bf87e8d88319c886d2aa0f2f.png" />
+<img alt="../../_images/6aea06dfe373650f56c87026566702ba8973f7af1924fc5d9b36d8dfe8bfc807.png" src="../../_images/6aea06dfe373650f56c87026566702ba8973f7af1924fc5d9b36d8dfe8bfc807.png" />
 </div>
 </div>
 <p>For any price that lies above the AVC curve but below the ATC curve, the firm will produce at a loss-minimising quantity. This is because for some levels of production, they will make revenue that is more than the total variable cost of production but is still less than the total cost, which includes the fixed cost. While they still lose money, they have offset some of the losses they would have incurred from the fixed cost. In our example, we see this for prices between 25 and 31. The red patch in the plot shows the loss.</p>
@@ -678,22 +666,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">21</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">firm_behaviour</span><span class="p">(</span><span class="mi">28</span><span class="p">,</span> <span class="n">individual_firm_costs</span><span class="p">)</span>
-
-<span class="nn">File c:\Users\lynnc\OneDrive\Documents\GitHub\textbook\content\02-supply\utils.py:14,</span> in <span class="ni">firm_behaviour</span><span class="nt">(price, individual_firm_costs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">output</span> <span class="o">=</span> <span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Output&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:]</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="n">mc</span> <span class="o">=</span> <span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Marginal Cost&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:]</span>
-<span class="ne">---&gt; </span><span class="mi">14</span> <span class="n">sp_mc</span> <span class="o">=</span> <span class="n">csaps</span><span class="o">.</span><span class="n">UnivariateCubicSmoothingSpline</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">mc</span><span class="p">,</span> <span class="n">smooth</span><span class="o">=</span><span class="mf">0.85</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="n">output_s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">output</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">output</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">150</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="n">mc_s</span> <span class="o">=</span> <span class="n">sp_mc</span><span class="p">(</span><span class="n">output_s</span><span class="p">)</span>
-
-<span class="ne">AttributeError</span>: module &#39;csaps&#39; has no attribute &#39;UnivariateCubicSmoothingSpline&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Production at loss minimising quantity
 </pre></div>
 </div>
-<img alt="../../_images/30bd87965de4bad26b9480db5e70c7544c1d9fe5bf87e8d88319c886d2aa0f2f.png" src="../../_images/30bd87965de4bad26b9480db5e70c7544c1d9fe5bf87e8d88319c886d2aa0f2f.png" />
+<img alt="../../_images/c60a60b5a8391dba3c5a2a5dfc7446203b20e8e9d24ffdd780884901707c1326.png" src="../../_images/c60a60b5a8391dba3c5a2a5dfc7446203b20e8e9d24ffdd780884901707c1326.png" />
 </div>
 </div>
 <p>If the price is above the ATC curve, the firm produces at a profit. In this example, it is at prices 32 and above. The green patch shows the profit.</p>
@@ -705,22 +681,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">24</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">firm_behaviour</span><span class="p">(</span><span class="mi">36</span><span class="p">,</span> <span class="n">individual_firm_costs</span><span class="p">)</span>
-
-<span class="nn">File c:\Users\lynnc\OneDrive\Documents\GitHub\textbook\content\02-supply\utils.py:14,</span> in <span class="ni">firm_behaviour</span><span class="nt">(price, individual_firm_costs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">output</span> <span class="o">=</span> <span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Output&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:]</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="n">mc</span> <span class="o">=</span> <span class="n">individual_firm_costs</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;Marginal Cost&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:]</span>
-<span class="ne">---&gt; </span><span class="mi">14</span> <span class="n">sp_mc</span> <span class="o">=</span> <span class="n">csaps</span><span class="o">.</span><span class="n">UnivariateCubicSmoothingSpline</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">mc</span><span class="p">,</span> <span class="n">smooth</span><span class="o">=</span><span class="mf">0.85</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="n">output_s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">output</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">output</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">150</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="n">mc_s</span> <span class="o">=</span> <span class="n">sp_mc</span><span class="p">(</span><span class="n">output_s</span><span class="p">)</span>
-
-<span class="ne">AttributeError</span>: module &#39;csaps&#39; has no attribute &#39;UnivariateCubicSmoothingSpline&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Production at a profit
 </pre></div>
 </div>
-<img alt="../../_images/30bd87965de4bad26b9480db5e70c7544c1d9fe5bf87e8d88319c886d2aa0f2f.png" src="../../_images/30bd87965de4bad26b9480db5e70c7544c1d9fe5bf87e8d88319c886d2aa0f2f.png" />
+<img alt="../../_images/9bfabbc006d578b39b24077012aada3c3d67f5a0fed65268285aa942cfcbb16f.png" src="../../_images/9bfabbc006d578b39b24077012aada3c3d67f5a0fed65268285aa942cfcbb16f.png" />
 </div>
 </div>
 <p>So, we have seen that a firm produces if the price is above the AVC. The question now is: what is the level of production?</p>
