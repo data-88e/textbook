@@ -1,12 +1,11 @@
 # Requirements for the demo notebooks
 # Useful for MyBinder configuration
-- pandas
-numpy
-- datascience
-- ipywidgets
+pandas
+datascience
+ipywidgets
 folium
 matplotlib
 nbinteract
-- scipy
+scipy
 jupyter-book
 matplotlib-label-lines

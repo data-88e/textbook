@@ -21,3 +21,13 @@ html:
 bibtex_bibfiles:
     - references.bib
 
+parse:
+  myst_enable_extensions:
+    - "amsmath"
+    - "dollarmath"
+  
+sphinx:
+  config:
+    mathjax_config:
+      TeX:
+        equationNumbers: {autoNumber: "AMS"}
