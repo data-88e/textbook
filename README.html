@@ -397,7 +397,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -413,6 +415,16 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">textbook</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#note-chapter-4-shifts-ipynb">NOTE: Chapter 4 - shifts.ipynb</a></li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -431,6 +443,10 @@ document.write(`
 </pre></div>
 </div>
 <p>This will output HTML to <code class="docutils literal notranslate"><span class="pre">_build/html</span></code>, which can be copied to <code class="docutils literal notranslate"><span class="pre">docs</span></code> in order to be served on GitHub Pages.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="note-chapter-4-shifts-ipynb">
+<h1>NOTE: Chapter 4 - shifts.ipynb<a class="headerlink" href="#note-chapter-4-shifts-ipynb" title="Link to this heading">#</a></h1>
+<p>The figures generated in this notebook are Plotly-based javascript-enbedded html files. The script portion of each figX.html file messes with the Jupyter Books ability to render the Latex symbols. You can see I commented out the creation of the html files(e.g fig1.html, etc). Then I went into each html file and commented out the script section. Then went back to the notebook and ran the cell to display the figure. There has to be an easier way!</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -469,6 +485,23 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">textbook</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#note-chapter-4-shifts-ipynb">NOTE: Chapter 4 - shifts.ipynb</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>
