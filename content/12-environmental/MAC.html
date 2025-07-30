@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/style.css?v=9f39b2ca" />
@@ -653,7 +653,7 @@ We start by importing a dataset on methane abatement from the International Envi
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#The find_x_pos function used for plotting! (out of scope)</span>
 
-<span class="k">def</span> <span class="nf">find_x_pos</span><span class="p">(</span><span class="n">widths</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">find_x_pos</span><span class="p">(</span><span class="n">widths</span><span class="p">):</span>
     <span class="n">cumulative_widths</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">cumulative_widths</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">widths</span><span class="p">))</span>
     <span class="n">half_widths</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">/</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">widths</span><span class="p">]</span>
@@ -679,7 +679,7 @@ We start by importing a dataset on methane abatement from the International Envi
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#The methane_tax function -- Let&#39;s introduce a tax!</span>
-<span class="k">def</span> <span class="nf">methane_tax</span><span class="p">(</span><span class="n">tax</span><span class="p">,</span> <span class="n">table</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">methane_tax</span><span class="p">(</span><span class="n">tax</span><span class="p">,</span> <span class="n">table</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">tax</span> <span class="o">&lt;</span> <span class="nb">min</span><span class="p">(</span><span class="n">table</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;Abatement Cost&#39;</span><span class="p">)):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No Abatement&quot;</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
@@ -697,7 +697,7 @@ We start by importing a dataset on methane abatement from the International Envi
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#The group_plot function used for plotting (out of scope)</span>
-<span class="k">def</span> <span class="nf">group_plot</span><span class="p">(</span><span class="n">tax</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">group_plot</span><span class="p">(</span><span class="n">tax</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Methane: $</span><span class="si">{</span><span class="n">tax</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="n">methane_tax</span><span class="p">(</span><span class="n">tax</span><span class="p">,</span> <span class="n">Group</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span><span class="mi">12</span><span class="p">))</span>
@@ -753,7 +753,7 @@ Abatement Technologies [&#39;Replace pumps&#39; &#39;Blowdown capture&#39; &#39;
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#The Methane curve plot - function!</span>
-<span class="k">def</span> <span class="nf">mckinsey_curve</span><span class="p">(</span><span class="n">tax</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">mckinsey_curve</span><span class="p">(</span><span class="n">tax</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Methane Tax: $</span><span class="si">{</span><span class="n">tax</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="n">methane_tax</span><span class="p">(</span><span class="n">tax</span><span class="p">,</span> <span class="n">abatement_table</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span><span class="mi">12</span><span class="p">))</span>
