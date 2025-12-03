@@ -40,7 +40,7 @@ jobs:
           # C. Run Axe CLI on the discovered URLs
           axe $URLS \
             --tags wcag2a,wcag2aa,wcag21a,wcag21aa \
-            --timeout 5000 \
+            --webdriver-options '{"pageLoadTimeout": 20000}' \
             --save axe-report.json \
             --exit
 
