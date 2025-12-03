@@ -5,6 +5,7 @@ const fs = require('fs');
 
 // Get URLs from command line args
 const urls = process.argv.slice(2);
+console.log(`\nStarting Axe scan on ${urls.length} pages...\n`);
 
 (async function scan() {
   const options = new chrome.Options();
@@ -26,28 +27,38 @@ const urls = process.argv.slice(2);
     // Set a very generous timeout for page loads (3 minutes)
     await driver.manage().setTimeouts({ pageLoad: 180000, script: 180000 });
 
-    for (const url of urls) {
-      console.log(`Testing ${url} ...`);
-      
+    for (let i = 0; i < urls.length; i++) {
+      const url = urls[i];
+      console.log(`[${i + 1}/${urls.length}] Testing ${url} ...`);
+
       try {
         await driver.get(url);
 
-        // Run Axe analysis
         const results = await new AxeBuilder(driver)
           .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
           .analyze();
 
         if (results.violations.length > 0) {
           console.log(`  FAILED: ${results.violations.length} violations found.`);
+          results.violations.forEach((violation) => {
+            console.log(`    [${violation.impact.toUpperCase()}] ${violation.id}: ${violation.help}`);
+            console.log(`    Help URL: ${violation.helpUrl}`);
+            
+            violation.nodes.forEach((node) => {
+               console.log(`      - Selector: ${node.target.join(' ')}`);
+            });
+            console.log(''); // Empty line for readability
+          });
+
           fullReport.push({
             url: url,
             violations: results.violations
           });
-          hasErrors = true; 
+          hasErrors = true;
         } else {
           console.log(`  PASSED`);
         }
-        
+
       } catch (e) {
         console.error(`  CRASHED: Could not scan ${url}. Skipping.`);
         console.error(`  Reason: ${e.message}`);
@@ -60,8 +71,9 @@ const urls = process.argv.slice(2);
       }
     }
 
+    // Save JSON report
     fs.writeFileSync('axe-report.json', JSON.stringify(fullReport, null, 2));
-    console.log('Report saved to axe-report.json');
+    console.log('\nReport saved to axe-report.json');
 
   } finally {
     await driver.quit();
