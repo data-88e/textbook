@@ -25,7 +25,7 @@ jobs:
     #     run: npx browser-driver-manager install chrome
 
       - name: Build Jupyter Book
-        run: jupyter-book build --html
+        run: npx jupyter-book build --html
 
       - name: Run Axe Checks
         run: |
