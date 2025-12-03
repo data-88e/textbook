@@ -1,3 +1,5 @@
-.ipynb_checkpoints
+**/.ipynb_checkpoints
 _build
 .venv
+**/.DS_Store
+**/__pycache__
