@@ -19,7 +19,7 @@ jobs:
           node-version: '20'
 
       - name: Install Jupyter Book, Axe CLI, and HTTP Server
-        run: npm install -g jupyter-book @axe-core/cli http-server
+        run: npm install -g jupyter-book selenium-webdriver @axe-core/webdriverjs chromedriver http-server wait-on
     
       - name: Install Matching ChromeDriver for Axe
         run: npx browser-driver-manager install chrome
@@ -31,18 +31,14 @@ jobs:
         run: |
           # A. Start a local server in the background
           npx http-server ./_build/html -p 8080 -s &
-          sleep 5
+          npx wait-on http://localhost:8080
           
           # B. Generate the URL list from the actual build artifacts
           cd _build/html
           URLS=$(find . -name "*.html" -not -path "*/build/*" | sed 's|^\./||' | sed 's|^|http://localhost:8080/|' | tr '\n' ' ')          
           
-          # C. Run Axe CLI on the discovered URLs
-          axe $URLS \
-            --tags wcag2a,wcag2aa,wcag21a,wcag21aa \
-            --chrome-options "no-sandbox,disable-dev-shm-usage,disable-gpu,headless=new"
-            --save axe-report.json \
-            --exit
+          # C. Run custom script
+          node axe-scan.js $URLS
 
       - name: Upload Accessibility Report
         if: always() 
