@@ -5,7 +5,7 @@ project:
     - name: Data 88E Course Staff
   copyright: '2020'
   github: data-88e/textbook
-  thebe:
+  jupyter:
     binder:
       repo: data-88e/textbook
       provider: github
@@ -85,3 +85,8 @@ site:
     folders: true
     hide_authors: true
   template: book-theme
+sphinx:
+  config:
+    # This overrides the default theme (Sphinx Book Theme)
+    # to use your custom theme.
+    html_theme: quantecon_book_theme
