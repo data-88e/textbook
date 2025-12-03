@@ -36,7 +36,8 @@ jobs:
           # B. Generate the URL list from the actual build artifacts
           cd _build/html
           URLS=$(find . -name "*.html" -not -path "*/build/*" | sed 's|^\./||' | sed 's|^|http://localhost:8080/|' | tr '\n' ' ')          
-          
+          cd ../..
+
           # C. Run custom script
           node axe-scan.js $URLS
 
