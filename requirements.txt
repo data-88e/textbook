@@ -2,10 +2,9 @@
 # Useful for MyBinder configuration
 pandas
 datascience
-ipywidgets
+ipywidgets==7.7.2
 folium
 matplotlib
-nbinteract
+nbinteract==0.2.6
 scipy
-jupyter-book<2
 matplotlib-label-lines
