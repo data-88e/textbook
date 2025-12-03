@@ -21,8 +21,8 @@ jobs:
       - name: Install Jupyter Book, Axe CLI, and HTTP Server
         run: npm install -g jupyter-book @axe-core/cli http-server
     
-    #   - name: Install Matching ChromeDriver for Node v20
-    #     run: npx browser-driver-manager install chrome
+      - name: Install Matching ChromeDriver for Node v20
+        run: npx browser-driver-manager install chrome
 
       - name: Build Jupyter Book
         run: jupyter-book build --html
