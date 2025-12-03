@@ -13,6 +13,11 @@ console.log(`\nStarting Axe scan on ${urls.length} pages...\n`);
   options.addArguments('--no-sandbox');
   options.addArguments('--disable-dev-shm-usage'); 
   options.addArguments('--disable-gpu');
+  // see if these help with the production/shifts page crashing
+  options.addArguments('--window-size=1920,1080');
+  options.addArguments('--disable-extensions');
+  options.addArguments('--disable-infobars');
+  options.addArguments('--disable-software-rasterizer');
   
   // Initialize Driver
   const driver = await new Builder()
