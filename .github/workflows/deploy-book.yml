@@ -27,8 +27,8 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install --upgrade setuptools
-        pip install --upgrade jupyter-book sphinxcontrib-bibtex
+        pip install --upgrade setuptools sphinxcontrib-bibtex
+        pip install jupyter-book<2
 
     # Build the book
     - name: Build the book
