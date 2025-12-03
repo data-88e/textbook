@@ -1,14 +1,15 @@
-# textbook
-Textbook for Data 88E: Economic Models at UC Berkeley
+# Textbook for Data 88E: Economic Models at UC Berkeley
 
-Content is stored in the content folder. Order of textbook can be changed from _toc.yml file.
+[![Jupyter Book (via myst) GitHub Pages Deploy](https://github.com/data-88e/textbook/actions/workflows/deploy.yml/badge.svg)](https://github.com/data-88e/textbook/actions/workflows/deploy.yml) [![Accessibility Checks](https://github.com/data-88e/textbook/actions/workflows/a11y.yml/badge.svg)](https://github.com/data-88e/textbook/actions/workflows/a11y.yml)
+
+Content is stored in the content folder. Order of textbook can be changed from the `myst.yml` file.
 
 To build the textbook, run
 ```
 jupyter-book build .
 ```
 
-This will output HTML to `_build/html`, which can be copied to `docs` in order to be served on GitHub Pages.
+This will output HTML to `_build/html`.
 
 
 # NOTE: Chapter 4 - shifts.ipynb
