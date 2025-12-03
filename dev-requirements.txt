@@ -1,0 +1,9 @@
+pandas
+datascience
+ipywidgets==7.7.2
+folium
+matplotlib
+nbinteract==0.2.6
+scipy
+matplotlib-label-lines
+jupyterbook>=2
