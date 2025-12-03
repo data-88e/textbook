@@ -7,5 +7,4 @@ folium
 matplotlib
 nbinteract==0.2.6
 scipy
-jupyter-book<2
 matplotlib-label-lines
