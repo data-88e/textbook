@@ -1,11 +1,11 @@
 # Requirements for the demo notebooks
 # Useful for MyBinder configuration
-pandas==2.3.3
-datascience==0.18.1
-ipywidgets==7.8.5
-folium==0.20.0
-matplotlib==3.10.7
+pandas
+datascience
+ipywidgets==7.7.2
+folium
+matplotlib
 nbinteract==0.2.6
-scipy==1.16.3
+scipy
 jupyter-book<2
-matplotlib-label-lines==0.8.1
+matplotlib-label-lines
