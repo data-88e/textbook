@@ -85,8 +85,3 @@ site:
     folders: true
     hide_authors: true
   template: book-theme
-sphinx:
-  config:
-    # This overrides the default theme (Sphinx Book Theme)
-    # to use your custom theme.
-    html_theme: quantecon_book_theme
