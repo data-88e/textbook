@@ -39,12 +39,12 @@ jobs:
         uses: astral-sh/setup-uv@v4
       - name: Install Jupyter Book (via myst)
         run: npm install -g jupyter-book
+      - name: Build HTML Assets
+        run: jupyter-book build --html
       - name: Generate redirects
         run: |
           uv run https://raw.githubusercontent.com/pancakereport/jb1-redirect-generator/main/generate_redirects.py \
             --base-url https://data88e.org/textbook/
-      - name: Build HTML Assets
-        run: jupyter-book build --html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
