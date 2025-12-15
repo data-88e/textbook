@@ -1,6 +1,7 @@
 version: 1
 project:
   title: 'Data 88E: Economic Models Textbook'
+  license: BSD-3-Clause
   authors:
     - name: Data 88E Course Staff
   copyright: '2020'
@@ -15,8 +16,8 @@ project:
   bibliography:
     - references.bib
   toc:
-    - file: content/intro.md
-    - file: content/00-intro/index.ipynb
+    - file: content/about.md
+    - file: content/00-introduction/index.ipynb
     - file: content/01-demand/index.md
       children:
         - file: content/01-demand/01-demand.ipynb
