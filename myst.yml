@@ -82,6 +82,7 @@ project:
 site:
   options:
     logo: content/images/econ-models.png
+    logo_text: "Data 88E: Economic Models Textbook"
     favicon: content/images/favicon.ico
     folders: true
     hide_authors: true

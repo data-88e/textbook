@@ -1,6 +1,6 @@
 # Environmental Economics
 
-![](windmills.png)
+![Five windmills on a green hill with a cloudy blue sky in the background.](windmills.png)
 
 In a broad sense, the field of Environmental Economics aims to relate and apply economic concepts to the environment.
  
