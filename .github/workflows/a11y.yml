@@ -31,16 +31,23 @@ jobs:
 
       - name: Run Axe Checks
         run: |
-          # A. Start a local server in the background
-          npx http-server ./_build/html -p 8080 -s &
-          npx wait-on http://localhost:8080
+
+          # A. Create a subdirectory structure that matches the BASE_URL
+          # This ensures http://localhost:8080/textbook/index.html works
+          mkdir -p staging${BASE_URL}
+          cp -r _build/html/* staging${BASE_URL}/
+
+          # B. Start server pointing to the staging root
+          npx http-server staging -p 8080 -s &
+          npx wait-on http://localhost:8080${BASE_URL}/
           
-          # B. Generate the URL list from the actual build artifacts
+          # C. Generate URLs including the BASE_URL prefix
           cd _build/html
-          URLS=$(find . -name "*.html" -not -path "*/build/*" | sed 's|^\./||' | sed 's|^|http://localhost:8080/|' | tr '\n' ' ')          
+          # We add the BASE_URL to the string via sed
+          URLS=$(find . -name "*.html" -not -path "*/build/*" | sed 's|^\./||' | sed "s|^|http://localhost:8080${BASE_URL}/|" | tr '\n' ' ')          
           cd ../..
 
-          # C. Run custom script
+          # D. Run custom script
           node axe-scan.js $URLS
 
       - name: Upload Accessibility Report
