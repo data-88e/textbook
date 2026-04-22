@@ -1,4 +1,4 @@
-const { Builder } = require('selenium-webdriver');
+const { Builder, By, until } = require('selenium-webdriver');
 const chrome = require('selenium-webdriver/chrome');
 const AxeBuilder = require('@axe-core/webdriverjs');
 const fs = require('fs');
@@ -38,6 +38,17 @@ console.log(`\nStarting Axe scan on ${urls.length} pages...\n`);
 
       try {
         await driver.get(url);
+        
+        try {
+          await driver.wait(until.elementLocated(By.css('main, #main-content, article')), 5000);
+          const dynamicLocator = By.css('.thebe-output, .jp-OutputArea, .overflow-x-auto');
+            await driver.wait(until.elementLocated(dynamicLocator), 3000)
+              .catch(() => {
+                // We don't log an error here, it's just a static page.
+              });
+        } catch (e) {
+          console.warn(`  Warning: Page took too long to show main content. Proceeding anyway.`);
+        }
 
         const results = await new AxeBuilder(driver)
           .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
