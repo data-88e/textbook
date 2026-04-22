@@ -41,6 +41,9 @@ jobs:
           npx http-server staging -p 8080 -s &
           npx wait-on http://localhost:8080${BASE_URL}/
           
+          # DEBUGGING
+          curl -I http://localhost:8080/textbook/content/introduction/index.html
+          
           # C. Generate URLs including the BASE_URL prefix
           cd _build/html
           # We add the BASE_URL to the string via sed
